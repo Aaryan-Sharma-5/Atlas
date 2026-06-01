@@ -1,0 +1,16 @@
+fastapi
+uvicorn[standard]
+neo4j
+psycopg2-binary
+spacy
+sentence-transformers
+pydantic
+pydantic-settings
+python-dotenv
+requests
+pdfplumber
+python-docx
+GitPython
+markdown-it-py
+beautifulsoup4
+lxml

@@ -1,0 +1,54 @@
+services:
+  neo4j:
+    image: neo4j:5.16-community
+    container_name: atlas-neo4j
+    ports:
+      - "7474:7474"  # HTTP
+      - "7687:7687"  # Bolt
+    environment:
+      NEO4J_AUTH: neo4j/atlas_password_123
+      NEO4J_PLUGINS: '["graph-data-science"]'
+      NEO4J_dbms_memory_heap_initial__size: 1G
+      NEO4J_dbms_memory_heap_max__size: 2G
+      NEO4J_dbms_memory_pagecache_size: 1G
+    volumes:
+      - neo4j_data:/var/lib/neo4j/data
+      - neo4j_logs:/var/lib/neo4j/logs
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:7474"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - atlas_network
+
+  postgres:
+    image: postgres:16-alpine
+    container_name: atlas-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: atlas_user
+      POSTGRES_PASSWORD: atlas_password_123
+      POSTGRES_DB: atlas
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U atlas_user -d atlas"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - atlas_network
+
+volumes:
+  neo4j_data:
+    driver: local
+  neo4j_logs:
+    driver: local
+  postgres_data:
+    driver: local
+
+networks:
+  atlas_network:
+    driver: bridge
