@@ -82,7 +82,8 @@ def _extract_text_from_pdf(pdf: pdfplumber.PDF) -> str:
     """
     pages_text = []
     for i, page in enumerate(pdf.pages, start=1):
-        text = page.extract_text() or ""
+        # Default x_tolerance (3) merges tightly-kerned words in academic PDFs ("AidanHogan"); 1.5 restores word boundaries without over-splitting body text.
+        text = page.extract_text(x_tolerance=1.5) or ""
         if text.strip():
             pages_text.append(f"--- Page {i} ---\n{text}")
 
