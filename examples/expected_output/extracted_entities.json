@@ -2,7 +2,7 @@
   "source": "2003.02320v6.pdf",
   "file_hash": "348d06999cd5fd039d31620f9552dba0ac34e9e16a614f88473a74591b9f438e",
   "chunk_count": 196,
-  "entity_count": 6914,
+  "entity_count": 6813,
   "entities": [
     {
       "text": "IMFD",
@@ -1725,14 +1725,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑝/𝑝2,𝑜/𝑣𝑛2(𝐺",
-      "label": "GPE",
-      "start_char": 2143,
-      "end_char": 2155,
-      "chunk_index": 11,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "Cypher",
       "label": "ORG",
       "start_char": 2713,
@@ -1841,22 +1833,6 @@
       "label": "PERSON",
       "start_char": 2230,
       "end_char": 2240,
-      "chunk_index": 12,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑄(𝐺",
-      "label": "ORG",
-      "start_char": 2357,
-      "end_char": 2360,
-      "chunk_index": 12,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑄(𝐺",
-      "label": "ORG",
-      "start_char": 2440,
-      "end_char": 2443,
       "chunk_index": 12,
       "source_file": "2003.02320v6.pdf"
     },
@@ -5565,14 +5541,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "c. 𝑑",
-      "label": "PERSON",
-      "start_char": 1820,
-      "end_char": 1824,
-      "chunk_index": 37,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "c. Region Complement",
       "label": "ORG",
       "start_char": 1856,
@@ -7149,14 +7117,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "C)𝑖𝑗",
-      "label": "PERSON",
-      "start_char": 2081,
-      "end_char": 2085,
-      "chunk_index": 53,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "Chile",
       "label": "GPE",
       "start_char": 2164,
@@ -7193,22 +7153,6 @@
       "label": "NORP",
       "start_char": 930,
       "end_char": 937,
-      "chunk_index": 54,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "M)𝑖𝑗",
-      "label": "PERSON",
-      "start_char": 1295,
-      "end_char": 1299,
-      "chunk_index": 54,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "x)𝑖",
-      "label": "PERSON",
-      "start_char": 1303,
-      "end_char": 1306,
       "chunk_index": 54,
       "source_file": "2003.02320v6.pdf"
     },
@@ -7305,14 +7249,6 @@
       "label": "ORG",
       "start_char": 509,
       "end_char": 514,
-      "chunk_index": 55,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "z𝑑",
-      "label": "PERSON",
-      "start_char": 534,
-      "end_char": 536,
       "chunk_index": 55,
       "source_file": "2003.02320v6.pdf"
     },
@@ -8570,14 +8506,6 @@
       "start_char": 2578,
       "end_char": 2581,
       "chunk_index": 66,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "A𝑝",
-      "label": "PERSON",
-      "start_char": 487,
-      "end_char": 489,
-      "chunk_index": 67,
       "source_file": "2003.02320v6.pdf"
     },
     {
@@ -51973,14 +51901,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "⊆ 𝑉 × 𝐿",
-      "label": "PRODUCT",
-      "start_char": 2394,
-      "end_char": 2401,
-      "chunk_index": 162,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "Santiago,",
       "label": "ORG",
       "start_char": 2544,
@@ -52365,30 +52285,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝐺 1 ⊆ 𝐺 2",
-      "label": "PRODUCT",
-      "start_char": 990,
-      "end_char": 999,
-      "chunk_index": 165,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝐺 1 ⊆ 𝐺 2",
-      "label": "PRODUCT",
-      "start_char": 1312,
-      "end_char": 1321,
-      "chunk_index": 165,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑄(𝐺",
-      "label": "ORG",
-      "start_char": 1766,
-      "end_char": 1769,
-      "chunk_index": 165,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "Example B.13",
       "label": "PERSON",
       "start_char": 1834,
@@ -52401,14 +52297,6 @@
       "label": "PERSON",
       "start_char": 52,
       "end_char": 64,
-      "chunk_index": 166,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑄(𝐺",
-      "label": "ORG",
-      "start_char": 398,
-      "end_char": 401,
       "chunk_index": 166,
       "source_file": "2003.02320v6.pdf"
     },
@@ -52429,22 +52317,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑅(𝑄",
-      "label": "WORK_OF_ART",
-      "start_char": 1115,
-      "end_char": 1118,
-      "chunk_index": 166,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝐺1 ⊈ 𝐺2",
-      "label": "PRODUCT",
-      "start_char": 1390,
-      "end_char": 1397,
-      "chunk_index": 166,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "RDF",
       "label": "ORG",
       "start_char": 1537,
@@ -52453,26 +52325,10 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝐺1 ⊆ 𝐺2",
-      "label": "PRODUCT",
-      "start_char": 1628,
-      "end_char": 1635,
-      "chunk_index": 166,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "Complex",
       "label": "NORP",
       "start_char": 2375,
       "end_char": 2382,
-      "chunk_index": 166,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑄(𝐺",
-      "label": "ORG",
-      "start_char": 2473,
-      "end_char": 2476,
       "chunk_index": 166,
       "source_file": "2003.02320v6.pdf"
     },
@@ -52489,14 +52345,6 @@
       "label": "NORP",
       "start_char": 50,
       "end_char": 57,
-      "chunk_index": 167,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑄(𝐺",
-      "label": "ORG",
-      "start_char": 148,
-      "end_char": 151,
       "chunk_index": 167,
       "source_file": "2003.02320v6.pdf"
     },
@@ -52549,14 +52397,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑙(𝑒",
-      "label": "ORG",
-      "start_char": 2291,
-      "end_char": 2294,
-      "chunk_index": 167,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "∈ Con",
       "label": "PERSON",
       "start_char": 31,
@@ -52565,34 +52405,10 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑙(𝑒",
-      "label": "ORG",
-      "start_char": 102,
-      "end_char": 105,
-      "chunk_index": 168,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "Con ∪ Var",
       "label": "ORG",
       "start_char": 691,
       "end_char": 700,
-      "chunk_index": 168,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑐,𝑟,𝑧)(𝐺",
-      "label": "ORG",
-      "start_char": 1019,
-      "end_char": 1027,
-      "chunk_index": 168,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑧,𝑟,𝑐)(𝐺",
-      "label": "ORG",
-      "start_char": 1079,
-      "end_char": 1087,
       "chunk_index": 168,
       "source_file": "2003.02320v6.pdf"
     },
@@ -52693,98 +52509,10 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑚𝑖𝑛 ∈ N",
-      "label": "ORG",
-      "start_char": 354,
-      "end_char": 361,
-      "chunk_index": 169,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑚𝑎𝑥 ∈ N",
-      "label": "ORG",
-      "start_char": 368,
-      "end_char": 375,
-      "chunk_index": 169,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜙]𝐺,𝑣,𝜎",
-      "label": "ORG",
-      "start_char": 2082,
-      "end_char": 2089,
-      "chunk_index": 169,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜙]𝐺,𝑣,𝜎",
-      "label": "ORG",
-      "start_char": 259,
-      "end_char": 266,
-      "chunk_index": 170,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜙]𝐺,𝑣,𝜎",
-      "label": "ORG",
-      "start_char": 495,
-      "end_char": 502,
-      "chunk_index": 170,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜎(𝑣,𝑠",
-      "label": "ORG",
-      "start_char": 521,
-      "end_char": 526,
-      "chunk_index": 170,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑝,𝑢",
-      "label": "ORG",
-      "start_char": 575,
-      "end_char": 578,
-      "chunk_index": 170,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜙]𝐺,𝑢,𝜎",
-      "label": "PRODUCT",
-      "start_char": 587,
-      "end_char": 594,
-      "chunk_index": 170,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜙]𝐺,𝑣,𝜎",
-      "label": "ORG",
-      "start_char": 611,
-      "end_char": 618,
-      "chunk_index": 170,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "Valid",
       "label": "NORP",
       "start_char": 1291,
       "end_char": 1296,
-      "chunk_index": 170,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜎(𝑣,𝑠",
-      "label": "ORG",
-      "start_char": 1516,
-      "end_char": 1521,
-      "chunk_index": 170,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜎(𝑣,𝑠",
-      "label": "ORG",
-      "start_char": 1560,
-      "end_char": 1565,
       "chunk_index": 170,
       "source_file": "2003.02320v6.pdf"
     },
@@ -52861,14 +52589,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑣′𝑝,𝑤′",
-      "label": "PERSON",
-      "start_char": 860,
-      "end_char": 866,
-      "chunk_index": 172,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "Example B.33",
       "label": "PERSON",
       "start_char": 1311,
@@ -52882,14 +52602,6 @@
       "start_char": 1704,
       "end_char": 1732,
       "chunk_index": 172,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝐸 𝐴 ⊆ 𝑉 × 𝐿 ×𝑉 ×𝐴",
-      "label": "LAW",
-      "start_char": 965,
-      "end_char": 982,
-      "chunk_index": 173,
       "source_file": "2003.02320v6.pdf"
     },
     {
@@ -52941,34 +52653,10 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑢𝐼,𝑙𝐼",
-      "label": "ORG",
-      "start_char": 699,
-      "end_char": 704,
-      "chunk_index": 174,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "𝐺. Next",
       "label": "ORG",
       "start_char": 764,
       "end_char": 771,
-      "chunk_index": 174,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜙(Γ",
-      "label": "GPE",
-      "start_char": 1095,
-      "end_char": 1098,
-      "chunk_index": 174,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜙(Γ",
-      "label": "GPE",
-      "start_char": 1221,
-      "end_char": 1224,
       "chunk_index": 174,
       "source_file": "2003.02320v6.pdf"
     },
@@ -53053,70 +52741,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑅(𝐺",
-      "label": "PERSON",
-      "start_char": 1659,
-      "end_char": 1662,
-      "chunk_index": 175,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜇(𝐻",
-      "label": "PERSON",
-      "start_char": 1683,
-      "end_char": 1686,
-      "chunk_index": 175,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜇∈𝐵(𝐺",
-      "label": "PERSON",
-      "start_char": 1689,
-      "end_char": 1694,
-      "chunk_index": 175,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑅(𝐺",
-      "label": "PERSON",
-      "start_char": 1884,
-      "end_char": 1887,
-      "chunk_index": 175,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "R+(𝐺",
-      "label": "PERSON",
-      "start_char": 1965,
-      "end_char": 1969,
-      "chunk_index": 175,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "R+(𝐺",
-      "label": "ORG",
-      "start_char": 2117,
-      "end_char": 2121,
-      "chunk_index": 175,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "R+(𝐺",
-      "label": "PERSON",
-      "start_char": 2145,
-      "end_char": 2149,
-      "chunk_index": 175,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "R𝑖+1(𝐺",
-      "label": "ORG",
-      "start_char": 2156,
-      "end_char": 2162,
-      "chunk_index": 175,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "RDFS",
       "label": "ORG",
       "start_char": 581,
@@ -53129,22 +52753,6 @@
       "label": "ORG",
       "start_char": 777,
       "end_char": 804,
-      "chunk_index": 176,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝐺 1 ∪ 𝛾(R",
-      "label": "PRODUCT",
-      "start_char": 1022,
-      "end_char": 1031,
-      "chunk_index": 176,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝛾(R",
-      "label": "ORG",
-      "start_char": 1246,
-      "end_char": 1249,
       "chunk_index": 176,
       "source_file": "2003.02320v6.pdf"
     },
@@ -53493,14 +53101,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "⊆ 𝑉 × 𝑉",
-      "label": "PRODUCT",
-      "start_char": 816,
-      "end_char": 823,
-      "chunk_index": 179,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "OWL",
       "label": "ORG",
       "start_char": 976,
@@ -53541,14 +53141,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑥,𝑥",
-      "label": "PERSON",
-      "start_char": 1565,
-      "end_char": 1568,
-      "chunk_index": 179,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "Universal Relation U Δ𝐼 × Δ𝐼 Relation Axioms",
       "label": "ORG",
       "start_char": 1894,
@@ -53573,22 +53165,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑥,𝑥",
-      "label": "PERSON",
-      "start_char": 2197,
-      "end_char": 2200,
-      "chunk_index": 179,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑥,𝑥",
-      "label": "PERSON",
-      "start_char": 2251,
-      "end_char": 2254,
-      "chunk_index": 179,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "Symmetric Relations",
       "label": "ORG",
       "start_char": 2261,
@@ -53601,14 +53177,6 @@
       "label": "ORG",
       "start_char": 2294,
       "end_char": 2326,
-      "chunk_index": 179,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑅−)𝐼",
-      "label": "NORP",
-      "start_char": 2334,
-      "end_char": 2338,
       "chunk_index": 179,
       "source_file": "2003.02320v6.pdf"
     },
@@ -53637,34 +53205,10 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑎𝐼,𝑏𝐼",
-      "label": "ORG",
-      "start_char": 2527,
-      "end_char": 2532,
-      "chunk_index": 179,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑏 𝑎𝐼",
-      "label": "PERSON",
-      "start_char": 2581,
-      "end_char": 2585,
-      "chunk_index": 179,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "𝑅−)𝐼 Asymmetric Relations Asym(𝑅",
       "label": "ORG",
       "start_char": 3,
       "end_char": 35,
-      "chunk_index": 180,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑅−)𝐼",
-      "label": "NORP",
-      "start_char": 43,
-      "end_char": 47,
       "chunk_index": 180,
       "source_file": "2003.02320v6.pdf"
     },
@@ -53689,30 +53233,6 @@
       "label": "ORG",
       "start_char": 199,
       "end_char": 233,
-      "chunk_index": 180,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑎𝐼,𝑏𝐼",
-      "label": "ORG",
-      "start_char": 236,
-      "end_char": 241,
-      "chunk_index": 180,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑏 𝑎𝐼",
-      "label": "PERSON",
-      "start_char": 290,
-      "end_char": 294,
-      "chunk_index": 180,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑏 𝑎𝐼",
-      "label": "PERSON",
-      "start_char": 315,
-      "end_char": 319,
       "chunk_index": 180,
       "source_file": "2003.02320v6.pdf"
     },
@@ -53777,14 +53297,6 @@
       "label": "ORG",
       "start_char": 2220,
       "end_char": 2233,
-      "chunk_index": 180,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑎,𝑏,𝑐 ∈ N",
-      "label": "ORG",
-      "start_char": 2251,
-      "end_char": 2260,
       "chunk_index": 180,
       "source_file": "2003.02320v6.pdf"
     },
@@ -53881,14 +53393,6 @@
       "label": "PERSON",
       "start_char": 690,
       "end_char": 696,
-      "chunk_index": 181,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜆(𝑣,𝑢",
-      "label": "PERSON",
-      "start_char": 833,
-      "end_char": 838,
       "chunk_index": 181,
       "source_file": "2003.02320v6.pdf"
     },
@@ -54005,22 +53509,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝜙(𝜀(𝑠",
-      "label": "PRODUCT",
-      "start_char": 448,
-      "end_char": 453,
-      "chunk_index": 183,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜌(𝑝),𝜀(𝑜",
-      "label": "ORG",
-      "start_char": 456,
-      "end_char": 464,
-      "chunk_index": 183,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "Wang",
       "label": "ORG",
       "start_char": 551,
@@ -54041,14 +53529,6 @@
       "label": "EVENT",
       "start_char": 1890,
       "end_char": 1897,
-      "chunk_index": 183,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "R𝑦",
-      "label": "ORG",
-      "start_char": 2008,
-      "end_char": 2010,
       "chunk_index": 183,
       "source_file": "2003.02320v6.pdf"
     },
@@ -54133,46 +53613,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "x)𝑖",
-      "label": "ORG",
-      "start_char": 2476,
-      "end_char": 2479,
-      "chunk_index": 184,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "X)𝑖𝑗",
-      "label": "PERSON",
-      "start_char": 2483,
-      "end_char": 2487,
-      "chunk_index": 184,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜙(𝜀(𝑠",
-      "label": "PRODUCT",
-      "start_char": 2947,
-      "end_char": 2952,
-      "chunk_index": 184,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜙(𝜀(𝑠",
-      "label": "PRODUCT",
-      "start_char": 277,
-      "end_char": 282,
-      "chunk_index": 185,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜌(𝑝),𝜀(𝑜",
-      "label": "ORG",
-      "start_char": 285,
-      "end_char": 293,
-      "chunk_index": 185,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "Model",
       "label": "PRODUCT",
       "start_char": 342,
@@ -54185,22 +53625,6 @@
       "label": "PERSON",
       "start_char": 645,
       "end_char": 651,
-      "chunk_index": 185,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "R𝑑 ≤ 𝑒",
-      "label": "PERSON",
-      "start_char": 671,
-      "end_char": 677,
-      "chunk_index": 185,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "R𝑑 ≤ 𝑒",
-      "label": "PERSON",
-      "start_char": 818,
-      "end_char": 824,
       "chunk_index": 185,
       "source_file": "2003.02320v6.pdf"
     },
@@ -54229,14 +53653,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "∥e𝑥 ∥2 ≤ 1",
-      "label": "PERSON",
-      "start_char": 1150,
-      "end_char": 1160,
-      "chunk_index": 185,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "Tr𝑝 De𝑜",
       "label": "PERSON",
       "start_char": 1193,
@@ -54249,14 +53665,6 @@
       "label": "ORG",
       "start_char": 1259,
       "end_char": 1269,
-      "chunk_index": 185,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "∈ R𝑑",
-      "label": "PERSON",
-      "start_char": 1299,
-      "end_char": 1303,
       "chunk_index": 185,
       "source_file": "2003.02320v6.pdf"
     },
@@ -54325,26 +53733,10 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "R𝑑 ≤",
-      "label": "PERSON",
-      "start_char": 516,
-      "end_char": 520,
-      "chunk_index": 186,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "w ∈ R𝑤",
       "label": "ORG",
       "start_char": 555,
       "end_char": 561,
-      "chunk_index": 186,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑏 𝑏",
-      "label": "PERSON",
-      "start_char": 692,
-      "end_char": 695,
       "chunk_index": 186,
       "source_file": "2003.02320v6.pdf"
     },
@@ -54381,34 +53773,10 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "X𝑛",
-      "label": "GPE",
-      "start_char": 1249,
-      "end_char": 1251,
-      "chunk_index": 186,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "∈ R𝑎𝑏",
-      "label": "PERSON",
-      "start_char": 1316,
-      "end_char": 1321,
-      "chunk_index": 186,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "vec(X)𝑘",
       "label": "ORG",
       "start_char": 1550,
       "end_char": 1557,
-      "chunk_index": 186,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "X)𝑖𝑗",
-      "label": "PERSON",
-      "start_char": 1561,
-      "end_char": 1565,
       "chunk_index": 186,
       "source_file": "2003.02320v6.pdf"
     },
@@ -54421,26 +53789,10 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "X[𝑖",
-      "label": "PERSON",
-      "start_char": 1687,
-      "end_char": 1690,
-      "chunk_index": 186,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "X ∈ R𝑎,𝑏,𝑐",
       "label": "PERSON",
       "start_char": 25,
       "end_char": 35,
-      "chunk_index": 187,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "X[𝑖",
-      "label": "PERSON",
-      "start_char": 50,
-      "end_char": 53,
       "chunk_index": 187,
       "source_file": "2003.02320v6.pdf"
     },
@@ -54477,26 +53829,10 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "Y)𝑘𝑗",
-      "label": "PERSON",
-      "start_char": 1009,
-      "end_char": 1013,
-      "chunk_index": 187,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "𝐿𝑝-norm",
       "label": "ORG",
       "start_char": 1747,
       "end_char": 1754,
-      "chunk_index": 187,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "|(x)𝑖|",
-      "label": "NORP",
-      "start_char": 1835,
-      "end_char": 1841,
       "chunk_index": 187,
       "source_file": "2003.02320v6.pdf"
     },
@@ -54621,67 +53957,11 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑖𝑚𝑗1",
-      "label": "PERSON",
-      "start_char": 2127,
-      "end_char": 2131,
-      "chunk_index": 188,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑗𝑛",
-      "label": "PERSON",
-      "start_char": 2134,
-      "end_char": 2136,
-      "chunk_index": 188,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑖𝑚",
-      "label": "PERSON",
-      "start_char": 2147,
-      "end_char": 2149,
-      "chunk_index": 188,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "X ⊗ Y",
       "label": "WORK_OF_ART",
       "start_char": 2250,
       "end_char": 2255,
       "chunk_index": 188,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": ",𝑎𝑛−1,𝑏,𝑎𝑛+1,",
-      "label": "PERSON",
-      "start_char": 2637,
-      "end_char": 2650,
-      "chunk_index": 188,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑖𝑚",
-      "label": "PERSON",
-      "start_char": 2692,
-      "end_char": 2694,
-      "chunk_index": 188,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑖𝑚",
-      "label": "PERSON",
-      "start_char": 2735,
-      "end_char": 2737,
-      "chunk_index": 188,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝑖𝑚",
-      "label": "PERSON",
-      "start_char": 28,
-      "end_char": 30,
-      "chunk_index": 189,
       "source_file": "2003.02320v6.pdf"
     },
     {
@@ -54713,30 +53993,6 @@
       "label": "PRODUCT",
       "start_char": 1207,
       "end_char": 1215,
-      "chunk_index": 189,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "X)𝑘𝑙",
-      "label": "PERSON",
-      "start_char": 1336,
-      "end_char": 1340,
-      "chunk_index": 189,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "X)𝑖𝑗",
-      "label": "PERSON",
-      "start_char": 1675,
-      "end_char": 1679,
-      "chunk_index": 189,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "Y)𝑙𝑘",
-      "label": "NORP",
-      "start_char": 1683,
-      "end_char": 1687,
       "chunk_index": 189,
       "source_file": "2003.02320v6.pdf"
     },
@@ -54789,14 +54045,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑎,𝑏,𝑐 ∈ N",
-      "label": "ORG",
-      "start_char": 1229,
-      "end_char": 1238,
-      "chunk_index": 190,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "node",
       "label": "GPE",
       "start_char": 1339,
@@ -54825,22 +54073,6 @@
       "label": "PERSON",
       "start_char": 1878,
       "end_char": 1884,
-      "chunk_index": 190,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "n𝑢",
-      "label": "PERSON",
-      "start_char": 1969,
-      "end_char": 1971,
-      "chunk_index": 190,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜆(𝑣,𝑢",
-      "label": "PERSON",
-      "start_char": 2014,
-      "end_char": 2019,
       "chunk_index": 190,
       "source_file": "2003.02320v6.pdf"
     },
@@ -54925,22 +54157,6 @@
       "source_file": "2003.02320v6.pdf"
     },
     {
-      "text": "𝑏 ∈ N",
-      "label": "ORG",
-      "start_char": 2244,
-      "end_char": 2249,
-      "chunk_index": 191,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "R𝑎𝑘.",
-      "label": "GPE",
-      "start_char": 2285,
-      "end_char": 2289,
-      "chunk_index": 191,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
       "text": "node",
       "label": "GPE",
       "start_char": 2359,
@@ -54969,22 +54185,6 @@
       "label": "PERSON",
       "start_char": 290,
       "end_char": 296,
-      "chunk_index": 192,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "n𝑢",
-      "label": "PERSON",
-      "start_char": 381,
-      "end_char": 383,
-      "chunk_index": 192,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "𝜆(𝑣,𝑢",
-      "label": "PERSON",
-      "start_char": 429,
-      "end_char": 434,
       "chunk_index": 192,
       "source_file": "2003.02320v6.pdf"
     },
@@ -55074,14 +54274,6 @@
       "start_char": 2312,
       "end_char": 2327,
       "chunk_index": 192,
-      "source_file": "2003.02320v6.pdf"
-    },
-    {
-      "text": "• 𝐺 ∪ Ψ∗ ∪ 𝐸+",
-      "label": "ORG",
-      "start_char": 548,
-      "end_char": 561,
-      "chunk_index": 193,
       "source_file": "2003.02320v6.pdf"
     },
     {
