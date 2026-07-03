@@ -1,10 +1,6 @@
 """Validated Entity/Relationship objects -> parameterized Cypher.
 
-This module RETURNS Cypher strings and parameter dicts; it never executes
-them (execution is neo4j_writer.py, Day 7). All values travel as
-parameters. Labels and relationship types cannot be parameterized in
-Cypher, so they are embedded — but only after whitelisting against the
-schema (NODE_HIERARCHY / RELATIONSHIP_TYPES), which validation guarantees.
+This module RETURNS Cypher strings and parameter dicts; it never executes them (execution is neo4j_writer.py). All values travel as parameters. Labels and relationship types cannot be parameterized in Cypher, so they are embedded — but only after whitelisting against the schema (NODE_HIERARCHY / RELATIONSHIP_TYPES), which validation guarantees.
 """
 
 from collections import defaultdict
@@ -17,9 +13,12 @@ CypherStatement = tuple[str, dict[str, Any]]
 
 
 def build_entity_cypher(entity: Entity) -> CypherStatement:
-    """Single-entity CREATE with base label + specific label."""
+    """Single-entity CREATE.
+
+    Three labels: :Entity (universal, carries the uniqueness constraint from constraints.cypher), base type, and specific type.
+    """
     _assert_valid_labels(entity)
-    cypher = f"CREATE (n:{entity.base_type}:{entity.type}) SET n = $props"
+    cypher = f"CREATE (n:Entity:{entity.base_type}:{entity.type}) SET n = $props"
     return cypher, {"props": _flat_props(entity)}
 
 
@@ -42,8 +41,7 @@ def build_relationship_cypher(rel: Relationship) -> CypherStatement:
 def build_entity_batch_cypher(entities: list[Entity]) -> list[CypherStatement]:
     """Batch CREATE via UNWIND, one statement per node type.
 
-    Labels are per-statement (Cypher can't parameterize them), so entities
-    are grouped by type; 3k nodes become ~4 round-trips instead of 3k.
+    Labels are per-statement (Cypher can't parameterize them), so entities are grouped by type; 3k nodes become ~4 round-trips instead of 3k.
     """
     by_type: dict[str, list[Entity]] = defaultdict(list)
     for entity in entities:
@@ -53,7 +51,9 @@ def build_entity_batch_cypher(entities: list[Entity]) -> list[CypherStatement]:
     statements: list[CypherStatement] = []
     for node_type, group in by_type.items():
         base = NODE_HIERARCHY[node_type]
-        cypher = f"UNWIND $rows AS row CREATE (n:{base}:{node_type}) SET n = row"
+        cypher = (
+            f"UNWIND $rows AS row CREATE (n:Entity:{base}:{node_type}) SET n = row"
+        )
         rows = [_flat_props(e) for e in group]
         statements.append((cypher, {"rows": rows}))
     return statements
@@ -62,8 +62,7 @@ def build_entity_batch_cypher(entities: list[Entity]) -> list[CypherStatement]:
 def _flat_props(entity: Entity) -> dict[str, Any]:
     """Mandatory fields + custom properties as one flat dict.
 
-    Neo4j properties must be primitives or lists of primitives; nested
-    dicts fail loudly here instead of at write time.
+    Neo4j properties must be primitives or lists of primitives; nested dicts fail loudly here instead of at write time.
     """
     props: dict[str, Any] = {
         "id": entity.id,
@@ -98,7 +97,6 @@ def _rel_props(rel: Relationship) -> dict[str, Any]:
 
 
 def _assert_valid_labels(entity: Entity) -> None:
-    # Entity.__post_init__ enforces this, but the builder embeds labels in
-    # Cypher text, so re-check as the last line of injection defense.
+    # Entity.__post_init__ enforces this, but the builder embeds labels in Cypher text, so re-check as the last line of injection defense.
     if entity.type not in NODE_HIERARCHY:
         raise ValueError(f"unvalidated entity type: {entity.type!r}")
