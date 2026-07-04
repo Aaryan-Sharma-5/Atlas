@@ -14,3 +14,4 @@ GitPython
 markdown-it-py
 beautifulsoup4
 lxml
+rapidfuzz

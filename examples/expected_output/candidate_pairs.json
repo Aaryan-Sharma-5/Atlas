@@ -1,0 +1,5769 @@
+{
+  "stage": "string_similarity",
+  "threshold": 0.85,
+  "entity_count": 4482,
+  "pair_count": 640,
+  "cross_source_pairs": 203,
+  "pairs": [
+    {
+      "id_a": "org_acl__rdflib_rdflib",
+      "id_b": "org_acl__2003_02320v6_pdf",
+      "name_a": "ACL",
+      "name_b": "ACL",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_acl__rdflib_rdflib",
+      "id_b": "org_acl__2002_00388v4_pdf",
+      "name_a": "ACL",
+      "name_b": "ACL",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_acl__2003_02320v6_pdf",
+      "id_b": "org_acl__2002_00388v4_pdf",
+      "name_a": "ACL",
+      "name_b": "ACL",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_acm__2002_00388v4_pdf",
+      "id_b": "org_acm__2003_02320v6_pdf",
+      "name_a": "ACM",
+      "name_b": "ACM",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_api__rdflib_rdflib",
+      "id_b": "org_api__2003_02320v6_pdf",
+      "name_a": "API",
+      "name_b": "API",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_api__rdflib_rdflib",
+      "id_b": "org_api__docs_architecture_md",
+      "name_a": "API",
+      "name_b": "API",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_api__2003_02320v6_pdf",
+      "id_b": "org_api__docs_architecture_md",
+      "name_a": "API",
+      "name_b": "API",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_albert__2003_02320v6_pdf",
+      "id_b": "person_albert__2002_00388v4_pdf",
+      "name_a": "Albert",
+      "name_b": "Albert",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_appendix_a__2002_00388v4_pdf",
+      "id_b": "person_appendix_a__2003_02320v6_pdf",
+      "name_a": "Appendix A.",
+      "name_b": "Appendix A",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_arica_santiago__2003_02320v6_pdf",
+      "id_b": "person_santiago_arica__2003_02320v6_pdf",
+      "name_a": "Arica Santiago",
+      "name_b": "Santiago Arica",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_bmc_bioinformatics__2003_02320v6_pdf",
+      "id_b": "org_bmc_bioinformatics__2002_00388v4_pdf",
+      "name_a": "BMC Bioinformatics",
+      "name_b": "BMC Bioinformatics",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_cpu__rdflib_rdflib",
+      "id_b": "org_cpu__2003_02320v6_pdf",
+      "name_a": "CPU",
+      "name_b": "CPU",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_cwa__2002_00388v4_pdf",
+      "id_b": "org_cwa__2003_02320v6_pdf",
+      "name_a": "CWA",
+      "name_b": "CWA",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_calama_arica__2003_02320v6_pdf",
+      "id_b": "person_arica_calama__2003_02320v6_pdf",
+      "name_a": "Calama Arica",
+      "name_b": "Arica Calama",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_complex__2002_00388v4_pdf",
+      "id_b": "org_complex__2003_02320v6_pdf",
+      "name_a": "ComplEx",
+      "name_b": "ComplEx",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_cypher__docs_architecture_md",
+      "id_b": "person_cypher__2003_02320v6_pdf",
+      "name_a": "Cypher",
+      "name_b": "Cypher",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_cypher__2003_02320v6_pdf",
+      "id_b": "org_cypher__docs_architecture_md",
+      "name_a": "Cypher",
+      "name_b": "Cypher",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_dbpedia__rdflib_rdflib",
+      "id_b": "org_dbpedia__2003_02320v6_pdf",
+      "name_a": "DBPedia",
+      "name_b": "DBpedia",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_dbpedia__rdflib_rdflib",
+      "id_b": "org_dbpedia__2002_00388v4_pdf",
+      "name_a": "DBPedia",
+      "name_b": "DBpedia",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_dbpedia__2003_02320v6_pdf",
+      "id_b": "org_dbpedia__2002_00388v4_pdf",
+      "name_a": "DBpedia",
+      "name_b": "DBpedia",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_dataset__rdflib_rdflib",
+      "id_b": "org_dataset__2002_00388v4_pdf",
+      "name_a": "Dataset",
+      "name_b": "Dataset",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "tech_discovery__2003_02320v6_pdf",
+      "id_b": "tech_discovery__2002_00388v4_pdf",
+      "name_a": "Discovery",
+      "name_b": "Discovery",
+      "type": "Technology",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "tech_distmult__2003_02320v6_pdf",
+      "id_b": "tech_distmult__2002_00388v4_pdf",
+      "name_a": "DistMult",
+      "name_b": "DistMult",
+      "type": "Technology",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_distmult__2002_00388v4_pdf",
+      "id_b": "org_distmult__2003_02320v6_pdf",
+      "name_a": "DistMult",
+      "name_b": "DistMult",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_draft_community_group_report__2003_02320v6_pdf",
+      "id_b": "org_community_group_draft_report__2003_02320v6_pdf",
+      "name_a": "Draft Community Group Report",
+      "name_b": "Community Group Draft Report",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_duc_minh_tran__2003_02320v6_pdf",
+      "id_b": "person_minh_duc_tran__2003_02320v6_pdf",
+      "name_a": "Duc Minh Tran",
+      "name_b": "Minh Duc Tran",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": false
+    },
+    {
+      "id_a": "lang_english__2003_02320v6_pdf",
+      "id_b": "lang_english__2002_00388v4_pdf",
+      "name_a": "English",
+      "name_b": "english",
+      "type": "Language",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "lang_english__2003_02320v6_pdf",
+      "id_b": "lang_english__docs_architecture_md",
+      "name_a": "English",
+      "name_b": "English",
+      "type": "Language",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_erik_cambria__2002_00388v4_pdf",
+      "id_b": "person_erik_cambria__2003_02320v6_pdf",
+      "name_a": "Erik Cambria",
+      "name_b": "Erik Cambria",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_fig__2002_00388v4_pdf",
+      "id_b": "person_fig__2003_02320v6_pdf",
+      "name_a": "Fig",
+      "name_b": "Fig",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_freebase__2002_00388v4_pdf",
+      "id_b": "person_freebase__2003_02320v6_pdf",
+      "name_a": "Freebase",
+      "name_b": "Freebase",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_gnn__2002_00388v4_pdf",
+      "id_b": "org_gnn__2003_02320v6_pdf",
+      "name_a": "GNN",
+      "name_b": "GNN",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_google__rdflib_rdflib",
+      "id_b": "org_google__2003_02320v6_pdf",
+      "name_a": "Google",
+      "name_b": "Google",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_google__rdflib_rdflib",
+      "id_b": "org_google__2002_00388v4_pdf",
+      "name_a": "Google",
+      "name_b": "Google",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_google__2003_02320v6_pdf",
+      "id_b": "org_google__2002_00388v4_pdf",
+      "name_a": "Google",
+      "name_b": "Google",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_graph__docs_architecture_md",
+      "id_b": "person_graph__2003_02320v6_pdf",
+      "name_a": "Graph",
+      "name_b": "Graph",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_graph_neural_networks__2002_00388v4_pdf",
+      "id_b": "org_graph_neural_networks__2003_02320v6_pdf",
+      "name_a": "Graph Neural Networks",
+      "name_b": "Graph Neural Networks",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_graphs__rdflib_rdflib",
+      "id_b": "person_graphs__2002_00388v4_pdf",
+      "name_a": "Graphs",
+      "name_b": "graphs",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_hdt__rdflib_rdflib",
+      "id_b": "org_hdt__2003_02320v6_pdf",
+      "name_a": "HDT",
+      "name_b": "HDT",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_html__rdflib_rdflib",
+      "id_b": "org_html__2003_02320v6_pdf",
+      "name_a": "HTML",
+      "name_b": "HTML",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_human_computer_interaction__2002_00388v4_pdf",
+      "id_b": "org_human_computer_interaction__2003_02320v6_pdf",
+      "name_a": "Human-Computer Interaction",
+      "name_b": "Human-Computer Interaction",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_hyper__2002_00388v4_pdf",
+      "id_b": "person_hyper__2003_02320v6_pdf",
+      "name_a": "HypER",
+      "name_b": "HypER",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_ieee__2002_00388v4_pdf",
+      "id_b": "org_ieee__2003_02320v6_pdf",
+      "name_a": "IEEE",
+      "name_b": "IEEE",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_iri__rdflib_rdflib",
+      "id_b": "org_iri__2003_02320v6_pdf",
+      "name_a": "IRI",
+      "name_b": "IRI",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_json__rdflib_rdflib",
+      "id_b": "person_json__2003_02320v6_pdf",
+      "name_a": "JSON",
+      "name_b": "JSON",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_java__2003_02320v6_pdf",
+      "id_b": "person_java__rdflib_rdflib",
+      "name_a": "Java",
+      "name_b": "Java",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_juan__2002_00388v4_pdf",
+      "id_b": "person_juan__2003_02320v6_pdf",
+      "name_a": "Juan",
+      "name_b": "Juan",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_kale__2002_00388v4_pdf",
+      "id_b": "org_kale__2003_02320v6_pdf",
+      "name_a": "KALE",
+      "name_b": "KALE",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_kdd__2003_02320v6_pdf",
+      "id_b": "org_kdd__2002_00388v4_pdf",
+      "name_a": "KDD",
+      "name_b": "KDD",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_logical__2002_00388v4_pdf",
+      "id_b": "org_logical__2003_02320v6_pdf",
+      "name_a": "Logical",
+      "name_b": "Logical",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_markdown__rdflib_rdflib",
+      "id_b": "org_markdown__2003_02320v6_pdf",
+      "name_a": "MArkdown",
+      "name_b": "Markdown",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_markdown__rdflib_rdflib",
+      "id_b": "org_markdown__docs_architecture_md",
+      "name_a": "MArkdown",
+      "name_b": "Markdown",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_markdown__2003_02320v6_pdf",
+      "id_b": "org_markdown__docs_architecture_md",
+      "name_a": "Markdown",
+      "name_b": "Markdown",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_markov__2002_00388v4_pdf",
+      "id_b": "person_markov__2003_02320v6_pdf",
+      "name_a": "Markov",
+      "name_b": "Markov",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_microsoft__2003_02320v6_pdf",
+      "id_b": "org_microsoft__2002_00388v4_pdf",
+      "name_a": "Microsoft",
+      "name_b": "Microsoft",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_nell__2002_00388v4_pdf",
+      "id_b": "org_nell__2003_02320v6_pdf",
+      "name_a": "NELL",
+      "name_b": "NELL",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_ner__2002_00388v4_pdf",
+      "id_b": "org_ner__2003_02320v6_pdf",
+      "name_a": "NER",
+      "name_b": "NER",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_ner__2002_00388v4_pdf",
+      "id_b": "org_ner__docs_architecture_md",
+      "name_a": "NER",
+      "name_b": "NER",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_ner__2003_02320v6_pdf",
+      "id_b": "org_ner__docs_architecture_md",
+      "name_a": "NER",
+      "name_b": "NER",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_nlp__2002_00388v4_pdf",
+      "id_b": "org_nlp__2003_02320v6_pdf",
+      "name_a": "NLP",
+      "name_b": "NLP",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_nlp__2002_00388v4_pdf",
+      "id_b": "org_nlp__docs_architecture_md",
+      "name_a": "NLP",
+      "name_b": "NLP",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_nlp__2003_02320v6_pdf",
+      "id_b": "org_nlp__docs_architecture_md",
+      "name_a": "NLP",
+      "name_b": "NLP",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_ntn__2002_00388v4_pdf",
+      "id_b": "org_ntn__2003_02320v6_pdf",
+      "name_a": "NTN",
+      "name_b": "NTN",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_negative__2002_00388v4_pdf",
+      "id_b": "org_negative__2003_02320v6_pdf",
+      "name_a": "Negative",
+      "name_b": "𝐸. Negative",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_owa__2002_00388v4_pdf",
+      "id_b": "org_owa__2003_02320v6_pdf",
+      "name_a": "OWA",
+      "name_b": "OWA",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_owl__rdflib_rdflib",
+      "id_b": "org_owl__2003_02320v6_pdf",
+      "name_a": "OWL",
+      "name_b": "OWL",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_opencyc__2002_00388v4_pdf",
+      "id_b": "org_opencyc__2003_02320v6_pdf",
+      "name_a": "OpenCyc",
+      "name_b": "OpenCyc",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_pekka_marttinen__2002_00388v4_pdf",
+      "id_b": "person_pekka_marttinen__2003_02320v6_pdf",
+      "name_a": "Pekka Marttinen",
+      "name_b": "Pekka Marttinen",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_philip_s_yu__2002_00388v4_pdf",
+      "id_b": "person_philip_s_yu__2003_02320v6_pdf",
+      "name_a": "Philip S. Yu",
+      "name_b": "Philip S. Yu",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_query__2002_00388v4_pdf",
+      "id_b": "org_query__docs_architecture_md",
+      "name_a": "Query",
+      "name_b": "Query",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_rdf__rdflib_rdflib",
+      "id_b": "org_rdf__2003_02320v6_pdf",
+      "name_a": "RDF",
+      "name_b": "RDF",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_rdf__rdflib_rdflib",
+      "id_b": "org_rdf__2002_00388v4_pdf",
+      "name_a": "RDF",
+      "name_b": "RDF",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_rdf__2003_02320v6_pdf",
+      "id_b": "org_rdf__2002_00388v4_pdf",
+      "name_a": "RDF",
+      "name_b": "RDF",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_rdfs__rdflib_rdflib",
+      "id_b": "org_rdfs__2003_02320v6_pdf",
+      "name_a": "RDFS",
+      "name_b": "RDFS",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_rescal__2002_00388v4_pdf",
+      "id_b": "org_rescal__2003_02320v6_pdf",
+      "name_a": "RESCAL",
+      "name_b": "RESCAL",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_rotate__2003_02320v6_pdf",
+      "id_b": "person_rotate__2002_00388v4_pdf",
+      "name_a": "RotatE",
+      "name_b": "RotatE",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_shacl__rdflib_rdflib",
+      "id_b": "org_shacl__2003_02320v6_pdf",
+      "name_a": "SHACL",
+      "name_b": "SHACL",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_sme__2002_00388v4_pdf",
+      "id_b": "org_sme__2003_02320v6_pdf",
+      "name_a": "SME",
+      "name_b": "SME",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_sql__2003_02320v6_pdf",
+      "id_b": "org_sql__docs_architecture_md",
+      "name_a": "SQL",
+      "name_b": "SQL",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_santiago_city_capital__2003_02320v6_pdf",
+      "id_b": "org_santiago_capital_city__2003_02320v6_pdf",
+      "name_a": "Santiago : City capital",
+      "name_b": "Santiago : Capital City",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_shirui_pan__2002_00388v4_pdf",
+      "id_b": "person_shirui_pan__2003_02320v6_pdf",
+      "name_a": "Shirui Pan",
+      "name_b": "Shirui Pan",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_syntax__rdflib_rdflib",
+      "id_b": "org_syntax__2003_02320v6_pdf",
+      "name_a": "Syntax",
+      "name_b": "Syntax",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_target__rdflib_rdflib",
+      "id_b": "org_target__docs_architecture_md",
+      "name_a": "Target",
+      "name_b": "Target",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_transe__2002_00388v4_pdf",
+      "id_b": "org_transe__2003_02320v6_pdf",
+      "name_a": "TransE",
+      "name_b": "TransE",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_tucker__2002_00388v4_pdf",
+      "id_b": "person_tucker__2003_02320v6_pdf",
+      "name_a": "Tucker",
+      "name_b": "TuckER",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_www__2003_02320v6_pdf",
+      "id_b": "org_www__2002_00388v4_pdf",
+      "name_a": "WWW",
+      "name_b": "WWW",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_wang__2002_00388v4_pdf",
+      "id_b": "person_wang__2003_02320v6_pdf",
+      "name_a": "Wang",
+      "name_b": "✓ Wang",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_wang__2002_00388v4_pdf",
+      "id_b": "org_wang__2003_02320v6_pdf",
+      "name_a": "Wang",
+      "name_b": "Wang",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_wang_et_al__2002_00388v4_pdf",
+      "id_b": "person_wang_et_al__2003_02320v6_pdf",
+      "name_a": "Wang et al",
+      "name_b": "Wang et al",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_wikidata__2003_02320v6_pdf",
+      "id_b": "org_wikidata__2002_00388v4_pdf",
+      "name_a": "Wikidata",
+      "name_b": "Wikidata",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_wikipedia__rdflib_rdflib",
+      "id_b": "org_wikipedia__2003_02320v6_pdf",
+      "name_a": "Wikipedia",
+      "name_b": "Wikipedia",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_wikipedia__rdflib_rdflib",
+      "id_b": "org_wikipedia__2002_00388v4_pdf",
+      "name_a": "Wikipedia",
+      "name_b": "Wikipedia",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_wikipedia__2003_02320v6_pdf",
+      "id_b": "org_wikipedia__2002_00388v4_pdf",
+      "name_a": "Wikipedia",
+      "name_b": "Wikipedia",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_wordnet__2002_00388v4_pdf",
+      "id_b": "org_wordnet__2003_02320v6_pdf",
+      "name_a": "WordNet",
+      "name_b": "WordNet",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_wu__2003_02320v6_pdf",
+      "id_b": "person_wu__2002_00388v4_pdf",
+      "name_a": "Wu",
+      "name_b": "Wu",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_xml__rdflib_rdflib",
+      "id_b": "org_xml__2003_02320v6_pdf",
+      "name_a": "XML",
+      "name_b": "XML",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_xsd__rdflib_rdflib",
+      "id_b": "org_xsd__2003_02320v6_pdf",
+      "name_a": "XSD",
+      "name_b": "XSD",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_yago__2002_00388v4_pdf",
+      "id_b": "org_yago__2003_02320v6_pdf",
+      "name_a": "YAGO",
+      "name_b": "YAGO",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_al__2002_00388v4_pdf",
+      "id_b": "person_al__2003_02320v6_pdf",
+      "name_a": "al",
+      "name_b": "al",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_al__2002_00388v4_pdf",
+      "id_b": "org_al__2003_02320v6_pdf",
+      "name_a": "al",
+      "name_b": "al",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_doc__rdflib_rdflib",
+      "id_b": "org_doc__docs_architecture_md",
+      "name_a": "doc",
+      "name_b": "doc",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_ed__2002_00388v4_pdf",
+      "id_b": "person_ed__2003_02320v6_pdf",
+      "name_a": "ed",
+      "name_b": "Ed",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "lang_english__2002_00388v4_pdf",
+      "id_b": "lang_english__docs_architecture_md",
+      "name_a": "english",
+      "name_b": "English",
+      "type": "Language",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_integer__rdflib_rdflib",
+      "id_b": "person_integer__2003_02320v6_pdf",
+      "name_a": "integer",
+      "name_b": "integer",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_knowledge_graphs__2002_00388v4_pdf",
+      "id_b": "person_knowledge_graphs__2003_02320v6_pdf",
+      "name_a": "knowledge graphs",
+      "name_b": "Knowledge Graphs",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_linear__2002_00388v4_pdf",
+      "id_b": "org_linear__2003_02320v6_pdf",
+      "name_a": "linear",
+      "name_b": "Linear",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_max__2002_00388v4_pdf",
+      "id_b": "person_max__rdflib_rdflib",
+      "name_a": "max",
+      "name_b": "max",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_node__rdflib_rdflib",
+      "id_b": "org_node__2003_02320v6_pdf",
+      "name_a": "node",
+      "name_b": "node",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_node__rdflib_rdflib",
+      "id_b": "org_node__2002_00388v4_pdf",
+      "name_a": "node",
+      "name_b": "node",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_node__2003_02320v6_pdf",
+      "id_b": "org_node__2002_00388v4_pdf",
+      "name_a": "node",
+      "name_b": "node",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_s_p_o__2003_02320v6_pdf",
+      "id_b": "org_o_p_s__2003_02320v6_pdf",
+      "name_a": "s p o",
+      "name_b": "o p s",
+      "type": "Organization",
+      "score": 1.0,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_r__2003_02320v6_pdf",
+      "id_b": "person_w_r__2002_00388v4_pdf",
+      "name_a": "∈ W R𝑤 ∈",
+      "name_b": "− w r (",
+      "type": "Person",
+      "score": 1.0,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_internationalized_resource_identifier__rdflib_rdflib",
+      "id_b": "org_internationalized_resource_identifiers__2003_02320v6_pdf",
+      "name_a": "Internationalized Resource Identifier",
+      "name_b": "Internationalized Resource Identifiers",
+      "type": "Organization",
+      "score": 0.9867,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_5th_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "id_b": "org_6th_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "name_a": "5th International Conference on Learning Representations",
+      "name_b": "6th International Conference on Learning Representations",
+      "type": "Organization",
+      "score": 0.9821,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_25th_international_conference_on_world_wide_web__2003_02320v6_pdf",
+      "id_b": "org_the_26th_international_conference_on_world_wide_web__2003_02320v6_pdf",
+      "name_a": "the 25th International Conference on World Wide Web",
+      "name_b": "the 26th International Conference on World Wide Web",
+      "type": "Organization",
+      "score": 0.9804,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_26th_international_conference_on_world_wide_web__2003_02320v6_pdf",
+      "id_b": "org_the_16th_international_conference_on_world_wide_web__2003_02320v6_pdf",
+      "name_a": "the 26th International Conference on World Wide Web",
+      "name_b": "the 16th International Conference on World Wide Web",
+      "type": "Organization",
+      "score": 0.9804,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_daniel_fern_ndez_lvarez__2003_02320v6_pdf",
+      "id_b": "person_daniel_fern_ndez_alvarez__2003_02320v6_pdf",
+      "name_a": "Daniel Fernández-Álvarez",
+      "name_b": "Daniel Fernández-Alvarez",
+      "type": "Person",
+      "score": 0.9787,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_association_for_computational_linguistics_2__2003_02320v6_pdf",
+      "id_b": "org_the_association_for_computational_linguistics_4__2003_02320v6_pdf",
+      "name_a": "the Association for Computational Linguistics 2",
+      "name_b": "the Association for Computational Linguistics 4",
+      "type": "Organization",
+      "score": 0.9787,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_association_for_computational_linguistics__2003_02320v6_pdf",
+      "id_b": "org_the_association_for_computational_linguistics_2__2003_02320v6_pdf",
+      "name_a": "The Association for Computational Linguistics",
+      "name_b": "the Association for Computational Linguistics 2",
+      "type": "Organization",
+      "score": 0.9783,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_association_for_computational_linguistics__2003_02320v6_pdf",
+      "id_b": "org_the_association_for_computational_linguistics_4__2003_02320v6_pdf",
+      "name_a": "The Association for Computational Linguistics",
+      "name_b": "the Association for Computational Linguistics 4",
+      "type": "Organization",
+      "score": 0.9783,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_josian_xavier_parreira__2003_02320v6_pdf",
+      "id_b": "person_josiane_xavier_parreira__2003_02320v6_pdf",
+      "name_a": "Josian Xavier Parreira",
+      "name_b": "Josiane Xavier Parreira",
+      "type": "Person",
+      "score": 0.9778,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_development_container__rdflib_rdflib",
+      "id_b": "org_development_containers__rdflib_rdflib",
+      "name_a": "Development Container",
+      "name_b": "Development Containers",
+      "type": "Organization",
+      "score": 0.9767,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_jos_emilio_labra_gayo__2003_02320v6_pdf",
+      "id_b": "person_jose_emilio_labra_gayo__2003_02320v6_pdf",
+      "name_a": "José Emilio Labra Gayo",
+      "name_b": "Jose Emilio Labra Gayo",
+      "type": "Person",
+      "score": 0.9767,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_agnieszka_awrynowicz__2003_02320v6_pdf",
+      "id_b": "person_agnieszka_lawrynowicz__2003_02320v6_pdf",
+      "name_a": "Agnieszka Ławrynowicz",
+      "name_b": "Agnieszka Lawrynowicz",
+      "type": "Person",
+      "score": 0.9756,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_asunc_n_g_mez_p_rez__2003_02320v6_pdf",
+      "id_b": "person_asunci_n_g_mez_p_rez__2003_02320v6_pdf",
+      "name_a": "Asuncón Gómez-Pérez",
+      "name_b": "Asunción Gómez-Pérez",
+      "type": "Person",
+      "score": 0.9744,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_world_heritage_sites__2003_02320v6_pdf",
+      "id_b": "org_world_heritage_site__2003_02320v6_pdf",
+      "name_a": "World Heritage Sites",
+      "name_b": "World Heritage Site",
+      "type": "Organization",
+      "score": 0.9744,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_internationalized_resource_identifiers__2003_02320v6_pdf",
+      "id_b": "org_internationalised_resource_identifiers__2003_02320v6_pdf",
+      "name_a": "Internationalized Resource Identifiers",
+      "name_b": "Internationalised Resource Identifiers",
+      "type": "Organization",
+      "score": 0.9737,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_chistina_teflioudi__2003_02320v6_pdf",
+      "id_b": "person_christina_teflioudi__2003_02320v6_pdf",
+      "name_a": "Chistina Teflioudi",
+      "name_b": "Christina Teflioudi",
+      "type": "Person",
+      "score": 0.973,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_ricardo_baeza_yates__2003_02320v6_pdf",
+      "id_b": "org_ricardobaeza_yates__2003_02320v6_pdf",
+      "name_a": "Ricardo Baeza-Yates",
+      "name_b": "RicardoBaeza-Yates",
+      "type": "Organization",
+      "score": 0.973,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_krzysztof_janowicz__2003_02320v6_pdf",
+      "id_b": "person_krysztof_janowicz__2003_02320v6_pdf",
+      "name_a": "Krzysztof Janowicz",
+      "name_b": "Krysztof Janowicz",
+      "type": "Person",
+      "score": 0.9714,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_diveshsrivastava__2003_02320v6_pdf",
+      "id_b": "org_divesh_srivastava__2003_02320v6_pdf",
+      "name_a": "DiveshSrivastava",
+      "name_b": "Divesh Srivastava",
+      "type": "Organization",
+      "score": 0.9697,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_semantic_web4__2002_00388v4_pdf",
+      "id_b": "org_the_semantic_web__2003_02320v6_pdf",
+      "name_a": "the Semantic Web4",
+      "name_b": "The Semantic Web",
+      "type": "Organization",
+      "score": 0.9697,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_knowledge_graph__2003_02320v6_pdf",
+      "id_b": "person_knowledge_graphs__2003_02320v6_pdf",
+      "name_a": "Knowledge Graph",
+      "name_b": "Knowledge Graphs",
+      "type": "Person",
+      "score": 0.9677,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_knowledge_graphs__2002_00388v4_pdf",
+      "id_b": "person_knowledge_graph__2003_02320v6_pdf",
+      "name_a": "knowledge graphs",
+      "name_b": "Knowledge Graph",
+      "type": "Person",
+      "score": 0.9677,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_the_association_for_computational_linguistics__2003_02320v6_pdf",
+      "id_b": "org_the_association_of_computational_linguistics__2003_02320v6_pdf",
+      "name_a": "The Association for Computational Linguistics",
+      "name_b": "the Association of Computational Linguistics",
+      "type": "Organization",
+      "score": 0.9663,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_acm_sigmod_international_conference_on_management_of_data__2003_02320v6_pdf",
+      "id_b": "org_the_acm_sigmod_international_conference_on_management_of_data__2003_02320v6_pdf",
+      "name_a": "ACM SIGMOD International Conference on Management of Data",
+      "name_b": "the ACM SIGMOD International Conference on Management of Data",
+      "type": "Organization",
+      "score": 0.9661,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_ognjen_savkovic__2003_02320v6_pdf",
+      "id_b": "org_ognjen_savkovi__2003_02320v6_pdf",
+      "name_a": "Ognjen Savkovic",
+      "name_b": "Ognjen Savković",
+      "type": "Organization",
+      "score": 0.9655,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_1st_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "id_b": "org_5th_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "name_a": "1st International Conference on Learning Representations",
+      "name_b": "5th International Conference on Learning Representations",
+      "type": "Organization",
+      "score": 0.9643,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_1st_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "id_b": "org_6th_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "name_a": "1st International Conference on Learning Representations",
+      "name_b": "6th International Conference on Learning Representations",
+      "type": "Organization",
+      "score": 0.9643,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_2nd_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "id_b": "org_3rd_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "name_a": "2nd International Conference on Learning Representations",
+      "name_b": "3rd International Conference on Learning Representations",
+      "type": "Organization",
+      "score": 0.9643,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_food_festivals__2003_02320v6_pdf",
+      "id_b": "org_food_festival__2003_02320v6_pdf",
+      "name_a": "Food Festivals",
+      "name_b": "Food Festival",
+      "type": "Organization",
+      "score": 0.963,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_knowledge_graph_completion__2002_00388v4_pdf",
+      "id_b": "org_a_knowledge_graph_completion__2002_00388v4_pdf",
+      "name_a": "Knowledge Graph Completion",
+      "name_b": "A. Knowledge Graph Completion",
+      "type": "Organization",
+      "score": 0.963,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_25th_international_conference_on_world_wide_web__2003_02320v6_pdf",
+      "id_b": "org_the_16th_international_conference_on_world_wide_web__2003_02320v6_pdf",
+      "name_a": "the 25th International Conference on World Wide Web",
+      "name_b": "the 16th International Conference on World Wide Web",
+      "type": "Organization",
+      "score": 0.9608,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_internationalized_resource_identifier__rdflib_rdflib",
+      "id_b": "org_internationalised_resource_identifiers__2003_02320v6_pdf",
+      "name_a": "Internationalized Resource Identifier",
+      "name_b": "Internationalised Resource Identifiers",
+      "type": "Organization",
+      "score": 0.96,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_i_balaz_evic__2002_00388v4_pdf",
+      "id_b": "person_i_balazevic__2002_00388v4_pdf",
+      "name_a": "I. Balazˇevic",
+      "name_b": "I. Balazevic",
+      "type": "Person",
+      "score": 0.9565,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_oscar_corcho__2003_02320v6_pdf",
+      "id_b": "person_scar_corcho__2003_02320v6_pdf",
+      "name_a": "Oscar Corcho",
+      "name_b": "Óscar Corcho",
+      "type": "Person",
+      "score": 0.9565,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_17th_international_conference_on_computational_linguistics__2003_02320v6_pdf",
+      "id_b": "org_international_conference_on_computational_linguistics__2003_02320v6_pdf",
+      "name_a": "17th International Conference on Computational Linguistics",
+      "name_b": "International Conference on Computational Linguistics",
+      "type": "Organization",
+      "score": 0.955,
+      "cross_source": false
+    },
+    {
+      "id_a": "tech_blank_nodes__rdflib_rdflib",
+      "id_b": "tech_blank_node__rdflib_rdflib",
+      "name_a": "Blank Nodes",
+      "name_b": "Blank Node",
+      "type": "Technology",
+      "score": 0.9524,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_c_relation_extraction__2002_00388v4_pdf",
+      "id_b": "org_relation_extraction__2003_02320v6_pdf",
+      "name_a": "C. Relation Extraction",
+      "name_b": "Relation Extraction",
+      "type": "Organization",
+      "score": 0.95,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_christopher_d_manning__2003_02320v6_pdf",
+      "id_b": "person_christopher_manning__2003_02320v6_pdf",
+      "name_a": "Christopher D. Manning",
+      "name_b": "Christopher Manning",
+      "type": "Person",
+      "score": 0.95,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_a_world_heritage_site__2003_02320v6_pdf",
+      "id_b": "org_world_heritage_site__2003_02320v6_pdf",
+      "name_a": "a World Heritage Site",
+      "name_b": "World Heritage Site",
+      "type": "Organization",
+      "score": 0.95,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_international_semantic_web_conference__2003_02320v6_pdf",
+      "id_b": "org_4th_international_semantic_web_conference__2003_02320v6_pdf",
+      "name_a": "International Semantic Web Conference",
+      "name_b": "4th International Semantic Web Conference",
+      "type": "Organization",
+      "score": 0.9487,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_eric_prud_hommeaux__2003_02320v6_pdf",
+      "id_b": "person_eric_g_prud_hommeaux__2003_02320v6_pdf",
+      "name_a": "Eric Prud’hommeaux",
+      "name_b": "Eric G. Prud’hommeaux",
+      "type": "Person",
+      "score": 0.9474,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_1st_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "id_b": "org_2nd_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "name_a": "1st International Conference on Learning Representations",
+      "name_b": "2nd International Conference on Learning Representations",
+      "type": "Organization",
+      "score": 0.9464,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_1st_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "id_b": "org_3rd_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "name_a": "1st International Conference on Learning Representations",
+      "name_b": "3rd International Conference on Learning Representations",
+      "type": "Organization",
+      "score": 0.9464,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_2nd_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "id_b": "org_5th_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "name_a": "2nd International Conference on Learning Representations",
+      "name_b": "5th International Conference on Learning Representations",
+      "type": "Organization",
+      "score": 0.9464,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_2nd_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "id_b": "org_6th_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "name_a": "2nd International Conference on Learning Representations",
+      "name_b": "6th International Conference on Learning Representations",
+      "type": "Organization",
+      "score": 0.9464,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_5th_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "id_b": "org_3rd_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "name_a": "5th International Conference on Learning Representations",
+      "name_b": "3rd International Conference on Learning Representations",
+      "type": "Organization",
+      "score": 0.9464,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_6th_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "id_b": "org_3rd_international_conference_on_learning_representations__2003_02320v6_pdf",
+      "name_a": "6th International Conference on Learning Representations",
+      "name_b": "3rd International Conference on Learning Representations",
+      "type": "Organization",
+      "score": 0.9464,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_association_of_computational_linguistics__2003_02320v6_pdf",
+      "id_b": "org_the_association_for_computational_linguistics_2__2003_02320v6_pdf",
+      "name_a": "the Association of Computational Linguistics",
+      "name_b": "the Association for Computational Linguistics 2",
+      "type": "Organization",
+      "score": 0.9451,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_association_of_computational_linguistics__2003_02320v6_pdf",
+      "id_b": "org_the_association_for_computational_linguistics_4__2003_02320v6_pdf",
+      "name_a": "the Association of Computational Linguistics",
+      "name_b": "the Association for Computational Linguistics 4",
+      "type": "Organization",
+      "score": 0.9451,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_microsoft_academic_knowledge_graph__2003_02320v6_pdf",
+      "id_b": "org_the_microsoft_academic_knowledge_graph__2003_02320v6_pdf",
+      "name_a": "Microsoft Academic Knowledge Graph",
+      "name_b": "The Microsoft Academic Knowledge Graph",
+      "type": "Organization",
+      "score": 0.9444,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_17th_international_conference_on_computational_linguistics__2003_02320v6_pdf",
+      "id_b": "org_the_5th_international_conference_on_computational_linguistics__2003_02320v6_pdf",
+      "name_a": "17th International Conference on Computational Linguistics",
+      "name_b": "the 5th International Conference on Computational Linguistics",
+      "type": "Organization",
+      "score": 0.9412,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_6th_european_semantic_web_conference__2003_02320v6_pdf",
+      "id_b": "org_european_semantic_web_conference__2003_02320v6_pdf",
+      "name_a": "6th European Semantic Web Conference",
+      "name_b": "European Semantic Web Conference",
+      "type": "Organization",
+      "score": 0.9412,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_claudio_gutierrez__2003_02320v6_pdf",
+      "id_b": "person_claudio_guti_rrez__2003_02320v6_pdf",
+      "name_a": "Claudio Gutierrez",
+      "name_b": "Claudio Gutiérrez",
+      "type": "Person",
+      "score": 0.9412,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_hextuples__rdflib_rdflib",
+      "id_b": "org_hextuple__rdflib_rdflib",
+      "name_a": "HexTuples",
+      "name_b": "HexTuple",
+      "type": "Organization",
+      "score": 0.9412,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_jie_zhang__2003_02320v6_pdf",
+      "id_b": "person_ji_zhang__2003_02320v6_pdf",
+      "name_a": "Jie Zhang",
+      "name_b": "Ji Zhang",
+      "type": "Person",
+      "score": 0.9412,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_sheila_mcilraith__2003_02320v6_pdf",
+      "id_b": "person_sheila_a_mcilraith__2003_02320v6_pdf",
+      "name_a": "Sheila McIlraith",
+      "name_b": "Sheila A. McIlraith",
+      "type": "Person",
+      "score": 0.9412,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_semantic__2002_00388v4_pdf",
+      "id_b": "org_semantics__2003_02320v6_pdf",
+      "name_a": "≈ Semantic",
+      "name_b": "Semantics",
+      "type": "Organization",
+      "score": 0.9412,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_no_unique_name_assumption__2003_02320v6_pdf",
+      "id_b": "org_a_unique_name_assumption__2003_02320v6_pdf",
+      "name_a": "No Unique Name Assumption",
+      "name_b": "a Unique Name Assumption",
+      "type": "Organization",
+      "score": 0.9388,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_fabian_m_suchanek__2003_02320v6_pdf",
+      "id_b": "person_fabian_suchanek__2003_02320v6_pdf",
+      "name_a": "Fabian M. Suchanek",
+      "name_b": "Fabian Suchanek",
+      "type": "Person",
+      "score": 0.9375,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_frederick_reiss__2003_02320v6_pdf",
+      "id_b": "person_frederick_r_reiss__2003_02320v6_pdf",
+      "name_a": "Frederick Reiss",
+      "name_b": "Frederick R. Reiss",
+      "type": "Person",
+      "score": 0.9375,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_joseph_e_gonzalez__2003_02320v6_pdf",
+      "id_b": "person_joseph_gonzalez__2003_02320v6_pdf",
+      "name_a": "Joseph E. Gonzalez",
+      "name_b": "Joseph Gonzalez",
+      "type": "Person",
+      "score": 0.9375,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_partha_talukdar__2003_02320v6_pdf",
+      "id_b": "person_partha_p_talukdar__2003_02320v6_pdf",
+      "name_a": "Partha Talukdar",
+      "name_b": "Partha P. Talukdar",
+      "type": "Person",
+      "score": 0.9375,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_tim_berners_lee_s__rdflib_rdflib",
+      "id_b": "person_tim_berners_lee__2003_02320v6_pdf",
+      "name_a": "Tim Berners-Lee's",
+      "name_b": "Tim Berners-Lee",
+      "type": "Person",
+      "score": 0.9375,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_the_forth_international_conference_on_web_search__2003_02320v6_pdf",
+      "id_b": "org_the_third_international_conference_on_web_search__2003_02320v6_pdf",
+      "name_a": "the Forth International Conference on Web Search",
+      "name_b": "the Third International Conference on Web Search",
+      "type": "Organization",
+      "score": 0.9375,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_bing_li__2003_02320v6_pdf",
+      "id_b": "person_bing_liu__2003_02320v6_pdf",
+      "name_a": "Bing Li",
+      "name_b": "Bing Liu",
+      "type": "Person",
+      "score": 0.9333,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_bryan_b_thompson__2003_02320v6_pdf",
+      "id_b": "person_bryan_thompson__2003_02320v6_pdf",
+      "name_a": "Bryan B. Thompson",
+      "name_b": "Bryan Thompson",
+      "type": "Person",
+      "score": 0.9333,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_definition_b_12__2003_02320v6_pdf",
+      "id_b": "person_definition_b_14__2003_02320v6_pdf",
+      "name_a": "Definition B.12",
+      "name_b": "Definition B.14",
+      "type": "Person",
+      "score": 0.9333,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_definition_b_14__2003_02320v6_pdf",
+      "id_b": "person_definition_b_46__2003_02320v6_pdf",
+      "name_a": "Definition B.14",
+      "name_b": "Definition B.46",
+      "type": "Person",
+      "score": 0.9333,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_hadmard__2002_00388v4_pdf",
+      "id_b": "org_hadamard__2003_02320v6_pdf",
+      "name_a": "Hadmard",
+      "name_b": "Hadamard",
+      "type": "Organization",
+      "score": 0.9333,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_j_zhang__2002_00388v4_pdf",
+      "id_b": "person_ji_zhang__2003_02320v6_pdf",
+      "name_a": "J. Zhang",
+      "name_b": "Ji Zhang",
+      "type": "Person",
+      "score": 0.9333,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_lu_yang__2003_02320v6_pdf",
+      "id_b": "person_yang_liu__2003_02320v6_pdf",
+      "name_a": "Lu Yang",
+      "name_b": "Yang Liu",
+      "type": "Person",
+      "score": 0.9333,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_manuela_veloso__2003_02320v6_pdf",
+      "id_b": "person_manuela_m_veloso__2003_02320v6_pdf",
+      "name_a": "Manuela Veloso",
+      "name_b": "Manuela M. Veloso",
+      "type": "Person",
+      "score": 0.9333,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_table_i__2002_00388v4_pdf",
+      "id_b": "org_table_vi__2002_00388v4_pdf",
+      "name_a": "Table I.",
+      "name_b": "Table VI",
+      "type": "Organization",
+      "score": 0.9333,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_table_i__2002_00388v4_pdf",
+      "id_b": "org_table_ix__2002_00388v4_pdf",
+      "name_a": "Table I.",
+      "name_b": "Table IX",
+      "type": "Organization",
+      "score": 0.9333,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_vijay_raghavan__2003_02320v6_pdf",
+      "id_b": "person_vijay_v_raghavan__2003_02320v6_pdf",
+      "name_a": "Vijay Raghavan",
+      "name_b": "Vijay V. Raghavan",
+      "type": "Person",
+      "score": 0.9333,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_chang__2002_00388v4_pdf",
+      "id_b": "person_yi_chang__2003_02320v6_pdf",
+      "name_a": "Y. Chang",
+      "name_b": "Yi Chang",
+      "type": "Person",
+      "score": 0.9333,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_yang_liu__2003_02320v6_pdf",
+      "id_b": "person_yan_liu__2003_02320v6_pdf",
+      "name_a": "Yang Liu",
+      "name_b": "Yan Liu",
+      "type": "Person",
+      "score": 0.9333,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_a_world_heritage_site__2003_02320v6_pdf",
+      "id_b": "org_name_world_heritage_site__2003_02320v6_pdf",
+      "name_a": "a World Heritage Site",
+      "name_b": "name(𝑒, World Heritage Site",
+      "type": "Organization",
+      "score": 0.9333,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_international_conference_on_computational_linguistics__2003_02320v6_pdf",
+      "id_b": "org_the_5th_international_conference_on_computational_linguistics__2003_02320v6_pdf",
+      "name_a": "International Conference on Computational Linguistics",
+      "name_b": "the 5th International Conference on Computational Linguistics",
+      "type": "Organization",
+      "score": 0.9298,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_fabien_l_gandon__2003_02320v6_pdf",
+      "id_b": "person_fabien_gandon__2003_02320v6_pdf",
+      "name_a": "Fabien L. Gandon",
+      "name_b": "Fabien Gandon",
+      "type": "Person",
+      "score": 0.9286,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_james_hendler__2003_02320v6_pdf",
+      "id_b": "person_james_a_hendler__2003_02320v6_pdf",
+      "name_a": "James Hendler",
+      "name_b": "James A. Hendler",
+      "type": "Person",
+      "score": 0.9286,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_piero_bonatti__2003_02320v6_pdf",
+      "id_b": "person_piero_a_bonatti__2003_02320v6_pdf",
+      "name_a": "Piero Bonatti",
+      "name_b": "Piero A. Bonatti",
+      "type": "Person",
+      "score": 0.9286,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_richard_finkers__2003_02320v6_pdf",
+      "id_b": "person_richard_fikes__2003_02320v6_pdf",
+      "name_a": "Richard Finkers",
+      "name_b": "Richard Fikes",
+      "type": "Person",
+      "score": 0.9286,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_a_world_heritage_site__2003_02320v6_pdf",
+      "id_b": "org_world_heritage_sites__2003_02320v6_pdf",
+      "name_a": "a World Heritage Site",
+      "name_b": "World Heritage Sites",
+      "type": "Organization",
+      "score": 0.9268,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_6th_international_conference__2003_02320v6_pdf",
+      "id_b": "org_international_conference__2003_02320v6_pdf",
+      "name_a": "6th International Conference,",
+      "name_b": "International Conference",
+      "type": "Organization",
+      "score": 0.9231,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_b_yang__2002_00388v4_pdf",
+      "id_b": "person_bo_yang__2003_02320v6_pdf",
+      "name_a": "B. Yang",
+      "name_b": "Bo Yang",
+      "type": "Person",
+      "score": 0.9231,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_bo_yan__2003_02320v6_pdf",
+      "id_b": "person_bo_yang__2003_02320v6_pdf",
+      "name_a": "Bo Yan",
+      "name_b": "Bo Yang",
+      "type": "Person",
+      "score": 0.9231,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_d_chen__2002_00388v4_pdf",
+      "id_b": "person_d_cheng__2002_00388v4_pdf",
+      "name_a": "D. Chen",
+      "name_b": "D. Cheng",
+      "type": "Person",
+      "score": 0.9231,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_liang__2002_00388v4_pdf",
+      "id_b": "person_j_ling__2002_00388v4_pdf",
+      "name_a": "J. Liang",
+      "name_b": "J. Ling",
+      "type": "Person",
+      "score": 0.9231,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_juan_f_sequeda__2003_02320v6_pdf",
+      "id_b": "person_juan_sequeda__2003_02320v6_pdf",
+      "name_a": "Juan F. Sequeda",
+      "name_b": "Juan Sequeda",
+      "type": "Person",
+      "score": 0.9231,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_juan_l_reutter__2003_02320v6_pdf",
+      "id_b": "person_juan_reutter__2003_02320v6_pdf",
+      "name_a": "Juan L. Reutter",
+      "name_b": "Juan Reutter",
+      "type": "Person",
+      "score": 0.9231,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_k_bert__2002_00388v4_pdf",
+      "id_b": "org_bert_mk__2002_00388v4_pdf",
+      "name_a": "K-BERT",
+      "name_b": "BERT-MK",
+      "type": "Organization",
+      "score": 0.9231,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_kg_bert__2002_00388v4_pdf",
+      "id_b": "org_k_bert__2002_00388v4_pdf",
+      "name_a": "KG-BERT",
+      "name_b": "K-BERT",
+      "type": "Organization",
+      "score": 0.9231,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_le_zhao__2003_02320v6_pdf",
+      "id_b": "person_l_zhao__2002_00388v4_pdf",
+      "name_a": "Le Zhao",
+      "name_b": "L. Zhao",
+      "type": "Person",
+      "score": 0.9231,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_li_deng__2003_02320v6_pdf",
+      "id_b": "person_l_deng__2002_00388v4_pdf",
+      "name_a": "Li Deng",
+      "name_b": "L. Deng",
+      "type": "Person",
+      "score": 0.9231,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_open_information_extraction_systems__2003_02320v6_pdf",
+      "id_b": "org_information_extraction_systems__2003_02320v6_pdf",
+      "name_a": "Open Information Extraction Systems",
+      "name_b": "Information Extraction Systems",
+      "type": "Organization",
+      "score": 0.9231,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_sparql__rdflib_rdflib",
+      "id_b": "org_xsparql__2003_02320v6_pdf",
+      "name_a": "SPARQL",
+      "name_b": "XSPARQL",
+      "type": "Organization",
+      "score": 0.9231,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_t_m_hospedales__2002_00388v4_pdf",
+      "id_b": "person_t_hospedales__2002_00388v4_pdf",
+      "name_a": "T. M. Hospedales",
+      "name_b": "T. Hospedales",
+      "type": "Person",
+      "score": 0.9231,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_t_m_mitchell__2002_00388v4_pdf",
+      "id_b": "person_tom_m_mitchell__2003_02320v6_pdf",
+      "name_a": "T. M. Mitchell",
+      "name_b": "Tom M. Mitchell",
+      "type": "Person",
+      "score": 0.9231,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_ttranse__2002_00388v4_pdf",
+      "id_b": "org_transe__2002_00388v4_pdf",
+      "name_a": "TTransE",
+      "name_b": "TransE",
+      "type": "Organization",
+      "score": 0.9231,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_ttranse__2002_00388v4_pdf",
+      "id_b": "org_transe__2003_02320v6_pdf",
+      "name_a": "TTransE",
+      "name_b": "TransE",
+      "type": "Organization",
+      "score": 0.9231,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_translational__2003_02320v6_pdf",
+      "id_b": "org_transactional__docs_architecture_md",
+      "name_a": "Translational",
+      "name_b": "Transactional",
+      "type": "Organization",
+      "score": 0.9231,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_x_chen__2002_00388v4_pdf",
+      "id_b": "person_x_cheng__2002_00388v4_pdf",
+      "name_a": "X. Chen",
+      "name_b": "X. Cheng",
+      "type": "Person",
+      "score": 0.9231,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_xiang__2002_00388v4_pdf",
+      "id_b": "person_y_xian__2002_00388v4_pdf",
+      "name_a": "Y. Xiang",
+      "name_b": "Y. Xian",
+      "type": "Person",
+      "score": 0.9231,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_unique_name_assumption__2003_02320v6_pdf",
+      "id_b": "org_a_unique_name_assumption__2003_02320v6_pdf",
+      "name_a": "the Unique Name Assumption",
+      "name_b": "a Unique Name Assumption",
+      "type": "Organization",
+      "score": 0.92,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_computing_surveys__2003_02320v6_pdf",
+      "id_b": "person_computing_surveys_40__2003_02320v6_pdf",
+      "name_a": "Computing Surveys",
+      "name_b": "Computing Surveys 40",
+      "type": "Person",
+      "score": 0.9189,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_example_b_10__2003_02320v6_pdf",
+      "id_b": "person_example_b_13__2003_02320v6_pdf",
+      "name_a": "Example B.10",
+      "name_b": "Example B.13",
+      "type": "Person",
+      "score": 0.9167,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_example_b_10__2003_02320v6_pdf",
+      "id_b": "person_example_b_16__2003_02320v6_pdf",
+      "name_a": "Example B.10",
+      "name_b": "Example B.16",
+      "type": "Person",
+      "score": 0.9167,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_example_b_10__2003_02320v6_pdf",
+      "id_b": "person_example_b_61__2003_02320v6_pdf",
+      "name_a": "Example B.10",
+      "name_b": "Example B.61",
+      "type": "Person",
+      "score": 0.9167,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_example_b_13__2003_02320v6_pdf",
+      "id_b": "person_example_b_16__2003_02320v6_pdf",
+      "name_a": "Example B.13",
+      "name_b": "Example B.16",
+      "type": "Person",
+      "score": 0.9167,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_example_b_13__2003_02320v6_pdf",
+      "id_b": "person_example_b_33__2003_02320v6_pdf",
+      "name_a": "Example B.13",
+      "name_b": "Example B.33",
+      "type": "Person",
+      "score": 0.9167,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_example_b_13__2003_02320v6_pdf",
+      "id_b": "person_example_b_61__2003_02320v6_pdf",
+      "name_a": "Example B.13",
+      "name_b": "Example B.61",
+      "type": "Person",
+      "score": 0.9167,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_example_b_16__2003_02320v6_pdf",
+      "id_b": "person_example_b_61__2003_02320v6_pdf",
+      "name_a": "Example B.16",
+      "name_b": "Example B.61",
+      "type": "Person",
+      "score": 0.9167,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_g_r_obozinski__2002_00388v4_pdf",
+      "id_b": "person_g_obozinski__2002_00388v4_pdf",
+      "name_a": "G. R. Obozinski",
+      "name_b": "G. Obozinski",
+      "type": "Person",
+      "score": 0.9167,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_linked_data_principles__2003_02320v6_pdf",
+      "id_b": "org_linked_data_principles__2003_02320v6_pdf",
+      "name_a": "the Linked Data Principles",
+      "name_b": "Linked Data Principles",
+      "type": "Organization",
+      "score": 0.9167,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_fine_grained_access_control__rdflib_rdflib",
+      "id_b": "org_fine_grained_access_control_fgac__rdflib_rdflib",
+      "name_a": "Fine-Grained Access Control",
+      "name_b": "Fine-Grained Access Control (FGAC",
+      "type": "Organization",
+      "score": 0.9153,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_neural_networks_20__2003_02320v6_pdf",
+      "id_b": "org_neural_networks_8__2003_02320v6_pdf",
+      "name_a": "Neural Networks 20",
+      "name_b": "Neural Networks 8",
+      "type": "Organization",
+      "score": 0.9143,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_semantic_technologies__2003_02320v6_pdf",
+      "id_b": "org_semantic_web_technologies__2003_02320v6_pdf",
+      "name_a": "Semantic Technologies",
+      "name_b": "Semantic Web Technologies",
+      "type": "Organization",
+      "score": 0.913,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_anna_tordai__2003_02320v6_pdf",
+      "id_b": "person_anna_tordia__2003_02320v6_pdf",
+      "name_a": "Anna Tordai",
+      "name_b": "Anna Tordia",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_appendix_b__2002_00388v4_pdf",
+      "id_b": "person_appendix_b_5__2003_02320v6_pdf",
+      "name_a": "Appendix B.",
+      "name_b": "Appendix B.5",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_d_cai__2002_00388v4_pdf",
+      "id_b": "person_d_chai__2002_00388v4_pdf",
+      "name_a": "D. Cai",
+      "name_b": "D. Chai",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_d_jurafsky__2002_00388v4_pdf",
+      "id_b": "person_dan_jurafsky__2003_02320v6_pdf",
+      "name_a": "D. Jurafsky",
+      "name_b": "Dan Jurafsky",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_d_zhu__2002_00388v4_pdf",
+      "id_b": "person_d_zhou__2002_00388v4_pdf",
+      "name_a": "D. Zhu",
+      "name_b": "D. Zhou",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_f_suchanek__2002_00388v4_pdf",
+      "id_b": "person_f_m_suchanek__2002_00388v4_pdf",
+      "name_a": "F. Suchanek",
+      "name_b": "F. M. Suchanek",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_glove__2003_02320v6_pdf",
+      "id_b": "person_kglove__2003_02320v6_pdf",
+      "name_a": "GloVe",
+      "name_b": "KGloVe",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_graphs__rdflib_rdflib",
+      "id_b": "person_graph__docs_architecture_md",
+      "name_a": "Graphs",
+      "name_b": "Graph",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_graphs__rdflib_rdflib",
+      "id_b": "person_graph__2003_02320v6_pdf",
+      "name_a": "Graphs",
+      "name_b": "Graph",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_guoliang_li__2003_02320v6_pdf",
+      "id_b": "person_guoliang_ji__2003_02320v6_pdf",
+      "name_a": "Guoliang Li",
+      "name_b": "Guoliang Ji",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_ling__2002_00388v4_pdf",
+      "id_b": "person_j_lin__2002_00388v4_pdf",
+      "name_a": "J. Ling",
+      "name_b": "J. Lin",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_zhao__2002_00388v4_pdf",
+      "id_b": "person_j_hao__2002_00388v4_pdf",
+      "name_a": "J. Zhao",
+      "name_b": "J. Hao",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_json_ld_1_0__2003_02320v6_pdf",
+      "id_b": "person_json_ld_1_1__rdflib_rdflib",
+      "name_a": "JSON-LD 1.0",
+      "name_b": "JSON-LD 1.1",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_l_guo__2002_00388v4_pdf",
+      "id_b": "person_li_guo__2003_02320v6_pdf",
+      "name_a": "L. Guo",
+      "name_b": "Li Guo",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": true
+    },
+    {
+      "id_a": "tech_model__2003_02320v6_pdf",
+      "id_b": "tech_models__2002_00388v4_pdf",
+      "name_a": "Model",
+      "name_b": "Models",
+      "type": "Technology",
+      "score": 0.9091,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_msg_agg_end__2003_02320v6_pdf",
+      "id_b": "org_msg_and_agg__2003_02320v6_pdf",
+      "name_a": "Msg, Agg, End",
+      "name_b": "Msg and Agg",
+      "type": "Organization",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_n_lao__2002_00388v4_pdf",
+      "id_b": "person_ni_lao__2003_02320v6_pdf",
+      "name_a": "N. Lao",
+      "name_b": "Ni Lao",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_paul_groth__2003_02320v6_pdf",
+      "id_b": "person_paul_t_groth__2003_02320v6_pdf",
+      "name_a": "Paul Groth",
+      "name_b": "Paul T. Groth",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_t_mitchell__2002_00388v4_pdf",
+      "id_b": "person_t_m_mitchell__2002_00388v4_pdf",
+      "name_a": "T. Mitchell",
+      "name_b": "T. M. Mitchell",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_tim_weninger__2003_02320v6_pdf",
+      "id_b": "person_t_weninger__2002_00388v4_pdf",
+      "name_a": "Tim Weninger",
+      "name_b": "T. Weninger",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_w_fan__2002_00388v4_pdf",
+      "id_b": "person_w_fang__2002_00388v4_pdf",
+      "name_a": "W. Fan",
+      "name_b": "W. Fang",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_x_zhu__2002_00388v4_pdf",
+      "id_b": "person_x_zhou__2002_00388v4_pdf",
+      "name_a": "X. Zhu",
+      "name_b": "X. Zhou",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_hao__2002_00388v4_pdf",
+      "id_b": "person_y_zhao__2002_00388v4_pdf",
+      "name_a": "Y. Hao",
+      "name_b": "Y. Zhao",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_hao__2002_00388v4_pdf",
+      "id_b": "person_y_shao__2002_00388v4_pdf",
+      "name_a": "Y. Hao",
+      "name_b": "Y. Shao",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_liu__2002_00388v4_pdf",
+      "id_b": "person_yu_liu__2003_02320v6_pdf",
+      "name_a": "Y. Liu",
+      "name_b": "Yu Liu",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_zhiyuan_liu__2003_02320v6_pdf",
+      "id_b": "person_zhiyuan_lin__2003_02320v6_pdf",
+      "name_a": "Zhiyuan Liu",
+      "name_b": "Zhiyuan Lin",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_cid_33__2002_00388v4_pdf",
+      "id_b": "org_cid_3__2003_02320v6_pdf",
+      "name_a": "cid:33",
+      "name_b": "cid:3",
+      "type": "Organization",
+      "score": 0.9091,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_graphs__2002_00388v4_pdf",
+      "id_b": "person_graph__docs_architecture_md",
+      "name_a": "graphs",
+      "name_b": "Graph",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_graphs__2002_00388v4_pdf",
+      "id_b": "person_graph__2003_02320v6_pdf",
+      "name_a": "graphs",
+      "name_b": "Graph",
+      "type": "Person",
+      "score": 0.9091,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_scar_corcho__2003_02320v6_pdf",
+      "id_b": "org_scor_corcho__2003_02320v6_pdf",
+      "name_a": "Óscar Corcho",
+      "name_b": "Óscor Corcho",
+      "type": "Organization",
+      "score": 0.9091,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_acm_sigkdd_international_conference_on_knowledge_discovery__2003_02320v6_pdf",
+      "id_b": "org_acm_sigkdd_international_conference_on_knowledge_discovery_data_mining__2003_02320v6_pdf",
+      "name_a": "ACM SIGKDD International Conference on Knowledge Discovery",
+      "name_b": "ACM SIGKDD International Conference on Knowledge Discovery & Data Mining",
+      "type": "Organization",
+      "score": 0.9062,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_eugene_santos_jr__2003_02320v6_pdf",
+      "id_b": "person_eugene_s_santos__2003_02320v6_pdf",
+      "name_a": "Eugene Santos Jr.",
+      "name_b": "Eugene S. Santos",
+      "type": "Person",
+      "score": 0.9032,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_fair_principles__2003_02320v6_pdf",
+      "id_b": "org_first_principles__2003_02320v6_pdf",
+      "name_a": "FAIR Principles",
+      "name_b": "First Principles",
+      "type": "Organization",
+      "score": 0.9032,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_rdf_validation__2003_02320v6_pdf",
+      "id_b": "org_an_rdf_validation__2003_02320v6_pdf",
+      "name_a": "RDF Validation",
+      "name_b": "An RDF Validation",
+      "type": "Organization",
+      "score": 0.9032,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_unique_name_assumption__2003_02320v6_pdf",
+      "id_b": "org_no_unique_name_assumption__2003_02320v6_pdf",
+      "name_a": "the Unique Name Assumption",
+      "name_b": "No Unique Name Assumption",
+      "type": "Organization",
+      "score": 0.902,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_20th_international_conference_on_world_wide_web_www_2011__2003_02320v6_pdf",
+      "id_b": "org_the_26th_international_conference_on_world_wide_web__2003_02320v6_pdf",
+      "name_a": "the 20th International Conference on World Wide Web, WWW 2011",
+      "name_b": "the 26th International Conference on World Wide Web",
+      "type": "Organization",
+      "score": 0.9009,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_20th_international_conference_on_world_wide_web_www_2011__2003_02320v6_pdf",
+      "id_b": "org_the_16th_international_conference_on_world_wide_web__2003_02320v6_pdf",
+      "name_a": "the 20th International Conference on World Wide Web, WWW 2011",
+      "name_b": "the 16th International Conference on World Wide Web",
+      "type": "Organization",
+      "score": 0.9009,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_25th_international_conference_on_world_wide_web__2003_02320v6_pdf",
+      "id_b": "org_the_20th_international_conference_on_world_wide_web_www_2011__2003_02320v6_pdf",
+      "name_a": "the 25th International Conference on World Wide Web",
+      "name_b": "the 20th International Conference on World Wide Web, WWW 2011",
+      "type": "Organization",
+      "score": 0.9009,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_appendix_a__2002_00388v4_pdf",
+      "id_b": "person_appendix_b__2002_00388v4_pdf",
+      "name_a": "Appendix A.",
+      "name_b": "Appendix B.",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_appendix_a__2002_00388v4_pdf",
+      "id_b": "person_appendix_c__2002_00388v4_pdf",
+      "name_a": "Appendix A.",
+      "name_b": "Appendix C.",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_appendix_b__2002_00388v4_pdf",
+      "id_b": "person_appendix_c__2002_00388v4_pdf",
+      "name_a": "Appendix B.",
+      "name_b": "Appendix C.",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_appendix_b__2002_00388v4_pdf",
+      "id_b": "person_appendix_a__2003_02320v6_pdf",
+      "name_a": "Appendix B.",
+      "name_b": "Appendix A",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_appendix_c__2002_00388v4_pdf",
+      "id_b": "person_appendix_a__2003_02320v6_pdf",
+      "name_a": "Appendix C.",
+      "name_b": "Appendix A",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_ehrlinger__2002_00388v4_pdf",
+      "id_b": "person_l_ehrlinger__2002_00388v4_pdf",
+      "name_a": "Ehrlinger",
+      "name_b": "L. Ehrlinger",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_feng_et_al__2002_00388v4_pdf",
+      "id_b": "person_peng_et_al__2002_00388v4_pdf",
+      "name_a": "Feng et al",
+      "name_b": "Peng et al",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_john_sowa__2003_02320v6_pdf",
+      "id_b": "person_john_f_sowa__2003_02320v6_pdf",
+      "name_a": "John Sowa",
+      "name_b": "John F. Sowa",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_m_welling__2002_00388v4_pdf",
+      "id_b": "person_max_welling__2003_02320v6_pdf",
+      "name_a": "M. Welling",
+      "name_b": "Max Welling",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_n_stokman__2003_02320v6_pdf",
+      "id_b": "person_f_n_stokman__2002_00388v4_pdf",
+      "name_a": "N. Stokman",
+      "name_b": "F. N. Stokman",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_semantic_technology__2003_02320v6_pdf",
+      "id_b": "org_semantic_technologies__2003_02320v6_pdf",
+      "name_a": "Semantic Technology",
+      "name_b": "Semantic Technologies",
+      "type": "Organization",
+      "score": 0.9,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_t_d_nguyen__2002_00388v4_pdf",
+      "id_b": "person_d_q_nguyen__2002_00388v4_pdf",
+      "name_a": "T. D. Nguyen",
+      "name_b": "D. Q. Nguyen",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_t_d_nguyen__2002_00388v4_pdf",
+      "id_b": "person_t_h_nguyen__2002_00388v4_pdf",
+      "name_a": "T. D. Nguyen",
+      "name_b": "T. H. Nguyen",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_valentina_presutti_eds__2003_02320v6_pdf",
+      "id_b": "org_valentina_presutti__2003_02320v6_pdf",
+      "name_a": "Valentina Presutti (Eds",
+      "name_b": "Valentina Presutti",
+      "type": "Organization",
+      "score": 0.9,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_zeng_et_al__2002_00388v4_pdf",
+      "id_b": "person_feng_et_al__2002_00388v4_pdf",
+      "name_a": "Zeng et al",
+      "name_b": "Feng et al",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_zeng_et_al__2002_00388v4_pdf",
+      "id_b": "person_peng_et_al__2002_00388v4_pdf",
+      "name_a": "Zeng et al",
+      "name_b": "Peng et al",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_international_workshops__2003_02320v6_pdf",
+      "id_b": "org_5th_international_workshop__2003_02320v6_pdf",
+      "name_a": "International Workshops",
+      "name_b": "5th International Workshop",
+      "type": "Organization",
+      "score": 0.898,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_open_information_extraction__2003_02320v6_pdf",
+      "id_b": "org_information_extraction__2003_02320v6_pdf",
+      "name_a": "Open Information Extraction",
+      "name_b": "Information Extraction",
+      "type": "Organization",
+      "score": 0.898,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_denny_vrandecic__2003_02320v6_pdf",
+      "id_b": "person_denny_vrande_i__2003_02320v6_pdf",
+      "name_a": "Denny Vrandecic",
+      "name_b": "Denny Vrandečić",
+      "type": "Person",
+      "score": 0.8966,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_relation_extraction_using_distant_supervision__2003_02320v6_pdf",
+      "id_b": "org_distant_supervision_of_relation_extraction__2003_02320v6_pdf",
+      "name_a": "Relation Extraction Using Distant Supervision",
+      "name_b": "Distant Supervision of Relation Extraction",
+      "type": "Organization",
+      "score": 0.8966,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_t_rockta_schel__2002_00388v4_pdf",
+      "id_b": "person_tim_rockt_schel__2003_02320v6_pdf",
+      "name_a": "T. Rockta¨schel",
+      "name_b": "Tim Rocktäschel",
+      "type": "Person",
+      "score": 0.8966,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_v_s_subrahmanian__2003_02320v6_pdf",
+      "id_b": "person_s_subramanian__2002_00388v4_pdf",
+      "name_a": "V. S. Subrahmanian",
+      "name_b": "S. Subramanian",
+      "type": "Person",
+      "score": 0.8966,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_knowledge_based_design_systems__2003_02320v6_pdf",
+      "id_b": "org_the_design_of_knowledge_based_systems__2003_02320v6_pdf",
+      "name_a": "Knowledge-Based Design Systems",
+      "name_b": "The Design of Knowledge-Based Systems",
+      "type": "Organization",
+      "score": 0.8955,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_jos_emilio_labra_gayo__2003_02320v6_pdf",
+      "id_b": "person_emilio_labra_gayo__2003_02320v6_pdf",
+      "name_a": "José Emilio Labra Gayo",
+      "name_b": "Emilio Labra Gayo",
+      "type": "Person",
+      "score": 0.8947,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_canonical_forms_for_isomorphic_and_equivalent__2003_02320v6_pdf",
+      "id_b": "org_canonical_forms_for_isomorphic_and_equivalent_rdf_graphs__2003_02320v6_pdf",
+      "name_a": "Canonical Forms for Isomorphic and Equivalent",
+      "name_b": "Canonical Forms for Isomorphic and Equivalent RDF Graphs",
+      "type": "Organization",
+      "score": 0.8911,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_a_miller__2002_00388v4_pdf",
+      "id_b": "person_g_a_miller__2002_00388v4_pdf",
+      "name_a": "A. Miller",
+      "name_b": "G. A. Miller",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_appendix__2003_02320v6_pdf",
+      "id_b": "person_appendix_a__2003_02320v6_pdf",
+      "name_a": "Appendix",
+      "name_b": "Appendix A",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_appendix_a__2002_00388v4_pdf",
+      "id_b": "person_appendix__2003_02320v6_pdf",
+      "name_a": "Appendix A.",
+      "name_b": "Appendix",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_appendix_b__2002_00388v4_pdf",
+      "id_b": "person_appendix__2003_02320v6_pdf",
+      "name_a": "Appendix B.",
+      "name_b": "Appendix",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_appendix_c__2002_00388v4_pdf",
+      "id_b": "person_appendix__2003_02320v6_pdf",
+      "name_a": "Appendix C.",
+      "name_b": "Appendix",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_bnode__rdflib_rdflib",
+      "id_b": "org_node__2003_02320v6_pdf",
+      "name_a": "BNode",
+      "name_b": "node",
+      "type": "Organization",
+      "score": 0.8889,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_bnode__rdflib_rdflib",
+      "id_b": "org_node__2002_00388v4_pdf",
+      "name_a": "BNode",
+      "name_b": "node",
+      "type": "Organization",
+      "score": 0.8889,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_bo_xu__2003_02320v6_pdf",
+      "id_b": "person_b_xu__2002_00388v4_pdf",
+      "name_a": "Bo Xu",
+      "name_b": "B. Xu",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_dan_jurafsky__2003_02320v6_pdf",
+      "id_b": "person_daniel_jurafsky__2003_02320v6_pdf",
+      "name_a": "Dan Jurafsky",
+      "name_b": "Daniel Jurafsky",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_dieng__2003_02320v6_pdf",
+      "id_b": "person_deng__2002_00388v4_pdf",
+      "name_a": "Dieng",
+      "name_b": "Deng",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_h_li__2002_00388v4_pdf",
+      "id_b": "person_h_liu__2002_00388v4_pdf",
+      "name_a": "H. Li",
+      "name_b": "H. Liu",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_ivan_lopez_arevalo__2003_02320v6_pdf",
+      "id_b": "person_ivan_l_pez_ar_valo__2003_02320v6_pdf",
+      "name_a": "Ivan Lopez-Arevalo",
+      "name_b": "Ivan López-Arévalo",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_li__2002_00388v4_pdf",
+      "id_b": "person_j_lin__2002_00388v4_pdf",
+      "name_a": "J. Li",
+      "name_b": "J. Lin",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_liu__2002_00388v4_pdf",
+      "id_b": "person_j_li__2002_00388v4_pdf",
+      "name_a": "J. Liu",
+      "name_b": "J. Li",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_l_costabello__2002_00388v4_pdf",
+      "id_b": "person_luca_costabello__2003_02320v6_pdf",
+      "name_a": "L. Costabello",
+      "name_b": "Luca Costabello",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_l_li__2002_00388v4_pdf",
+      "id_b": "person_l_liu__2002_00388v4_pdf",
+      "name_a": "L. Li",
+      "name_b": "L. Liu",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_lode__rdflib_rdflib",
+      "id_b": "org_lodie__2003_02320v6_pdf",
+      "name_a": "LODE",
+      "name_b": "LODIE",
+      "type": "Organization",
+      "score": 0.8889,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_lei_zhang__2003_02320v6_pdf",
+      "id_b": "person_wei_zhang__2003_02320v6_pdf",
+      "name_a": "Lei Zhang",
+      "name_b": "Wei Zhang",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_lin_et_al__2002_00388v4_pdf",
+      "id_b": "person_liu_et_al__2002_00388v4_pdf",
+      "name_a": "Lin et al",
+      "name_b": "Liu et al",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_linked_data_anonymization__2003_02320v6_pdf",
+      "id_b": "org_anonymisation_for_linked_data__2003_02320v6_pdf",
+      "name_a": "Linked Data Anonymization",
+      "name_b": "Anonymisation for Linked Data",
+      "type": "Organization",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_m_li__2002_00388v4_pdf",
+      "id_b": "person_m_liu__2002_00388v4_pdf",
+      "name_a": "M. Li",
+      "name_b": "M. Liu",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_meng_wang__2003_02320v6_pdf",
+      "id_b": "person_feng_wang__2003_02320v6_pdf",
+      "name_a": "Meng Wang",
+      "name_b": "Feng Wang",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_name__rdflib_rdflib",
+      "id_b": "person_name2__2003_02320v6_pdf",
+      "name_a": "Name",
+      "name_b": "name2",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_p_qin__2002_00388v4_pdf",
+      "id_b": "person_p_qi__2002_00388v4_pdf",
+      "name_a": "P. Qin",
+      "name_b": "P. Qi",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_ji__2002_00388v4_pdf",
+      "id_b": "person_s_jia__2002_00388v4_pdf",
+      "name_a": "S. Ji",
+      "name_b": "S. Jia",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_lai__2002_00388v4_pdf",
+      "id_b": "person_s_li__2002_00388v4_pdf",
+      "name_a": "S. Lai",
+      "name_b": "S. Li",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_santiago__2003_02320v6_pdf",
+      "id_b": "person_santiago_4__2003_02320v6_pdf",
+      "name_a": "Santiago",
+      "name_b": "Santiago 4",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_sousa__2002_00388v4_pdf",
+      "id_b": "person_sosa__rdflib_rdflib",
+      "name_a": "Sousa",
+      "name_b": "sosa",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_w_hu__2002_00388v4_pdf",
+      "id_b": "person_w_hua__2002_00388v4_pdf",
+      "name_a": "W. Hu",
+      "name_b": "W. Hua",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_liu__2002_00388v4_pdf",
+      "id_b": "person_w_lu__2002_00388v4_pdf",
+      "name_a": "W. Liu",
+      "name_b": "W. Lu",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_liu__2002_00388v4_pdf",
+      "id_b": "person_w_li__2002_00388v4_pdf",
+      "name_a": "W. Liu",
+      "name_b": "W. Li",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_x_li__2002_00388v4_pdf",
+      "id_b": "person_x_lin__2002_00388v4_pdf",
+      "name_a": "X. Li",
+      "name_b": "X. Lin",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_gu__2002_00388v4_pdf",
+      "id_b": "person_y_guo__2002_00388v4_pdf",
+      "name_a": "Y. Gu",
+      "name_b": "Y. Guo",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_lin__2002_00388v4_pdf",
+      "id_b": "person_y_li__2002_00388v4_pdf",
+      "name_a": "Y. Lin",
+      "name_b": "Y. Li",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_liu__2002_00388v4_pdf",
+      "id_b": "person_y_li__2002_00388v4_pdf",
+      "name_a": "Y. Liu",
+      "name_b": "Y. Li",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_ma__2002_00388v4_pdf",
+      "id_b": "person_y_mao__2002_00388v4_pdf",
+      "name_a": "Y. Ma",
+      "name_b": "Y. Mao",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_xue__2002_00388v4_pdf",
+      "id_b": "person_y_xu__2002_00388v4_pdf",
+      "name_a": "Y. Xue",
+      "name_b": "Y. Xu",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhu__2002_00388v4_pdf",
+      "id_b": "person_y_hu__2002_00388v4_pdf",
+      "name_a": "Y. Zhu",
+      "name_b": "Y. Hu",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_yi_hu__2003_02320v6_pdf",
+      "id_b": "person_y_hu__2002_00388v4_pdf",
+      "name_a": "Yi Hu",
+      "name_b": "Y. Hu",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_z_liu__2002_00388v4_pdf",
+      "id_b": "person_z_li__2002_00388v4_pdf",
+      "name_a": "Z. Liu",
+      "name_b": "Z. Li",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhu__2002_00388v4_pdf",
+      "id_b": "person_z_hu__2002_00388v4_pdf",
+      "name_a": "Z. Zhu",
+      "name_b": "Z. Hu",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_node__rdflib_rdflib",
+      "id_b": "org_bnode__rdflib_rdflib",
+      "name_a": "node",
+      "name_b": "BNode",
+      "type": "Organization",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_type__2003_02320v6_pdf",
+      "id_b": "person_types__2003_02320v6_pdf",
+      "name_a": "type,𝑐",
+      "name_b": "Types",
+      "type": "Person",
+      "score": 0.8889,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_meta_relational_learning__2002_00388v4_pdf",
+      "id_b": "org_relational_learning__2003_02320v6_pdf",
+      "name_a": "Meta Relational Learning",
+      "name_b": "Relational Learning",
+      "type": "Organization",
+      "score": 0.8837,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_name_world_heritage_site__2003_02320v6_pdf",
+      "id_b": "org_world_heritage_site__2003_02320v6_pdf",
+      "name_a": "name(𝑒, World Heritage Site",
+      "name_b": "World Heritage Site",
+      "type": "Organization",
+      "score": 0.8837,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_community_group_report__2003_02320v6_pdf",
+      "id_b": "org_draft_community_group_report__2003_02320v6_pdf",
+      "name_a": "Community Group Report",
+      "name_b": "Draft Community Group Report",
+      "type": "Organization",
+      "score": 0.88,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_community_group_report__2003_02320v6_pdf",
+      "id_b": "org_community_group_draft_report__2003_02320v6_pdf",
+      "name_a": "Community Group Report",
+      "name_b": "Community Group Draft Report",
+      "type": "Organization",
+      "score": 0.88,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_l_ehrlinger__2002_00388v4_pdf",
+      "id_b": "person_lisa_ehrlinger__2003_02320v6_pdf",
+      "name_a": "L. Ehrlinger",
+      "name_b": "Lisa Ehrlinger",
+      "type": "Person",
+      "score": 0.88,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_santiago_easter_island_world__2003_02320v6_pdf",
+      "id_b": "org_santiago_easter_island__2003_02320v6_pdf",
+      "name_a": "Santiago Easter Island World",
+      "name_b": "Santiago Easter Island",
+      "type": "Organization",
+      "score": 0.88,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_thomas_wetter__2003_02320v6_pdf",
+      "id_b": "person_thomas_eiter__2003_02320v6_pdf",
+      "name_a": "Thomas Wetter",
+      "name_b": "Thomas Eiter",
+      "type": "Person",
+      "score": 0.88,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_th_o_trouillon__2003_02320v6_pdf",
+      "id_b": "person_t_trouillon__2002_00388v4_pdf",
+      "name_a": "Théo Trouillon",
+      "name_b": "T. Trouillon",
+      "type": "Person",
+      "score": 0.88,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_distantly_supervised_relation_extraction__2003_02320v6_pdf",
+      "id_b": "org_distant_supervision_of_relation_extraction__2003_02320v6_pdf",
+      "name_a": "Distantly Supervised Relation Extraction",
+      "name_b": "Distant Supervision of Relation Extraction",
+      "type": "Organization",
+      "score": 0.878,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_a_smola__2002_00388v4_pdf",
+      "id_b": "person_a_j_smola__2002_00388v4_pdf",
+      "name_a": "A. Smola",
+      "name_b": "A. J. Smola",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_dbpedia__rdflib_rdflib",
+      "id_b": "org_dbpedia_a__2003_02320v6_pdf",
+      "name_a": "DBPedia",
+      "name_b": "DBpedia-A",
+      "type": "Organization",
+      "score": 0.875,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_dbpedia__2003_02320v6_pdf",
+      "id_b": "org_dbpedia_a__2003_02320v6_pdf",
+      "name_a": "DBpedia",
+      "name_b": "DBpedia-A",
+      "type": "Organization",
+      "score": 0.875,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_dbpedia__2002_00388v4_pdf",
+      "id_b": "org_dbpedia_a__2003_02320v6_pdf",
+      "name_a": "DBpedia",
+      "name_b": "DBpedia-A",
+      "type": "Organization",
+      "score": 0.875,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_hu_et_al__2002_00388v4_pdf",
+      "id_b": "person_xu_et_al__2003_02320v6_pdf",
+      "name_a": "Hu et al",
+      "name_b": "Xu et al",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_j_huang__2002_00388v4_pdf",
+      "id_b": "person_x_j_huang__2002_00388v4_pdf",
+      "name_a": "J. Huang",
+      "name_b": "X.-J. Huang",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_jie_zhang__2003_02320v6_pdf",
+      "id_b": "person_j_zhang__2002_00388v4_pdf",
+      "name_a": "Jie Zhang",
+      "name_b": "J. Zhang",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_kang_liu__2003_02320v6_pdf",
+      "id_b": "person_yang_liu__2003_02320v6_pdf",
+      "name_a": "Kang Liu",
+      "name_b": "Yang Liu",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_lacroix__2002_00388v4_pdf",
+      "id_b": "person_t_lacroix__2002_00388v4_pdf",
+      "name_a": "Lacroix",
+      "name_b": "T. Lacroix",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_max_schmachtenberg__2003_02320v6_pdf",
+      "id_b": "person_schmachtenberg__2003_02320v6_pdf",
+      "name_a": "Max Schmachtenberg",
+      "name_b": "Schmachtenberg",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_min_zhang__2003_02320v6_pdf",
+      "id_b": "person_n_zhang__2002_00388v4_pdf",
+      "name_a": "Min Zhang",
+      "name_b": "N. Zhang",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_n_stokman__2003_02320v6_pdf",
+      "id_b": "person_stokman__2003_02320v6_pdf",
+      "name_a": "N. Stokman",
+      "name_b": "Stokman",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_kirrane__2002_00388v4_pdf",
+      "id_b": "person_kirrane__2003_02320v6_pdf",
+      "name_a": "S. Kirrane",
+      "name_b": "Kirrane",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_santiago_flight_latam_arica__2003_02320v6_pdf",
+      "id_b": "org_santiago_flight_arica__2003_02320v6_pdf",
+      "name_a": "Santiago Flight LATAM Arica",
+      "name_b": "Santiago flight Arica",
+      "type": "Organization",
+      "score": 0.875,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_santiago_and_arica__2003_02320v6_pdf",
+      "id_b": "org_santiago_arica__2003_02320v6_pdf",
+      "name_a": "Santiago and Arica",
+      "name_b": "Santiago Arica",
+      "type": "Organization",
+      "score": 0.875,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_table_vi__2002_00388v4_pdf",
+      "id_b": "org_table_ix__2002_00388v4_pdf",
+      "name_a": "Table VI",
+      "name_b": "Table IX",
+      "type": "Organization",
+      "score": 0.875,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_unesco_world_heritage__2003_02320v6_pdf",
+      "id_b": "org_unesco_world_heritage_sites__2003_02320v6_pdf",
+      "name_a": "UNESCO World Heritage",
+      "name_b": "UNESCO World Heritage Sites",
+      "type": "Organization",
+      "score": 0.875,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_wei_zhang__2003_02320v6_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "Wei Zhang",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_wen_jiang__2003_02320v6_pdf",
+      "id_b": "person_w_jiang__2002_00388v4_pdf",
+      "name_a": "Wen Jiang",
+      "name_b": "W. Jiang",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_x_huang__2002_00388v4_pdf",
+      "id_b": "person_x_j_huang__2002_00388v4_pdf",
+      "name_a": "X. Huang",
+      "name_b": "X.-J. Huang",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_xin_wang__2003_02320v6_pdf",
+      "id_b": "person_bin_wang__2003_02320v6_pdf",
+      "name_a": "Xin Wang",
+      "name_b": "Bin Wang",
+      "type": "Person",
+      "score": 0.875,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_international_conference_on_computational_linguistics__2003_02320v6_pdf",
+      "id_b": "org_international_journal_of_computational_linguistics__2003_02320v6_pdf",
+      "name_a": "International Conference on Computational Linguistics",
+      "name_b": "International Journal of Computational Linguistics",
+      "type": "Organization",
+      "score": 0.8738,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_adaptive_information__2003_02320v6_pdf",
+      "id_b": "org_adaptive_innovation__2003_02320v6_pdf",
+      "name_a": "Adaptive Information",
+      "name_b": "Adaptive Innovation",
+      "type": "Organization",
+      "score": 0.8718,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_jose_emilio_labra_gayo__2003_02320v6_pdf",
+      "id_b": "person_emilio_labra_gayo__2003_02320v6_pdf",
+      "name_a": "Jose Emilio Labra Gayo",
+      "name_b": "Emilio Labra Gayo",
+      "type": "Person",
+      "score": 0.8718,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_university_of_bonn__2003_02320v6_pdf",
+      "id_b": "org_university_of_bologna__2003_02320v6_pdf",
+      "name_a": "University of Bonn",
+      "name_b": "University of Bologna",
+      "type": "Organization",
+      "score": 0.8718,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_open_information_extraction__2003_02320v6_pdf",
+      "id_b": "org_open_information_extraction_systems__2003_02320v6_pdf",
+      "name_a": "Open Information Extraction",
+      "name_b": "Open Information Extraction Systems",
+      "type": "Organization",
+      "score": 0.871,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_blank_nodes_or_literals__rdflib_rdflib",
+      "id_b": "org_the_literal_blank_nodes__rdflib_rdflib",
+      "name_a": "Blank Nodes or Literals",
+      "name_b": "the Literal Blank Nodes",
+      "type": "Organization",
+      "score": 0.8696,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_feng_et_al__2002_00388v4_pdf",
+      "id_b": "person_rl_feng_et_al__2002_00388v4_pdf",
+      "name_a": "Feng et al",
+      "name_b": "RL Feng et al",
+      "type": "Person",
+      "score": 0.8696,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_n_mccarthy__2002_00388v4_pdf",
+      "id_b": "person_john_mccarthy__2003_02320v6_pdf",
+      "name_a": "N. McCarthy",
+      "name_b": "John McCarthy",
+      "type": "Person",
+      "score": 0.8696,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_regi_n_de_valpara_so__2003_02320v6_pdf",
+      "id_b": "org_regi_n_de_valpara_so_table__2003_02320v6_pdf",
+      "name_a": "Región de Valparaíso",
+      "name_b": "Región de Valparaíso Table",
+      "type": "Organization",
+      "score": 0.8696,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_definition_b_12__2003_02320v6_pdf",
+      "id_b": "person_definition_b_39__2003_02320v6_pdf",
+      "name_a": "Definition B.12",
+      "name_b": "Definition B.39",
+      "type": "Person",
+      "score": 0.8667,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_definition_b_12__2003_02320v6_pdf",
+      "id_b": "person_definition_b_46__2003_02320v6_pdf",
+      "name_a": "Definition B.12",
+      "name_b": "Definition B.46",
+      "type": "Person",
+      "score": 0.8667,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_definition_b_14__2003_02320v6_pdf",
+      "id_b": "person_definition_b_39__2003_02320v6_pdf",
+      "name_a": "Definition B.14",
+      "name_b": "Definition B.39",
+      "type": "Person",
+      "score": 0.8667,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_definition_b_39__2003_02320v6_pdf",
+      "id_b": "person_definition_b_46__2003_02320v6_pdf",
+      "name_a": "Definition B.39",
+      "name_b": "Definition B.46",
+      "type": "Person",
+      "score": 0.8667,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_local_closed_world_assumption_lcwa__2003_02320v6_pdf",
+      "id_b": "org_local_closed_world_assumption__2003_02320v6_pdf",
+      "name_a": "the Local Closed World Assumption (LCWA",
+      "name_b": "Local Closed World Assumption",
+      "type": "Organization",
+      "score": 0.8657,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_stuckenschmidt__2002_00388v4_pdf",
+      "id_b": "person_heiner_stuckenschmidt__2003_02320v6_pdf",
+      "name_a": "H. Stuckenschmidt",
+      "name_b": "Heiner Stuckenschmidt",
+      "type": "Person",
+      "score": 0.8649,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_santiago_capital__2003_02320v6_pdf",
+      "id_b": "org_santiago_city_capital__2003_02320v6_pdf",
+      "name_a": "Santiago capital",
+      "name_b": "Santiago : City capital",
+      "type": "Organization",
+      "score": 0.8649,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_santiago_capital__2003_02320v6_pdf",
+      "id_b": "org_santiago_capital_city__2003_02320v6_pdf",
+      "name_a": "Santiago capital",
+      "name_b": "Santiago : Capital City",
+      "type": "Organization",
+      "score": 0.8649,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_a_world_heritage_site__2003_02320v6_pdf",
+      "id_b": "org_a_world_heritage__2003_02320v6_pdf",
+      "name_a": "a World Heritage Site",
+      "name_b": "a World Heritage",
+      "type": "Organization",
+      "score": 0.8649,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_international_semantic_web_conference__2003_02320v6_pdf",
+      "id_b": "org_international_conference_on_semantic_systems__2003_02320v6_pdf",
+      "name_a": "International Semantic Web Conference",
+      "name_b": "International Conference on Semantic Systems",
+      "type": "Organization",
+      "score": 0.8642,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_symmetric_relations__2003_02320v6_pdf",
+      "id_b": "org_asymmetric_relations_asym__2003_02320v6_pdf",
+      "name_a": "Symmetric Relations",
+      "name_b": "𝑅−)𝐼 Asymmetric Relations Asym(𝑅",
+      "type": "Organization",
+      "score": 0.8636,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_name_world_heritage_site__2003_02320v6_pdf",
+      "id_b": "org_world_heritage_sites__2003_02320v6_pdf",
+      "name_a": "name(𝑒, World Heritage Site",
+      "name_b": "World Heritage Sites",
+      "type": "Organization",
+      "score": 0.8636,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_international_conference_on_semantic_systems_semantics2016__2003_02320v6_pdf",
+      "id_b": "org_international_conference_on_semantic_systems__2003_02320v6_pdf",
+      "name_a": "International Conference on Semantic Systems - SEMANTiCS2016",
+      "name_b": "International Conference on Semantic Systems",
+      "type": "Organization",
+      "score": 0.8627,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_name_world_heritage_site__2003_02320v6_pdf",
+      "id_b": "org_unesco_world_heritage_sites__2003_02320v6_pdf",
+      "name_a": "name(𝑒, World Heritage Site",
+      "name_b": "UNESCO World Heritage Sites",
+      "type": "Organization",
+      "score": 0.8627,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_b_chang__2002_00388v4_pdf",
+      "id_b": "person_e_chang__2002_00388v4_pdf",
+      "name_a": "B. Chang",
+      "name_b": "E. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_b_chang__2002_00388v4_pdf",
+      "id_b": "person_z_chang__2002_00388v4_pdf",
+      "name_a": "B. Chang",
+      "name_b": "Z. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_b_wang__2002_00388v4_pdf",
+      "id_b": "person_bin_wang__2003_02320v6_pdf",
+      "name_a": "B. Wang",
+      "name_b": "Bin Wang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_bin_zhou__2003_02320v6_pdf",
+      "id_b": "person_b_zhou__2002_00388v4_pdf",
+      "name_a": "Bin Zhou",
+      "name_b": "B. Zhou",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_bing_li__2003_02320v6_pdf",
+      "id_b": "person_ping_li__2003_02320v6_pdf",
+      "name_a": "Bing Li",
+      "name_b": "Ping Li",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_bing_li__2003_02320v6_pdf",
+      "id_b": "person_ying_li__2003_02320v6_pdf",
+      "name_a": "Bing Li",
+      "name_b": "Ying Li",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_bo_yang__2003_02320v6_pdf",
+      "id_b": "person_bo_pang__2003_02320v6_pdf",
+      "name_a": "Bo Yang",
+      "name_b": "Bo Pang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_c_huang__2002_00388v4_pdf",
+      "id_b": "person_h_huang__2002_00388v4_pdf",
+      "name_a": "C. Huang",
+      "name_b": "H. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_c_huang__2002_00388v4_pdf",
+      "id_b": "person_y_huang__2002_00388v4_pdf",
+      "name_a": "C. Huang",
+      "name_b": "Y. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_c_huang__2002_00388v4_pdf",
+      "id_b": "person_x_huang__2002_00388v4_pdf",
+      "name_a": "C. Huang",
+      "name_b": "X. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_c_shang__2002_00388v4_pdf",
+      "id_b": "person_c_zhang__2002_00388v4_pdf",
+      "name_a": "C. Shang",
+      "name_b": "C. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_c_shang__2002_00388v4_pdf",
+      "id_b": "person_c_huang__2002_00388v4_pdf",
+      "name_a": "C. Shang",
+      "name_b": "C. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_c_zhang__2002_00388v4_pdf",
+      "id_b": "person_c_huang__2002_00388v4_pdf",
+      "name_a": "C. Zhang",
+      "name_b": "C. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_c_zhang__2002_00388v4_pdf",
+      "id_b": "person_q_zhang__2002_00388v4_pdf",
+      "name_a": "C. Zhang",
+      "name_b": "Q. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_c_zhang__2002_00388v4_pdf",
+      "id_b": "person_t_zhang__2002_00388v4_pdf",
+      "name_a": "C. Zhang",
+      "name_b": "T. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_c_zhang__2002_00388v4_pdf",
+      "id_b": "person_r_zhang__2002_00388v4_pdf",
+      "name_a": "C. Zhang",
+      "name_b": "R. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_c_zhang__2002_00388v4_pdf",
+      "id_b": "person_x_zhang__2002_00388v4_pdf",
+      "name_a": "C. Zhang",
+      "name_b": "X. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_c_zhang__2002_00388v4_pdf",
+      "id_b": "person_n_zhang__2002_00388v4_pdf",
+      "name_a": "C. Zhang",
+      "name_b": "N. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_c_zhang__2002_00388v4_pdf",
+      "id_b": "person_d_zhang__2002_00388v4_pdf",
+      "name_a": "C. Zhang",
+      "name_b": "D. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_c_zhang__2002_00388v4_pdf",
+      "id_b": "person_f_zhang__2002_00388v4_pdf",
+      "name_a": "C. Zhang",
+      "name_b": "F. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_cnn__2002_00388v4_pdf",
+      "id_b": "org_pcnn__2002_00388v4_pdf",
+      "name_a": "CNN",
+      "name_b": "PCNN",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_cardie__2002_00388v4_pdf",
+      "id_b": "person_c_cardie__2002_00388v4_pdf",
+      "name_a": "Cardie",
+      "name_b": "C. Cardie",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_chi_wang__2003_02320v6_pdf",
+      "id_b": "person_h_wang__2002_00388v4_pdf",
+      "name_a": "Chi Wang",
+      "name_b": "H. Wang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_chi_wang__2003_02320v6_pdf",
+      "id_b": "person_c_wang__2002_00388v4_pdf",
+      "name_a": "Chi Wang",
+      "name_b": "C. Wang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_d_yang__2002_00388v4_pdf",
+      "id_b": "person_d_ouyang__2002_00388v4_pdf",
+      "name_a": "D. Yang",
+      "name_b": "D. Ouyang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_d_zhang__2002_00388v4_pdf",
+      "id_b": "person_f_zhang__2002_00388v4_pdf",
+      "name_a": "D. Zhang",
+      "name_b": "F. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_data_quality__2003_02320v6_pdf",
+      "id_b": "org_big_data_quality__2003_02320v6_pdf",
+      "name_a": "Data Quality",
+      "name_b": "Big Data Quality",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_drinks_festival__2003_02320v6_pdf",
+      "id_b": "org_drinks_festival_city__2003_02320v6_pdf",
+      "name_a": "Drinks Festival 𝑄",
+      "name_b": "Drinks Festival city",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_e_cambria__2002_00388v4_pdf",
+      "id_b": "person_erik_cambria__2003_02320v6_pdf",
+      "name_a": "E. Cambria",
+      "name_b": "Erik Cambria",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_e_chang__2002_00388v4_pdf",
+      "id_b": "person_z_chang__2002_00388v4_pdf",
+      "name_a": "E. Chang",
+      "name_b": "Z. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_erik_cambria__2002_00388v4_pdf",
+      "id_b": "person_e_cambria__2002_00388v4_pdf",
+      "name_a": "Erik Cambria",
+      "name_b": "E. Cambria",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_fan_yang__2003_02320v6_pdf",
+      "id_b": "person_f_yang__2002_00388v4_pdf",
+      "name_a": "Fan Yang",
+      "name_b": "F. Yang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_h_huang__2002_00388v4_pdf",
+      "id_b": "person_y_huang__2002_00388v4_pdf",
+      "name_a": "H. Huang",
+      "name_b": "Y. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_huang__2002_00388v4_pdf",
+      "id_b": "person_x_huang__2002_00388v4_pdf",
+      "name_a": "H. Huang",
+      "name_b": "X. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_jiang__2002_00388v4_pdf",
+      "id_b": "person_m_jiang__2002_00388v4_pdf",
+      "name_a": "H. Jiang",
+      "name_b": "M. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_jiang__2002_00388v4_pdf",
+      "id_b": "person_x_jiang__2002_00388v4_pdf",
+      "name_a": "H. Jiang",
+      "name_b": "X. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_jiang__2002_00388v4_pdf",
+      "id_b": "person_t_jiang__2002_00388v4_pdf",
+      "name_a": "H. Jiang",
+      "name_b": "T. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_jiang__2002_00388v4_pdf",
+      "id_b": "person_j_jiang__2002_00388v4_pdf",
+      "name_a": "H. Jiang",
+      "name_b": "J. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_zhang__2002_00388v4_pdf",
+      "id_b": "person_c_zhang__2002_00388v4_pdf",
+      "name_a": "H. Zhang",
+      "name_b": "C. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_zhang__2002_00388v4_pdf",
+      "id_b": "person_h_huang__2002_00388v4_pdf",
+      "name_a": "H. Zhang",
+      "name_b": "H. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_zhang__2002_00388v4_pdf",
+      "id_b": "person_q_zhang__2002_00388v4_pdf",
+      "name_a": "H. Zhang",
+      "name_b": "Q. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_zhang__2002_00388v4_pdf",
+      "id_b": "person_t_zhang__2002_00388v4_pdf",
+      "name_a": "H. Zhang",
+      "name_b": "T. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_zhang__2002_00388v4_pdf",
+      "id_b": "person_r_zhang__2002_00388v4_pdf",
+      "name_a": "H. Zhang",
+      "name_b": "R. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_zhang__2002_00388v4_pdf",
+      "id_b": "person_x_zhang__2002_00388v4_pdf",
+      "name_a": "H. Zhang",
+      "name_b": "X. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_zhang__2002_00388v4_pdf",
+      "id_b": "person_n_zhang__2002_00388v4_pdf",
+      "name_a": "H. Zhang",
+      "name_b": "N. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_zhang__2002_00388v4_pdf",
+      "id_b": "person_d_zhang__2002_00388v4_pdf",
+      "name_a": "H. Zhang",
+      "name_b": "D. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_zhang__2002_00388v4_pdf",
+      "id_b": "person_f_zhang__2002_00388v4_pdf",
+      "name_a": "H. Zhang",
+      "name_b": "F. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_hao_wang__2003_02320v6_pdf",
+      "id_b": "person_h_wang__2002_00388v4_pdf",
+      "name_a": "Hao Wang",
+      "name_b": "H. Wang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_iri__rdflib_rdflib",
+      "id_b": "org_iris__2003_02320v6_pdf",
+      "name_a": "IRI",
+      "name_b": "IRIS",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_iri__2003_02320v6_pdf",
+      "id_b": "org_iris__2003_02320v6_pdf",
+      "name_a": "IRI",
+      "name_b": "IRIS",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_deoliveira__2002_00388v4_pdf",
+      "id_b": "person_john_de_oliveira__2003_02320v6_pdf",
+      "name_a": "J. DeOliveira",
+      "name_b": "John De Oliveira",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_j_huang__2002_00388v4_pdf",
+      "id_b": "person_p_huang__2002_00388v4_pdf",
+      "name_a": "J. Huang",
+      "name_b": "P. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_huang__2002_00388v4_pdf",
+      "id_b": "person_j_zhang__2002_00388v4_pdf",
+      "name_a": "J. Huang",
+      "name_b": "J. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_huang__2002_00388v4_pdf",
+      "id_b": "person_m_huang__2002_00388v4_pdf",
+      "name_a": "J. Huang",
+      "name_b": "M. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_huang__2002_00388v4_pdf",
+      "id_b": "person_c_huang__2002_00388v4_pdf",
+      "name_a": "J. Huang",
+      "name_b": "C. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_huang__2002_00388v4_pdf",
+      "id_b": "person_h_huang__2002_00388v4_pdf",
+      "name_a": "J. Huang",
+      "name_b": "H. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_huang__2002_00388v4_pdf",
+      "id_b": "person_y_huang__2002_00388v4_pdf",
+      "name_a": "J. Huang",
+      "name_b": "Y. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_huang__2002_00388v4_pdf",
+      "id_b": "person_x_huang__2002_00388v4_pdf",
+      "name_a": "J. Huang",
+      "name_b": "X. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_krishnamurthy__2002_00388v4_pdf",
+      "id_b": "person_jayant_krishnamurthy__2003_02320v6_pdf",
+      "name_a": "J. Krishnamurthy",
+      "name_b": "Jayant Krishnamurthy",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_j_lehmann__2002_00388v4_pdf",
+      "id_b": "person_jens_lehmann__2003_02320v6_pdf",
+      "name_a": "J. Lehmann",
+      "name_b": "Jens Lehmann",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_j_liang__2002_00388v4_pdf",
+      "id_b": "person_x_liang__2002_00388v4_pdf",
+      "name_a": "J. Liang",
+      "name_b": "X. Liang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_liang__2002_00388v4_pdf",
+      "id_b": "person_j_jiang__2002_00388v4_pdf",
+      "name_a": "J. Liang",
+      "name_b": "J. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_tang__2002_00388v4_pdf",
+      "id_b": "person_jie_tang__2003_02320v6_pdf",
+      "name_a": "J. Tang",
+      "name_b": "--- Jie Tang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_j_zhang__2002_00388v4_pdf",
+      "id_b": "person_s_zhang__2002_00388v4_pdf",
+      "name_a": "J. Zhang",
+      "name_b": "S. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_zhang__2002_00388v4_pdf",
+      "id_b": "person_h_zhang__2002_00388v4_pdf",
+      "name_a": "J. Zhang",
+      "name_b": "H. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_zhang__2002_00388v4_pdf",
+      "id_b": "person_c_zhang__2002_00388v4_pdf",
+      "name_a": "J. Zhang",
+      "name_b": "C. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_zhang__2002_00388v4_pdf",
+      "id_b": "person_q_zhang__2002_00388v4_pdf",
+      "name_a": "J. Zhang",
+      "name_b": "Q. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_zhang__2002_00388v4_pdf",
+      "id_b": "person_t_zhang__2002_00388v4_pdf",
+      "name_a": "J. Zhang",
+      "name_b": "T. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_zhang__2002_00388v4_pdf",
+      "id_b": "person_r_zhang__2002_00388v4_pdf",
+      "name_a": "J. Zhang",
+      "name_b": "R. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_zhang__2002_00388v4_pdf",
+      "id_b": "person_x_zhang__2002_00388v4_pdf",
+      "name_a": "J. Zhang",
+      "name_b": "X. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_zhang__2002_00388v4_pdf",
+      "id_b": "person_n_zhang__2002_00388v4_pdf",
+      "name_a": "J. Zhang",
+      "name_b": "N. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_zhang__2002_00388v4_pdf",
+      "id_b": "person_d_zhang__2002_00388v4_pdf",
+      "name_a": "J. Zhang",
+      "name_b": "D. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_zhang__2002_00388v4_pdf",
+      "id_b": "person_f_zhang__2002_00388v4_pdf",
+      "name_a": "J. Zhang",
+      "name_b": "F. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_j_zhao__2002_00388v4_pdf",
+      "id_b": "person_jun_zhao__2003_02320v6_pdf",
+      "name_a": "J. Zhao",
+      "name_b": "Jun Zhao",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_james_henderson__2003_02320v6_pdf",
+      "id_b": "person_james_hendler__2003_02320v6_pdf",
+      "name_a": "James Henderson",
+      "name_b": "James Hendler",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_jian_tang__2003_02320v6_pdf",
+      "id_b": "person_jiliang_tang__2003_02320v6_pdf",
+      "name_a": "Jian Tang",
+      "name_b": "Jiliang Tang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_jiang_et_al__2002_00388v4_pdf",
+      "id_b": "person_wang_et_al__2003_02320v6_pdf",
+      "name_a": "Jiang et al",
+      "name_b": "Wang et al",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_jun_liu__2003_02320v6_pdf",
+      "id_b": "person_kun_liu__2003_02320v6_pdf",
+      "name_a": "Jun Liu",
+      "name_b": "Kun Liu",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_k_bert__2002_00388v4_pdf",
+      "id_b": "org_bert_k_l__2002_00388v4_pdf",
+      "name_a": "K-BERT",
+      "name_b": "BERT k l",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_k_achan__2002_00388v4_pdf",
+      "id_b": "person_ki_chan__2003_02320v6_pdf",
+      "name_a": "K. Achan",
+      "name_b": "Ki Chan",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_kg_bert__2002_00388v4_pdf",
+      "id_b": "org_bert_mk__2002_00388v4_pdf",
+      "name_a": "KG-BERT",
+      "name_b": "BERT-MK",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_kge__2002_00388v4_pdf",
+      "id_b": "org_kg2e__2002_00388v4_pdf",
+      "name_a": "KGE",
+      "name_b": "KG2E",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_kleene_s__2003_02320v6_pdf",
+      "id_b": "person_kleene__2003_02320v6_pdf",
+      "name_a": "Kleene’s",
+      "name_b": "Kleene",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_ling__2002_00388v4_pdf",
+      "id_b": "person_lin__2003_02320v6_pdf",
+      "name_a": "Ling",
+      "name_b": "Lin",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_lu_yang__2003_02320v6_pdf",
+      "id_b": "person_yan_liu__2003_02320v6_pdf",
+      "name_a": "Lu Yang",
+      "name_b": "Yan Liu",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_m_gardner__2002_00388v4_pdf",
+      "id_b": "person_matt_gardner__2003_02320v6_pdf",
+      "name_a": "M. Gardner",
+      "name_b": "Matt Gardner",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_m_huang__2002_00388v4_pdf",
+      "id_b": "person_c_huang__2002_00388v4_pdf",
+      "name_a": "M. Huang",
+      "name_b": "C. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_m_huang__2002_00388v4_pdf",
+      "id_b": "person_h_huang__2002_00388v4_pdf",
+      "name_a": "M. Huang",
+      "name_b": "H. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_m_huang__2002_00388v4_pdf",
+      "id_b": "person_y_huang__2002_00388v4_pdf",
+      "name_a": "M. Huang",
+      "name_b": "Y. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_m_huang__2002_00388v4_pdf",
+      "id_b": "person_x_huang__2002_00388v4_pdf",
+      "name_a": "M. Huang",
+      "name_b": "X. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_m_jiang__2002_00388v4_pdf",
+      "id_b": "person_x_jiang__2002_00388v4_pdf",
+      "name_a": "M. Jiang",
+      "name_b": "X. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_m_jiang__2002_00388v4_pdf",
+      "id_b": "person_t_jiang__2002_00388v4_pdf",
+      "name_a": "M. Jiang",
+      "name_b": "T. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_m_jiang__2002_00388v4_pdf",
+      "id_b": "person_j_jiang__2002_00388v4_pdf",
+      "name_a": "M. Jiang",
+      "name_b": "J. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_mt_h__2002_00388v4_pdf",
+      "id_b": "org_t_h__2002_00388v4_pdf",
+      "name_a": "MT h",
+      "name_b": "t(h",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_mint__rdflib_rdflib",
+      "id_b": "org_mit__2003_02320v6_pdf",
+      "name_a": "Mint",
+      "name_b": "MIT",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_n_du__2002_00388v4_pdf",
+      "id_b": "person_n_d__2003_02320v6_pdf",
+      "name_a": "N. Du",
+      "name_b": "n. d.]",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_n_zhang__2002_00388v4_pdf",
+      "id_b": "person_d_zhang__2002_00388v4_pdf",
+      "name_a": "N. Zhang",
+      "name_b": "D. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_n_zhang__2002_00388v4_pdf",
+      "id_b": "person_f_zhang__2002_00388v4_pdf",
+      "name_a": "N. Zhang",
+      "name_b": "F. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_never_ending_language_learner__2002_00388v4_pdf",
+      "id_b": "org_the_never_ending_language_learning__2003_02320v6_pdf",
+      "name_a": "Never-Ending Language Learner",
+      "name_b": "The Never Ending Language Learning",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_obo__rdflib_rdflib",
+      "id_b": "org_obof__2003_02320v6_pdf",
+      "name_a": "OBO",
+      "name_b": "OBOF",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_owa__2002_00388v4_pdf",
+      "id_b": "org_sowa__2003_02320v6_pdf",
+      "name_a": "OWA",
+      "name_b": "Sowa",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_owa__2003_02320v6_pdf",
+      "id_b": "org_sowa__2003_02320v6_pdf",
+      "name_a": "OWA",
+      "name_b": "Sowa",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_p_huang__2002_00388v4_pdf",
+      "id_b": "person_m_huang__2002_00388v4_pdf",
+      "name_a": "P. Huang",
+      "name_b": "M. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_p_huang__2002_00388v4_pdf",
+      "id_b": "person_c_huang__2002_00388v4_pdf",
+      "name_a": "P. Huang",
+      "name_b": "C. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_p_huang__2002_00388v4_pdf",
+      "id_b": "person_h_huang__2002_00388v4_pdf",
+      "name_a": "P. Huang",
+      "name_b": "H. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_p_huang__2002_00388v4_pdf",
+      "id_b": "person_y_huang__2002_00388v4_pdf",
+      "name_a": "P. Huang",
+      "name_b": "Y. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_p_huang__2002_00388v4_pdf",
+      "id_b": "person_x_huang__2002_00388v4_pdf",
+      "name_a": "P. Huang",
+      "name_b": "X. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_piero_andrea_bonatti__2003_02320v6_pdf",
+      "id_b": "person_piero_a_bonatti__2003_02320v6_pdf",
+      "name_a": "Piero Andrea Bonatti",
+      "name_b": "Piero A. Bonatti",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_ping_li__2003_02320v6_pdf",
+      "id_b": "person_ying_li__2003_02320v6_pdf",
+      "name_a": "Ping Li",
+      "name_b": "Ying Li",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_pythonic__rdflib_rdflib",
+      "id_b": "org_python__rdflib_rdflib",
+      "name_a": "Pythonic",
+      "name_b": "Python",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_q_zhang__2002_00388v4_pdf",
+      "id_b": "person_t_zhang__2002_00388v4_pdf",
+      "name_a": "Q. Zhang",
+      "name_b": "T. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_q_zhang__2002_00388v4_pdf",
+      "id_b": "person_r_zhang__2002_00388v4_pdf",
+      "name_a": "Q. Zhang",
+      "name_b": "R. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_q_zhang__2002_00388v4_pdf",
+      "id_b": "person_x_zhang__2002_00388v4_pdf",
+      "name_a": "Q. Zhang",
+      "name_b": "X. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_q_zhang__2002_00388v4_pdf",
+      "id_b": "person_n_zhang__2002_00388v4_pdf",
+      "name_a": "Q. Zhang",
+      "name_b": "N. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_q_zhang__2002_00388v4_pdf",
+      "id_b": "person_d_zhang__2002_00388v4_pdf",
+      "name_a": "Q. Zhang",
+      "name_b": "D. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_q_zhang__2002_00388v4_pdf",
+      "id_b": "person_f_zhang__2002_00388v4_pdf",
+      "name_a": "Q. Zhang",
+      "name_b": "F. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_r_zhang__2002_00388v4_pdf",
+      "id_b": "person_x_zhang__2002_00388v4_pdf",
+      "name_a": "R. Zhang",
+      "name_b": "X. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_r_zhang__2002_00388v4_pdf",
+      "id_b": "person_n_zhang__2002_00388v4_pdf",
+      "name_a": "R. Zhang",
+      "name_b": "N. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_r_zhang__2002_00388v4_pdf",
+      "id_b": "person_d_zhang__2002_00388v4_pdf",
+      "name_a": "R. Zhang",
+      "name_b": "D. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_r_zhang__2002_00388v4_pdf",
+      "id_b": "person_f_zhang__2002_00388v4_pdf",
+      "name_a": "R. Zhang",
+      "name_b": "F. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_rdf__rdflib_rdflib",
+      "id_b": "org_rdfs__rdflib_rdflib",
+      "name_a": "RDF",
+      "name_b": "RDFS",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_rdf__rdflib_rdflib",
+      "id_b": "org_rdfs__2003_02320v6_pdf",
+      "name_a": "RDF",
+      "name_b": "RDFS",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_rdf__2003_02320v6_pdf",
+      "id_b": "org_rdfs__2003_02320v6_pdf",
+      "name_a": "RDF",
+      "name_b": "RDFS",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_rdfs__rdflib_rdflib",
+      "id_b": "org_rdf__2003_02320v6_pdf",
+      "name_a": "RDFS",
+      "name_b": "RDF",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_rdfs__rdflib_rdflib",
+      "id_b": "org_rdf__2002_00388v4_pdf",
+      "name_a": "RDFS",
+      "name_b": "RDF",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_rdfs__2003_02320v6_pdf",
+      "id_b": "org_rdf__2002_00388v4_pdf",
+      "name_a": "RDFS",
+      "name_b": "RDF",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_richard_chbeir__2003_02320v6_pdf",
+      "id_b": "person_richard_socher__2003_02320v6_pdf",
+      "name_a": "Richard Chbeir",
+      "name_b": "Richard Socher",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_chang__2002_00388v4_pdf",
+      "id_b": "person_y_chang__2002_00388v4_pdf",
+      "name_a": "S. Chang",
+      "name_b": "Y. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_chang__2002_00388v4_pdf",
+      "id_b": "person_b_chang__2002_00388v4_pdf",
+      "name_a": "S. Chang",
+      "name_b": "B. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_chang__2002_00388v4_pdf",
+      "id_b": "person_e_chang__2002_00388v4_pdf",
+      "name_a": "S. Chang",
+      "name_b": "E. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_chang__2002_00388v4_pdf",
+      "id_b": "person_z_chang__2002_00388v4_pdf",
+      "name_a": "S. Chang",
+      "name_b": "Z. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_kumar__2002_00388v4_pdf",
+      "id_b": "person_a_kumar__2002_00388v4_pdf",
+      "name_a": "S. Kumar",
+      "name_b": "A. Kumar",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_mohammed__2002_00388v4_pdf",
+      "id_b": "person_s_k_mohamed__2002_00388v4_pdf",
+      "name_a": "S. Mohammed",
+      "name_b": "S. K. Mohamed",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_zhang__2002_00388v4_pdf",
+      "id_b": "person_h_zhang__2002_00388v4_pdf",
+      "name_a": "S. Zhang",
+      "name_b": "H. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_zhang__2002_00388v4_pdf",
+      "id_b": "person_s_chang__2002_00388v4_pdf",
+      "name_a": "S. Zhang",
+      "name_b": "S. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_zhang__2002_00388v4_pdf",
+      "id_b": "person_c_zhang__2002_00388v4_pdf",
+      "name_a": "S. Zhang",
+      "name_b": "C. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_zhang__2002_00388v4_pdf",
+      "id_b": "person_q_zhang__2002_00388v4_pdf",
+      "name_a": "S. Zhang",
+      "name_b": "Q. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_zhang__2002_00388v4_pdf",
+      "id_b": "person_t_zhang__2002_00388v4_pdf",
+      "name_a": "S. Zhang",
+      "name_b": "T. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_zhang__2002_00388v4_pdf",
+      "id_b": "person_r_zhang__2002_00388v4_pdf",
+      "name_a": "S. Zhang",
+      "name_b": "R. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_zhang__2002_00388v4_pdf",
+      "id_b": "person_x_zhang__2002_00388v4_pdf",
+      "name_a": "S. Zhang",
+      "name_b": "X. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_zhang__2002_00388v4_pdf",
+      "id_b": "person_s_zheng__2002_00388v4_pdf",
+      "name_a": "S. Zhang",
+      "name_b": "S. Zheng",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_zhang__2002_00388v4_pdf",
+      "id_b": "person_n_zhang__2002_00388v4_pdf",
+      "name_a": "S. Zhang",
+      "name_b": "N. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_zhang__2002_00388v4_pdf",
+      "id_b": "person_d_zhang__2002_00388v4_pdf",
+      "name_a": "S. Zhang",
+      "name_b": "D. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_s_zhang__2002_00388v4_pdf",
+      "id_b": "person_f_zhang__2002_00388v4_pdf",
+      "name_a": "S. Zhang",
+      "name_b": "F. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_santiago_santiago_santiago__2003_02320v6_pdf",
+      "id_b": "person_santiago_arica_santiago__2003_02320v6_pdf",
+      "name_a": "Santiago Santiago Santiago",
+      "name_b": "Santiago Arica Santiago",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_santiago_and_arica_la380__2003_02320v6_pdf",
+      "id_b": "org_santiago_and_arica__2003_02320v6_pdf",
+      "name_a": "Santiago and Arica LA380",
+      "name_b": "Santiago and Arica",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_t_hoang__2002_00388v4_pdf",
+      "id_b": "person_t_zhang__2002_00388v4_pdf",
+      "name_a": "T. Hoang",
+      "name_b": "T. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_t_jiang__2002_00388v4_pdf",
+      "id_b": "person_j_jiang__2002_00388v4_pdf",
+      "name_a": "T. Jiang",
+      "name_b": "J. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_t_zhang__2002_00388v4_pdf",
+      "id_b": "person_r_zhang__2002_00388v4_pdf",
+      "name_a": "T. Zhang",
+      "name_b": "R. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_t_zhang__2002_00388v4_pdf",
+      "id_b": "person_x_zhang__2002_00388v4_pdf",
+      "name_a": "T. Zhang",
+      "name_b": "X. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_t_zhang__2002_00388v4_pdf",
+      "id_b": "person_n_zhang__2002_00388v4_pdf",
+      "name_a": "T. Zhang",
+      "name_b": "N. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_t_zhang__2002_00388v4_pdf",
+      "id_b": "person_d_zhang__2002_00388v4_pdf",
+      "name_a": "T. Zhang",
+      "name_b": "D. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_t_zhang__2002_00388v4_pdf",
+      "id_b": "person_f_zhang__2002_00388v4_pdf",
+      "name_a": "T. Zhang",
+      "name_b": "F. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "tech_table_2__2003_02320v6_pdf",
+      "id_b": "tech_table_4__2003_02320v6_pdf",
+      "name_a": "Table 2",
+      "name_b": "Table 4",
+      "type": "Technology",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "tech_table_2__2003_02320v6_pdf",
+      "id_b": "tech_table_5__2003_02320v6_pdf",
+      "name_a": "Table 2",
+      "name_b": "Table 5",
+      "type": "Technology",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "tech_table_2__2003_02320v6_pdf",
+      "id_b": "tech_table_7__2003_02320v6_pdf",
+      "name_a": "Table 2",
+      "name_b": "Table 7",
+      "type": "Technology",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "tech_table_2__2003_02320v6_pdf",
+      "id_b": "tech_table_8__2003_02320v6_pdf",
+      "name_a": "Table 2",
+      "name_b": "Table 8",
+      "type": "Technology",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "tech_table_4__2003_02320v6_pdf",
+      "id_b": "tech_table_5__2003_02320v6_pdf",
+      "name_a": "Table 4",
+      "name_b": "Table 5",
+      "type": "Technology",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "tech_table_4__2003_02320v6_pdf",
+      "id_b": "tech_table_7__2003_02320v6_pdf",
+      "name_a": "Table 4",
+      "name_b": "Table 7",
+      "type": "Technology",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "tech_table_4__2003_02320v6_pdf",
+      "id_b": "tech_table_8__2003_02320v6_pdf",
+      "name_a": "Table 4",
+      "name_b": "Table 8",
+      "type": "Technology",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "tech_table_5__2003_02320v6_pdf",
+      "id_b": "tech_table_7__2003_02320v6_pdf",
+      "name_a": "Table 5",
+      "name_b": "Table 7",
+      "type": "Technology",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "tech_table_5__2003_02320v6_pdf",
+      "id_b": "tech_table_8__2003_02320v6_pdf",
+      "name_a": "Table 5",
+      "name_b": "Table 8",
+      "type": "Technology",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "tech_table_7__2003_02320v6_pdf",
+      "id_b": "tech_table_8__2003_02320v6_pdf",
+      "name_a": "Table 7",
+      "name_b": "Table 8",
+      "type": "Technology",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_una__2003_02320v6_pdf",
+      "id_b": "org_nuna__2003_02320v6_pdf",
+      "name_a": "UNA",
+      "name_b": "NUNA",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_university_of_milano__2003_02320v6_pdf",
+      "id_b": "org_university_of_michigan__2003_02320v6_pdf",
+      "name_a": "University of Milano",
+      "name_b": "University of Michigan",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_jiang__2002_00388v4_pdf",
+      "id_b": "person_h_jiang__2002_00388v4_pdf",
+      "name_a": "W. Jiang",
+      "name_b": "H. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_jiang__2002_00388v4_pdf",
+      "id_b": "person_m_jiang__2002_00388v4_pdf",
+      "name_a": "W. Jiang",
+      "name_b": "M. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_jiang__2002_00388v4_pdf",
+      "id_b": "person_x_jiang__2002_00388v4_pdf",
+      "name_a": "W. Jiang",
+      "name_b": "X. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_jiang__2002_00388v4_pdf",
+      "id_b": "person_t_jiang__2002_00388v4_pdf",
+      "name_a": "W. Jiang",
+      "name_b": "T. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_jiang__2002_00388v4_pdf",
+      "id_b": "person_j_jiang__2002_00388v4_pdf",
+      "name_a": "W. Jiang",
+      "name_b": "J. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_wang__2002_00388v4_pdf",
+      "id_b": "person_wei_wang__2003_02320v6_pdf",
+      "name_a": "W. Wang",
+      "name_b": "Wei Wang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_w_xiong__2002_00388v4_pdf",
+      "id_b": "person_c_xiong__2002_00388v4_pdf",
+      "name_a": "W. Xiong",
+      "name_b": "C. Xiong",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_y_wang__2002_00388v4_pdf",
+      "id_b": "person_w_wang__2002_00388v4_pdf",
+      "name_a": "W. Y. Wang",
+      "name_b": "W. Wang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_z_zhang__2002_00388v4_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "Z. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_y_zhang__2002_00388v4_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "Y. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_j_zhang__2002_00388v4_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "J. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_s_zhang__2002_00388v4_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "S. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_h_zhang__2002_00388v4_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "H. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_c_zhang__2002_00388v4_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "C. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_q_zhang__2002_00388v4_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "Q. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_t_zhang__2002_00388v4_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "T. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_r_zhang__2002_00388v4_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "R. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_x_zhang__2002_00388v4_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "X. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_n_zhang__2002_00388v4_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "N. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_d_zhang__2002_00388v4_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "D. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_zhang__2002_00388v4_pdf",
+      "id_b": "person_f_zhang__2002_00388v4_pdf",
+      "name_a": "W. Zhang",
+      "name_b": "F. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_wang_et_al__2002_00388v4_pdf",
+      "id_b": "person_zhang_et_al__2002_00388v4_pdf",
+      "name_a": "Wang et al",
+      "name_b": "Zhang et al",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_wang_et_al__2002_00388v4_pdf",
+      "id_b": "person_jiang_et_al__2002_00388v4_pdf",
+      "name_a": "Wang et al",
+      "name_b": "Jiang et al",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_x_cheng__2002_00388v4_pdf",
+      "id_b": "person_d_cheng__2002_00388v4_pdf",
+      "name_a": "X. Cheng",
+      "name_b": "D. Cheng",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_x_dong__2002_00388v4_pdf",
+      "id_b": "person_xin_dong__2003_02320v6_pdf",
+      "name_a": "X. Dong",
+      "name_b": "Xin Dong",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_x_jiang__2002_00388v4_pdf",
+      "id_b": "person_t_jiang__2002_00388v4_pdf",
+      "name_a": "X. Jiang",
+      "name_b": "T. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_x_jiang__2002_00388v4_pdf",
+      "id_b": "person_x_liang__2002_00388v4_pdf",
+      "name_a": "X. Jiang",
+      "name_b": "X. Liang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_x_jiang__2002_00388v4_pdf",
+      "id_b": "person_j_jiang__2002_00388v4_pdf",
+      "name_a": "X. Jiang",
+      "name_b": "J. Jiang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_x_wang__2002_00388v4_pdf",
+      "id_b": "person_xin_wang__2003_02320v6_pdf",
+      "name_a": "X. Wang",
+      "name_b": "Xin Wang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_x_zhang__2002_00388v4_pdf",
+      "id_b": "person_x_huang__2002_00388v4_pdf",
+      "name_a": "X. Zhang",
+      "name_b": "X. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_x_zhang__2002_00388v4_pdf",
+      "id_b": "person_n_zhang__2002_00388v4_pdf",
+      "name_a": "X. Zhang",
+      "name_b": "N. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_x_zhang__2002_00388v4_pdf",
+      "id_b": "person_d_zhang__2002_00388v4_pdf",
+      "name_a": "X. Zhang",
+      "name_b": "D. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_x_zhang__2002_00388v4_pdf",
+      "id_b": "person_f_zhang__2002_00388v4_pdf",
+      "name_a": "X. Zhang",
+      "name_b": "F. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_chang__2002_00388v4_pdf",
+      "id_b": "person_b_chang__2002_00388v4_pdf",
+      "name_a": "Y. Chang",
+      "name_b": "B. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_chang__2002_00388v4_pdf",
+      "id_b": "person_e_chang__2002_00388v4_pdf",
+      "name_a": "Y. Chang",
+      "name_b": "E. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_chang__2002_00388v4_pdf",
+      "id_b": "person_z_chang__2002_00388v4_pdf",
+      "name_a": "Y. Chang",
+      "name_b": "Z. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_huang__2002_00388v4_pdf",
+      "id_b": "person_y_chang__2002_00388v4_pdf",
+      "name_a": "Y. Huang",
+      "name_b": "Y. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_huang__2002_00388v4_pdf",
+      "id_b": "person_x_huang__2002_00388v4_pdf",
+      "name_a": "Y. Huang",
+      "name_b": "X. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_wang__2002_00388v4_pdf",
+      "id_b": "person_w_y_wang__2002_00388v4_pdf",
+      "name_a": "Y. Wang",
+      "name_b": "W. Y. Wang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhang__2002_00388v4_pdf",
+      "id_b": "person_j_zhang__2002_00388v4_pdf",
+      "name_a": "Y. Zhang",
+      "name_b": "J. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhang__2002_00388v4_pdf",
+      "id_b": "person_s_zhang__2002_00388v4_pdf",
+      "name_a": "Y. Zhang",
+      "name_b": "S. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhang__2002_00388v4_pdf",
+      "id_b": "person_h_zhang__2002_00388v4_pdf",
+      "name_a": "Y. Zhang",
+      "name_b": "H. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhang__2002_00388v4_pdf",
+      "id_b": "person_c_zhang__2002_00388v4_pdf",
+      "name_a": "Y. Zhang",
+      "name_b": "C. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhang__2002_00388v4_pdf",
+      "id_b": "person_q_zhang__2002_00388v4_pdf",
+      "name_a": "Y. Zhang",
+      "name_b": "Q. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhang__2002_00388v4_pdf",
+      "id_b": "person_t_zhang__2002_00388v4_pdf",
+      "name_a": "Y. Zhang",
+      "name_b": "T. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhang__2002_00388v4_pdf",
+      "id_b": "person_r_zhang__2002_00388v4_pdf",
+      "name_a": "Y. Zhang",
+      "name_b": "R. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhang__2002_00388v4_pdf",
+      "id_b": "person_y_huang__2002_00388v4_pdf",
+      "name_a": "Y. Zhang",
+      "name_b": "Y. Huang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhang__2002_00388v4_pdf",
+      "id_b": "person_x_zhang__2002_00388v4_pdf",
+      "name_a": "Y. Zhang",
+      "name_b": "X. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhang__2002_00388v4_pdf",
+      "id_b": "person_y_chang__2002_00388v4_pdf",
+      "name_a": "Y. Zhang",
+      "name_b": "Y. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhang__2002_00388v4_pdf",
+      "id_b": "person_n_zhang__2002_00388v4_pdf",
+      "name_a": "Y. Zhang",
+      "name_b": "N. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhang__2002_00388v4_pdf",
+      "id_b": "person_d_zhang__2002_00388v4_pdf",
+      "name_a": "Y. Zhang",
+      "name_b": "D. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_y_zhang__2002_00388v4_pdf",
+      "id_b": "person_f_zhang__2002_00388v4_pdf",
+      "name_a": "Y. Zhang",
+      "name_b": "F. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_y_zhang__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "Y. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_j_zhang__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "J. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_s_zhang__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "S. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_h_zhang__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "H. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_c_zhang__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "C. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_q_zhang__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "Q. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_t_zhang__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "T. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_r_zhang__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "R. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_x_zhang__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "X. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_z_zhong__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "Z. Zhong",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_n_zhang__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "N. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_d_zhang__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "D. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_f_zhang__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "F. Zhang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_z_chang__2002_00388v4_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "Z. Chang",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_zhang_et_al__2002_00388v4_pdf",
+      "id_b": "person_zeng_et_al__2002_00388v4_pdf",
+      "name_a": "Zhang et al",
+      "name_b": "Zeng et al",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_zhang_et_al__2002_00388v4_pdf",
+      "id_b": "person_wang_et_al__2003_02320v6_pdf",
+      "name_a": "Zhang et al",
+      "name_b": "Wang et al",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_cid_48__2002_00388v4_pdf",
+      "id_b": "org_h_cid_48__2002_00388v4_pdf",
+      "name_a": "cid:48",
+      "name_b": "h(cid:48",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_h_cid_62__2002_00388v4_pdf",
+      "id_b": "person_cid_62__2002_00388v4_pdf",
+      "name_a": "h(cid:62",
+      "name_b": "− τ(cid:62",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_irs__2002_00388v4_pdf",
+      "id_b": "org_iris__2003_02320v6_pdf",
+      "name_a": "irs",
+      "name_b": "IRIS",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_max__2002_00388v4_pdf",
+      "id_b": "person_x_ma__2002_00388v4_pdf",
+      "name_a": "max",
+      "name_b": "X. Ma",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_max__rdflib_rdflib",
+      "id_b": "person_x_ma__2002_00388v4_pdf",
+      "name_a": "max",
+      "name_b": "X. Ma",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_node_ids__rdflib_rdflib",
+      "id_b": "person_node_s__2003_02320v6_pdf",
+      "name_a": "node IDs",
+      "name_b": "node s",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_the_closed_world_assumption__2003_02320v6_pdf",
+      "id_b": "org_local_closed_world_assumption__2003_02320v6_pdf",
+      "name_a": "the Closed World Assumption",
+      "name_b": "Local Closed World Assumption",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_the_rdf4j_client__rdflib_rdflib",
+      "id_b": "org_rdf4j_client__rdflib_rdflib",
+      "name_a": "the RDF4J Client",
+      "name_b": "RDF4J Client",
+      "type": "Organization",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_u_w__2002_00388v4_pdf",
+      "id_b": "person_w_hu__2002_00388v4_pdf",
+      "name_a": "u w",
+      "name_b": "W. Hu",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_u_w__2002_00388v4_pdf",
+      "id_b": "person_w_lu__2002_00388v4_pdf",
+      "name_a": "u w",
+      "name_b": "W. Lu",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_ra__2002_00388v4_pdf",
+      "id_b": "person_w_r__2002_00388v4_pdf",
+      "name_a": "w ra",
+      "name_b": "− w r (",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": false
+    },
+    {
+      "id_a": "person_w_r__2003_02320v6_pdf",
+      "id_b": "person_w_ra__2002_00388v4_pdf",
+      "name_a": "∈ W R𝑤 ∈",
+      "name_b": "w ra",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "person_w_e__2003_02320v6_pdf",
+      "id_b": "person_w_he__2002_00388v4_pdf",
+      "name_a": "− W𝑝e𝑜",
+      "name_b": "W. He",
+      "type": "Person",
+      "score": 0.8571,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_system_development_corporation__2003_02320v6_pdf",
+      "id_b": "org_systems_development_corp__2003_02320v6_pdf",
+      "name_a": "System Development Corporation",
+      "name_b": "Systems Development Corp.",
+      "type": "Organization",
+      "score": 0.8519,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_c_relation_extraction__2002_00388v4_pdf",
+      "id_b": "org_relation_extraction_binary__2003_02320v6_pdf",
+      "name_a": "C. Relation Extraction",
+      "name_b": "Relation Extraction Binary",
+      "type": "Organization",
+      "score": 0.8511,
+      "cross_source": true
+    },
+    {
+      "id_a": "org_unesco_world_heritage_sites__2003_02320v6_pdf",
+      "id_b": "org_world_heritage_sites__2003_02320v6_pdf",
+      "name_a": "UNESCO World Heritage Sites",
+      "name_b": "World Heritage Sites",
+      "type": "Organization",
+      "score": 0.8511,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_comma_separated_value__rdflib_rdflib",
+      "id_b": "org_tab_separated_value__rdflib_rdflib",
+      "name_a": "Comma-Separated Value",
+      "name_b": "Tab-Separated Value",
+      "type": "Organization",
+      "score": 0.85,
+      "cross_source": false
+    },
+    {
+      "id_a": "org_cid_13_cid_13_cid_13__2002_00388v4_pdf",
+      "id_b": "org_cid_12_cid_12_cid_12__2002_00388v4_pdf",
+      "name_a": "cid:13)(cid:13)(cid:13",
+      "name_b": "cid:12)(cid:12)(cid:12",
+      "type": "Organization",
+      "score": 0.85,
+      "cross_source": false
+    }
+  ]
+}
