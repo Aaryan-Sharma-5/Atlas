@@ -7,6 +7,24 @@ This directory contains:
 
 ## Test Corpus
 
+Four sources across three domains (papers, code, architecture docs). Entity resolution is validated on the duplicates that occur ACROSS these sources.
+
+| Source | Domain | Ingested via |
+|---|---|---|
+| `2003.02320v6.pdf` (Hogan et al.) | Research paper | `pdf_parser` |
+| `2002.00388v4.pdf` (Ji et al.) | Research paper | `pdf_parser` |
+| `github.com/rdflib/rdflib` (docs, cloned to `.cache/repos/`) | Code repository | `github_parser` + `markdown_parser` |
+| `docs/architecture.md` (Atlas's own) | Architecture doc | `markdown_parser` |
+
+### 2002.00388v4.pdf
+
+**A Survey on Knowledge Graphs: Representation, Acquisition, and Applications** (Ji, Pan, Cambria, Marttinen, Yu, 2020)
+- **Source:** https://arxiv.org/abs/2002.00388
+- **Pages:** 27 | **Chunks:** 65 | **Mentions:** ~2,500 | **Entities:** ~1,100
+- **Purpose:** Second same-domain source. Overlaps heavily with Hogan et al.
+  (DBpedia, Wikidata, WordNet, ComplEx, DistMult, shared cited authors) —
+  the cross-source duplicate surface that entity resolution merges.
+
 ### 2003.02320v6.pdf
 
 **Knowledge Graphs** (Hogan, Blomqvist, Cochez, et al., 2021)

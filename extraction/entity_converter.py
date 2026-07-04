@@ -46,6 +46,9 @@ def convert_raw_entities(
         (entities, skipped) where skipped maps unmappable spaCy labels to
         how many mentions were dropped.
     """
+    # Ids are namespaced by source, so the same name in two documents yields two distinct nodes. Collapsing them into one canonical entity is resolution/'s job — done explicitly, never implicitly at id-collision time.
+    source_slug = _slugify(_normalize(extraction_source.split(":", 1)[-1]))
+
     groups: dict[tuple[str, str], list[RawEntity]] = defaultdict(list)
     skipped: Counter[str] = Counter()
 
@@ -77,7 +80,7 @@ def convert_raw_entities(
 
         entities.append(
             Entity(
-                id=f"{_ID_PREFIX[node_type]}_{slug}",
+                id=f"{_ID_PREFIX[node_type]}_{slug}__{source_slug}",
                 type=node_type,
                 name=name,
                 confidence=confidence,

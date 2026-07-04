@@ -66,12 +66,14 @@ with Neo4jWriter() as writer:
           f"{counts['relationships_written']} relationships")
 
     print("\n[6/6] Verification queries...")
+    # Scope counts to this source: the graph may hold other documents.
     label_counts = writer.run_read(
-        "MATCH (n:Entity) RETURN labels(n) AS labels, count(*) AS count "
-        "ORDER BY count DESC"
+        "MATCH (n:Entity {extraction_source: $source}) "
+        "RETURN labels(n) AS labels, count(*) AS count ORDER BY count DESC",
+        {"source": SOURCE},
     )
     total = sum(r["count"] for r in label_counts)
-    print(f"      total :Entity nodes: {total}")
+    print(f"      :Entity nodes from {SOURCE}: {total}")
     for row in label_counts:
         print(f"        {':'.join(row['labels']):45s} {row['count']:5d}")
 
@@ -81,14 +83,17 @@ with Neo4jWriter() as writer:
 
     print("\n      Sample Person node from Neo4j:")
     person = writer.run_read(
-        "MATCH (n:Person) WHERE n.confidence >= 0.9 "
-        "RETURN n ORDER BY n.name LIMIT 1"
+        "MATCH (n:Person {extraction_source: $source}) WHERE n.confidence >= 0.9 "
+        "RETURN n ORDER BY n.name LIMIT 1",
+        {"source": SOURCE},
     )[0]["n"]
     print("      " + json.dumps(person, indent=2, ensure_ascii=False).replace("\n", "\n      "))
 
     print("\n      Sample Technology node from Neo4j:")
     tech = writer.run_read(
-        "MATCH (n:Technology) RETURN n ORDER BY n.confidence DESC LIMIT 1"
+        "MATCH (n:Technology {extraction_source: $source}) "
+        "RETURN n ORDER BY n.confidence DESC LIMIT 1",
+        {"source": SOURCE},
     )[0]["n"]
     print("      " + json.dumps(tech, indent=2, ensure_ascii=False).replace("\n", "\n      "))
 

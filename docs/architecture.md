@@ -61,6 +61,8 @@ Organizations accumulate vast amounts of knowledge scattered across documents, r
 │ ├─ Markdown Parser (markdown-it-py)                         │
 │ └─ Web Parser (BeautifulSoup)                               │
 └─────────────────────────────────────────────────────────────┘
+
+  NOTE (implementation status): ingestion/github_parser.py currently extracts DOCUMENTATION FILES ONLY (.md/.rst prose) plus repo metadata(name, url, pinned commit hash). AST parsing, dependency graphs, and call graphs and are NOT implemented.Code entities (Function, Class, Module) do not yet appear in the graph.     
                               ↓
 ┌─────────────────────────────────────────────────────────────┐
 │ Text Processing                                             │
@@ -338,6 +340,10 @@ These are explicitly **not** part of the initial build and are listed for archit
 - **Aspect-based sentiment extraction** for identifying critical claims or disagreements in papers.
 
 ### 11.2 Code Intelligence (Phase 3, explicitly planned)
+
+*Status: none of this exists yet. The current GitHub ingestion path
+(`ingestion/github_parser.py`) reads documentation files only.*
+
 - **AST parsing** of entire repositories into call graphs and dependency graphs.
 - **Type inference** for function signatures and interfaces.
 - **Import resolution** to build a full dependency graph across packages.

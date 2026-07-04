@@ -19,6 +19,28 @@ These fields prevent data loss and enable source tracing. They are enforced by `
 
 ---
 
+## Entity Id Convention
+
+Extraction-produced entity ids follow:
+
+```
+{type_prefix}_{name_slug}__{source_slug}
+```
+
+| Segment | Meaning | Example |
+|---|---|---|
+| `type_prefix` | Short prefix per node type (person, org, tech, lang) | `person` |
+| `name_slug` | Lowercased, punctuation-collapsed entity name | `aidan_hogan` |
+| `source_slug` | Slug of the extraction source document | `2003_02320v6_pdf` |
+
+Full example: `person_aidan_hogan__2003_02320v6_pdf`
+
+**Why the source namespace:** ids are deterministic slugs of names, so the same name extracted from two documents would otherwise collide with the `unique_entity_id` constraint. **Pre-resolution, identical names across sources exist as distinct nodes by design.** Merging them into one canonical entity is `resolution/`'s job — an explicit, auditable step — never an implicit side effect of an id collision at write time.
+
+Post-resolution canonical entities will drop the source namespace (convention to be documented when resolution merge logic is implemented; the examples in this file, e.g. `tech_pytorch`, show the canonical form).
+
+---
+
 ## Node Properties by Type
 
 ### Resource Hierarchy
