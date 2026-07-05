@@ -1,5 +1,5 @@
-"""Entity resolution: string similarity, embedding similarity, merge logic."""
+"""Entity resolution: normalization -> blocking -> matching -> decisioning."""
 
-from resolution.string_matcher import CandidatePair, find_candidate_pairs
+from resolution.matchers.string_matcher import CandidatePair, find_candidate_pairs
 
 __all__ = ["find_candidate_pairs", "CandidatePair"]
