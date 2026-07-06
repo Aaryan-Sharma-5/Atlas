@@ -374,8 +374,24 @@ These are explicitly **not** part of the initial build and are listed for archit
 - **Audit logs** (who queried what, when).
 - **Role-based access control** (different users see different subgraphs).
 
+## 12. Known Technical Debt
+
+Deliberate, recorded gaps. Each item names the stage responsible for addressing it; none may be "fixed" opportunistically in an unrelated stage.
+
+### 12.1 Embedding-sourced tentative pairs with short names (Stage 5 responsibility)
+
+The embedding threshold (0.90, calibrated 2026-07-06) deliberately weights recall over precision because every embedding match becomes a TENTATIVE `SAME_AS`, never an auto-merge. Consequence: short-name and initials-only pairs ("B. Zhou" / "C. Zhou") can clear the threshold as false positives. **Stage 5 quality flagging must specifically flag embedding-sourced tentative pairs where either entity name has 3 or fewer tokens or consists only of initials** — these are the highest-risk false positives from this threshold choice. Do not raise the threshold to compensate; the choice was intentional.
+
+### 12.2 Acronym-to-full-name pairs are unreachable under current blocking (unscheduled)
+
+Pairs like "W3C" / "World Wide Web Consortium" share no token, so they never share a block, and matchers only see blocked candidates (by design). Neither the string nor the embedding matcher can propose them. Fixing this requires a different blocking key (e.g. character n-grams or a curated acronym table) and was explicitly deferred as over-engineering at current corpus size. If cross-source acronym duplicates matter for a demo, this is the first blocking change to make.
+
+### 12.3 General-purpose NER under-extracts technical entities 
+
+`en_core_web_sm` under-extracts Technology/Language relative to Person/Organization (42 and 2 entities vs ~1,900 Person in the current corpus). A domain-specific extraction strategy requires explicit instruction. Do not compensate in resolution logic.
+
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** 2026-07-01  
-**Status:** Architecture frozen; ready for schema definition (Day 1 of Phase 1).
+**Document Version:** 1.1  
+**Last Updated:** 2026-07-06  
+**Status:** Phase 2 in progress; resolution Stages 1+2 calibrated, Stage 4 decisioning pending review.

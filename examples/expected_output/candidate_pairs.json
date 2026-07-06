@@ -1,14 +1,13 @@
 {
-  "stage": "string_similarity",
-  "threshold": 0.85,
-  "normalization": "resolution/normalization/normalizer.py (accent folding, articles, dual forms)",
-  "blocking_key": "union: type|first_token, type|last_token, type|sorted_initials over both normalized forms",
+  "stage": "combined_string_embedding",
+  "string_threshold": 0.85,
+  "embedding_threshold": 0.9,
+  "embedding_model": "sentence-transformers/all-MiniLM-L6-v2",
   "entity_count": 4482,
-  "block_count": 7474,
-  "largest_block": 56,
-  "blocked_unique_pairs": 41443,
-  "pair_count": 614,
-  "cross_source_pairs": 194,
+  "pair_count": 693,
+  "string_pairs": 614,
+  "embedding_pairs": 79,
+  "cross_source_pairs": 204,
   "pairs": [
     {
       "id_a": "org_acl__2003_02320v6_pdf",
@@ -23,7 +22,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_acl__rdflib_rdflib",
@@ -38,7 +38,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_acl__rdflib_rdflib",
@@ -53,7 +54,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_acm__2002_00388v4_pdf",
@@ -68,7 +70,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_acm_sigmod_international_conference_on_management_of_data__2003_02320v6_pdf",
@@ -83,7 +86,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_api__2003_02320v6_pdf",
@@ -98,7 +102,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_api__rdflib_rdflib",
@@ -113,7 +118,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_api__rdflib_rdflib",
@@ -128,7 +134,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_albert__2003_02320v6_pdf",
@@ -143,7 +150,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_appendix_a__2002_00388v4_pdf",
@@ -158,7 +166,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_arica_santiago__2003_02320v6_pdf",
@@ -171,7 +180,8 @@
       "matched_by": [
         "sorted_initials_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_bmc_bioinformatics__2003_02320v6_pdf",
@@ -186,7 +196,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_cpu__rdflib_rdflib",
@@ -201,7 +212,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_cwa__2002_00388v4_pdf",
@@ -216,7 +228,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_calama_arica__2003_02320v6_pdf",
@@ -229,7 +242,8 @@
       "matched_by": [
         "sorted_initials_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_claudio_gutierrez__2003_02320v6_pdf",
@@ -244,7 +258,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_complex__2002_00388v4_pdf",
@@ -259,7 +274,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_cypher__2003_02320v6_pdf",
@@ -274,7 +290,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_cypher__docs_architecture_md",
@@ -289,7 +306,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_dbpedia__rdflib_rdflib",
@@ -304,7 +322,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_dbpedia__rdflib_rdflib",
@@ -319,7 +338,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_dbpedia__2003_02320v6_pdf",
@@ -334,7 +354,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_daniel_fern_ndez_lvarez__2003_02320v6_pdf",
@@ -349,7 +370,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_dataset__rdflib_rdflib",
@@ -364,7 +386,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_denny_vrandecic__2003_02320v6_pdf",
@@ -379,7 +402,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_discovery__2003_02320v6_pdf",
@@ -394,7 +418,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_distmult__2002_00388v4_pdf",
@@ -409,7 +434,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_distmult__2003_02320v6_pdf",
@@ -424,7 +450,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_draft__2003_02320v6_pdf",
@@ -439,7 +466,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_draft_community_group_report__2003_02320v6_pdf",
@@ -453,7 +481,8 @@
         "last_token_block",
         "sorted_initials_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_duc_minh_tran__2003_02320v6_pdf",
@@ -467,7 +496,8 @@
         "last_token_block",
         "sorted_initials_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "lang_english__2003_02320v6_pdf",
@@ -482,7 +512,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "lang_english__2003_02320v6_pdf",
@@ -497,7 +528,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_erik_cambria__2002_00388v4_pdf",
@@ -512,7 +544,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_fig__2002_00388v4_pdf",
@@ -527,7 +560,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_freebase__2002_00388v4_pdf",
@@ -542,7 +576,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_gnn__2002_00388v4_pdf",
@@ -557,7 +592,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_google__2003_02320v6_pdf",
@@ -572,7 +608,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_google__rdflib_rdflib",
@@ -587,7 +624,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_google__rdflib_rdflib",
@@ -602,7 +640,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_graph__docs_architecture_md",
@@ -617,7 +656,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_graph_neural_networks__2002_00388v4_pdf",
@@ -632,7 +672,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_graphs__rdflib_rdflib",
@@ -647,7 +688,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_hdt__rdflib_rdflib",
@@ -662,7 +704,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_html__rdflib_rdflib",
@@ -677,7 +720,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_human_computer_interaction__2002_00388v4_pdf",
@@ -692,7 +736,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_hyper__2002_00388v4_pdf",
@@ -707,7 +752,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_ieee__2002_00388v4_pdf",
@@ -722,7 +768,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_iri__rdflib_rdflib",
@@ -737,7 +784,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_ivan_lopez_arevalo__2003_02320v6_pdf",
@@ -752,7 +800,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_json__rdflib_rdflib",
@@ -767,7 +816,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_java__2003_02320v6_pdf",
@@ -782,7 +832,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_jorge_per_z__2003_02320v6_pdf",
@@ -797,7 +848,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_jos_emilio_labra_gayo__2003_02320v6_pdf",
@@ -812,7 +864,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_juan__2002_00388v4_pdf",
@@ -827,7 +880,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_kale__2002_00388v4_pdf",
@@ -842,7 +896,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_kdd__2003_02320v6_pdf",
@@ -857,7 +912,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_kleene_s__2003_02320v6_pdf",
@@ -872,7 +928,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_logical__2002_00388v4_pdf",
@@ -887,7 +944,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_markdown__rdflib_rdflib",
@@ -902,7 +960,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_markdown__rdflib_rdflib",
@@ -917,7 +976,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_markdown__2003_02320v6_pdf",
@@ -932,7 +992,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_markov__2002_00388v4_pdf",
@@ -947,7 +1008,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_microsoft__2003_02320v6_pdf",
@@ -962,7 +1024,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_microsoft_academic_knowledge_graph__2003_02320v6_pdf",
@@ -977,7 +1040,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_nell__2002_00388v4_pdf",
@@ -992,7 +1056,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_ner__2002_00388v4_pdf",
@@ -1007,7 +1072,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_ner__2002_00388v4_pdf",
@@ -1022,7 +1088,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_ner__2003_02320v6_pdf",
@@ -1037,7 +1104,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_nlp__2002_00388v4_pdf",
@@ -1052,7 +1120,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_nlp__2002_00388v4_pdf",
@@ -1067,7 +1136,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_nlp__2003_02320v6_pdf",
@@ -1082,7 +1152,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_ntn__2002_00388v4_pdf",
@@ -1097,7 +1168,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_owa__2002_00388v4_pdf",
@@ -1112,7 +1184,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_owl__rdflib_rdflib",
@@ -1127,7 +1200,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_ognjen_savkovic__2003_02320v6_pdf",
@@ -1142,7 +1216,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_opencyc__2002_00388v4_pdf",
@@ -1157,7 +1232,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_oscar_corcho__2003_02320v6_pdf",
@@ -1172,7 +1248,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_pekka_marttinen__2002_00388v4_pdf",
@@ -1187,7 +1264,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_philip_s_yu__2002_00388v4_pdf",
@@ -1202,7 +1280,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_query__2002_00388v4_pdf",
@@ -1217,7 +1296,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_rdf__2003_02320v6_pdf",
@@ -1232,7 +1312,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_rdf__rdflib_rdflib",
@@ -1247,7 +1328,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_rdf__rdflib_rdflib",
@@ -1262,7 +1344,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_rdf_validation__2003_02320v6_pdf",
@@ -1277,7 +1360,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_rdfs__rdflib_rdflib",
@@ -1292,7 +1376,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_rescal__2002_00388v4_pdf",
@@ -1307,7 +1392,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_rotate__2003_02320v6_pdf",
@@ -1322,7 +1408,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_shacl__rdflib_rdflib",
@@ -1337,7 +1424,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_sme__2002_00388v4_pdf",
@@ -1352,7 +1440,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_sql__2003_02320v6_pdf",
@@ -1367,7 +1456,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_santiago_city_capital__2003_02320v6_pdf",
@@ -1381,7 +1471,8 @@
         "first_token_block",
         "sorted_initials_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_shirui_pan__2002_00388v4_pdf",
@@ -1396,7 +1487,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_syntax__rdflib_rdflib",
@@ -1411,7 +1503,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_target__rdflib_rdflib",
@@ -1426,7 +1519,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_tim_berners_lee_s__rdflib_rdflib",
@@ -1441,7 +1535,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_transe__2002_00388v4_pdf",
@@ -1456,7 +1551,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_tucker__2002_00388v4_pdf",
@@ -1471,7 +1567,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_www__2003_02320v6_pdf",
@@ -1486,7 +1583,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_wang__2002_00388v4_pdf",
@@ -1501,7 +1599,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_wang__2002_00388v4_pdf",
@@ -1516,7 +1615,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_wang_et_al__2002_00388v4_pdf",
@@ -1531,7 +1631,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_wikidata__2003_02320v6_pdf",
@@ -1546,7 +1647,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_wikipedia__2003_02320v6_pdf",
@@ -1561,7 +1663,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_wikipedia__rdflib_rdflib",
@@ -1576,7 +1679,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_wikipedia__rdflib_rdflib",
@@ -1591,7 +1695,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_wordnet__2002_00388v4_pdf",
@@ -1606,7 +1711,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_wu__2003_02320v6_pdf",
@@ -1621,7 +1727,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_xml__rdflib_rdflib",
@@ -1636,7 +1743,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_xsd__rdflib_rdflib",
@@ -1651,7 +1759,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_yago__2002_00388v4_pdf",
@@ -1666,7 +1775,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_a_world_heritage_site__2003_02320v6_pdf",
@@ -1681,7 +1791,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_al__2002_00388v4_pdf",
@@ -1696,7 +1807,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_al__2002_00388v4_pdf",
@@ -1711,7 +1823,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_doc__rdflib_rdflib",
@@ -1726,7 +1839,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_ed__2002_00388v4_pdf",
@@ -1741,7 +1855,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "lang_english__2002_00388v4_pdf",
@@ -1756,7 +1871,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_integer__rdflib_rdflib",
@@ -1771,7 +1887,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_knowledge_graphs__2002_00388v4_pdf",
@@ -1786,7 +1903,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_linear__2002_00388v4_pdf",
@@ -1801,7 +1919,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_max__2002_00388v4_pdf",
@@ -1816,7 +1935,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_node__2003_02320v6_pdf",
@@ -1831,7 +1951,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_node__rdflib_rdflib",
@@ -1846,7 +1967,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_node__rdflib_rdflib",
@@ -1861,7 +1983,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_s_p_o__2003_02320v6_pdf",
@@ -1874,7 +1997,8 @@
       "matched_by": [
         "sorted_initials_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_linked_data_principles__2003_02320v6_pdf",
@@ -1889,7 +2013,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_rdf_schema__2003_02320v6_pdf",
@@ -1904,7 +2029,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_rdf4j_client__rdflib_rdflib",
@@ -1919,7 +2045,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_unique_name_assumption__2003_02320v6_pdf",
@@ -1934,7 +2061,23 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "org_santiago_de_chile__2003_02320v6_pdf",
+      "id_b": "org_santiago_santiago_de_chile__2003_02320v6_pdf",
+      "name_a": "Santiago de Chile",
+      "name_b": "Santiago Santiago de Chile",
+      "type": "Organization",
+      "score": 0.9871,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_internationalized_resource_identifier__rdflib_rdflib",
@@ -1948,7 +2091,23 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "org_claimant_xy12sda__2003_02320v6_pdf",
+      "id_b": "org_claimant_xy12sda_xy12sda__2003_02320v6_pdf",
+      "name_a": "Claimant-XY12SDA",
+      "name_b": "Claimant-XY12SDA XY12SDA",
+      "type": "Organization",
+      "score": 0.9833,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_5th_international_conference_on_learning_representations__2003_02320v6_pdf",
@@ -1961,7 +2120,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_25th_international_conference_on_world_wide_web__2003_02320v6_pdf",
@@ -1975,7 +2135,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_26th_international_conference_on_world_wide_web__2003_02320v6_pdf",
@@ -1988,7 +2149,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_josian_xavier_parreira__2003_02320v6_pdf",
@@ -2002,7 +2164,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_development_container__rdflib_rdflib",
@@ -2016,7 +2179,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_association_for_computational_linguistics_2__2003_02320v6_pdf",
@@ -2031,7 +2195,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_association_for_computational_linguistics__2003_02320v6_pdf",
@@ -2046,7 +2211,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_association_for_computational_linguistics__2003_02320v6_pdf",
@@ -2061,7 +2227,22 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "org_extreme_design__2003_02320v6_pdf",
+      "id_b": "org_extreme_design_with__2003_02320v6_pdf",
+      "name_a": "eXtreme Design",
+      "name_b": "eXtreme Design with",
+      "type": "Organization",
+      "score": 0.9745,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "person_asunc_n_g_mez_p_rez__2003_02320v6_pdf",
@@ -2075,7 +2256,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_world_heritage_sites__2003_02320v6_pdf",
@@ -2089,7 +2271,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_a_world_heritage_site__2003_02320v6_pdf",
@@ -2103,7 +2286,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_17th_international_conference_on_computational_linguistics__2003_02320v6_pdf",
@@ -2116,7 +2300,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_internationalized_resource_identifiers__2003_02320v6_pdf",
@@ -2130,7 +2315,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_chistina_teflioudi__2003_02320v6_pdf",
@@ -2144,7 +2330,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_ricardo_baeza_yates__2003_02320v6_pdf",
@@ -2157,7 +2344,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_krzysztof_janowicz__2003_02320v6_pdf",
@@ -2171,7 +2359,23 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "org_santiago_arica__2003_02320v6_pdf",
+      "id_b": "org_santiago_santiago_arica__2003_02320v6_pdf",
+      "name_a": "Santiago Arica",
+      "name_b": "Santiago Santiago Arica",
+      "type": "Organization",
+      "score": 0.9684,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "person_knowledge_graph__2003_02320v6_pdf",
@@ -2185,7 +2389,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_knowledge_graphs__2002_00388v4_pdf",
@@ -2199,7 +2404,22 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "org_rdf_reading__rdflib_rdflib",
+      "id_b": "org_rdf_reading_rdf__rdflib_rdflib",
+      "name_a": "RDF Reading",
+      "name_b": "RDF Reading RDF",
+      "type": "Organization",
+      "score": 0.9674,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_1st_international_conference_on_learning_representations__2003_02320v6_pdf",
@@ -2212,7 +2432,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_1st_international_conference_on_learning_representations__2003_02320v6_pdf",
@@ -2225,7 +2446,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_2nd_international_conference_on_learning_representations__2003_02320v6_pdf",
@@ -2238,7 +2460,22 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_arica_santiago__2003_02320v6_pdf",
+      "id_b": "person_arica_santiago_arica__2003_02320v6_pdf",
+      "name_a": "Arica Santiago",
+      "name_b": "Arica Santiago Arica",
+      "type": "Person",
+      "score": 0.9642,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_international_conference_on_computational_linguistics__2003_02320v6_pdf",
@@ -2251,7 +2488,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_food_festivals__2003_02320v6_pdf",
@@ -2265,7 +2503,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_knowledge_graph_completion__2002_00388v4_pdf",
@@ -2280,7 +2519,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_association_for_computational_linguistics__2003_02320v6_pdf",
@@ -2294,7 +2534,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_internationalized_resource_identifier__rdflib_rdflib",
@@ -2307,7 +2548,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_semantic_web4__2002_00388v4_pdf",
@@ -2321,7 +2563,22 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "org_acm_sigkdd_international_conference_on_knowledge_discovery__2003_02320v6_pdf",
+      "id_b": "org_the_26th_acm_sigkdd_conference_on_knowledge_discovery__2003_02320v6_pdf",
+      "name_a": "ACM SIGKDD International Conference on Knowledge Discovery",
+      "name_b": "The 26th ACM SIGKDD Conference on Knowledge Discovery",
+      "type": "Organization",
+      "score": 0.959,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_the_25th_international_conference_on_world_wide_web__2003_02320v6_pdf",
@@ -2334,7 +2591,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_i_balaz_evic__2002_00388v4_pdf",
@@ -2348,7 +2606,38 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_graphs__rdflib_rdflib",
+      "id_b": "person_graphs_graphs__rdflib_rdflib",
+      "name_a": "Graphs",
+      "name_b": "Graphs Graphs",
+      "type": "Person",
+      "score": 0.9552,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_graphs__2002_00388v4_pdf",
+      "id_b": "person_graphs_graphs__rdflib_rdflib",
+      "name_a": "graphs",
+      "name_b": "Graphs Graphs",
+      "type": "Person",
+      "score": 0.9552,
+      "cross_source": true,
+      "matched_by": [
+        "first_token_block",
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_17th_international_conference_on_computational_linguistics__2003_02320v6_pdf",
@@ -2361,7 +2650,52 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_arica_santiago_arica__2003_02320v6_pdf",
+      "id_b": "person_santiago_arica__2003_02320v6_pdf",
+      "name_a": "Arica Santiago Arica",
+      "name_b": "Santiago Arica",
+      "type": "Person",
+      "score": 0.9538,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_santiago__2003_02320v6_pdf",
+      "id_b": "person_santiago_santiago_santiago__2003_02320v6_pdf",
+      "name_a": "Santiago",
+      "name_b": "Santiago Santiago Santiago",
+      "type": "Person",
+      "score": 0.9537,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_eid15_event__2003_02320v6_pdf",
+      "id_b": "org_eid15_type_event__2003_02320v6_pdf",
+      "name_a": "EID15 , Event",
+      "name_b": "EID15 type Event",
+      "type": "Organization",
+      "score": 0.953,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "person_agnieszka_awrynowicz__2003_02320v6_pdf",
@@ -2374,7 +2708,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_blank_nodes__rdflib_rdflib",
@@ -2388,7 +2723,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_knowledge_based_design_systems__2003_02320v6_pdf",
@@ -2401,7 +2737,36 @@
       "matched_by": [
         "last_token_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_description_logic__2003_02320v6_pdf",
+      "id_b": "person_description_logic_reasoning__2003_02320v6_pdf",
+      "name_a": "Description Logic",
+      "name_b": "Description Logic Reasoning",
+      "type": "Person",
+      "score": 0.9517,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_arica_santiago__2003_02320v6_pdf",
+      "id_b": "person_santiago_arica_santiago__2003_02320v6_pdf",
+      "name_a": "Arica Santiago",
+      "name_b": "Santiago Arica Santiago",
+      "type": "Person",
+      "score": 0.95,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_c_relation_extraction__2002_00388v4_pdf",
@@ -2416,7 +2781,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_christopher_d_manning__2003_02320v6_pdf",
@@ -2431,7 +2797,37 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "org_open_information_extraction_systems__2003_02320v6_pdf",
+      "id_b": "org_the_open_information_extraction_paradigm__2003_02320v6_pdf",
+      "name_a": "Open Information Extraction Systems",
+      "name_b": "the Open Information Extraction Paradigm",
+      "type": "Organization",
+      "score": 0.9498,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_luis_antonio_gal_rraga__2003_02320v6_pdf",
+      "id_b": "person_luis_gal_rraga__2003_02320v6_pdf",
+      "name_a": "Luis Antonio Galárraga",
+      "name_b": "Luis Galárraga",
+      "type": "Person",
+      "score": 0.9493,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_international_semantic_web_conference__2003_02320v6_pdf",
@@ -2444,7 +2840,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_eric_prud_hommeaux__2003_02320v6_pdf",
@@ -2459,7 +2856,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_1st_international_conference_on_learning_representations__2003_02320v6_pdf",
@@ -2472,7 +2870,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_1st_international_conference_on_learning_representations__2003_02320v6_pdf",
@@ -2485,7 +2884,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_2nd_international_conference_on_learning_representations__2003_02320v6_pdf",
@@ -2498,7 +2898,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_2nd_international_conference_on_learning_representations__2003_02320v6_pdf",
@@ -2511,7 +2912,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_5th_international_conference_on_learning_representations__2003_02320v6_pdf",
@@ -2524,7 +2926,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_6th_international_conference_on_learning_representations__2003_02320v6_pdf",
@@ -2537,7 +2940,66 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "org_p_h__2002_00388v4_pdf",
+      "id_b": "org_p_h_p__2002_00388v4_pdf",
+      "name_a": "P (h",
+      "name_b": "P (h) + P",
+      "type": "Organization",
+      "score": 0.9446,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_santiago_arica__2003_02320v6_pdf",
+      "id_b": "person_santiago_arica_santiago__2003_02320v6_pdf",
+      "name_a": "Santiago Arica",
+      "name_b": "Santiago Arica Santiago",
+      "type": "Person",
+      "score": 0.9441,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_h_co__2002_00388v4_pdf",
+      "id_b": "org_h_h__2002_00388v4_pdf",
+      "name_a": "H Co",
+      "name_b": "h h",
+      "type": "Organization",
+      "score": 0.9438,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_wei_zhang__2003_02320v6_pdf",
+      "id_b": "person_weizhen_zhang__2003_02320v6_pdf",
+      "name_a": "Wei Zhang",
+      "name_b": "Weizhen Zhang",
+      "type": "Person",
+      "score": 0.9416,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "sorted_initials_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_6th_european_semantic_web_conference__2003_02320v6_pdf",
@@ -2550,7 +3012,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_hextuples__rdflib_rdflib",
@@ -2563,7 +3026,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_jie_zhang__2003_02320v6_pdf",
@@ -2577,7 +3041,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_sheila_mcilraith__2003_02320v6_pdf",
@@ -2592,7 +3057,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_semantic__2002_00388v4_pdf",
@@ -2605,7 +3071,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_association_of_computational_linguistics__2003_02320v6_pdf",
@@ -2619,7 +3086,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_association_of_computational_linguistics__2003_02320v6_pdf",
@@ -2633,7 +3101,37 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_e_gabrilovich__2002_00388v4_pdf",
+      "id_b": "person_evgeniy_gabrilovich__2003_02320v6_pdf",
+      "name_a": "E. Gabrilovich",
+      "name_b": "Evgeniy Gabrilovich",
+      "type": "Person",
+      "score": 0.9383,
+      "cross_source": true,
+      "matched_by": [
+        "last_token_block",
+        "sorted_initials_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_semantic_web_technologies__2003_02320v6_pdf",
+      "id_b": "org_the_semantic_web__2003_02320v6_pdf",
+      "name_a": "Semantic Web Technologies",
+      "name_b": "The Semantic Web",
+      "type": "Organization",
+      "score": 0.9378,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "person_fabian_m_suchanek__2003_02320v6_pdf",
@@ -2648,7 +3146,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_frederick_reiss__2003_02320v6_pdf",
@@ -2663,7 +3162,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_joseph_e_gonzalez__2003_02320v6_pdf",
@@ -2678,7 +3178,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_partha_talukdar__2003_02320v6_pdf",
@@ -2693,7 +3194,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_no_unique_name_assumption__2003_02320v6_pdf",
@@ -2706,7 +3208,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_unique_name_assumption__2003_02320v6_pdf",
@@ -2719,7 +3222,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_bing_li__2003_02320v6_pdf",
@@ -2733,7 +3237,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_bryan_b_thompson__2003_02320v6_pdf",
@@ -2748,7 +3253,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_definition_b_12__2003_02320v6_pdf",
@@ -2762,7 +3268,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_definition_b_14__2003_02320v6_pdf",
@@ -2775,7 +3282,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_hadmard__2002_00388v4_pdf",
@@ -2788,7 +3296,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_zhang__2002_00388v4_pdf",
@@ -2802,7 +3311,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_lu_yang__2003_02320v6_pdf",
@@ -2815,7 +3325,8 @@
       "matched_by": [
         "sorted_initials_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_manuela_veloso__2003_02320v6_pdf",
@@ -2830,7 +3341,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_table_i__2002_00388v4_pdf",
@@ -2844,7 +3356,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_table_i__2002_00388v4_pdf",
@@ -2857,7 +3370,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_vijay_raghavan__2003_02320v6_pdf",
@@ -2872,7 +3386,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_chang__2002_00388v4_pdf",
@@ -2886,7 +3401,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_yang_liu__2003_02320v6_pdf",
@@ -2900,7 +3416,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_forth_international_conference_on_web_search__2003_02320v6_pdf",
@@ -2913,7 +3430,22 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_huang__2002_00388v4_pdf",
+      "id_b": "person_m_huang__2002_00388v4_pdf",
+      "name_a": "Huang",
+      "name_b": "M. Huang",
+      "type": "Person",
+      "score": 0.9291,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "person_fabien_l_gandon__2003_02320v6_pdf",
@@ -2928,7 +3460,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_james_hendler__2003_02320v6_pdf",
@@ -2943,7 +3476,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_piero_bonatti__2003_02320v6_pdf",
@@ -2958,7 +3492,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_richard_finkers__2003_02320v6_pdf",
@@ -2972,7 +3507,78 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_h_cid_48__2002_00388v4_pdf",
+      "id_b": "person_h_cid_62__2002_00388v4_pdf",
+      "name_a": "h(cid:48",
+      "name_b": "h(cid:62",
+      "type": "Person",
+      "score": 0.9256,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_information_extraction__2003_02320v6_pdf",
+      "id_b": "org_information_extraction_systems__2003_02320v6_pdf",
+      "name_a": "Information Extraction",
+      "name_b": "Information Extraction Systems",
+      "type": "Organization",
+      "score": 0.9253,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_appendix_a__2003_02320v6_pdf",
+      "id_b": "person_appendix_a_herein__2003_02320v6_pdf",
+      "name_a": "Appendix A",
+      "name_b": "Appendix A. Herein",
+      "type": "Person",
+      "score": 0.9251,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_appendix_a__2002_00388v4_pdf",
+      "id_b": "person_appendix_a_herein__2003_02320v6_pdf",
+      "name_a": "Appendix A.",
+      "name_b": "Appendix A. Herein",
+      "type": "Person",
+      "score": 0.9251,
+      "cross_source": true,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_b_zhou__2002_00388v4_pdf",
+      "id_b": "person_c_zhou__2002_00388v4_pdf",
+      "name_a": "B. Zhou",
+      "name_b": "C. Zhou",
+      "type": "Person",
+      "score": 0.9249,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_6th_international_conference__2003_02320v6_pdf",
@@ -2985,7 +3591,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_b_yang__2002_00388v4_pdf",
@@ -2999,7 +3606,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_bo_yan__2003_02320v6_pdf",
@@ -3013,7 +3621,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_d_chen__2002_00388v4_pdf",
@@ -3027,7 +3636,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_liang__2002_00388v4_pdf",
@@ -3041,7 +3651,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_juan_f_sequeda__2003_02320v6_pdf",
@@ -3056,7 +3667,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_juan_l_reutter__2003_02320v6_pdf",
@@ -3071,7 +3683,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_kg_bert__2002_00388v4_pdf",
@@ -3085,7 +3698,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_le_zhao__2003_02320v6_pdf",
@@ -3099,7 +3713,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_li_deng__2003_02320v6_pdf",
@@ -3113,7 +3728,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_open_information_extraction_systems__2003_02320v6_pdf",
@@ -3126,7 +3742,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_t_m_hospedales__2002_00388v4_pdf",
@@ -3140,7 +3757,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_t_m_mitchell__2002_00388v4_pdf",
@@ -3154,7 +3772,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_ttranse__2002_00388v4_pdf",
@@ -3167,7 +3786,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_ttranse__2002_00388v4_pdf",
@@ -3180,7 +3800,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_translational__2003_02320v6_pdf",
@@ -3193,7 +3814,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_chen__2002_00388v4_pdf",
@@ -3207,7 +3829,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_xiang__2002_00388v4_pdf",
@@ -3221,7 +3844,64 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_submission_21_may_2004__2003_02320v6_pdf",
+      "id_b": "person_submission_3_june_2005__2003_02320v6_pdf",
+      "name_a": "Submission 21 May 2004",
+      "name_b": "Submission 3 June 2005",
+      "type": "Person",
+      "score": 0.9221,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_appendix_c__2002_00388v4_pdf",
+      "id_b": "person_appendix_c_overall__2002_00388v4_pdf",
+      "name_a": "Appendix C.",
+      "name_b": "Appendix C. Overall",
+      "type": "Person",
+      "score": 0.922,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_ieee_computer__2003_02320v6_pdf",
+      "id_b": "org_ieee_computer_society__2003_02320v6_pdf",
+      "name_a": "IEEE Computer",
+      "name_b": "IEEE Computer Society",
+      "type": "Organization",
+      "score": 0.9218,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_chen__2002_00388v4_pdf",
+      "id_b": "person_m_chen__2002_00388v4_pdf",
+      "name_a": "Chen",
+      "name_b": "M. Chen",
+      "type": "Person",
+      "score": 0.9207,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_the_local_closed_world_assumption_lcwa__2003_02320v6_pdf",
@@ -3234,7 +3914,22 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_h_huang__2002_00388v4_pdf",
+      "id_b": "person_huang__2002_00388v4_pdf",
+      "name_a": "H. Huang",
+      "name_b": "Huang",
+      "type": "Person",
+      "score": 0.9204,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "person_computing_surveys__2003_02320v6_pdf",
@@ -3247,7 +3942,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_example_b_10__2003_02320v6_pdf",
@@ -3261,7 +3957,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_example_b_10__2003_02320v6_pdf",
@@ -3275,7 +3972,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_example_b_10__2003_02320v6_pdf",
@@ -3288,7 +3986,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_example_b_13__2003_02320v6_pdf",
@@ -3302,7 +4001,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_example_b_13__2003_02320v6_pdf",
@@ -3315,7 +4015,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_example_b_13__2003_02320v6_pdf",
@@ -3328,7 +4029,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_example_b_16__2003_02320v6_pdf",
@@ -3341,7 +4043,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_g_r_obozinski__2002_00388v4_pdf",
@@ -3355,7 +4058,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_scar_corcho__2003_02320v6_pdf",
@@ -3369,7 +4073,23 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_santiago__2003_02320v6_pdf",
+      "id_b": "person_santiago_arica_santiago__2003_02320v6_pdf",
+      "name_a": "Santiago",
+      "name_b": "Santiago Arica Santiago",
+      "type": "Person",
+      "score": 0.9162,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_fine_grained_access_control__rdflib_rdflib",
@@ -3382,7 +4102,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_never_ending_language_learner__2002_00388v4_pdf",
@@ -3396,7 +4117,50 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_eugene_santos_jr__2003_02320v6_pdf",
+      "id_b": "person_santos_jr__2003_02320v6_pdf",
+      "name_a": "Eugene Santos Jr.",
+      "name_b": "Santos Jr.",
+      "type": "Person",
+      "score": 0.9149,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_b_y_lin__2002_00388v4_pdf",
+      "id_b": "person_y_lin__2002_00388v4_pdf",
+      "name_a": "B. Y. Lin",
+      "name_b": "Y. Lin",
+      "type": "Person",
+      "score": 0.9148,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_4th_international_semantic_web_conference__2003_02320v6_pdf",
+      "id_b": "org_6th_european_semantic_web_conference__2003_02320v6_pdf",
+      "name_a": "4th International Semantic Web Conference",
+      "name_b": "6th European Semantic Web Conference",
+      "type": "Organization",
+      "score": 0.9145,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_neural_networks_20__2003_02320v6_pdf",
@@ -3409,7 +4173,51 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_z_zhang__2002_00388v4_pdf",
+      "id_b": "person_ziqi_zhang__2003_02320v6_pdf",
+      "name_a": "Z. Zhang",
+      "name_b": "Ziqi Zhang",
+      "type": "Person",
+      "score": 0.9138,
+      "cross_source": true,
+      "matched_by": [
+        "last_token_block",
+        "sorted_initials_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_p_qin__2002_00388v4_pdf",
+      "id_b": "person_qin__2002_00388v4_pdf",
+      "name_a": "P. Qin",
+      "name_b": "Qin",
+      "type": "Person",
+      "score": 0.9134,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_att_blstm__2002_00388v4_pdf",
+      "id_b": "org_attention_att_blstm__2002_00388v4_pdf",
+      "name_a": "Att-BLSTM",
+      "name_b": "Attention Att-BLSTM",
+      "type": "Organization",
+      "score": 0.9131,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_semantic_technologies__2003_02320v6_pdf",
@@ -3423,7 +4231,206 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_json_ld_1_1__rdflib_rdflib",
+      "id_b": "person_json_ld__rdflib_rdflib",
+      "name_a": "JSON-LD 1.1",
+      "name_b": "JSON-LD",
+      "type": "Person",
+      "score": 0.9127,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "last_token_block",
+        "sorted_initials_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_p_zhou__2002_00388v4_pdf",
+      "id_b": "person_q_zhou__2002_00388v4_pdf",
+      "name_a": "P. Zhou",
+      "name_b": "Q. Zhou",
+      "type": "Person",
+      "score": 0.9127,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_appendix_b_5__2003_02320v6_pdf",
+      "id_b": "person_appendix_b_6_3__2003_02320v6_pdf",
+      "name_a": "Appendix B.5",
+      "name_b": "Appendix B.6.3",
+      "type": "Person",
+      "score": 0.9123,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_huang__2002_00388v4_pdf",
+      "id_b": "person_j_huang__2002_00388v4_pdf",
+      "name_a": "Huang",
+      "name_b": "J. Huang",
+      "type": "Person",
+      "score": 0.9122,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_p_wang__2002_00388v4_pdf",
+      "id_b": "person_wang__2002_00388v4_pdf",
+      "name_a": "P. Wang",
+      "name_b": "Wang",
+      "type": "Person",
+      "score": 0.9114,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_p_wang__2002_00388v4_pdf",
+      "id_b": "person_wang__2003_02320v6_pdf",
+      "name_a": "P. Wang",
+      "name_b": "✓ Wang",
+      "type": "Person",
+      "score": 0.9114,
+      "cross_source": true,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_huang__2002_00388v4_pdf",
+      "id_b": "person_p_huang__2002_00388v4_pdf",
+      "name_a": "Huang",
+      "name_b": "P. Huang",
+      "type": "Person",
+      "score": 0.9108,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_chun__2003_02320v6_pdf",
+      "id_b": "person_chun_lu__2003_02320v6_pdf",
+      "name_a": "Chun",
+      "name_b": "Chun Lu",
+      "type": "Person",
+      "score": 0.9106,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_h_h__2002_00388v4_pdf",
+      "id_b": "org_h_h_r__2002_00388v4_pdf",
+      "name_a": "h h",
+      "name_b": "h h r + +",
+      "type": "Organization",
+      "score": 0.9105,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_b_zhou__2002_00388v4_pdf",
+      "id_b": "person_p_zhou__2002_00388v4_pdf",
+      "name_a": "B. Zhou",
+      "name_b": "P. Zhou",
+      "type": "Person",
+      "score": 0.9101,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_albert_einstein__2002_00388v4_pdf",
+      "id_b": "person_einstein__2002_00388v4_pdf",
+      "name_a": "Albert Einstein",
+      "name_b": "Einstein",
+      "type": "Person",
+      "score": 0.91,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_chen__2002_00388v4_pdf",
+      "id_b": "person_h_chen__2002_00388v4_pdf",
+      "name_a": "Chen",
+      "name_b": "H. Chen",
+      "type": "Person",
+      "score": 0.9096,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_european_semantic_web_conference__2003_02320v6_pdf",
+      "id_b": "org_international_semantic_web_conference__2003_02320v6_pdf",
+      "name_a": "European Semantic Web Conference",
+      "name_b": "International Semantic Web Conference",
+      "type": "Organization",
+      "score": 0.9095,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_common_namespaces__rdflib_rdflib",
+      "id_b": "person_namespaces__rdflib_rdflib",
+      "name_a": "Common Namespaces",
+      "name_b": "Namespaces",
+      "type": "Person",
+      "score": 0.9092,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "person_anna_tordai__2003_02320v6_pdf",
@@ -3437,7 +4444,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_appendix_b__2002_00388v4_pdf",
@@ -3450,7 +4458,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_d_cai__2002_00388v4_pdf",
@@ -3464,7 +4473,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_d_jurafsky__2002_00388v4_pdf",
@@ -3478,7 +4488,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_d_zhu__2002_00388v4_pdf",
@@ -3492,7 +4503,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_f_suchanek__2002_00388v4_pdf",
@@ -3506,7 +4518,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_graphs__rdflib_rdflib",
@@ -3519,7 +4532,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_graphs__rdflib_rdflib",
@@ -3532,7 +4546,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_guoliang_li__2003_02320v6_pdf",
@@ -3545,7 +4560,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_ling__2002_00388v4_pdf",
@@ -3559,7 +4575,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_zhao__2002_00388v4_pdf",
@@ -3572,7 +4589,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_json_ld_1_0__2003_02320v6_pdf",
@@ -3587,7 +4605,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_l_guo__2002_00388v4_pdf",
@@ -3601,7 +4620,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_model__2003_02320v6_pdf",
@@ -3614,7 +4634,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_msg_agg_end__2003_02320v6_pdf",
@@ -3627,7 +4648,8 @@
       "matched_by": [
         "first_token_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_n_lao__2002_00388v4_pdf",
@@ -3641,7 +4663,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_paul_groth__2003_02320v6_pdf",
@@ -3656,7 +4679,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_t_mitchell__2002_00388v4_pdf",
@@ -3670,7 +4694,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_tim_weninger__2003_02320v6_pdf",
@@ -3684,7 +4709,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_fan__2002_00388v4_pdf",
@@ -3698,7 +4724,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_zhu__2002_00388v4_pdf",
@@ -3712,7 +4739,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_hao__2002_00388v4_pdf",
@@ -3725,7 +4753,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_hao__2002_00388v4_pdf",
@@ -3738,7 +4767,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_liu__2002_00388v4_pdf",
@@ -3752,7 +4782,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_zhiyuan_liu__2003_02320v6_pdf",
@@ -3766,7 +4797,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_cid_33__2002_00388v4_pdf",
@@ -3780,7 +4812,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_graphs__2002_00388v4_pdf",
@@ -3793,7 +4826,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_graphs__2002_00388v4_pdf",
@@ -3806,7 +4840,64 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "org_feature_axiom_condition__2003_02320v6_pdf",
+      "id_b": "org_feature_axiom_condition_example_assertion__2003_02320v6_pdf",
+      "name_a": "Feature Axiom Condition",
+      "name_b": "Feature Axiom Condition Example Assertion",
+      "type": "Organization",
+      "score": 0.9088,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_b_yang__2002_00388v4_pdf",
+      "id_b": "person_yang__2003_02320v6_pdf",
+      "name_a": "B. Yang",
+      "name_b": "Yang",
+      "type": "Person",
+      "score": 0.9074,
+      "cross_source": true,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_chen__2002_00388v4_pdf",
+      "id_b": "person_t_chen__2002_00388v4_pdf",
+      "name_a": "Chen",
+      "name_b": "T. Chen",
+      "type": "Person",
+      "score": 0.9067,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_cid_48__2002_00388v4_pdf",
+      "id_b": "org_cid_62__2002_00388v4_pdf",
+      "name_a": "cid:48",
+      "name_b": "cid:62",
+      "type": "Organization",
+      "score": 0.9067,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "org_acm_sigkdd_international_conference_on_knowledge_discovery__2003_02320v6_pdf",
@@ -3819,7 +4910,79 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "org_regi_n_de_valpara_so__2003_02320v6_pdf",
+      "id_b": "org_regi_n_de_valpara_so_different__2003_02320v6_pdf",
+      "name_a": "Región de Valparaíso",
+      "name_b": "Región de Valparaíso Different",
+      "type": "Organization",
+      "score": 0.9059,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_c_huang__2002_00388v4_pdf",
+      "id_b": "person_huang__2002_00388v4_pdf",
+      "name_a": "C. Huang",
+      "name_b": "Huang",
+      "type": "Person",
+      "score": 0.9056,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_b_zhou__2002_00388v4_pdf",
+      "id_b": "person_q_zhou__2002_00388v4_pdf",
+      "name_a": "B. Zhou",
+      "name_b": "Q. Zhou",
+      "type": "Person",
+      "score": 0.9048,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_xiao_huang__2003_02320v6_pdf",
+      "id_b": "person_xiaojiang_huang__2003_02320v6_pdf",
+      "name_a": "Xiao Huang",
+      "name_b": "Xiaojiang Huang",
+      "type": "Person",
+      "score": 0.9043,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "sorted_initials_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_jiang__2003_02320v6_pdf",
+      "id_b": "person_m_jiang__2002_00388v4_pdf",
+      "name_a": "Jiang",
+      "name_b": "M. Jiang",
+      "type": "Person",
+      "score": 0.9039,
+      "cross_source": true,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "person_eugene_santos_jr__2003_02320v6_pdf",
@@ -3832,7 +4995,8 @@
       "matched_by": [
         "first_token_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_fair_principles__2003_02320v6_pdf",
@@ -3846,7 +5010,221 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_h_zhang__2002_00388v4_pdf",
+      "id_b": "person_wei_zhang__2003_02320v6_pdf",
+      "name_a": "H. Zhang",
+      "name_b": "Wei Zhang",
+      "type": "Person",
+      "score": 0.9032,
+      "cross_source": true,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_chen__2002_00388v4_pdf",
+      "id_b": "person_q_chen__2002_00388v4_pdf",
+      "name_a": "Chen",
+      "name_b": "Q. Chen",
+      "type": "Person",
+      "score": 0.9029,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_san_pedro__2003_02320v6_pdf",
+      "id_b": "person_santiago_san_pedro__2003_02320v6_pdf",
+      "name_a": "San Pedro",
+      "name_b": "Santiago San Pedro",
+      "type": "Person",
+      "score": 0.9023,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_santiago_and_arica__2003_02320v6_pdf",
+      "id_b": "org_santiago_santiago_arica__2003_02320v6_pdf",
+      "name_a": "Santiago and Arica",
+      "name_b": "Santiago Santiago Arica",
+      "type": "Organization",
+      "score": 0.9023,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_h_chen__2002_00388v4_pdf",
+      "id_b": "person_w_chen__2002_00388v4_pdf",
+      "name_a": "H. Chen",
+      "name_b": "W. Chen",
+      "type": "Person",
+      "score": 0.9021,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_chen__2002_00388v4_pdf",
+      "id_b": "person_j_chen__2002_00388v4_pdf",
+      "name_a": "Chen",
+      "name_b": "J. Chen",
+      "type": "Person",
+      "score": 0.902,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_chen__2002_00388v4_pdf",
+      "id_b": "person_d_chen__2002_00388v4_pdf",
+      "name_a": "Chen",
+      "name_b": "D. Chen",
+      "type": "Person",
+      "score": 0.9013,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_j_wang__2002_00388v4_pdf",
+      "id_b": "person_wang__2002_00388v4_pdf",
+      "name_a": "J. Wang",
+      "name_b": "Wang",
+      "type": "Person",
+      "score": 0.9012,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_j_wang__2002_00388v4_pdf",
+      "id_b": "person_wang__2003_02320v6_pdf",
+      "name_a": "J. Wang",
+      "name_b": "✓ Wang",
+      "type": "Person",
+      "score": 0.9012,
+      "cross_source": true,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_licenses_compatibility_and_composition__2003_02320v6_pdf",
+      "id_b": "org_licenses_composition__2003_02320v6_pdf",
+      "name_a": "Licenses Compatibility and Composition",
+      "name_b": "Licenses Composition",
+      "type": "Organization",
+      "score": 0.9012,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_z_wang__2002_00388v4_pdf",
+      "id_b": "person_zhen_wang__2003_02320v6_pdf",
+      "name_a": "Z. Wang",
+      "name_b": "Zhen Wang",
+      "type": "Person",
+      "score": 0.9008,
+      "cross_source": true,
+      "matched_by": [
+        "last_token_block",
+        "sorted_initials_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_c_zhou__2002_00388v4_pdf",
+      "id_b": "person_p_zhou__2002_00388v4_pdf",
+      "name_a": "C. Zhou",
+      "name_b": "P. Zhou",
+      "type": "Person",
+      "score": 0.9007,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_santiago_flight__2003_02320v6_pdf",
+      "id_b": "org_santiago_flight_arica__2003_02320v6_pdf",
+      "name_a": "Santiago flight",
+      "name_b": "Santiago flight Arica",
+      "type": "Organization",
+      "score": 0.9007,
+      "cross_source": false,
+      "matched_by": [
+        "first_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "person_chengqi_zhang__2003_02320v6_pdf",
+      "id_b": "person_wei_zhang__2003_02320v6_pdf",
+      "name_a": "Chengqi Zhang",
+      "name_b": "Wei Zhang",
+      "type": "Person",
+      "score": 0.9006,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
+    },
+    {
+      "id_a": "org_description_logics__2003_02320v6_pdf",
+      "id_b": "org_the_26th_international_workshop_on_description_logics__2003_02320v6_pdf",
+      "name_a": "Description Logics",
+      "name_b": "the 26th International Workshop on Description Logics",
+      "type": "Organization",
+      "score": 0.9004,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "person_appendix_a__2002_00388v4_pdf",
@@ -3859,7 +5237,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_appendix_a__2002_00388v4_pdf",
@@ -3872,7 +5251,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_appendix_b__2002_00388v4_pdf",
@@ -3885,7 +5265,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_appendix_b__2002_00388v4_pdf",
@@ -3898,7 +5279,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_appendix_c__2002_00388v4_pdf",
@@ -3911,7 +5293,22 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
+    },
+    {
+      "id_a": "person_chen__2002_00388v4_pdf",
+      "id_b": "person_w_chen__2002_00388v4_pdf",
+      "name_a": "Chen",
+      "name_b": "W. Chen",
+      "type": "Person",
+      "score": 0.9,
+      "cross_source": false,
+      "matched_by": [
+        "last_token_block",
+        "embedding_similarity"
+      ],
+      "matcher": "embedding"
     },
     {
       "id_a": "person_ehrlinger__2002_00388v4_pdf",
@@ -3924,7 +5321,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_feng_et_al__2002_00388v4_pdf",
@@ -3937,7 +5335,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_john_sowa__2003_02320v6_pdf",
@@ -3952,7 +5351,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_m_welling__2002_00388v4_pdf",
@@ -3966,7 +5366,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_n_stokman__2003_02320v6_pdf",
@@ -3979,7 +5380,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_semantic_technology__2003_02320v6_pdf",
@@ -3993,7 +5395,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_t_d_nguyen__2002_00388v4_pdf",
@@ -4006,7 +5409,8 @@
       "matched_by": [
         "last_token_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_t_d_nguyen__2002_00388v4_pdf",
@@ -4020,7 +5424,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_valentina_presutti_eds__2003_02320v6_pdf",
@@ -4033,7 +5438,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_zeng_et_al__2002_00388v4_pdf",
@@ -4046,7 +5452,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_zeng_et_al__2002_00388v4_pdf",
@@ -4059,7 +5466,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_open_information_extraction__2003_02320v6_pdf",
@@ -4072,7 +5480,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_canonical_forms_for_isomorphic_and_equivalent__2003_02320v6_pdf",
@@ -4085,7 +5494,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_a_miller__2002_00388v4_pdf",
@@ -4098,7 +5508,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_appendix__2003_02320v6_pdf",
@@ -4111,7 +5522,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_appendix_a__2002_00388v4_pdf",
@@ -4124,7 +5536,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_appendix_b__2002_00388v4_pdf",
@@ -4137,7 +5550,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_appendix_c__2002_00388v4_pdf",
@@ -4150,7 +5564,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_bo_xu__2003_02320v6_pdf",
@@ -4164,7 +5579,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_dan_jurafsky__2003_02320v6_pdf",
@@ -4178,7 +5594,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_dieng__2003_02320v6_pdf",
@@ -4191,7 +5608,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_li__2002_00388v4_pdf",
@@ -4205,7 +5623,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_li__2002_00388v4_pdf",
@@ -4219,7 +5638,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_liu__2002_00388v4_pdf",
@@ -4233,7 +5653,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_l_costabello__2002_00388v4_pdf",
@@ -4247,7 +5668,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_l_li__2002_00388v4_pdf",
@@ -4261,7 +5683,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_lode__rdflib_rdflib",
@@ -4274,7 +5697,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_lei_zhang__2003_02320v6_pdf",
@@ -4287,7 +5711,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_lin_et_al__2002_00388v4_pdf",
@@ -4301,7 +5726,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_m_li__2002_00388v4_pdf",
@@ -4315,7 +5741,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_meng_wang__2003_02320v6_pdf",
@@ -4328,7 +5755,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_name__rdflib_rdflib",
@@ -4341,7 +5769,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_negative__2002_00388v4_pdf",
@@ -4354,7 +5783,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_p_qin__2002_00388v4_pdf",
@@ -4368,7 +5798,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_ji__2002_00388v4_pdf",
@@ -4382,7 +5813,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_lai__2002_00388v4_pdf",
@@ -4396,7 +5828,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_santiago__2003_02320v6_pdf",
@@ -4409,7 +5842,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_sousa__2002_00388v4_pdf",
@@ -4422,7 +5856,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_hu__2002_00388v4_pdf",
@@ -4436,7 +5871,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_liu__2002_00388v4_pdf",
@@ -4450,7 +5886,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_liu__2002_00388v4_pdf",
@@ -4464,7 +5901,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_li__2002_00388v4_pdf",
@@ -4478,7 +5916,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_gu__2002_00388v4_pdf",
@@ -4492,7 +5931,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_lin__2002_00388v4_pdf",
@@ -4506,7 +5946,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_liu__2002_00388v4_pdf",
@@ -4520,7 +5961,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_ma__2002_00388v4_pdf",
@@ -4534,7 +5976,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_xue__2002_00388v4_pdf",
@@ -4548,7 +5991,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhu__2002_00388v4_pdf",
@@ -4561,7 +6005,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_yi_hu__2003_02320v6_pdf",
@@ -4575,7 +6020,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_liu__2002_00388v4_pdf",
@@ -4589,7 +6035,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhu__2002_00388v4_pdf",
@@ -4602,7 +6049,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_closed_world_assumption__2003_02320v6_pdf",
@@ -4615,7 +6063,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_meta_relational_learning__2002_00388v4_pdf",
@@ -4628,7 +6077,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_community_group_report__2003_02320v6_pdf",
@@ -4642,7 +6092,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_community_group_report__2003_02320v6_pdf",
@@ -4655,7 +6106,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_l_ehrlinger__2002_00388v4_pdf",
@@ -4669,7 +6121,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_santiago_easter_island_world__2003_02320v6_pdf",
@@ -4682,7 +6135,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_thomas_wetter__2003_02320v6_pdf",
@@ -4695,7 +6149,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_th_o_trouillon__2003_02320v6_pdf",
@@ -4709,7 +6164,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_distantly_supervised_relation_extraction__2003_02320v6_pdf",
@@ -4722,7 +6178,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_a_smola__2002_00388v4_pdf",
@@ -4736,7 +6193,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_dbpedia__rdflib_rdflib",
@@ -4749,7 +6207,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_dbpedia__2002_00388v4_pdf",
@@ -4762,7 +6221,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_dbpedia__2003_02320v6_pdf",
@@ -4775,7 +6235,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_hu_et_al__2002_00388v4_pdf",
@@ -4788,7 +6249,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_huang__2002_00388v4_pdf",
@@ -4801,7 +6263,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_jie_zhang__2003_02320v6_pdf",
@@ -4815,7 +6278,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_kang_liu__2003_02320v6_pdf",
@@ -4828,7 +6292,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_lacroix__2002_00388v4_pdf",
@@ -4841,7 +6306,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_max_schmachtenberg__2003_02320v6_pdf",
@@ -4854,7 +6320,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_min_zhang__2003_02320v6_pdf",
@@ -4867,7 +6334,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_n_stokman__2003_02320v6_pdf",
@@ -4880,7 +6348,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_kirrane__2002_00388v4_pdf",
@@ -4893,7 +6362,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_santiago_flight_latam_arica__2003_02320v6_pdf",
@@ -4907,7 +6377,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_santiago_and_arica__2003_02320v6_pdf",
@@ -4921,7 +6392,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_table_vi__2002_00388v4_pdf",
@@ -4934,7 +6406,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_unesco_world_heritage__2003_02320v6_pdf",
@@ -4947,7 +6420,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -4961,7 +6435,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_wen_jiang__2003_02320v6_pdf",
@@ -4975,7 +6450,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_huang__2002_00388v4_pdf",
@@ -4989,7 +6465,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_xin_wang__2003_02320v6_pdf",
@@ -5002,7 +6479,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_cid_62__2002_00388v4_pdf",
@@ -5017,7 +6495,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_international_conference_on_computational_linguistics__2003_02320v6_pdf",
@@ -5031,7 +6510,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_adaptive_information__2003_02320v6_pdf",
@@ -5045,7 +6525,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_jose_emilio_labra_gayo__2003_02320v6_pdf",
@@ -5058,7 +6539,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_jos_emilio_labra_gayo__2003_02320v6_pdf",
@@ -5071,7 +6553,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_university_of_bonn__2003_02320v6_pdf",
@@ -5085,7 +6568,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_open_information_extraction__2003_02320v6_pdf",
@@ -5098,7 +6582,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_feng_et_al__2002_00388v4_pdf",
@@ -5111,7 +6596,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_ksi_research_inc__2003_02320v6_pdf",
@@ -5124,7 +6610,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_n_mccarthy__2002_00388v4_pdf",
@@ -5137,7 +6624,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_regi_n_de_valpara_so__2003_02320v6_pdf",
@@ -5150,7 +6638,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_definition_b_12__2003_02320v6_pdf",
@@ -5163,7 +6652,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_definition_b_12__2003_02320v6_pdf",
@@ -5176,7 +6666,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_definition_b_14__2003_02320v6_pdf",
@@ -5189,7 +6680,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_definition_b_39__2003_02320v6_pdf",
@@ -5202,7 +6694,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_drinks_festival__2003_02320v6_pdf",
@@ -5215,7 +6708,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_stuckenschmidt__2002_00388v4_pdf",
@@ -5229,7 +6723,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_santiago_capital__2003_02320v6_pdf",
@@ -5242,7 +6737,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_santiago_capital__2003_02320v6_pdf",
@@ -5256,7 +6752,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_international_semantic_web_conference__2003_02320v6_pdf",
@@ -5269,7 +6766,8 @@
       "matched_by": [
         "first_token_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_international_conference_on_semantic_systems_semantics2016__2003_02320v6_pdf",
@@ -5282,7 +6780,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_b_chang__2002_00388v4_pdf",
@@ -5295,7 +6794,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_b_chang__2002_00388v4_pdf",
@@ -5308,7 +6808,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_b_wang__2002_00388v4_pdf",
@@ -5322,7 +6823,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_bin_zhou__2003_02320v6_pdf",
@@ -5336,7 +6838,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_bing_li__2003_02320v6_pdf",
@@ -5349,7 +6852,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_bing_li__2003_02320v6_pdf",
@@ -5362,7 +6866,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_bo_yang__2003_02320v6_pdf",
@@ -5375,7 +6880,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_c_huang__2002_00388v4_pdf",
@@ -5388,7 +6894,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_c_huang__2002_00388v4_pdf",
@@ -5401,7 +6908,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_c_huang__2002_00388v4_pdf",
@@ -5414,7 +6922,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_c_shang__2002_00388v4_pdf",
@@ -5427,7 +6936,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_c_shang__2002_00388v4_pdf",
@@ -5440,7 +6950,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_c_zhang__2002_00388v4_pdf",
@@ -5453,7 +6964,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_c_zhang__2002_00388v4_pdf",
@@ -5466,7 +6978,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_c_zhang__2002_00388v4_pdf",
@@ -5479,7 +6992,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_c_zhang__2002_00388v4_pdf",
@@ -5492,7 +7006,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_c_zhang__2002_00388v4_pdf",
@@ -5505,7 +7020,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_c_zhang__2002_00388v4_pdf",
@@ -5518,7 +7034,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_c_zhang__2002_00388v4_pdf",
@@ -5531,7 +7048,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_c_zhang__2002_00388v4_pdf",
@@ -5544,7 +7062,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_cardie__2002_00388v4_pdf",
@@ -5557,7 +7076,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_chi_wang__2003_02320v6_pdf",
@@ -5571,7 +7091,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_chi_wang__2003_02320v6_pdf",
@@ -5584,7 +7105,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_d_yang__2002_00388v4_pdf",
@@ -5597,7 +7119,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_d_zhang__2002_00388v4_pdf",
@@ -5610,7 +7133,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_data_quality__2003_02320v6_pdf",
@@ -5623,7 +7147,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_e_cambria__2002_00388v4_pdf",
@@ -5637,7 +7162,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_e_chang__2002_00388v4_pdf",
@@ -5650,7 +7176,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_erik_cambria__2002_00388v4_pdf",
@@ -5664,7 +7191,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_fan_yang__2003_02320v6_pdf",
@@ -5678,7 +7206,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_huang__2002_00388v4_pdf",
@@ -5691,7 +7220,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_huang__2002_00388v4_pdf",
@@ -5704,7 +7234,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_jiang__2002_00388v4_pdf",
@@ -5717,7 +7248,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_jiang__2002_00388v4_pdf",
@@ -5730,7 +7262,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_jiang__2002_00388v4_pdf",
@@ -5743,7 +7276,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_jiang__2002_00388v4_pdf",
@@ -5756,7 +7290,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_zhang__2002_00388v4_pdf",
@@ -5769,7 +7304,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_zhang__2002_00388v4_pdf",
@@ -5782,7 +7318,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_zhang__2002_00388v4_pdf",
@@ -5795,7 +7332,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_zhang__2002_00388v4_pdf",
@@ -5808,7 +7346,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_zhang__2002_00388v4_pdf",
@@ -5821,7 +7360,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_zhang__2002_00388v4_pdf",
@@ -5834,7 +7374,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_zhang__2002_00388v4_pdf",
@@ -5847,7 +7388,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_zhang__2002_00388v4_pdf",
@@ -5860,7 +7402,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_h_zhang__2002_00388v4_pdf",
@@ -5873,7 +7416,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_hao_wang__2003_02320v6_pdf",
@@ -5887,7 +7431,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_iri__2003_02320v6_pdf",
@@ -5900,7 +7445,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_iri__rdflib_rdflib",
@@ -5913,7 +7459,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_huang__2002_00388v4_pdf",
@@ -5926,7 +7473,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_huang__2002_00388v4_pdf",
@@ -5939,7 +7487,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_huang__2002_00388v4_pdf",
@@ -5952,7 +7501,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_huang__2002_00388v4_pdf",
@@ -5965,7 +7515,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_huang__2002_00388v4_pdf",
@@ -5978,7 +7529,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_huang__2002_00388v4_pdf",
@@ -5991,7 +7543,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_huang__2002_00388v4_pdf",
@@ -6004,7 +7557,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_krishnamurthy__2002_00388v4_pdf",
@@ -6018,7 +7572,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_lehmann__2002_00388v4_pdf",
@@ -6032,7 +7587,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_liang__2002_00388v4_pdf",
@@ -6045,7 +7601,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_liang__2002_00388v4_pdf",
@@ -6058,7 +7615,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_tang__2002_00388v4_pdf",
@@ -6072,7 +7630,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_zhang__2002_00388v4_pdf",
@@ -6085,7 +7644,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_zhang__2002_00388v4_pdf",
@@ -6098,7 +7658,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_zhang__2002_00388v4_pdf",
@@ -6111,7 +7672,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_zhang__2002_00388v4_pdf",
@@ -6124,7 +7686,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_zhang__2002_00388v4_pdf",
@@ -6137,7 +7700,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_zhang__2002_00388v4_pdf",
@@ -6150,7 +7714,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_zhang__2002_00388v4_pdf",
@@ -6163,7 +7728,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_zhang__2002_00388v4_pdf",
@@ -6176,7 +7742,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_zhang__2002_00388v4_pdf",
@@ -6189,7 +7756,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_zhang__2002_00388v4_pdf",
@@ -6202,7 +7770,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_j_zhao__2002_00388v4_pdf",
@@ -6216,7 +7785,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_james_henderson__2003_02320v6_pdf",
@@ -6230,7 +7800,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_jian_tang__2003_02320v6_pdf",
@@ -6244,7 +7815,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_jiang_et_al__2002_00388v4_pdf",
@@ -6257,7 +7829,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_jun_liu__2003_02320v6_pdf",
@@ -6270,7 +7843,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_kge__2002_00388v4_pdf",
@@ -6283,7 +7857,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_ling__2002_00388v4_pdf",
@@ -6296,7 +7871,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_lu_yang__2003_02320v6_pdf",
@@ -6309,7 +7885,8 @@
       "matched_by": [
         "sorted_initials_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_m_gardner__2002_00388v4_pdf",
@@ -6323,7 +7900,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_m_huang__2002_00388v4_pdf",
@@ -6336,7 +7914,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_m_huang__2002_00388v4_pdf",
@@ -6349,7 +7928,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_m_huang__2002_00388v4_pdf",
@@ -6362,7 +7942,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_m_huang__2002_00388v4_pdf",
@@ -6375,7 +7956,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_m_jiang__2002_00388v4_pdf",
@@ -6388,7 +7970,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_m_jiang__2002_00388v4_pdf",
@@ -6401,7 +7984,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_m_jiang__2002_00388v4_pdf",
@@ -6414,7 +7998,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_mt_h__2002_00388v4_pdf",
@@ -6427,7 +8012,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_mint__rdflib_rdflib",
@@ -6440,7 +8026,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_n_du__2002_00388v4_pdf",
@@ -6454,7 +8041,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_n_zhang__2002_00388v4_pdf",
@@ -6467,7 +8055,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_n_zhang__2002_00388v4_pdf",
@@ -6480,7 +8069,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_obo__rdflib_rdflib",
@@ -6493,7 +8083,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_open_information_extraction__2003_02320v6_pdf",
@@ -6506,7 +8097,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_p_huang__2002_00388v4_pdf",
@@ -6519,7 +8111,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_p_huang__2002_00388v4_pdf",
@@ -6532,7 +8125,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_p_huang__2002_00388v4_pdf",
@@ -6545,7 +8139,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_p_huang__2002_00388v4_pdf",
@@ -6558,7 +8153,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_p_huang__2002_00388v4_pdf",
@@ -6571,7 +8167,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_piero_andrea_bonatti__2003_02320v6_pdf",
@@ -6586,7 +8183,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_ping_li__2003_02320v6_pdf",
@@ -6599,7 +8197,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_pythonic__rdflib_rdflib",
@@ -6612,7 +8211,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_q_zhang__2002_00388v4_pdf",
@@ -6625,7 +8225,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_q_zhang__2002_00388v4_pdf",
@@ -6638,7 +8239,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_q_zhang__2002_00388v4_pdf",
@@ -6651,7 +8253,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_q_zhang__2002_00388v4_pdf",
@@ -6664,7 +8267,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_q_zhang__2002_00388v4_pdf",
@@ -6677,7 +8281,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_q_zhang__2002_00388v4_pdf",
@@ -6690,7 +8295,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_r_zhang__2002_00388v4_pdf",
@@ -6703,7 +8309,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_r_zhang__2002_00388v4_pdf",
@@ -6716,7 +8323,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_r_zhang__2002_00388v4_pdf",
@@ -6729,7 +8337,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_r_zhang__2002_00388v4_pdf",
@@ -6742,7 +8351,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_rdf__2003_02320v6_pdf",
@@ -6755,7 +8365,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_rdf__rdflib_rdflib",
@@ -6768,7 +8379,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_rdf__rdflib_rdflib",
@@ -6781,7 +8393,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_rdfs__2003_02320v6_pdf",
@@ -6794,7 +8407,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_rdfs__rdflib_rdflib",
@@ -6807,7 +8421,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_rdfs__rdflib_rdflib",
@@ -6820,7 +8435,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_richard_chbeir__2003_02320v6_pdf",
@@ -6833,7 +8449,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_chang__2002_00388v4_pdf",
@@ -6846,7 +8463,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_chang__2002_00388v4_pdf",
@@ -6859,7 +8477,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_chang__2002_00388v4_pdf",
@@ -6872,7 +8491,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_chang__2002_00388v4_pdf",
@@ -6885,7 +8505,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_kumar__2002_00388v4_pdf",
@@ -6898,7 +8519,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_mohammed__2002_00388v4_pdf",
@@ -6911,7 +8533,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_zhang__2002_00388v4_pdf",
@@ -6924,7 +8547,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_zhang__2002_00388v4_pdf",
@@ -6937,7 +8561,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_zhang__2002_00388v4_pdf",
@@ -6950,7 +8575,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_zhang__2002_00388v4_pdf",
@@ -6963,7 +8589,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_zhang__2002_00388v4_pdf",
@@ -6976,7 +8603,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_zhang__2002_00388v4_pdf",
@@ -6989,7 +8617,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_zhang__2002_00388v4_pdf",
@@ -7002,7 +8631,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_zhang__2002_00388v4_pdf",
@@ -7015,7 +8645,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_zhang__2002_00388v4_pdf",
@@ -7029,7 +8660,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_zhang__2002_00388v4_pdf",
@@ -7042,7 +8674,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_s_zhang__2002_00388v4_pdf",
@@ -7055,7 +8688,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_santiago_santiago_santiago__2003_02320v6_pdf",
@@ -7069,7 +8703,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_santiago_and_arica_la380__2003_02320v6_pdf",
@@ -7082,7 +8717,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_t_hoang__2002_00388v4_pdf",
@@ -7095,7 +8731,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_t_jiang__2002_00388v4_pdf",
@@ -7108,7 +8745,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_t_zhang__2002_00388v4_pdf",
@@ -7121,7 +8759,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_t_zhang__2002_00388v4_pdf",
@@ -7134,7 +8773,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_t_zhang__2002_00388v4_pdf",
@@ -7147,7 +8787,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_t_zhang__2002_00388v4_pdf",
@@ -7160,7 +8801,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_t_zhang__2002_00388v4_pdf",
@@ -7173,7 +8815,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_table_2__2003_02320v6_pdf",
@@ -7186,7 +8829,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_table_2__2003_02320v6_pdf",
@@ -7199,7 +8843,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_table_2__2003_02320v6_pdf",
@@ -7212,7 +8857,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_table_2__2003_02320v6_pdf",
@@ -7225,7 +8871,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_table_4__2003_02320v6_pdf",
@@ -7238,7 +8885,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_table_4__2003_02320v6_pdf",
@@ -7251,7 +8899,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_table_4__2003_02320v6_pdf",
@@ -7264,7 +8913,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_table_5__2003_02320v6_pdf",
@@ -7277,7 +8927,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_table_5__2003_02320v6_pdf",
@@ -7290,7 +8941,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "tech_table_7__2003_02320v6_pdf",
@@ -7303,7 +8955,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_university_of_milano__2003_02320v6_pdf",
@@ -7317,7 +8970,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_w_w__2003_02320v6_pdf",
@@ -7330,7 +8984,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_jiang__2002_00388v4_pdf",
@@ -7343,7 +8998,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_jiang__2002_00388v4_pdf",
@@ -7356,7 +9012,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_jiang__2002_00388v4_pdf",
@@ -7369,7 +9026,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_jiang__2002_00388v4_pdf",
@@ -7382,7 +9040,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_jiang__2002_00388v4_pdf",
@@ -7395,7 +9054,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_wang__2002_00388v4_pdf",
@@ -7409,7 +9069,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_xiong__2002_00388v4_pdf",
@@ -7422,7 +9083,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_y_wang__2002_00388v4_pdf",
@@ -7436,7 +9098,8 @@
         "first_token_block",
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -7449,7 +9112,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -7462,7 +9126,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -7475,7 +9140,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -7488,7 +9154,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -7501,7 +9168,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -7514,7 +9182,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -7527,7 +9196,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -7540,7 +9210,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -7553,7 +9224,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -7566,7 +9238,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -7579,7 +9252,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -7592,7 +9266,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_zhang__2002_00388v4_pdf",
@@ -7605,7 +9280,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_wang_et_al__2002_00388v4_pdf",
@@ -7618,7 +9294,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_wang_et_al__2002_00388v4_pdf",
@@ -7631,7 +9308,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_cheng__2002_00388v4_pdf",
@@ -7644,7 +9322,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_dong__2002_00388v4_pdf",
@@ -7658,7 +9337,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_jiang__2002_00388v4_pdf",
@@ -7671,7 +9351,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_jiang__2002_00388v4_pdf",
@@ -7684,7 +9365,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_jiang__2002_00388v4_pdf",
@@ -7697,7 +9379,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_wang__2002_00388v4_pdf",
@@ -7711,7 +9394,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_zhang__2002_00388v4_pdf",
@@ -7724,7 +9408,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_zhang__2002_00388v4_pdf",
@@ -7737,7 +9422,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_zhang__2002_00388v4_pdf",
@@ -7750,7 +9436,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_x_zhang__2002_00388v4_pdf",
@@ -7763,7 +9450,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_chang__2002_00388v4_pdf",
@@ -7776,7 +9464,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_chang__2002_00388v4_pdf",
@@ -7789,7 +9478,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_chang__2002_00388v4_pdf",
@@ -7802,7 +9492,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_huang__2002_00388v4_pdf",
@@ -7815,7 +9506,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_huang__2002_00388v4_pdf",
@@ -7828,7 +9520,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_wang__2002_00388v4_pdf",
@@ -7841,7 +9534,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhang__2002_00388v4_pdf",
@@ -7854,7 +9548,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhang__2002_00388v4_pdf",
@@ -7867,7 +9562,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhang__2002_00388v4_pdf",
@@ -7880,7 +9576,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhang__2002_00388v4_pdf",
@@ -7893,7 +9590,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhang__2002_00388v4_pdf",
@@ -7906,7 +9604,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhang__2002_00388v4_pdf",
@@ -7919,7 +9618,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhang__2002_00388v4_pdf",
@@ -7932,7 +9632,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhang__2002_00388v4_pdf",
@@ -7945,7 +9646,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhang__2002_00388v4_pdf",
@@ -7958,7 +9660,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhang__2002_00388v4_pdf",
@@ -7971,7 +9674,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhang__2002_00388v4_pdf",
@@ -7984,7 +9688,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhang__2002_00388v4_pdf",
@@ -7997,7 +9702,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_y_zhang__2002_00388v4_pdf",
@@ -8010,7 +9716,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8023,7 +9730,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8036,7 +9744,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8049,7 +9758,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8062,7 +9772,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8075,7 +9786,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8088,7 +9800,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8101,7 +9814,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8114,7 +9828,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8127,7 +9842,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8140,7 +9856,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8153,7 +9870,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8166,7 +9884,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8179,7 +9898,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_z_zhang__2002_00388v4_pdf",
@@ -8193,7 +9913,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_zhang_et_al__2002_00388v4_pdf",
@@ -8206,7 +9927,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_zhang_et_al__2002_00388v4_pdf",
@@ -8220,7 +9942,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_cid_48__2002_00388v4_pdf",
@@ -8235,7 +9958,8 @@
         "last_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_irs__2002_00388v4_pdf",
@@ -8248,7 +9972,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_node_ids__rdflib_rdflib",
@@ -8261,7 +9986,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_ra__2002_00388v4_pdf",
@@ -8275,7 +10001,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "person_w_r__2003_02320v6_pdf",
@@ -8289,7 +10016,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_human_computer_interaction__2002_00388v4_pdf",
@@ -8302,7 +10030,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_the_acm_on_human_computer_interaction_2__2003_02320v6_pdf",
@@ -8315,7 +10044,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_system_development_corporation__2003_02320v6_pdf",
@@ -8328,7 +10058,8 @@
       "matched_by": [
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_c_relation_extraction__2002_00388v4_pdf",
@@ -8341,7 +10072,8 @@
       "matched_by": [
         "first_token_block",
         "token_sort_ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_graph_neural_networks__2002_00388v4_pdf",
@@ -8354,7 +10086,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_graph_neural_networks__2003_02320v6_pdf",
@@ -8367,7 +10100,8 @@
       "matched_by": [
         "first_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_unesco_world_heritage_sites__2003_02320v6_pdf",
@@ -8380,7 +10114,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_acm_conference_on_information_and_knowledge_management__2003_02320v6_pdf",
@@ -8393,7 +10128,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_comma_separated_value__rdflib_rdflib",
@@ -8406,7 +10142,8 @@
       "matched_by": [
         "last_token_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     },
     {
       "id_a": "org_cid_13_cid_13_cid_13__2002_00388v4_pdf",
@@ -8420,7 +10157,8 @@
         "first_token_block",
         "sorted_initials_block",
         "ratio"
-      ]
+      ],
+      "matcher": "string"
     }
   ]
 }
