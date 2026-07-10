@@ -55,6 +55,21 @@ KnowledgeEntity (abstract base)
 
 **Node counts (typical):** 100-10,000 per corpus.
 
+### Canonical (resolution layer)
+
+Represents one real-world entity that resolution decided is duplicated across source entities. Its own top-level type, deliberately **not** under `KnowledgeEntity` (or any extraction hierarchy):
+
+- Canonical nodes are **derived by `resolution/`**, never extracted from a source; they have no extraction provenance in the same sense (their provenance is the resolution run itself).
+- A Canonical can in principle group entities of any specific type — today's corpus produces Person/Organization/Technology/Language canonicals, but the mechanism is not restricted to `KnowledgeEntity` subtypes, so parenting it there would be wrong the day Code or Resource duplicates appear.
+
+```
+Canonical (own top-level type, resolution-derived)
+```
+
+Labels: `:Canonical:{SpecificType}` — the specific type label of its member entities is carried (e.g. `:Canonical:Person`), so type-scoped traversals work without hopping the `SAME_AS` edge. A Canonical never carries the `:Entity` label: `:Entity` means "extracted node", and the `unique_entity_id` constraint stays scoped to extracted nodes; Canonical ids get their own constraint.
+
+**Node counts (typical):** one per resolved duplicate cluster; bounded above by half the entity count.
+
 ---
 
 ## Relationship Types
@@ -122,6 +137,12 @@ Relationships are typed, directed edges with semantic meaning. They do not form 
 |---|---|---|---|---|
 | `EXTRACTED_FROM` | (all entities) | Resource | 1..1 | Entity extracted from this resource (internal tracking) |
 
+### Resolution
+
+| Relationship | Source | Target | Cardinality | Semantics |
+|---|---|---|---|---|
+| `SAME_AS` | Canonical | (any extracted entity) | 2..N per Canonical, 0..1 per entity | Resolution decided the target entity is an occurrence of this canonical entity. Source entities are never deleted or physically merged (Rule 8); the edge's `decision_action` distinguishes confirmed (`MERGE`) from tentative (`TENTATIVE`) groupings. |
+
 ---
 
 ## Cardinality Notes
@@ -141,7 +162,7 @@ The following relationships are **not** modeled as edges for MVP:
 
 - **Temporal relationships** (e.g., "published_date," "updated_on"): These are properties on nodes, not edges.
 - **Strength rankings** (e.g., "stronger_than," "less_relevant_than"): Encoded via confidence scores on edges, not as separate relationships.
-- **Cross-source same-entity links** (e.g., "same_as"): Handled by entity resolution; not exposed as edges once merged.
+- ~~**Cross-source same-entity links** (e.g., "same_as"): Handled by entity resolution; not exposed as edges once merged.~~ *Superseded (v1.1): resolution is non-destructive per Rule 8 — `SAME_AS` IS an exposed edge type (see Resolution section above), and no physical merge ever happens.*
 - **Negative relationships** (e.g., "does_not_support"): Can be modeled as separate relationship type if required; out of scope for MVP.
 
 ---
@@ -181,6 +202,6 @@ When adding a new relationship type:
 
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** 2026-07-01  
-**Status:** Complete for MVP; additional relationship types from Phase 3 (code intelligence) not yet included.
+**Document Version:** 1.1  
+**Last Updated:** 2026-07-10
+**Status:** Complete for MVP + resolution layer (Canonical, SAME_AS); additional relationship types from Phase 3 (code intelligence) not yet included.

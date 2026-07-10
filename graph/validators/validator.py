@@ -5,6 +5,7 @@ from typing import Iterable
 
 from models.entity import NODE_HIERARCHY, Entity
 from models.relationship import RELATIONSHIP_TYPES, Relationship
+from models.resolution import DECISION_ACTIONS, ResolutionDecision
 
 
 @dataclass
@@ -79,6 +80,92 @@ def _relationship_errors(rel: Relationship, valid_ids: set[str]) -> list[str]:
     if rel.target_id not in valid_ids:
         reasons.append(f"orphan: target {rel.target_id!r} not a valid entity")
     reasons.extend(_common_errors(rel))
+    return reasons
+
+
+@dataclass
+class DecisionValidationResult:
+    decisions: list[ResolutionDecision]
+    errors: list[ValidationError]
+
+    @property
+    def ok(self) -> bool:
+        return not self.errors
+
+
+def validate_decisions(
+    decisions: Iterable[ResolutionDecision],
+    known_entity_ids: set[str] | None = None,
+) -> DecisionValidationResult:
+    """ResolutionDecision objects must pass here before graph/builders/ turns them into Canonical + SAME_AS writes (Rule 3 applies to resolution writes like any other).
+
+    Batch-level invariants: an entity may belong to at most one cluster, and canonical ids are unique. known_entity_ids (from graph/queries/) enables the orphan check; None skips it.
+    """
+    errors: list[ValidationError] = []
+    valid: list[ResolutionDecision] = []
+    claimed_entities: dict[str, str] = {}  # entity id -> canonical id that claimed it
+    seen_canonical_ids: set[str] = set()
+
+    for decision in decisions:
+        label = decision.canonical_id or f"NONE:{'|'.join(decision.source_ids)}"
+        reasons = _decision_errors(decision, known_entity_ids)
+
+        if decision.action in ("MERGE", "TENTATIVE"):
+            if decision.canonical_id in seen_canonical_ids:
+                reasons.append(f"duplicate canonical id {decision.canonical_id!r}")
+            for sid in decision.source_ids:
+                if sid in claimed_entities:
+                    reasons.append(
+                        f"entity {sid!r} already claimed by "
+                        f"{claimed_entities[sid]!r} (overlapping clusters)"
+                    )
+
+        if reasons:
+            errors.extend(ValidationError(label, r) for r in reasons)
+        else:
+            valid.append(decision)
+            if decision.action in ("MERGE", "TENTATIVE"):
+                seen_canonical_ids.add(decision.canonical_id)
+                for sid in decision.source_ids:
+                    claimed_entities[sid] = decision.canonical_id
+
+    return DecisionValidationResult(valid, errors)
+
+
+def _decision_errors(
+    decision: ResolutionDecision, known_entity_ids: set[str] | None
+) -> list[str]:
+    reasons: list[str] = []
+    if decision.action not in DECISION_ACTIONS:
+        reasons.append(f"invalid action {decision.action!r}")
+    if not isinstance(decision.confidence, (int, float)) or not (
+        0.0 <= decision.confidence <= 1.0
+    ):
+        reasons.append(f"confidence {decision.confidence!r} outside [0.0, 1.0]")
+    if decision.entity_type not in NODE_HIERARCHY:
+        reasons.append(f"invalid entity type {decision.entity_type!r}")
+    if len(set(decision.source_ids)) != len(decision.source_ids):
+        reasons.append("duplicate source ids within decision")
+    if known_entity_ids is not None:
+        for sid in decision.source_ids:
+            if sid not in known_entity_ids:
+                reasons.append(f"orphan: source entity {sid!r} not in graph")
+
+    if decision.action in ("MERGE", "TENTATIVE"):
+        if not decision.canonical_id:
+            reasons.append("missing canonical_id")
+        elif "__" in decision.canonical_id:
+            reasons.append(
+                f"canonical id {decision.canonical_id!r} carries a source "
+                "namespace ('__'); canonical ids must drop it (physical.md)"
+            )
+        if not decision.canonical_name:
+            reasons.append("missing canonical_name")
+        if len(decision.source_ids) < 2:
+            reasons.append(
+                f"{decision.action} needs >= 2 source entities, "
+                f"got {len(decision.source_ids)}"
+            )
     return reasons
 
 

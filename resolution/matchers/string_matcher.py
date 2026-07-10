@@ -16,6 +16,12 @@ from resolution.normalization.normalizer import normalize
 DEFAULT_THRESHOLD = 0.85
 
 
+def string_similarity(name_a: str, name_b: str) -> float:
+    """Single-pair version of the exact metric _score_block uses (max of ratio and token_sort_ratio on normalized names). Decisioning's cohesion check imports this so cluster cohesion and candidate scoring can never drift apart."""
+    a, b = normalize(name_a), normalize(name_b)
+    return round(max(fuzz.ratio(a, b), fuzz.token_sort_ratio(a, b)) / 100.0, 4)
+
+
 @dataclass
 class CandidatePair:
     id_a: str

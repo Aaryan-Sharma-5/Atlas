@@ -38,6 +38,8 @@ RELATIONSHIP_TYPES: frozenset[str] = frozenset(
         "PRODUCED_BY",
         # Metadata and origin
         "EXTRACTED_FROM",
+        # Resolution (Canonical -> source entity, see conceptual.md Resolution section)
+        "SAME_AS",
     }
 )
 

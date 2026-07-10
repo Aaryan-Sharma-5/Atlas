@@ -37,7 +37,13 @@ Full example: `person_aidan_hogan__2003_02320v6_pdf`
 
 **Why the source namespace:** ids are deterministic slugs of names, so the same name extracted from two documents would otherwise collide with the `unique_entity_id` constraint. **Pre-resolution, identical names across sources exist as distinct nodes by design.** Merging them into one canonical entity is `resolution/`'s job — an explicit, auditable step — never an implicit side effect of an id collision at write time.
 
-Post-resolution canonical entities will drop the source namespace (convention to be documented when resolution merge logic is implemented; the examples in this file, e.g. `tech_pytorch`, show the canonical form).
+**Canonical id convention (post-resolution):** canonical entities drop the source namespace:
+
+```
+{type_prefix}_{name_slug}
+```
+
+`type_prefix` is taken from the member entities (person, org, tech, lang), `name_slug` is the slug of the chosen canonical name. Example: `person_aidan_hogan` canonicalizing `person_aidan_hogan__2003_02320v6_pdf` and `person_aidan_hogan__2002_00388v4_pdf`. If two distinct clusters of the same type slug to the same id, a numeric suffix disambiguates (`person_aidan_hogan_2`) — collision does NOT imply same entity. The examples in this file (e.g. `tech_pytorch`) show the canonical form.
 
 ---
 
@@ -254,6 +260,22 @@ All code entities share these base properties:
 
 ---
 
+### Canonical (resolution layer)
+
+Derived by `resolution/decisioning/`, never extracted. Labels: `:Canonical:{SpecificType}` (no `:Entity` label — see conceptual.md). Mandatory confidence/provenance fields apply (Rule 4) with resolution semantics: `confidence` is the decision confidence (weakest supporting candidate-pair score in the cluster), `extraction_source` names the candidate set the decision was made from, `extraction_method` names the resolver and its rule version.
+
+| Property | Type | Required | Description | Example |
+|---|---|---|---|---|
+| `id` | string | ✓ | Canonical id, `{type_prefix}_{name_slug}` (no source namespace). | "person_aidan_hogan" |
+| `canonical_name` | string | ✓ | Chosen display name (most frequent member name; ties → longest). | "Aidan Hogan" |
+| `created_at` | integer | ✓ | Unix timestamp of the resolution write. | 1784332800 |
+| `source_count` | integer | ✓ | Number of member entities behind this canonical. | 3 |
+| `confidence` | float | ✓ | Decision confidence, [0.0, 1.0]. | 0.94 |
+| `extraction_source` | string | ✓ | Candidate set provenance. | "resolution:candidate_pairs" |
+| `extraction_method` | string | ✓ | Resolver + rule version. | "merge_resolver:union_find@v1" |
+
+---
+
 ## Relationship Properties
 
 All relationships carry these mandatory fields (plus the ones below):
@@ -412,6 +434,20 @@ No additional properties.
 
 ---
 
+### Resolution
+
+#### SAME_AS
+
+Direction: `(Canonical)-[:SAME_AS]->(source entity)`. Carries the mandatory relationship fields with resolution semantics (same as the Canonical node), plus:
+
+| Property | Type | Required | Description | Example |
+|---|---|---|---|---|
+| `confidence` | float | ✓ | Decision confidence (weakest supporting pair score). | 0.94 |
+| `decision_action` | string | ✓ | "MERGE" or "TENTATIVE" (NONE decisions produce no edge). | "TENTATIVE" |
+| `decided_at` | integer | ✓ | Unix timestamp of the resolution decision write. | 1784332800 |
+
+---
+
 ## Uniqueness Constraints (indexes.cypher)
 
 ```cypher
@@ -429,7 +465,12 @@ CREATE CONSTRAINT unique_technology_id IF NOT EXISTS
 
 CREATE CONSTRAINT unique_organization_id IF NOT EXISTS
   FOR (n:Organization) REQUIRE n.id IS UNIQUE;
+
+CREATE CONSTRAINT unique_canonical_id IF NOT EXISTS
+  FOR (n:Canonical) REQUIRE n.id IS UNIQUE;
 ```
+
+`unique_canonical_id` is separate from `unique_entity_id` because Canonical nodes deliberately do not carry the `:Entity` label (conceptual.md, Canonical section).
 
 ---
 
@@ -542,6 +583,6 @@ Vector index stores Sentence Transformer embeddings (dimension 384 for `all-Mini
 
 ---
 
-**Document Version:** 1.0  
-**Last Updated:** 2026-07-01
-**Status:** Complete for MVP; code entity properties (Phase 3) will expand once AST parsing is implemented.
+**Document Version:** 1.1  
+**Last Updated:** 2026-07-10
+**Status:** Complete for MVP + resolution layer (Canonical, SAME_AS); code entity properties (Phase 3) will expand once AST parsing is implemented.

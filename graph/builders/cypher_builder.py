@@ -8,8 +8,12 @@ from typing import Any
 
 from models.entity import NODE_HIERARCHY, Entity
 from models.relationship import RELATIONSHIP_TYPES, Relationship
+from models.resolution import ResolutionDecision
 
 CypherStatement = tuple[str, dict[str, Any]]
+
+RESOLUTION_SOURCE = "resolution:candidate_pairs"
+RESOLUTION_METHOD = "merge_resolver:union_find@v1"
 
 
 def build_entity_cypher(entity: Entity) -> CypherStatement:
@@ -57,6 +61,52 @@ def build_entity_batch_cypher(entities: list[Entity]) -> list[CypherStatement]:
         rows = [_flat_props(e) for e in group]
         statements.append((cypher, {"rows": rows}))
     return statements
+
+
+def build_resolution_cypher(
+    decision: ResolutionDecision, decided_at: int
+) -> list[CypherStatement]:
+    """Validated ResolutionDecision -> Canonical node + SAME_AS edges (Rule 8: source entities are matched, never modified or deleted).
+
+    MERGE (not CREATE) on the canonical node and edges so a re-run of the same decision set is idempotent under the unique_canonical_id constraint. NONE decisions produce no statements.
+    """
+    if decision.action == "NONE":
+        return []
+    if decision.entity_type not in NODE_HIERARCHY:
+        raise ValueError(f"unvalidated entity type: {decision.entity_type!r}")
+
+    node = (
+        f"MERGE (c:Canonical:{decision.entity_type} {{id: $id}}) SET c += $props",
+        {
+            "id": decision.canonical_id,
+            "props": {
+                "canonical_name": decision.canonical_name,
+                "created_at": decided_at,
+                "source_count": len(decision.source_ids),
+                "confidence": decision.confidence,
+                "extraction_source": RESOLUTION_SOURCE,
+                "extraction_method": RESOLUTION_METHOD,
+            },
+        },
+    )
+    edges = (
+        "MATCH (c:Canonical {id: $canonical_id}) "
+        "UNWIND $source_ids AS sid "
+        "MATCH (e:Entity {id: sid}) "
+        "MERGE (c)-[r:SAME_AS]->(e) SET r = $props",
+        {
+            "canonical_id": decision.canonical_id,
+            "source_ids": decision.source_ids,
+            "props": {
+                "confidence": decision.confidence,
+                "decision_action": decision.action,
+                "decided_at": decided_at,
+                "extraction_source": RESOLUTION_SOURCE,
+                "extraction_method": RESOLUTION_METHOD,
+            },
+        },
+    )
+    return [node, edges]
 
 
 def _flat_props(entity: Entity) -> dict[str, Any]:

@@ -1,0 +1,4693 @@
+{
+  "stage": "merge_decisioning",
+  "rules": "string>0.92 MERGE; string 0.70-0.92 or embedding TENTATIVE; else NONE; cluster gated by weakest edge; cluster cohesion floor 0.85 all-pairs (complete-linkage split of single-linkage chains)",
+  "decision_count": 329,
+  "by_action": {
+    "MERGE": 139,
+    "TENTATIVE": 190
+  },
+  "canonical_entity_count": 4080,
+  "cohesion_orphans": 58,
+  "priority_review_count": 7,
+  "decisions": [
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_z_zhang",
+      "canonical_name": "Z. Zhang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_d_zhang__2002_00388v4_pdf",
+        "person_f_zhang__2002_00388v4_pdf",
+        "person_h_zhang__2002_00388v4_pdf",
+        "person_j_zhang__2002_00388v4_pdf",
+        "person_n_zhang__2002_00388v4_pdf",
+        "person_q_zhang__2002_00388v4_pdf",
+        "person_r_zhang__2002_00388v4_pdf",
+        "person_s_zhang__2002_00388v4_pdf",
+        "person_t_zhang__2002_00388v4_pdf",
+        "person_w_zhang__2002_00388v4_pdf",
+        "person_x_zhang__2002_00388v4_pdf",
+        "person_y_zhang__2002_00388v4_pdf",
+        "person_z_zhang__2002_00388v4_pdf"
+      ],
+      "reasoning": "13 entities linked by 78 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 41-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 13,
+      "priority_review": true
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_x_jiang",
+      "canonical_name": "X. Jiang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_h_jiang__2002_00388v4_pdf",
+        "person_j_jiang__2002_00388v4_pdf",
+        "person_m_jiang__2002_00388v4_pdf",
+        "person_t_jiang__2002_00388v4_pdf",
+        "person_w_jiang__2002_00388v4_pdf",
+        "person_x_jiang__2002_00388v4_pdf"
+      ],
+      "reasoning": "6 entities linked by 15 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 14-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 6,
+      "priority_review": true
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_appendix_c",
+      "canonical_name": "Appendix C.",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_appendix__2003_02320v6_pdf",
+        "person_appendix_a__2002_00388v4_pdf",
+        "person_appendix_a__2003_02320v6_pdf",
+        "person_appendix_b__2002_00388v4_pdf",
+        "person_appendix_c__2002_00388v4_pdf"
+      ],
+      "reasoning": "5 entities linked by 10 string edge(s) [0.8889..1.0]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 9-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 5,
+      "priority_review": true
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "org_rdf",
+      "canonical_name": "RDF",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_rdf__2002_00388v4_pdf",
+        "org_rdf__2003_02320v6_pdf",
+        "org_rdf__rdflib_rdflib",
+        "org_rdfs__2003_02320v6_pdf",
+        "org_rdfs__rdflib_rdflib"
+      ],
+      "reasoning": "5 entities linked by 10 string edge(s) [0.8571..1.0]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 5,
+      "priority_review": true
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_p_huang",
+      "canonical_name": "P. Huang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_h_huang__2002_00388v4_pdf",
+        "person_huang__2002_00388v4_pdf",
+        "person_j_huang__2002_00388v4_pdf",
+        "person_m_huang__2002_00388v4_pdf",
+        "person_p_huang__2002_00388v4_pdf"
+      ],
+      "reasoning": "5 entities linked by 6 string edge(s) [0.8571..0.8571] + 4 embedding edge(s) [0.9108..0.9291]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 41-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 5,
+      "priority_review": true
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_z_chang",
+      "canonical_name": "Z. Chang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_b_chang__2002_00388v4_pdf",
+        "person_e_chang__2002_00388v4_pdf",
+        "person_s_chang__2002_00388v4_pdf",
+        "person_y_chang__2002_00388v4_pdf",
+        "person_z_chang__2002_00388v4_pdf"
+      ],
+      "reasoning": "5 entities linked by 10 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 41-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 5,
+      "priority_review": true
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "tech_table_8",
+      "canonical_name": "Table 8",
+      "entity_type": "Technology",
+      "source_ids": [
+        "tech_table_2__2003_02320v6_pdf",
+        "tech_table_4__2003_02320v6_pdf",
+        "tech_table_5__2003_02320v6_pdf",
+        "tech_table_7__2003_02320v6_pdf",
+        "tech_table_8__2003_02320v6_pdf"
+      ],
+      "reasoning": "5 entities linked by 10 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 5,
+      "priority_review": true
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "lang_english",
+      "canonical_name": "English",
+      "entity_type": "Language",
+      "source_ids": [
+        "lang_english__2002_00388v4_pdf",
+        "lang_english__2003_02320v6_pdf",
+        "lang_english__docs_architecture_md"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_acl",
+      "canonical_name": "ACL",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_acl__2002_00388v4_pdf",
+        "org_acl__2003_02320v6_pdf",
+        "org_acl__rdflib_rdflib"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_acm",
+      "canonical_name": "ACM",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_acm__2002_00388v4_pdf",
+        "org_acm__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_al",
+      "canonical_name": "al",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_al__2002_00388v4_pdf",
+        "org_al__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_an_rdf_validation",
+      "canonical_name": "An RDF Validation",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_an_rdf_validation__2003_02320v6_pdf",
+        "org_rdf_validation__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_api",
+      "canonical_name": "API",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_api__2003_02320v6_pdf",
+        "org_api__docs_architecture_md",
+        "org_api__rdflib_rdflib"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_bmc_bioinformatics",
+      "canonical_name": "BMC Bioinformatics",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_bmc_bioinformatics__2002_00388v4_pdf",
+        "org_bmc_bioinformatics__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_complex",
+      "canonical_name": "ComplEx",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_complex__2002_00388v4_pdf",
+        "org_complex__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_cpu",
+      "canonical_name": "CPU",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_cpu__2003_02320v6_pdf",
+        "org_cpu__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_cwa",
+      "canonical_name": "CWA",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_cwa__2002_00388v4_pdf",
+        "org_cwa__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_cypher",
+      "canonical_name": "Cypher",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_cypher__2003_02320v6_pdf",
+        "org_cypher__docs_architecture_md"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_dataset",
+      "canonical_name": "Dataset",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_dataset__2002_00388v4_pdf",
+        "org_dataset__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_distmult",
+      "canonical_name": "DistMult",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_distmult__2002_00388v4_pdf",
+        "org_distmult__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_doc",
+      "canonical_name": "doc",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_doc__docs_architecture_md",
+        "org_doc__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_gnn",
+      "canonical_name": "GNN",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_gnn__2002_00388v4_pdf",
+        "org_gnn__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_google",
+      "canonical_name": "Google",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_google__2002_00388v4_pdf",
+        "org_google__2003_02320v6_pdf",
+        "org_google__rdflib_rdflib"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_hdt",
+      "canonical_name": "HDT",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_hdt__2003_02320v6_pdf",
+        "org_hdt__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_html",
+      "canonical_name": "HTML",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_html__2003_02320v6_pdf",
+        "org_html__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_ieee",
+      "canonical_name": "IEEE",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_ieee__2002_00388v4_pdf",
+        "org_ieee__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_kale",
+      "canonical_name": "KALE",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_kale__2002_00388v4_pdf",
+        "org_kale__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_kdd",
+      "canonical_name": "KDD",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_kdd__2002_00388v4_pdf",
+        "org_kdd__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_linear",
+      "canonical_name": "linear",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_linear__2002_00388v4_pdf",
+        "org_linear__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_logical",
+      "canonical_name": "Logical",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_logical__2002_00388v4_pdf",
+        "org_logical__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_markdown",
+      "canonical_name": "Markdown",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_markdown__2003_02320v6_pdf",
+        "org_markdown__docs_architecture_md",
+        "org_markdown__rdflib_rdflib"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_microsoft",
+      "canonical_name": "Microsoft",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_microsoft__2002_00388v4_pdf",
+        "org_microsoft__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_nell",
+      "canonical_name": "NELL",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_nell__2002_00388v4_pdf",
+        "org_nell__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_ner",
+      "canonical_name": "NER",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_ner__2002_00388v4_pdf",
+        "org_ner__2003_02320v6_pdf",
+        "org_ner__docs_architecture_md"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_nlp",
+      "canonical_name": "NLP",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_nlp__2002_00388v4_pdf",
+        "org_nlp__2003_02320v6_pdf",
+        "org_nlp__docs_architecture_md"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_node",
+      "canonical_name": "node",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_node__2002_00388v4_pdf",
+        "org_node__2003_02320v6_pdf",
+        "org_node__rdflib_rdflib"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_ntn",
+      "canonical_name": "NTN",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_ntn__2002_00388v4_pdf",
+        "org_ntn__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_ognjen_savkovi",
+      "canonical_name": "Ognjen Savković",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_ognjen_savkovi__2003_02320v6_pdf",
+        "org_ognjen_savkovic__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_opencyc",
+      "canonical_name": "OpenCyc",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_opencyc__2002_00388v4_pdf",
+        "org_opencyc__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_owa",
+      "canonical_name": "OWA",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_owa__2002_00388v4_pdf",
+        "org_owa__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_owl",
+      "canonical_name": "OWL",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_owl__2003_02320v6_pdf",
+        "org_owl__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_query",
+      "canonical_name": "Query",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_query__2002_00388v4_pdf",
+        "org_query__docs_architecture_md"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_rescal",
+      "canonical_name": "RESCAL",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_rescal__2002_00388v4_pdf",
+        "org_rescal__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_s_p_o",
+      "canonical_name": "s p o",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_o_p_s__2003_02320v6_pdf",
+        "org_s_p_o__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_shacl",
+      "canonical_name": "SHACL",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_shacl__2003_02320v6_pdf",
+        "org_shacl__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_sme",
+      "canonical_name": "SME",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_sme__2002_00388v4_pdf",
+        "org_sme__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_sql",
+      "canonical_name": "SQL",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_sql__2003_02320v6_pdf",
+        "org_sql__docs_architecture_md"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_syntax",
+      "canonical_name": "Syntax",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_syntax__2003_02320v6_pdf",
+        "org_syntax__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_target",
+      "canonical_name": "Target",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_target__docs_architecture_md",
+        "org_target__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_the_acm_sigmod_international_conference_on_management_of_data",
+      "canonical_name": "the ACM SIGMOD International Conference on Management of Data",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_acm_sigmod_international_conference_on_management_of_data__2003_02320v6_pdf",
+        "org_the_acm_sigmod_international_conference_on_management_of_data__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_the_linked_data_principles",
+      "canonical_name": "the Linked Data Principles",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_linked_data_principles__2003_02320v6_pdf",
+        "org_the_linked_data_principles__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_the_microsoft_academic_knowledge_graph",
+      "canonical_name": "The Microsoft Academic Knowledge Graph",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_microsoft_academic_knowledge_graph__2003_02320v6_pdf",
+        "org_the_microsoft_academic_knowledge_graph__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_the_rdf4j_client",
+      "canonical_name": "the RDF4J Client",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_rdf4j_client__rdflib_rdflib",
+        "org_the_rdf4j_client__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_the_rdf_schema",
+      "canonical_name": "the RDF Schema",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_rdf_schema__2003_02320v6_pdf",
+        "org_the_rdf_schema__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_wang",
+      "canonical_name": "Wang",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_wang__2002_00388v4_pdf",
+        "org_wang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_wikidata",
+      "canonical_name": "Wikidata",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_wikidata__2002_00388v4_pdf",
+        "org_wikidata__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_wikipedia",
+      "canonical_name": "Wikipedia",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_wikipedia__2002_00388v4_pdf",
+        "org_wikipedia__2003_02320v6_pdf",
+        "org_wikipedia__rdflib_rdflib"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_wordnet",
+      "canonical_name": "WordNet",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_wordnet__2002_00388v4_pdf",
+        "org_wordnet__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_www",
+      "canonical_name": "WWW",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_www__2002_00388v4_pdf",
+        "org_www__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_xml",
+      "canonical_name": "XML",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_xml__2003_02320v6_pdf",
+        "org_xml__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_xsd",
+      "canonical_name": "XSD",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_xsd__2003_02320v6_pdf",
+        "org_xsd__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "org_yago",
+      "canonical_name": "YAGO",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_yago__2002_00388v4_pdf",
+        "org_yago__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_al",
+      "canonical_name": "al",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_al__2002_00388v4_pdf",
+        "person_al__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_albert",
+      "canonical_name": "Albert",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_albert__2002_00388v4_pdf",
+        "person_albert__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_calama_arica",
+      "canonical_name": "Calama Arica",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_arica_calama__2003_02320v6_pdf",
+        "person_calama_arica__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_claudio_guti_rrez",
+      "canonical_name": "Claudio Gutiérrez",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_claudio_guti_rrez__2003_02320v6_pdf",
+        "person_claudio_gutierrez__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_cypher",
+      "canonical_name": "Cypher",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_cypher__2003_02320v6_pdf",
+        "person_cypher__docs_architecture_md"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_daniel_fern_ndez_lvarez",
+      "canonical_name": "Daniel Fernández-Álvarez",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_daniel_fern_ndez_alvarez__2003_02320v6_pdf",
+        "person_daniel_fern_ndez_lvarez__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_denny_vrande_i",
+      "canonical_name": "Denny Vrandečić",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_denny_vrande_i__2003_02320v6_pdf",
+        "person_denny_vrandecic__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_ed",
+      "canonical_name": "ed",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_ed__2002_00388v4_pdf",
+        "person_ed__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_fig",
+      "canonical_name": "Fig",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_fig__2002_00388v4_pdf",
+        "person_fig__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_freebase",
+      "canonical_name": "Freebase",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_freebase__2002_00388v4_pdf",
+        "person_freebase__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_hyper",
+      "canonical_name": "HypER",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_hyper__2002_00388v4_pdf",
+        "person_hyper__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_integer",
+      "canonical_name": "integer",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_integer__2003_02320v6_pdf",
+        "person_integer__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_ivan_l_pez_ar_valo",
+      "canonical_name": "Ivan López-Arévalo",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_ivan_l_pez_ar_valo__2003_02320v6_pdf",
+        "person_ivan_lopez_arevalo__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_java",
+      "canonical_name": "Java",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_java__2003_02320v6_pdf",
+        "person_java__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_jorge_p_rez",
+      "canonical_name": "Jorge Pérez",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_jorge_p_rez__2003_02320v6_pdf",
+        "person_jorge_per_z__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_json",
+      "canonical_name": "JSON",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_json__2003_02320v6_pdf",
+        "person_json__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_juan",
+      "canonical_name": "Juan",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_juan__2002_00388v4_pdf",
+        "person_juan__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_kleene_s",
+      "canonical_name": "Kleene’s",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_kleene__2003_02320v6_pdf",
+        "person_kleene_s__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_markov",
+      "canonical_name": "Markov",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_markov__2002_00388v4_pdf",
+        "person_markov__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_max",
+      "canonical_name": "max",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_max__2002_00388v4_pdf",
+        "person_max__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_minh_duc_tran",
+      "canonical_name": "Minh Duc Tran",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_duc_minh_tran__2003_02320v6_pdf",
+        "person_minh_duc_tran__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_pekka_marttinen",
+      "canonical_name": "Pekka Marttinen",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_pekka_marttinen__2002_00388v4_pdf",
+        "person_pekka_marttinen__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_philip_s_yu",
+      "canonical_name": "Philip S. Yu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_philip_s_yu__2002_00388v4_pdf",
+        "person_philip_s_yu__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_rotate",
+      "canonical_name": "RotatE",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_rotate__2002_00388v4_pdf",
+        "person_rotate__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_s_draft",
+      "canonical_name": "’s Draft",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_draft__2003_02320v6_pdf",
+        "person_s_draft__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_scar_corcho",
+      "canonical_name": "Óscar Corcho",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_oscar_corcho__2003_02320v6_pdf",
+        "person_scar_corcho__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_shirui_pan",
+      "canonical_name": "Shirui Pan",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_shirui_pan__2002_00388v4_pdf",
+        "person_shirui_pan__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_tim_berners_lee_s",
+      "canonical_name": "Tim Berners-Lee's",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_tim_berners_lee__2003_02320v6_pdf",
+        "person_tim_berners_lee_s__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_tucker",
+      "canonical_name": "Tucker",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_tucker__2002_00388v4_pdf",
+        "person_tucker__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "person_wu",
+      "canonical_name": "Wu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_wu__2002_00388v4_pdf",
+        "person_wu__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "tech_discovery",
+      "canonical_name": "Discovery",
+      "entity_type": "Technology",
+      "source_ids": [
+        "tech_discovery__2002_00388v4_pdf",
+        "tech_discovery__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 1.0,
+      "canonical_id": "tech_distmult",
+      "canonical_name": "DistMult",
+      "entity_type": "Technology",
+      "source_ids": [
+        "tech_distmult__2002_00388v4_pdf",
+        "tech_distmult__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [1.0..1.0]; weakest link 1.0 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9778,
+      "canonical_id": "person_josiane_xavier_parreira",
+      "canonical_name": "Josiane Xavier Parreira",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_josian_xavier_parreira__2003_02320v6_pdf",
+        "person_josiane_xavier_parreira__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9778..0.9778]; weakest link 0.9778 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9767,
+      "canonical_id": "org_development_containers",
+      "canonical_name": "Development Containers",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_development_container__rdflib_rdflib",
+        "org_development_containers__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9767..0.9767]; weakest link 0.9767 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9744,
+      "canonical_id": "org_a_world_heritage_site",
+      "canonical_name": "a World Heritage Site",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_a_world_heritage_site__2003_02320v6_pdf",
+        "org_world_heritage_site__2003_02320v6_pdf",
+        "org_world_heritage_sites__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.9744..1.0]; weakest link 0.9744 -> MERGE; cohesion split of 5-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9744,
+      "canonical_id": "person_asunci_n_g_mez_p_rez",
+      "canonical_name": "Asunción Gómez-Pérez",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_asunc_n_g_mez_p_rez__2003_02320v6_pdf",
+        "person_asunci_n_g_mez_p_rez__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9744..0.9744]; weakest link 0.9744 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.973,
+      "canonical_id": "org_ricardo_baeza_yates",
+      "canonical_name": "Ricardo Baeza-Yates",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_ricardo_baeza_yates__2003_02320v6_pdf",
+        "org_ricardobaeza_yates__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.973..0.973]; weakest link 0.973 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.973,
+      "canonical_id": "person_christina_teflioudi",
+      "canonical_name": "Christina Teflioudi",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_chistina_teflioudi__2003_02320v6_pdf",
+        "person_christina_teflioudi__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.973..0.973]; weakest link 0.973 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9714,
+      "canonical_id": "person_krzysztof_janowicz",
+      "canonical_name": "Krzysztof Janowicz",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_krysztof_janowicz__2003_02320v6_pdf",
+        "person_krzysztof_janowicz__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9714..0.9714]; weakest link 0.9714 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9677,
+      "canonical_id": "person_knowledge_graphs",
+      "canonical_name": "knowledge graphs",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_knowledge_graph__2003_02320v6_pdf",
+        "person_knowledge_graphs__2002_00388v4_pdf",
+        "person_knowledge_graphs__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.9677..1.0]; weakest link 0.9677 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.963,
+      "canonical_id": "org_a_knowledge_graph_completion",
+      "canonical_name": "A. Knowledge Graph Completion",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_a_knowledge_graph_completion__2002_00388v4_pdf",
+        "org_knowledge_graph_completion__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.963..0.963]; weakest link 0.963 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.963,
+      "canonical_id": "org_food_festivals",
+      "canonical_name": "Food Festivals",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_food_festival__2003_02320v6_pdf",
+        "org_food_festivals__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.963..0.963]; weakest link 0.963 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.96,
+      "canonical_id": "org_internationalized_resource_identifiers",
+      "canonical_name": "Internationalized Resource Identifiers",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_internationalised_resource_identifiers__2003_02320v6_pdf",
+        "org_internationalized_resource_identifier__rdflib_rdflib",
+        "org_internationalized_resource_identifiers__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.96..0.9867]; weakest link 0.96 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9574,
+      "canonical_id": "org_the_26th_international_conference_on_world_wide_web",
+      "canonical_name": "the 26th International Conference on World Wide Web",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_the_16th_international_conference_on_world_wide_web__2003_02320v6_pdf",
+        "org_the_25th_international_conference_on_world_wide_web__2003_02320v6_pdf",
+        "org_the_26th_international_conference_on_world_wide_web__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.9574..0.9787]; weakest link 0.9574 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9565,
+      "canonical_id": "person_i_balaz_evic",
+      "canonical_name": "I. Balazˇevic",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_i_balaz_evic__2002_00388v4_pdf",
+        "person_i_balazevic__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9565..0.9565]; weakest link 0.9565 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.955,
+      "canonical_id": "org_the_5th_international_conference_on_computational_linguistics",
+      "canonical_name": "the 5th International Conference on Computational Linguistics",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_17th_international_conference_on_computational_linguistics__2003_02320v6_pdf",
+        "org_international_conference_on_computational_linguistics__2003_02320v6_pdf",
+        "org_the_5th_international_conference_on_computational_linguistics__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.955..0.9739]; weakest link 0.955 -> MERGE; cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9524,
+      "canonical_id": "org_the_design_of_knowledge_based_systems",
+      "canonical_name": "The Design of Knowledge-Based Systems",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_knowledge_based_design_systems__2003_02320v6_pdf",
+        "org_the_design_of_knowledge_based_systems__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9524..0.9524]; weakest link 0.9524 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9524,
+      "canonical_id": "person_agnieszka_awrynowicz",
+      "canonical_name": "Agnieszka Ławrynowicz",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_agnieszka_awrynowicz__2003_02320v6_pdf",
+        "person_agnieszka_lawrynowicz__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9524..0.9524]; weakest link 0.9524 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9524,
+      "canonical_id": "tech_blank_nodes",
+      "canonical_name": "Blank Nodes",
+      "entity_type": "Technology",
+      "source_ids": [
+        "tech_blank_node__rdflib_rdflib",
+        "tech_blank_nodes__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9524..0.9524]; weakest link 0.9524 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.95,
+      "canonical_id": "org_c_relation_extraction",
+      "canonical_name": "C. Relation Extraction",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_c_relation_extraction__2002_00388v4_pdf",
+        "org_relation_extraction__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.95..0.95]; weakest link 0.95 -> MERGE; cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.95,
+      "canonical_id": "person_christopher_d_manning",
+      "canonical_name": "Christopher D. Manning",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_christopher_d_manning__2003_02320v6_pdf",
+        "person_christopher_manning__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.95..0.95]; weakest link 0.95 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9474,
+      "canonical_id": "person_eric_g_prud_hommeaux",
+      "canonical_name": "Eric G. Prud’hommeaux",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_eric_g_prud_hommeaux__2003_02320v6_pdf",
+        "person_eric_prud_hommeaux__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9474..0.9474]; weakest link 0.9474 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9464,
+      "canonical_id": "org_6th_international_conference_on_learning_representations",
+      "canonical_name": "6th International Conference on Learning Representations",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_1st_international_conference_on_learning_representations__2003_02320v6_pdf",
+        "org_2nd_international_conference_on_learning_representations__2003_02320v6_pdf",
+        "org_3rd_international_conference_on_learning_representations__2003_02320v6_pdf",
+        "org_5th_international_conference_on_learning_representations__2003_02320v6_pdf",
+        "org_6th_international_conference_on_learning_representations__2003_02320v6_pdf"
+      ],
+      "reasoning": "5 entities linked by 10 string edge(s) [0.9464..0.9821]; weakest link 0.9464 -> MERGE",
+      "cluster_size": 5,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9412,
+      "canonical_id": "org_hextuples",
+      "canonical_name": "HexTuples",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_hextuple__rdflib_rdflib",
+        "org_hextuples__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9412..0.9412]; weakest link 0.9412 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9412,
+      "canonical_id": "org_semantic",
+      "canonical_name": "≈ Semantic",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_semantic__2002_00388v4_pdf",
+        "org_semantics__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9412..0.9412]; weakest link 0.9412 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9412,
+      "canonical_id": "person_jie_zhang",
+      "canonical_name": "Jie Zhang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_ji_zhang__2003_02320v6_pdf",
+        "person_jie_zhang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9412..0.9412]; weakest link 0.9412 -> MERGE; cohesion split of 41-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9412,
+      "canonical_id": "person_sheila_a_mcilraith",
+      "canonical_name": "Sheila A. McIlraith",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_sheila_a_mcilraith__2003_02320v6_pdf",
+        "person_sheila_mcilraith__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9412..0.9412]; weakest link 0.9412 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9398,
+      "canonical_id": "org_the_association_for_computational_linguistics_4",
+      "canonical_name": "the Association for Computational Linguistics 4",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_the_association_for_computational_linguistics_2__2003_02320v6_pdf",
+        "org_the_association_for_computational_linguistics_4__2003_02320v6_pdf",
+        "org_the_association_for_computational_linguistics__2003_02320v6_pdf",
+        "org_the_association_of_computational_linguistics__2003_02320v6_pdf"
+      ],
+      "reasoning": "4 entities linked by 6 string edge(s) [0.9398..0.9767]; weakest link 0.9398 -> MERGE",
+      "cluster_size": 4,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9375,
+      "canonical_id": "person_fabian_m_suchanek",
+      "canonical_name": "Fabian M. Suchanek",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_fabian_m_suchanek__2003_02320v6_pdf",
+        "person_fabian_suchanek__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9375..0.9375]; weakest link 0.9375 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9375,
+      "canonical_id": "person_frederick_r_reiss",
+      "canonical_name": "Frederick R. Reiss",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_frederick_r_reiss__2003_02320v6_pdf",
+        "person_frederick_reiss__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9375..0.9375]; weakest link 0.9375 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9375,
+      "canonical_id": "person_joseph_e_gonzalez",
+      "canonical_name": "Joseph E. Gonzalez",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_joseph_e_gonzalez__2003_02320v6_pdf",
+        "person_joseph_gonzalez__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9375..0.9375]; weakest link 0.9375 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9375,
+      "canonical_id": "person_partha_p_talukdar",
+      "canonical_name": "Partha P. Talukdar",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_partha_p_talukdar__2003_02320v6_pdf",
+        "person_partha_talukdar__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9375..0.9375]; weakest link 0.9375 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9362,
+      "canonical_id": "org_the_unique_name_assumption",
+      "canonical_name": "the Unique Name Assumption",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_a_unique_name_assumption__2003_02320v6_pdf",
+        "org_no_unique_name_assumption__2003_02320v6_pdf",
+        "org_the_unique_name_assumption__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.9362..1.0]; weakest link 0.9362 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9333,
+      "canonical_id": "org_hadamard",
+      "canonical_name": "Hadamard",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_hadamard__2003_02320v6_pdf",
+        "org_hadmard__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9333..0.9333]; weakest link 0.9333 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9333,
+      "canonical_id": "person_bing_liu",
+      "canonical_name": "Bing Liu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_bing_li__2003_02320v6_pdf",
+        "person_bing_liu__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9333..0.9333]; weakest link 0.9333 -> MERGE; cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9333,
+      "canonical_id": "person_bryan_b_thompson",
+      "canonical_name": "Bryan B. Thompson",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_bryan_b_thompson__2003_02320v6_pdf",
+        "person_bryan_thompson__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9333..0.9333]; weakest link 0.9333 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9333,
+      "canonical_id": "person_manuela_m_veloso",
+      "canonical_name": "Manuela M. Veloso",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_manuela_m_veloso__2003_02320v6_pdf",
+        "person_manuela_veloso__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9333..0.9333]; weakest link 0.9333 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9333,
+      "canonical_id": "person_vijay_v_raghavan",
+      "canonical_name": "Vijay V. Raghavan",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_vijay_raghavan__2003_02320v6_pdf",
+        "person_vijay_v_raghavan__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9333..0.9333]; weakest link 0.9333 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9318,
+      "canonical_id": "org_the_third_international_conference_on_web_search",
+      "canonical_name": "the Third International Conference on Web Search",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_the_forth_international_conference_on_web_search__2003_02320v6_pdf",
+        "org_the_third_international_conference_on_web_search__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9318..0.9318]; weakest link 0.9318 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9286,
+      "canonical_id": "person_fabien_l_gandon",
+      "canonical_name": "Fabien L. Gandon",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_fabien_gandon__2003_02320v6_pdf",
+        "person_fabien_l_gandon__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9286..0.9286]; weakest link 0.9286 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9286,
+      "canonical_id": "person_james_a_hendler",
+      "canonical_name": "James A. Hendler",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_james_a_hendler__2003_02320v6_pdf",
+        "person_james_hendler__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9286..0.9286]; weakest link 0.9286 -> MERGE; cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9286,
+      "canonical_id": "person_richard_finkers",
+      "canonical_name": "Richard Finkers",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_richard_fikes__2003_02320v6_pdf",
+        "person_richard_finkers__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9286..0.9286]; weakest link 0.9286 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9231,
+      "canonical_id": "org_6th_international_conference",
+      "canonical_name": "6th International Conference,",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_6th_international_conference__2003_02320v6_pdf",
+        "org_international_conference__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9231..0.9231]; weakest link 0.9231 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9231,
+      "canonical_id": "org_kg_bert",
+      "canonical_name": "KG-BERT",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_k_bert__2002_00388v4_pdf",
+        "org_kg_bert__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9231..0.9231]; weakest link 0.9231 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9231,
+      "canonical_id": "org_transe",
+      "canonical_name": "TransE",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_transe__2002_00388v4_pdf",
+        "org_transe__2003_02320v6_pdf",
+        "org_ttranse__2002_00388v4_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.9231..1.0]; weakest link 0.9231 -> MERGE",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9231,
+      "canonical_id": "org_translational",
+      "canonical_name": "Translational",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_transactional__docs_architecture_md",
+        "org_translational__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9231..0.9231]; weakest link 0.9231 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9231,
+      "canonical_id": "person_bo_yang",
+      "canonical_name": "Bo Yang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_b_yang__2002_00388v4_pdf",
+        "person_bo_yang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9231..0.9231]; weakest link 0.9231 -> MERGE; cohesion split of 5-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9231,
+      "canonical_id": "person_j_liang",
+      "canonical_name": "J. Liang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_j_liang__2002_00388v4_pdf",
+        "person_j_ling__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9231..0.9231]; weakest link 0.9231 -> MERGE; cohesion split of 14-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9231,
+      "canonical_id": "person_juan_f_sequeda",
+      "canonical_name": "Juan F. Sequeda",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_juan_f_sequeda__2003_02320v6_pdf",
+        "person_juan_sequeda__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9231..0.9231]; weakest link 0.9231 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9231,
+      "canonical_id": "person_juan_l_reutter",
+      "canonical_name": "Juan L. Reutter",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_juan_l_reutter__2003_02320v6_pdf",
+        "person_juan_reutter__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9231..0.9231]; weakest link 0.9231 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9231,
+      "canonical_id": "person_le_zhao",
+      "canonical_name": "Le Zhao",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_l_zhao__2002_00388v4_pdf",
+        "person_le_zhao__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9231..0.9231]; weakest link 0.9231 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9231,
+      "canonical_id": "person_li_deng",
+      "canonical_name": "Li Deng",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_l_deng__2002_00388v4_pdf",
+        "person_li_deng__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9231..0.9231]; weakest link 0.9231 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9231,
+      "canonical_id": "person_t_m_hospedales",
+      "canonical_name": "T. M. Hospedales",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_t_hospedales__2002_00388v4_pdf",
+        "person_t_m_hospedales__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9231..0.9231]; weakest link 0.9231 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "MERGE",
+      "confidence": 0.9231,
+      "canonical_id": "person_y_xiang",
+      "canonical_name": "Y. Xiang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_y_xian__2002_00388v4_pdf",
+        "person_y_xiang__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9231..0.9231]; weakest link 0.9231 -> MERGE",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9871,
+      "canonical_id": "org_santiago_de_chile",
+      "canonical_name": "Santiago de Chile",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_santiago_de_chile__2003_02320v6_pdf",
+        "org_santiago_santiago_de_chile__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9871..0.9871]; weakest link 0.9871 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9833,
+      "canonical_id": "org_claimant_xy12sda",
+      "canonical_name": "Claimant-XY12SDA",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_claimant_xy12sda__2003_02320v6_pdf",
+        "org_claimant_xy12sda_xy12sda__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9833..0.9833]; weakest link 0.9833 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9745,
+      "canonical_id": "org_extreme_design_with",
+      "canonical_name": "eXtreme Design with",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_extreme_design__2003_02320v6_pdf",
+        "org_extreme_design_with__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9745..0.9745]; weakest link 0.9745 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9684,
+      "canonical_id": "org_santiago_arica",
+      "canonical_name": "Santiago Arica",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_santiago_arica__2003_02320v6_pdf",
+        "org_santiago_santiago_arica__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9684..0.9684]; weakest link 0.9684 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9674,
+      "canonical_id": "org_rdf_reading_rdf",
+      "canonical_name": "RDF Reading RDF",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_rdf_reading__rdflib_rdflib",
+        "org_rdf_reading_rdf__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9674..0.9674]; weakest link 0.9674 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9538,
+      "canonical_id": "person_arica_santiago_arica",
+      "canonical_name": "Arica Santiago Arica",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_arica_santiago__2003_02320v6_pdf",
+        "person_arica_santiago_arica__2003_02320v6_pdf",
+        "person_santiago_arica__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 1 string edge(s) [1.0..1.0] + 2 embedding edge(s) [0.9538..0.9642]; weakest link 0.9538 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 7-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.953,
+      "canonical_id": "org_eid15_type_event",
+      "canonical_name": "EID15 type Event",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_eid15_event__2003_02320v6_pdf",
+        "org_eid15_type_event__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.953..0.953]; weakest link 0.953 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9517,
+      "canonical_id": "person_description_logic_reasoning",
+      "canonical_name": "Description Logic Reasoning",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_description_logic__2003_02320v6_pdf",
+        "person_description_logic_reasoning__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9517..0.9517]; weakest link 0.9517 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9493,
+      "canonical_id": "person_luis_antonio_gal_rraga",
+      "canonical_name": "Luis Antonio Galárraga",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_luis_antonio_gal_rraga__2003_02320v6_pdf",
+        "person_luis_gal_rraga__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9493..0.9493]; weakest link 0.9493 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9446,
+      "canonical_id": "org_p_h_p",
+      "canonical_name": "P (h) + P",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_p_h__2002_00388v4_pdf",
+        "org_p_h_p__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9446..0.9446]; weakest link 0.9446 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9438,
+      "canonical_id": "org_h_co",
+      "canonical_name": "H Co",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_h_co__2002_00388v4_pdf",
+        "org_h_h__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9438..0.9438]; weakest link 0.9438 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9383,
+      "canonical_id": "person_evgeniy_gabrilovich",
+      "canonical_name": "Evgeniy Gabrilovich",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_e_gabrilovich__2002_00388v4_pdf",
+        "person_evgeniy_gabrilovich__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9383..0.9383]; weakest link 0.9383 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9378,
+      "canonical_id": "org_semantic_web_technologies",
+      "canonical_name": "Semantic Web Technologies",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_semantic_web_technologies__2003_02320v6_pdf",
+        "org_the_semantic_web__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9378..0.9378]; weakest link 0.9378 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 5-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9253,
+      "canonical_id": "org_information_extraction_systems",
+      "canonical_name": "Information Extraction Systems",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_information_extraction__2003_02320v6_pdf",
+        "org_information_extraction_systems__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9253..0.9253]; weakest link 0.9253 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 5-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9221,
+      "canonical_id": "person_submission_3_june_2005",
+      "canonical_name": "Submission 3 June 2005",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_submission_21_may_2004__2003_02320v6_pdf",
+        "person_submission_3_june_2005__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9221..0.9221]; weakest link 0.9221 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9218,
+      "canonical_id": "org_ieee_computer_society",
+      "canonical_name": "IEEE Computer Society",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_ieee_computer__2003_02320v6_pdf",
+        "org_ieee_computer_society__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9218..0.9218]; weakest link 0.9218 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9189,
+      "canonical_id": "person_computing_surveys_40",
+      "canonical_name": "Computing Surveys 40",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_computing_surveys_40__2003_02320v6_pdf",
+        "person_computing_surveys__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9189..0.9189]; weakest link 0.9189 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9167,
+      "canonical_id": "org_scor_corcho",
+      "canonical_name": "Óscor Corcho",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_scar_corcho__2003_02320v6_pdf",
+        "org_scor_corcho__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9167..0.9167]; weakest link 0.9167 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9167,
+      "canonical_id": "person_example_b_61",
+      "canonical_name": "Example B.61",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_example_b_10__2003_02320v6_pdf",
+        "person_example_b_13__2003_02320v6_pdf",
+        "person_example_b_16__2003_02320v6_pdf",
+        "person_example_b_61__2003_02320v6_pdf"
+      ],
+      "reasoning": "4 entities linked by 6 string edge(s) [0.9167..0.9167]; weakest link 0.9167 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 5-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 4,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9167,
+      "canonical_id": "person_g_r_obozinski",
+      "canonical_name": "G. R. Obozinski",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_g_obozinski__2002_00388v4_pdf",
+        "person_g_r_obozinski__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9167..0.9167]; weakest link 0.9167 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9153,
+      "canonical_id": "org_fine_grained_access_control_fgac",
+      "canonical_name": "Fine-Grained Access Control (FGAC",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_fine_grained_access_control__rdflib_rdflib",
+        "org_fine_grained_access_control_fgac__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9153..0.9153]; weakest link 0.9153 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9153,
+      "canonical_id": "org_the_never_ending_language_learning",
+      "canonical_name": "The Never Ending Language Learning",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_never_ending_language_learner__2002_00388v4_pdf",
+        "org_the_never_ending_language_learning__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9153..0.9153]; weakest link 0.9153 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9148,
+      "canonical_id": "person_b_y_lin",
+      "canonical_name": "B. Y. Lin",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_b_y_lin__2002_00388v4_pdf",
+        "person_y_lin__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9148..0.9148]; weakest link 0.9148 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 5-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9145,
+      "canonical_id": "org_4th_international_semantic_web_conference",
+      "canonical_name": "4th International Semantic Web Conference",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_4th_international_semantic_web_conference__2003_02320v6_pdf",
+        "org_6th_european_semantic_web_conference__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9145..0.9145]; weakest link 0.9145 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 6-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9143,
+      "canonical_id": "org_neural_networks_20",
+      "canonical_name": "Neural Networks 20",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_neural_networks_20__2003_02320v6_pdf",
+        "org_neural_networks_8__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9143..0.9143]; weakest link 0.9143 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9131,
+      "canonical_id": "org_attention_att_blstm",
+      "canonical_name": "Attention Att-BLSTM",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_att_blstm__2002_00388v4_pdf",
+        "org_attention_att_blstm__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9131..0.9131]; weakest link 0.9131 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9123,
+      "canonical_id": "person_appendix_b_6_3",
+      "canonical_name": "Appendix B.6.3",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_appendix_b_5__2003_02320v6_pdf",
+        "person_appendix_b_6_3__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9123..0.9123]; weakest link 0.9123 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 9-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9106,
+      "canonical_id": "person_chun_lu",
+      "canonical_name": "Chun Lu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_chun__2003_02320v6_pdf",
+        "person_chun_lu__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9106..0.9106]; weakest link 0.9106 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.91,
+      "canonical_id": "person_albert_einstein",
+      "canonical_name": "Albert Einstein",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_albert_einstein__2002_00388v4_pdf",
+        "person_einstein__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.91..0.91]; weakest link 0.91 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9095,
+      "canonical_id": "org_international_semantic_web_conference",
+      "canonical_name": "International Semantic Web Conference",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_european_semantic_web_conference__2003_02320v6_pdf",
+        "org_international_semantic_web_conference__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9095..0.9095]; weakest link 0.9095 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 6-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9092,
+      "canonical_id": "person_common_namespaces",
+      "canonical_name": "Common Namespaces",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_common_namespaces__rdflib_rdflib",
+        "person_namespaces__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9092..0.9092]; weakest link 0.9092 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "org_cid_33",
+      "canonical_name": "cid:33",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_cid_33__2002_00388v4_pdf",
+        "org_cid_3__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "org_msg_agg_end",
+      "canonical_name": "Msg, Agg, End",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_msg_agg_end__2003_02320v6_pdf",
+        "org_msg_and_agg__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_anna_tordia",
+      "canonical_name": "Anna Tordia",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_anna_tordai__2003_02320v6_pdf",
+        "person_anna_tordia__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_d_chai",
+      "canonical_name": "D. Chai",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_d_cai__2002_00388v4_pdf",
+        "person_d_chai__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_d_zhou",
+      "canonical_name": "D. Zhou",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_d_zhou__2002_00388v4_pdf",
+        "person_d_zhu__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_dan_jurafsky",
+      "canonical_name": "Dan Jurafsky",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_d_jurafsky__2002_00388v4_pdf",
+        "person_dan_jurafsky__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_f_m_suchanek",
+      "canonical_name": "F. M. Suchanek",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_f_m_suchanek__2002_00388v4_pdf",
+        "person_f_suchanek__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_graph",
+      "canonical_name": "Graph",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_graph__2003_02320v6_pdf",
+        "person_graph__docs_architecture_md",
+        "person_graphs__2002_00388v4_pdf",
+        "person_graphs__rdflib_rdflib"
+      ],
+      "reasoning": "4 entities linked by 6 string edge(s) [0.9091..1.0]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 5-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 4,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_guoliang_li",
+      "canonical_name": "Guoliang Li",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_guoliang_ji__2003_02320v6_pdf",
+        "person_guoliang_li__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_j_zhao",
+      "canonical_name": "J. Zhao",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_j_hao__2002_00388v4_pdf",
+        "person_j_zhao__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_json_ld_1_0",
+      "canonical_name": "JSON-LD 1.0",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_json_ld_1_0__2003_02320v6_pdf",
+        "person_json_ld_1_1__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_li_guo",
+      "canonical_name": "Li Guo",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_l_guo__2002_00388v4_pdf",
+        "person_li_guo__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_ni_lao",
+      "canonical_name": "Ni Lao",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_n_lao__2002_00388v4_pdf",
+        "person_ni_lao__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_paul_t_groth",
+      "canonical_name": "Paul T. Groth",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_paul_groth__2003_02320v6_pdf",
+        "person_paul_t_groth__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_t_m_mitchell",
+      "canonical_name": "T. M. Mitchell",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_t_m_mitchell__2002_00388v4_pdf",
+        "person_t_mitchell__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_tim_weninger",
+      "canonical_name": "Tim Weninger",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_t_weninger__2002_00388v4_pdf",
+        "person_tim_weninger__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_w_fang",
+      "canonical_name": "W. Fang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_w_fan__2002_00388v4_pdf",
+        "person_w_fang__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_x_zhou",
+      "canonical_name": "X. Zhou",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_x_zhou__2002_00388v4_pdf",
+        "person_x_zhu__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_y_shao",
+      "canonical_name": "Y. Shao",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_y_hao__2002_00388v4_pdf",
+        "person_y_shao__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "person_zhiyuan_liu",
+      "canonical_name": "Zhiyuan Liu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_zhiyuan_lin__2003_02320v6_pdf",
+        "person_zhiyuan_liu__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9091,
+      "canonical_id": "tech_models",
+      "canonical_name": "Models",
+      "entity_type": "Technology",
+      "source_ids": [
+        "tech_model__2003_02320v6_pdf",
+        "tech_models__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9091..0.9091]; weakest link 0.9091 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9088,
+      "canonical_id": "org_feature_axiom_condition_example_assertion",
+      "canonical_name": "Feature Axiom Condition Example Assertion",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_feature_axiom_condition__2003_02320v6_pdf",
+        "org_feature_axiom_condition_example_assertion__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9088..0.9088]; weakest link 0.9088 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9067,
+      "canonical_id": "org_cid_62",
+      "canonical_name": "cid:62",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_cid_48__2002_00388v4_pdf",
+        "org_cid_62__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9067..0.9067]; weakest link 0.9067 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9062,
+      "canonical_id": "org_acm_sigkdd_international_conference_on_knowledge_discovery_data_mining",
+      "canonical_name": "ACM SIGKDD International Conference on Knowledge Discovery & Data Mining",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_acm_sigkdd_international_conference_on_knowledge_discovery__2003_02320v6_pdf",
+        "org_acm_sigkdd_international_conference_on_knowledge_discovery_data_mining__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9062..0.9062]; weakest link 0.9062 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9059,
+      "canonical_id": "org_regi_n_de_valpara_so_different",
+      "canonical_name": "Región de Valparaíso Different",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_regi_n_de_valpara_so__2003_02320v6_pdf",
+        "org_regi_n_de_valpara_so_different__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9059..0.9059]; weakest link 0.9059 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9043,
+      "canonical_id": "person_xiaojiang_huang",
+      "canonical_name": "Xiaojiang Huang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_xiao_huang__2003_02320v6_pdf",
+        "person_xiaojiang_huang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9043..0.9043]; weakest link 0.9043 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9032,
+      "canonical_id": "org_first_principles",
+      "canonical_name": "First Principles",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_fair_principles__2003_02320v6_pdf",
+        "org_first_principles__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9032..0.9032]; weakest link 0.9032 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9032,
+      "canonical_id": "person_eugene_santos_jr",
+      "canonical_name": "Eugene Santos Jr.",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_eugene_s_santos__2003_02320v6_pdf",
+        "person_eugene_santos_jr__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9032..0.9032]; weakest link 0.9032 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9023,
+      "canonical_id": "person_santiago_san_pedro",
+      "canonical_name": "Santiago San Pedro",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_san_pedro__2003_02320v6_pdf",
+        "person_santiago_san_pedro__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9023..0.9023]; weakest link 0.9023 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9021,
+      "canonical_id": "person_w_chen",
+      "canonical_name": "W. Chen",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_h_chen__2002_00388v4_pdf",
+        "person_w_chen__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9021..0.9021]; weakest link 0.9021 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 11-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9013,
+      "canonical_id": "person_d_chen",
+      "canonical_name": "D. Chen",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_chen__2002_00388v4_pdf",
+        "person_d_chen__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9013..0.9013]; weakest link 0.9013 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 11-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9012,
+      "canonical_id": "org_licenses_compatibility_and_composition",
+      "canonical_name": "Licenses Compatibility and Composition",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_licenses_compatibility_and_composition__2003_02320v6_pdf",
+        "org_licenses_composition__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9012..0.9012]; weakest link 0.9012 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9012,
+      "canonical_id": "person_j_wang",
+      "canonical_name": "J. Wang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_j_wang__2002_00388v4_pdf",
+        "person_wang__2002_00388v4_pdf",
+        "person_wang__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 1 string edge(s) [1.0..1.0] + 2 embedding edge(s) [0.9012..0.9012]; weakest link 0.9012 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9008,
+      "canonical_id": "person_zhen_wang",
+      "canonical_name": "Zhen Wang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_z_wang__2002_00388v4_pdf",
+        "person_zhen_wang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9008..0.9008]; weakest link 0.9008 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9007,
+      "canonical_id": "org_santiago_flight_arica",
+      "canonical_name": "Santiago flight Arica",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_santiago_flight__2003_02320v6_pdf",
+        "org_santiago_flight_arica__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9007..0.9007]; weakest link 0.9007 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9007,
+      "canonical_id": "person_p_zhou",
+      "canonical_name": "P. Zhou",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_c_zhou__2002_00388v4_pdf",
+        "person_p_zhou__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9007..0.9007]; weakest link 0.9007 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 5-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9006,
+      "canonical_id": "person_chengqi_zhang",
+      "canonical_name": "Chengqi Zhang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_chengqi_zhang__2003_02320v6_pdf",
+        "person_wei_zhang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9006..0.9006]; weakest link 0.9006 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 41-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9004,
+      "canonical_id": "org_the_26th_international_workshop_on_description_logics",
+      "canonical_name": "the 26th International Workshop on Description Logics",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_description_logics__2003_02320v6_pdf",
+        "org_the_26th_international_workshop_on_description_logics__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 embedding edge(s) [0.9004..0.9004]; weakest link 0.9004 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9,
+      "canonical_id": "org_semantic_technologies",
+      "canonical_name": "Semantic Technologies",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_semantic_technologies__2003_02320v6_pdf",
+        "org_semantic_technology__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9..0.9]; weakest link 0.9 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 5-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9,
+      "canonical_id": "org_valentina_presutti_eds",
+      "canonical_name": "Valentina Presutti (Eds",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_valentina_presutti__2003_02320v6_pdf",
+        "org_valentina_presutti_eds__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9..0.9]; weakest link 0.9 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9,
+      "canonical_id": "person_f_n_stokman",
+      "canonical_name": "F. N. Stokman",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_f_n_stokman__2002_00388v4_pdf",
+        "person_n_stokman__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9..0.9]; weakest link 0.9 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9,
+      "canonical_id": "person_john_f_sowa",
+      "canonical_name": "John F. Sowa",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_john_f_sowa__2003_02320v6_pdf",
+        "person_john_sowa__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9..0.9]; weakest link 0.9 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9,
+      "canonical_id": "person_l_ehrlinger",
+      "canonical_name": "L. Ehrlinger",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_ehrlinger__2002_00388v4_pdf",
+        "person_l_ehrlinger__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9..0.9]; weakest link 0.9 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9,
+      "canonical_id": "person_max_welling",
+      "canonical_name": "Max Welling",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_m_welling__2002_00388v4_pdf",
+        "person_max_welling__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9..0.9]; weakest link 0.9 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9,
+      "canonical_id": "person_t_d_nguyen",
+      "canonical_name": "T. D. Nguyen",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_d_q_nguyen__2002_00388v4_pdf",
+        "person_t_d_nguyen__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.9..0.9]; weakest link 0.9 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.9,
+      "canonical_id": "person_zeng_et_al",
+      "canonical_name": "Zeng et al",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_feng_et_al__2002_00388v4_pdf",
+        "person_peng_et_al__2002_00388v4_pdf",
+        "person_zeng_et_al__2002_00388v4_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.9..0.9]; weakest link 0.9 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 8-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8911,
+      "canonical_id": "org_canonical_forms_for_isomorphic_and_equivalent_rdf_graphs",
+      "canonical_name": "Canonical Forms for Isomorphic and Equivalent RDF Graphs",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_canonical_forms_for_isomorphic_and_equivalent__2003_02320v6_pdf",
+        "org_canonical_forms_for_isomorphic_and_equivalent_rdf_graphs__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8911..0.8911]; weakest link 0.8911 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "org_lodie",
+      "canonical_name": "LODIE",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_lode__rdflib_rdflib",
+        "org_lodie__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "org_negative",
+      "canonical_name": "𝐸. Negative",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_negative__2002_00388v4_pdf",
+        "org_negative__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_bo_xu",
+      "canonical_name": "Bo Xu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_b_xu__2002_00388v4_pdf",
+        "person_bo_xu__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_dieng",
+      "canonical_name": "Dieng",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_deng__2002_00388v4_pdf",
+        "person_dieng__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_g_a_miller",
+      "canonical_name": "G. A. Miller",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_a_miller__2002_00388v4_pdf",
+        "person_g_a_miller__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_h_liu",
+      "canonical_name": "H. Liu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_h_li__2002_00388v4_pdf",
+        "person_h_liu__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_j_lin",
+      "canonical_name": "J. Lin",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_j_li__2002_00388v4_pdf",
+        "person_j_lin__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 14-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_l_liu",
+      "canonical_name": "L. Liu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_l_li__2002_00388v4_pdf",
+        "person_l_liu__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_liu_et_al",
+      "canonical_name": "Liu et al",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_lin_et_al__2002_00388v4_pdf",
+        "person_liu_et_al__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_luca_costabello",
+      "canonical_name": "Luca Costabello",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_l_costabello__2002_00388v4_pdf",
+        "person_luca_costabello__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_m_liu",
+      "canonical_name": "M. Liu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_m_li__2002_00388v4_pdf",
+        "person_m_liu__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_meng_wang",
+      "canonical_name": "Meng Wang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_feng_wang__2003_02320v6_pdf",
+        "person_meng_wang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_name2",
+      "canonical_name": "name2",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_name2__2003_02320v6_pdf",
+        "person_name__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_p_qin",
+      "canonical_name": "P. Qin",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_p_qi__2002_00388v4_pdf",
+        "person_p_qin__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_s_jia",
+      "canonical_name": "S. Jia",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_s_ji__2002_00388v4_pdf",
+        "person_s_jia__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_s_lai",
+      "canonical_name": "S. Lai",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_s_lai__2002_00388v4_pdf",
+        "person_s_li__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_santiago_4",
+      "canonical_name": "Santiago 4",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_santiago_4__2003_02320v6_pdf",
+        "person_santiago__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 7-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_sousa",
+      "canonical_name": "Sousa",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_sosa__rdflib_rdflib",
+        "person_sousa__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_w_hua",
+      "canonical_name": "W. Hua",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_w_hu__2002_00388v4_pdf",
+        "person_w_hua__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_w_liu",
+      "canonical_name": "W. Liu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_w_li__2002_00388v4_pdf",
+        "person_w_liu__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_x_lin",
+      "canonical_name": "X. Lin",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_x_li__2002_00388v4_pdf",
+        "person_x_lin__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_y_guo",
+      "canonical_name": "Y. Guo",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_y_gu__2002_00388v4_pdf",
+        "person_y_guo__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_y_liu",
+      "canonical_name": "Y. Liu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_y_li__2002_00388v4_pdf",
+        "person_y_liu__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 5-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_y_mao",
+      "canonical_name": "Y. Mao",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_y_ma__2002_00388v4_pdf",
+        "person_y_mao__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_y_xue",
+      "canonical_name": "Y. Xue",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_y_xu__2002_00388v4_pdf",
+        "person_y_xue__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_y_zhu",
+      "canonical_name": "Y. Zhu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_y_hu__2002_00388v4_pdf",
+        "person_y_zhu__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_z_liu",
+      "canonical_name": "Z. Liu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_z_li__2002_00388v4_pdf",
+        "person_z_liu__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8889,
+      "canonical_id": "person_z_zhu",
+      "canonical_name": "Z. Zhu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_z_hu__2002_00388v4_pdf",
+        "person_z_zhu__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8889..0.8889]; weakest link 0.8889 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8846,
+      "canonical_id": "org_local_closed_world_assumption",
+      "canonical_name": "Local Closed World Assumption",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_local_closed_world_assumption__2003_02320v6_pdf",
+        "org_the_closed_world_assumption__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8846..0.8846]; weakest link 0.8846 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8837,
+      "canonical_id": "org_meta_relational_learning",
+      "canonical_name": "Meta Relational Learning",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_meta_relational_learning__2002_00388v4_pdf",
+        "org_relational_learning__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8837..0.8837]; weakest link 0.8837 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.88,
+      "canonical_id": "org_draft_community_group_report",
+      "canonical_name": "Draft Community Group Report",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_community_group_draft_report__2003_02320v6_pdf",
+        "org_community_group_report__2003_02320v6_pdf",
+        "org_draft_community_group_report__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.88..1.0]; weakest link 0.88 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.88,
+      "canonical_id": "org_santiago_easter_island_world",
+      "canonical_name": "Santiago Easter Island World",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_santiago_easter_island__2003_02320v6_pdf",
+        "org_santiago_easter_island_world__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.88..0.88]; weakest link 0.88 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.88,
+      "canonical_id": "person_th_o_trouillon",
+      "canonical_name": "Théo Trouillon",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_t_trouillon__2002_00388v4_pdf",
+        "person_th_o_trouillon__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.88..0.88]; weakest link 0.88 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.88,
+      "canonical_id": "person_thomas_wetter",
+      "canonical_name": "Thomas Wetter",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_thomas_eiter__2003_02320v6_pdf",
+        "person_thomas_wetter__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.88..0.88]; weakest link 0.88 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.878,
+      "canonical_id": "org_distant_supervision_of_relation_extraction",
+      "canonical_name": "Distant Supervision of Relation Extraction",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_distant_supervision_of_relation_extraction__2003_02320v6_pdf",
+        "org_distantly_supervised_relation_extraction__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.878..0.878]; weakest link 0.878 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.875,
+      "canonical_id": "org_dbpedia",
+      "canonical_name": "DBpedia",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_dbpedia__2002_00388v4_pdf",
+        "org_dbpedia__2003_02320v6_pdf",
+        "org_dbpedia__rdflib_rdflib",
+        "org_dbpedia_a__2003_02320v6_pdf"
+      ],
+      "reasoning": "4 entities linked by 6 string edge(s) [0.875..1.0]; weakest link 0.875 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 4,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.875,
+      "canonical_id": "org_table_vi",
+      "canonical_name": "Table VI",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_table_i__2002_00388v4_pdf",
+        "org_table_ix__2002_00388v4_pdf",
+        "org_table_vi__2002_00388v4_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.875..0.9333]; weakest link 0.875 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.875,
+      "canonical_id": "org_unesco_world_heritage_sites",
+      "canonical_name": "UNESCO World Heritage Sites",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_unesco_world_heritage__2003_02320v6_pdf",
+        "org_unesco_world_heritage_sites__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.875..0.875]; weakest link 0.875 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 5-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.875,
+      "canonical_id": "person_a_j_smola",
+      "canonical_name": "A. J. Smola",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_a_j_smola__2002_00388v4_pdf",
+        "person_a_smola__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.875..0.875]; weakest link 0.875 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.875,
+      "canonical_id": "person_cid_62",
+      "canonical_name": "− τ(cid:62",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_cid_62__2002_00388v4_pdf",
+        "person_h_cid_62__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.875..0.875]; weakest link 0.875 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.875,
+      "canonical_id": "person_max_schmachtenberg",
+      "canonical_name": "Max Schmachtenberg",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_max_schmachtenberg__2003_02320v6_pdf",
+        "person_schmachtenberg__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.875..0.875]; weakest link 0.875 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.875,
+      "canonical_id": "person_s_kirrane",
+      "canonical_name": "S. Kirrane",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_kirrane__2003_02320v6_pdf",
+        "person_s_kirrane__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.875..0.875]; weakest link 0.875 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.875,
+      "canonical_id": "person_t_lacroix",
+      "canonical_name": "T. Lacroix",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_lacroix__2002_00388v4_pdf",
+        "person_t_lacroix__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.875..0.875]; weakest link 0.875 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.875,
+      "canonical_id": "person_x_j_huang",
+      "canonical_name": "X.-J. Huang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_x_huang__2002_00388v4_pdf",
+        "person_x_j_huang__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.875..0.875]; weakest link 0.875 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 41-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.875,
+      "canonical_id": "person_xu_et_al",
+      "canonical_name": "Xu et al",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_hu_et_al__2002_00388v4_pdf",
+        "person_xu_et_al__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.875..0.875]; weakest link 0.875 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.875,
+      "canonical_id": "person_yang_liu",
+      "canonical_name": "Yang Liu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_kang_liu__2003_02320v6_pdf",
+        "person_yang_liu__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.875..0.875]; weakest link 0.875 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8718,
+      "canonical_id": "org_adaptive_information",
+      "canonical_name": "Adaptive Information",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_adaptive_information__2003_02320v6_pdf",
+        "org_adaptive_innovation__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8718..0.8718]; weakest link 0.8718 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8718,
+      "canonical_id": "org_university_of_bologna",
+      "canonical_name": "University of Bologna",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_university_of_bologna__2003_02320v6_pdf",
+        "org_university_of_bonn__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8718..0.8718]; weakest link 0.8718 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8718,
+      "canonical_id": "person_jos_emilio_labra_gayo",
+      "canonical_name": "José Emilio Labra Gayo",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_emilio_labra_gayo__2003_02320v6_pdf",
+        "person_jos_emilio_labra_gayo__2003_02320v6_pdf",
+        "person_jose_emilio_labra_gayo__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.8718..1.0]; weakest link 0.8718 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8696,
+      "canonical_id": "org_ksi_research_inc",
+      "canonical_name": "KSI Research Inc.",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_ir_research__2003_02320v6_pdf",
+        "org_ksi_research_inc__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8696..0.8696]; weakest link 0.8696 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8696,
+      "canonical_id": "person_john_mccarthy",
+      "canonical_name": "John McCarthy",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_john_mccarthy__2003_02320v6_pdf",
+        "person_n_mccarthy__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8696..0.8696]; weakest link 0.8696 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8667,
+      "canonical_id": "person_definition_b_46",
+      "canonical_name": "Definition B.46",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_definition_b_12__2003_02320v6_pdf",
+        "person_definition_b_14__2003_02320v6_pdf",
+        "person_definition_b_39__2003_02320v6_pdf",
+        "person_definition_b_46__2003_02320v6_pdf"
+      ],
+      "reasoning": "4 entities linked by 6 string edge(s) [0.8667..0.9333]; weakest link 0.8667 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 4,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8649,
+      "canonical_id": "org_drinks_festival_city",
+      "canonical_name": "Drinks Festival city",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_drinks_festival__2003_02320v6_pdf",
+        "org_drinks_festival_city__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8649..0.8649]; weakest link 0.8649 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8649,
+      "canonical_id": "org_santiago_city_capital",
+      "canonical_name": "Santiago : City capital",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_santiago_capital__2003_02320v6_pdf",
+        "org_santiago_capital_city__2003_02320v6_pdf",
+        "org_santiago_city_capital__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.8649..1.0]; weakest link 0.8649 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8649,
+      "canonical_id": "person_heiner_stuckenschmidt",
+      "canonical_name": "Heiner Stuckenschmidt",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_h_stuckenschmidt__2002_00388v4_pdf",
+        "person_heiner_stuckenschmidt__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8649..0.8649]; weakest link 0.8649 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8627,
+      "canonical_id": "org_international_conference_on_semantic_systems_semantics2016",
+      "canonical_name": "International Conference on Semantic Systems - SEMANTiCS2016",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_international_conference_on_semantic_systems__2003_02320v6_pdf",
+        "org_international_conference_on_semantic_systems_semantics2016__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8627..0.8627]; weakest link 0.8627 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 6-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "org_big_data_quality",
+      "canonical_name": "Big Data Quality",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_big_data_quality__2003_02320v6_pdf",
+        "org_data_quality__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "org_iri",
+      "canonical_name": "IRI",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_iri__2003_02320v6_pdf",
+        "org_iri__rdflib_rdflib",
+        "org_iris__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.8571..1.0]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "org_kg2e",
+      "canonical_name": "KG2E",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_kg2e__2002_00388v4_pdf",
+        "org_kge__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "org_mint",
+      "canonical_name": "Mint",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_mint__rdflib_rdflib",
+        "org_mit__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "org_mt_h",
+      "canonical_name": "MT h",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_mt_h__2002_00388v4_pdf",
+        "org_t_h__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "org_obof",
+      "canonical_name": "OBOF",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_obo__rdflib_rdflib",
+        "org_obof__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "org_pythonic",
+      "canonical_name": "Pythonic",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_python__rdflib_rdflib",
+        "org_pythonic__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "org_santiago_and_arica_la380",
+      "canonical_name": "Santiago and Arica LA380",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_santiago_and_arica__2003_02320v6_pdf",
+        "org_santiago_and_arica_la380__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "org_the_open_information_extraction_paradigm",
+      "canonical_name": "the Open Information Extraction Paradigm",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_open_information_extraction__2003_02320v6_pdf",
+        "org_open_information_extraction_systems__2003_02320v6_pdf",
+        "org_the_open_information_extraction_paradigm__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 2 string edge(s) [0.8571..0.871] + 1 embedding edge(s) [0.9498..0.9498]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 5-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "org_university_of_michigan",
+      "canonical_name": "University of Michigan",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_university_of_michigan__2003_02320v6_pdf",
+        "org_university_of_milano__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "org_w_r",
+      "canonical_name": "w ∈ R𝑤",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_w_r__2003_02320v6_pdf",
+        "org_w_w__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_bin_wang",
+      "canonical_name": "Bin Wang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_b_wang__2002_00388v4_pdf",
+        "person_bin_wang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_bin_zhou",
+      "canonical_name": "Bin Zhou",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_b_zhou__2002_00388v4_pdf",
+        "person_bin_zhou__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 5-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_c_cardie",
+      "canonical_name": "C. Cardie",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_c_cardie__2002_00388v4_pdf",
+        "person_cardie__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_c_zhang",
+      "canonical_name": "C. Zhang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_c_huang__2002_00388v4_pdf",
+        "person_c_shang__2002_00388v4_pdf",
+        "person_c_zhang__2002_00388v4_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 41-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_chi_wang",
+      "canonical_name": "Chi Wang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_c_wang__2002_00388v4_pdf",
+        "person_chi_wang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_d_ouyang",
+      "canonical_name": "D. Ouyang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_d_ouyang__2002_00388v4_pdf",
+        "person_d_yang__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_erik_cambria",
+      "canonical_name": "Erik Cambria",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_e_cambria__2002_00388v4_pdf",
+        "person_erik_cambria__2002_00388v4_pdf",
+        "person_erik_cambria__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.8571..1.0]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_fan_yang",
+      "canonical_name": "Fan Yang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_f_yang__2002_00388v4_pdf",
+        "person_fan_yang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_hao_wang",
+      "canonical_name": "Hao Wang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_h_wang__2002_00388v4_pdf",
+        "person_hao_wang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_jayant_krishnamurthy",
+      "canonical_name": "Jayant Krishnamurthy",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_j_krishnamurthy__2002_00388v4_pdf",
+        "person_jayant_krishnamurthy__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_jens_lehmann",
+      "canonical_name": "Jens Lehmann",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_j_lehmann__2002_00388v4_pdf",
+        "person_jens_lehmann__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_jie_tang",
+      "canonical_name": "--- Jie Tang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_j_tang__2002_00388v4_pdf",
+        "person_jie_tang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_jiliang_tang",
+      "canonical_name": "Jiliang Tang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_jian_tang__2003_02320v6_pdf",
+        "person_jiliang_tang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_kun_liu",
+      "canonical_name": "Kun Liu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_jun_liu__2003_02320v6_pdf",
+        "person_kun_liu__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_ling",
+      "canonical_name": "Ling",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_lin__2003_02320v6_pdf",
+        "person_ling__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_matt_gardner",
+      "canonical_name": "Matt Gardner",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_m_gardner__2002_00388v4_pdf",
+        "person_matt_gardner__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_n_d",
+      "canonical_name": "n. d.]",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_n_d__2003_02320v6_pdf",
+        "person_n_du__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_node_ids",
+      "canonical_name": "node IDs",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_node_ids__rdflib_rdflib",
+        "person_node_s__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_piero_andrea_bonatti",
+      "canonical_name": "Piero Andrea Bonatti",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_piero_a_bonatti__2003_02320v6_pdf",
+        "person_piero_andrea_bonatti__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_richard_socher",
+      "canonical_name": "Richard Socher",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_richard_chbeir__2003_02320v6_pdf",
+        "person_richard_socher__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_s_k_mohamed",
+      "canonical_name": "S. K. Mohamed",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_s_k_mohamed__2002_00388v4_pdf",
+        "person_s_mohammed__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_s_kumar",
+      "canonical_name": "S. Kumar",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_a_kumar__2002_00388v4_pdf",
+        "person_s_kumar__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_santiago_arica_santiago",
+      "canonical_name": "Santiago Arica Santiago",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_santiago_arica_santiago__2003_02320v6_pdf",
+        "person_santiago_santiago_santiago__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 7-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_w_r",
+      "canonical_name": "∈ W R𝑤 ∈",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_w_r__2002_00388v4_pdf",
+        "person_w_r__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 3-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_w_xiong",
+      "canonical_name": "W. Xiong",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_c_xiong__2002_00388v4_pdf",
+        "person_w_xiong__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_w_y_wang",
+      "canonical_name": "W. Y. Wang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_w_wang__2002_00388v4_pdf",
+        "person_w_y_wang__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_wang_et_al",
+      "canonical_name": "Wang et al",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_jiang_et_al__2002_00388v4_pdf",
+        "person_wang_et_al__2002_00388v4_pdf",
+        "person_wang_et_al__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.8571..1.0]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 8-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_x_cheng",
+      "canonical_name": "X. Cheng",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_d_cheng__2002_00388v4_pdf",
+        "person_x_cheng__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 11-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_xin_dong",
+      "canonical_name": "Xin Dong",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_x_dong__2002_00388v4_pdf",
+        "person_xin_dong__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_xin_wang",
+      "canonical_name": "Xin Wang",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_x_wang__2002_00388v4_pdf",
+        "person_xin_wang__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_yan_liu",
+      "canonical_name": "Yan Liu",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_lu_yang__2003_02320v6_pdf",
+        "person_yan_liu__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8571,
+      "canonical_id": "person_ying_li",
+      "canonical_name": "Ying Li",
+      "entity_type": "Person",
+      "source_ids": [
+        "person_ping_li__2003_02320v6_pdf",
+        "person_ying_li__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8571..0.8571]; weakest link 0.8571 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92); cohesion split of 4-entity single-linkage cluster (floor 0.85)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8525,
+      "canonical_id": "org_human_computer_interaction",
+      "canonical_name": "Human-Computer Interaction",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_human_computer_interaction__2002_00388v4_pdf",
+        "org_human_computer_interaction__2003_02320v6_pdf",
+        "org_the_acm_on_human_computer_interaction_2__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.8525..1.0]; weakest link 0.8525 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8519,
+      "canonical_id": "org_system_development_corporation",
+      "canonical_name": "System Development Corporation",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_system_development_corporation__2003_02320v6_pdf",
+        "org_systems_development_corp__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8519..0.8519]; weakest link 0.8519 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8511,
+      "canonical_id": "org_graph_neural_networks",
+      "canonical_name": "Graph Neural Networks",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_graph_neural_networks__2002_00388v4_pdf",
+        "org_graph_neural_networks__2003_02320v6_pdf",
+        "org_the_graph_neural_network_model__2003_02320v6_pdf"
+      ],
+      "reasoning": "3 entities linked by 3 string edge(s) [0.8511..1.0]; weakest link 0.8511 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 3,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.8504,
+      "canonical_id": "org_the_25th_acm_international_conference_on_information_and_knowledge_management",
+      "canonical_name": "the 25th ACM International Conference on Information and Knowledge Management",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_acm_conference_on_information_and_knowledge_management__2003_02320v6_pdf",
+        "org_the_25th_acm_international_conference_on_information_and_knowledge_management__2003_02320v6_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.8504..0.8504]; weakest link 0.8504 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.85,
+      "canonical_id": "org_cid_13_cid_13_cid_13",
+      "canonical_name": "cid:13)(cid:13)(cid:13",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_cid_12_cid_12_cid_12__2002_00388v4_pdf",
+        "org_cid_13_cid_13_cid_13__2002_00388v4_pdf"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.85..0.85]; weakest link 0.85 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    },
+    {
+      "action": "TENTATIVE",
+      "confidence": 0.85,
+      "canonical_id": "org_comma_separated_value",
+      "canonical_name": "Comma-Separated Value",
+      "entity_type": "Organization",
+      "source_ids": [
+        "org_comma_separated_value__rdflib_rdflib",
+        "org_tab_separated_value__rdflib_rdflib"
+      ],
+      "reasoning": "2 entities linked by 1 string edge(s) [0.85..0.85]; weakest link 0.85 -> TENTATIVE (MERGE requires every edge to be a string match > 0.92)",
+      "cluster_size": 2,
+      "priority_review": false
+    }
+  ]
+}

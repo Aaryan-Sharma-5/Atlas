@@ -7,3 +7,7 @@
 
 CREATE CONSTRAINT unique_entity_id IF NOT EXISTS
 FOR (n:Entity) REQUIRE n.id IS UNIQUE;
+
+// Canonical nodes (resolution layer) deliberately do not carry :Entity, so they need their own id constraint (see physical.md, Canonical section).
+CREATE CONSTRAINT unique_canonical_id IF NOT EXISTS
+FOR (n:Canonical) REQUIRE n.id IS UNIQUE;
