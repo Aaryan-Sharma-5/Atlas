@@ -380,7 +380,7 @@ Deliberate, recorded gaps. Each item names the stage responsible for addressing 
 
 ### 12.1 Embedding-sourced tentative pairs with short names (Stage 5 responsibility)
 
-The embedding threshold (0.90, calibrated 2026-07-06) deliberately weights recall over precision because every embedding match becomes a TENTATIVE `SAME_AS`, never an auto-merge. Consequence: short-name and initials-only pairs ("B. Zhou" / "C. Zhou") can clear the threshold as false positives. **Stage 5 quality flagging must specifically flag embedding-sourced tentative pairs where either entity name has 3 or fewer tokens or consists only of initials** — these are the highest-risk false positives from this threshold choice. Do not raise the threshold to compensate; the choice was intentional.
+The embedding threshold (0.90, calibrated 2026-07-06) deliberately weights recall over precision because every embedding match becomes a TENTATIVE `SAME_AS`, never an auto-merge. Consequence: short-name and initials-only pairs ("B. Zhou" / "C. Zhou") can clear the threshold as false positives. **Stage 5 quality flagging must specifically flag embedding-sourced tentative pairs where either entity name has 3 or fewer tokens or consists only of initials** — these are the highest-risk false positives from this threshold choice. Do not raise the threshold to compensate; the choice was intentional. Also flag NER stutter artifacts ("Santiago Santiago de Chile", "RDF Reading RDF"): legitimate same-entity candidates but extraction-quality noise that inflates tentative counts — Stage 5 flags them, decisioning surfaces them and never suppresses or "fixes" them, same principle as the acronym gap (§12.2).
 
 ### 12.2 Acronym-to-full-name pairs are unreachable under current blocking (unscheduled)
 
@@ -390,8 +390,14 @@ Pairs like "W3C" / "World Wide Web Consortium" share no token, so they never sha
 
 `en_core_web_sm` under-extracts Technology/Language relative to Person/Organization (42 and 2 entities vs ~1,900 Person in the current corpus). A domain-specific extraction strategy requires explicit instruction. Do not compensate in resolution logic.
 
+### 12.4 Why union-find alone was insufficient: the cluster cohesion floor (0.85)
+
+Stage 4 clustering is union-find over candidate pairs — **single-linkage**, so it chains: A~B, B~C, C~D each clear the pairwise threshold while A and D share nothing. On the first corpus run this produced a 41-entity "Z. Zhang" canonical (plus "X. Jiang" ×14, "Chen" ×11) gluing Zhang/Chang/Jiang/Huang surnames through 0.857 initial-swap edges. Weakest-link gating correctly kept them TENTATIVE, but structurally they are not one entity each.
+
+Fix (2026-07-11): a **cluster cohesion floor of 0.85** — every *pair* inside a surviving cluster (not just every candidate edge) must reach 0.85 similarity. For the check, pairs never directly compared count as 0. Note for future readers: the naive fix — "drop edges below the floor and recompute connected components" — is a **no-op** here, because every candidate edge already scores ≥ the matcher thresholds (the chain links themselves are 0.857 edges); nothing can ever be dropped. Failing clusters are therefore re-partitioned greedily into complete-linkage groups on `max(candidate edge score, string similarity)` — embedding-joined pairs keep their edge score so their lower string similarity doesn't tear them apart. Members cohering with no group fall out of resolution entirely (cohesion orphans). Implemented in `resolution/decisioning/merge_resolver.py::_cohesion_partition`.
+
 ---
 
 **Document Version:** 1.1  
-**Last Updated:** 2026-07-06  
-**Status:** Phase 2 in progress; resolution Stages 1+2 calibrated, Stage 4 decisioning pending review.
+**Last Updated:** 2026-07-11  
+**Status:** Stage 5 

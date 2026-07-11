@@ -1,0 +1,636 @@
+{
+  "stage": "quality_flagging",
+  "flag_count": 58,
+  "by_type": {
+    "cross_type_collision": 8,
+    "large_tentative_cluster": 7,
+    "ner_stutter": 7,
+    "short_name_embedding": 36
+  },
+  "flagged_canonicals": 52,
+  "canonical_count": 329,
+  "flags": [
+    {
+      "flag_type": "cross_type_collision",
+      "canonical_id": "org_al",
+      "canonical_name": "al",
+      "entity_type": "Organization",
+      "reason": "same canonical name resolved under multiple node types; type-scoped blocking kept them apart by design — at least one is likely a NER type mislabel",
+      "evidence": [
+        "person_al (Person)"
+      ]
+    },
+    {
+      "flag_type": "cross_type_collision",
+      "canonical_id": "org_cypher",
+      "canonical_name": "Cypher",
+      "entity_type": "Organization",
+      "reason": "same canonical name resolved under multiple node types; type-scoped blocking kept them apart by design — at least one is likely a NER type mislabel",
+      "evidence": [
+        "person_cypher (Person)"
+      ]
+    },
+    {
+      "flag_type": "cross_type_collision",
+      "canonical_id": "org_distmult",
+      "canonical_name": "DistMult",
+      "entity_type": "Organization",
+      "reason": "same canonical name resolved under multiple node types; type-scoped blocking kept them apart by design — at least one is likely a NER type mislabel",
+      "evidence": [
+        "tech_distmult (Technology)"
+      ]
+    },
+    {
+      "flag_type": "cross_type_collision",
+      "canonical_id": "org_w_r",
+      "canonical_name": "w ∈ R𝑤",
+      "entity_type": "Organization",
+      "reason": "same canonical name resolved under multiple node types; type-scoped blocking kept them apart by design — at least one is likely a NER type mislabel",
+      "evidence": [
+        "person_w_r (Person)"
+      ]
+    },
+    {
+      "flag_type": "cross_type_collision",
+      "canonical_id": "person_al",
+      "canonical_name": "al",
+      "entity_type": "Person",
+      "reason": "same canonical name resolved under multiple node types; type-scoped blocking kept them apart by design — at least one is likely a NER type mislabel",
+      "evidence": [
+        "org_al (Organization)"
+      ]
+    },
+    {
+      "flag_type": "cross_type_collision",
+      "canonical_id": "person_cypher",
+      "canonical_name": "Cypher",
+      "entity_type": "Person",
+      "reason": "same canonical name resolved under multiple node types; type-scoped blocking kept them apart by design — at least one is likely a NER type mislabel",
+      "evidence": [
+        "org_cypher (Organization)"
+      ]
+    },
+    {
+      "flag_type": "cross_type_collision",
+      "canonical_id": "person_w_r",
+      "canonical_name": "∈ W R𝑤 ∈",
+      "entity_type": "Person",
+      "reason": "same canonical name resolved under multiple node types; type-scoped blocking kept them apart by design — at least one is likely a NER type mislabel",
+      "evidence": [
+        "org_w_r (Organization)"
+      ]
+    },
+    {
+      "flag_type": "cross_type_collision",
+      "canonical_id": "tech_distmult",
+      "canonical_name": "DistMult",
+      "entity_type": "Technology",
+      "reason": "same canonical name resolved under multiple node types; type-scoped blocking kept them apart by design — at least one is likely a NER type mislabel",
+      "evidence": [
+        "org_distmult (Organization)"
+      ]
+    },
+    {
+      "flag_type": "large_tentative_cluster",
+      "canonical_id": "org_rdf",
+      "canonical_name": "RDF",
+      "entity_type": "Organization",
+      "reason": "5 members held together at the cohesion floor — likely several real-world entities (docs §12.4 residual)",
+      "evidence": [
+        "org_rdf__2002_00388v4_pdf",
+        "org_rdf__2003_02320v6_pdf",
+        "org_rdf__rdflib_rdflib",
+        "org_rdfs__2003_02320v6_pdf",
+        "org_rdfs__rdflib_rdflib"
+      ]
+    },
+    {
+      "flag_type": "large_tentative_cluster",
+      "canonical_id": "person_appendix_c",
+      "canonical_name": "Appendix C.",
+      "entity_type": "Person",
+      "reason": "5 members held together at the cohesion floor — likely several real-world entities (docs §12.4 residual)",
+      "evidence": [
+        "person_appendix__2003_02320v6_pdf",
+        "person_appendix_a__2002_00388v4_pdf",
+        "person_appendix_a__2003_02320v6_pdf",
+        "person_appendix_b__2002_00388v4_pdf",
+        "person_appendix_c__2002_00388v4_pdf"
+      ]
+    },
+    {
+      "flag_type": "large_tentative_cluster",
+      "canonical_id": "person_p_huang",
+      "canonical_name": "P. Huang",
+      "entity_type": "Person",
+      "reason": "5 members held together at the cohesion floor — likely several real-world entities (docs §12.4 residual)",
+      "evidence": [
+        "person_h_huang__2002_00388v4_pdf",
+        "person_huang__2002_00388v4_pdf",
+        "person_j_huang__2002_00388v4_pdf",
+        "person_m_huang__2002_00388v4_pdf",
+        "person_p_huang__2002_00388v4_pdf"
+      ]
+    },
+    {
+      "flag_type": "large_tentative_cluster",
+      "canonical_id": "person_x_jiang",
+      "canonical_name": "X. Jiang",
+      "entity_type": "Person",
+      "reason": "6 members held together at the cohesion floor — likely several real-world entities (docs §12.4 residual)",
+      "evidence": [
+        "person_h_jiang__2002_00388v4_pdf",
+        "person_j_jiang__2002_00388v4_pdf",
+        "person_m_jiang__2002_00388v4_pdf",
+        "person_t_jiang__2002_00388v4_pdf",
+        "person_w_jiang__2002_00388v4_pdf",
+        "person_x_jiang__2002_00388v4_pdf"
+      ]
+    },
+    {
+      "flag_type": "large_tentative_cluster",
+      "canonical_id": "person_z_chang",
+      "canonical_name": "Z. Chang",
+      "entity_type": "Person",
+      "reason": "5 members held together at the cohesion floor — likely several real-world entities (docs §12.4 residual)",
+      "evidence": [
+        "person_b_chang__2002_00388v4_pdf",
+        "person_e_chang__2002_00388v4_pdf",
+        "person_s_chang__2002_00388v4_pdf",
+        "person_y_chang__2002_00388v4_pdf",
+        "person_z_chang__2002_00388v4_pdf"
+      ]
+    },
+    {
+      "flag_type": "large_tentative_cluster",
+      "canonical_id": "person_z_zhang",
+      "canonical_name": "Z. Zhang",
+      "entity_type": "Person",
+      "reason": "13 members held together at the cohesion floor — likely several real-world entities (docs §12.4 residual)",
+      "evidence": [
+        "person_d_zhang__2002_00388v4_pdf",
+        "person_f_zhang__2002_00388v4_pdf",
+        "person_h_zhang__2002_00388v4_pdf",
+        "person_j_zhang__2002_00388v4_pdf",
+        "person_n_zhang__2002_00388v4_pdf",
+        "person_q_zhang__2002_00388v4_pdf",
+        "person_r_zhang__2002_00388v4_pdf",
+        "person_s_zhang__2002_00388v4_pdf",
+        "person_t_zhang__2002_00388v4_pdf",
+        "person_w_zhang__2002_00388v4_pdf",
+        "person_x_zhang__2002_00388v4_pdf",
+        "person_y_zhang__2002_00388v4_pdf",
+        "person_z_zhang__2002_00388v4_pdf"
+      ]
+    },
+    {
+      "flag_type": "large_tentative_cluster",
+      "canonical_id": "tech_table_8",
+      "canonical_name": "Table 8",
+      "entity_type": "Technology",
+      "reason": "5 members held together at the cohesion floor — likely several real-world entities (docs §12.4 residual)",
+      "evidence": [
+        "tech_table_2__2003_02320v6_pdf",
+        "tech_table_4__2003_02320v6_pdf",
+        "tech_table_5__2003_02320v6_pdf",
+        "tech_table_7__2003_02320v6_pdf",
+        "tech_table_8__2003_02320v6_pdf"
+      ]
+    },
+    {
+      "flag_type": "ner_stutter",
+      "canonical_id": "org_claimant_xy12sda",
+      "canonical_name": "Claimant-XY12SDA",
+      "entity_type": "Organization",
+      "reason": "member name(s) show NER stutter — legitimate same-entity grouping, but the underlying extraction is noisy (docs §12.1)",
+      "evidence": [
+        "Claimant-XY12SDA XY12SDA"
+      ]
+    },
+    {
+      "flag_type": "ner_stutter",
+      "canonical_id": "org_h_co",
+      "canonical_name": "H Co",
+      "entity_type": "Organization",
+      "reason": "member name(s) show NER stutter — legitimate same-entity grouping, but the underlying extraction is noisy (docs §12.1)",
+      "evidence": [
+        "h h"
+      ]
+    },
+    {
+      "flag_type": "ner_stutter",
+      "canonical_id": "org_santiago_arica",
+      "canonical_name": "Santiago Arica",
+      "entity_type": "Organization",
+      "reason": "member name(s) show NER stutter — legitimate same-entity grouping, but the underlying extraction is noisy (docs §12.1)",
+      "evidence": [
+        "Santiago Santiago Arica"
+      ]
+    },
+    {
+      "flag_type": "ner_stutter",
+      "canonical_id": "org_santiago_de_chile",
+      "canonical_name": "Santiago de Chile",
+      "entity_type": "Organization",
+      "reason": "member name(s) show NER stutter — legitimate same-entity grouping, but the underlying extraction is noisy (docs §12.1)",
+      "evidence": [
+        "Santiago Santiago de Chile"
+      ]
+    },
+    {
+      "flag_type": "ner_stutter",
+      "canonical_id": "org_w_r",
+      "canonical_name": "w ∈ R𝑤",
+      "entity_type": "Organization",
+      "reason": "member name(s) show NER stutter — legitimate same-entity grouping, but the underlying extraction is noisy (docs §12.1)",
+      "evidence": [
+        "W W"
+      ]
+    },
+    {
+      "flag_type": "ner_stutter",
+      "canonical_id": "person_json_ld_1_0",
+      "canonical_name": "JSON-LD 1.0",
+      "entity_type": "Person",
+      "reason": "member name(s) show NER stutter — legitimate same-entity grouping, but the underlying extraction is noisy (docs §12.1)",
+      "evidence": [
+        "JSON-LD 1.1"
+      ]
+    },
+    {
+      "flag_type": "ner_stutter",
+      "canonical_id": "person_santiago_arica_santiago",
+      "canonical_name": "Santiago Arica Santiago",
+      "entity_type": "Person",
+      "reason": "member name(s) show NER stutter — legitimate same-entity grouping, but the underlying extraction is noisy (docs §12.1)",
+      "evidence": [
+        "Santiago Santiago Santiago"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_attention_att_blstm",
+      "canonical_name": "Attention Att-BLSTM",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Att-BLSTM' ~ 'Attention Att-BLSTM' (cos 0.9131)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_cid_62",
+      "canonical_name": "cid:62",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'cid:48' ~ 'cid:62' (cos 0.9067)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_claimant_xy12sda",
+      "canonical_name": "Claimant-XY12SDA",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Claimant-XY12SDA' ~ 'Claimant-XY12SDA XY12SDA' (cos 0.9833)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_eid15_type_event",
+      "canonical_name": "EID15 type Event",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'EID15 , Event' ~ 'EID15 type Event' (cos 0.953)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_extreme_design_with",
+      "canonical_name": "eXtreme Design with",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'eXtreme Design' ~ 'eXtreme Design with' (cos 0.9745)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_feature_axiom_condition_example_assertion",
+      "canonical_name": "Feature Axiom Condition Example Assertion",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Feature Axiom Condition' ~ 'Feature Axiom Condition Example Assertion' (cos 0.9088)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_h_co",
+      "canonical_name": "H Co",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'H Co' ~ 'h h' (cos 0.9438)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_ieee_computer_society",
+      "canonical_name": "IEEE Computer Society",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'IEEE Computer' ~ 'IEEE Computer Society' (cos 0.9218)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_information_extraction_systems",
+      "canonical_name": "Information Extraction Systems",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Information Extraction' ~ 'Information Extraction Systems' (cos 0.9253)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_licenses_compatibility_and_composition",
+      "canonical_name": "Licenses Compatibility and Composition",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Licenses Compatibility and Composition' ~ 'Licenses Composition' (cos 0.9012)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_p_h_p",
+      "canonical_name": "P (h) + P",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'P (h' ~ 'P (h) + P' (cos 0.9446)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_rdf_reading_rdf",
+      "canonical_name": "RDF Reading RDF",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'RDF Reading' ~ 'RDF Reading RDF' (cos 0.9674)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_regi_n_de_valpara_so_different",
+      "canonical_name": "Región de Valparaíso Different",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Región de Valparaíso' ~ 'Región de Valparaíso Different' (cos 0.9059)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_santiago_arica",
+      "canonical_name": "Santiago Arica",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Santiago Arica' ~ 'Santiago Santiago Arica' (cos 0.9684)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_santiago_de_chile",
+      "canonical_name": "Santiago de Chile",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Santiago de Chile' ~ 'Santiago Santiago de Chile' (cos 0.9871)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_santiago_flight_arica",
+      "canonical_name": "Santiago flight Arica",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Santiago flight' ~ 'Santiago flight Arica' (cos 0.9007)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_semantic_web_technologies",
+      "canonical_name": "Semantic Web Technologies",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Semantic Web Technologies' ~ 'The Semantic Web' (cos 0.9378)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "org_the_26th_international_workshop_on_description_logics",
+      "canonical_name": "the 26th International Workshop on Description Logics",
+      "entity_type": "Organization",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Description Logics' ~ 'the 26th International Workshop on Description Logics' (cos 0.9004)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_albert_einstein",
+      "canonical_name": "Albert Einstein",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Albert Einstein' ~ 'Einstein' (cos 0.91)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_appendix_b_6_3",
+      "canonical_name": "Appendix B.6.3",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Appendix B.5' ~ 'Appendix B.6.3' (cos 0.9123)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_arica_santiago_arica",
+      "canonical_name": "Arica Santiago Arica",
+      "entity_type": "Person",
+      "reason": "2 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Arica Santiago' ~ 'Arica Santiago Arica' (cos 0.9642)",
+        "'Arica Santiago Arica' ~ 'Santiago Arica' (cos 0.9538)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_b_y_lin",
+      "canonical_name": "B. Y. Lin",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'B. Y. Lin' ~ 'Y. Lin' (cos 0.9148)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_chengqi_zhang",
+      "canonical_name": "Chengqi Zhang",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Chengqi Zhang' ~ 'Wei Zhang' (cos 0.9006)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_chun_lu",
+      "canonical_name": "Chun Lu",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Chun' ~ 'Chun Lu' (cos 0.9106)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_common_namespaces",
+      "canonical_name": "Common Namespaces",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Common Namespaces' ~ 'Namespaces' (cos 0.9092)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_d_chen",
+      "canonical_name": "D. Chen",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Chen' ~ 'D. Chen' (cos 0.9013)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_description_logic_reasoning",
+      "canonical_name": "Description Logic Reasoning",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Description Logic' ~ 'Description Logic Reasoning' (cos 0.9517)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_evgeniy_gabrilovich",
+      "canonical_name": "Evgeniy Gabrilovich",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'E. Gabrilovich' ~ 'Evgeniy Gabrilovich' (cos 0.9383)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_j_wang",
+      "canonical_name": "J. Wang",
+      "entity_type": "Person",
+      "reason": "2 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'J. Wang' ~ 'Wang' (cos 0.9012)",
+        "'J. Wang' ~ '✓ Wang' (cos 0.9012)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_luis_antonio_gal_rraga",
+      "canonical_name": "Luis Antonio Galárraga",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Luis Antonio Galárraga' ~ 'Luis Galárraga' (cos 0.9493)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_p_huang",
+      "canonical_name": "P. Huang",
+      "entity_type": "Person",
+      "reason": "4 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Huang' ~ 'M. Huang' (cos 0.9291)",
+        "'H. Huang' ~ 'Huang' (cos 0.9204)",
+        "'Huang' ~ 'J. Huang' (cos 0.9122)",
+        "'Huang' ~ 'P. Huang' (cos 0.9108)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_p_zhou",
+      "canonical_name": "P. Zhou",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'C. Zhou' ~ 'P. Zhou' (cos 0.9007)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_santiago_san_pedro",
+      "canonical_name": "Santiago San Pedro",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'San Pedro' ~ 'Santiago San Pedro' (cos 0.9023)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_w_chen",
+      "canonical_name": "W. Chen",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'H. Chen' ~ 'W. Chen' (cos 0.9021)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_xiaojiang_huang",
+      "canonical_name": "Xiaojiang Huang",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Xiao Huang' ~ 'Xiaojiang Huang' (cos 0.9043)"
+      ]
+    },
+    {
+      "flag_type": "short_name_embedding",
+      "canonical_id": "person_zhen_wang",
+      "canonical_name": "Zhen Wang",
+      "entity_type": "Person",
+      "reason": "1 embedding edge(s) between short/initials-only names (<= 3 tokens) — highest-risk false-positive class of the 0.90 threshold (docs §12.1)",
+      "evidence": [
+        "'Z. Wang' ~ 'Zhen Wang' (cos 0.9008)"
+      ]
+    }
+  ]
+}
