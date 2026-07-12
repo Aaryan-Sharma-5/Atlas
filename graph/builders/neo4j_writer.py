@@ -13,8 +13,9 @@ from neo4j import GraphDatabase
 from graph.builders.cypher_builder import (
     build_entity_batch_cypher,
     build_relationship_cypher,
+    build_resolution_cypher,
 )
-from graph.validators.validator import ValidationResult
+from graph.validators.validator import DecisionValidationResult, ValidationResult
 
 DEFAULT_URI = os.environ.get("NEO4J_URI", "bolt://localhost:7687")
 DEFAULT_USER = os.environ.get("NEO4J_USER", "neo4j")
@@ -87,6 +88,29 @@ class Neo4jWriter:
         return {
             "entities_written": len(validated.entities),
             "relationships_written": len(validated.relationships),
+        }
+
+    def write_resolution(
+        self, validated: DecisionValidationResult, decided_at: int
+    ) -> dict[str, int]:
+        """Write validated ResolutionDecisions as Canonical nodes + SAME_AS edges in one transaction. Accepts a DecisionValidationResult only, same gate as write(): resolution output cannot reach Neo4j without graph/validators/.
+
+        Non-destructive by construction (Rule 8): the generated Cypher only MERGEs :Canonical nodes and :SAME_AS edges and MATCHes existing :Entity nodes; no :Entity is modified or deleted.
+        """
+        statements = [
+            stmt
+            for decision in validated.decisions
+            for stmt in build_resolution_cypher(decision, decided_at)
+        ]
+        with self._driver.session() as session:
+            with session.begin_transaction() as tx:
+                for cypher, params in statements:
+                    tx.run(cypher, params).consume()
+                tx.commit()
+        written = [d for d in validated.decisions if d.action != "NONE"]
+        return {
+            "canonical_nodes_written": len(written),
+            "same_as_edges_written": sum(len(d.source_ids) for d in written),
         }
 
     def run_read(
