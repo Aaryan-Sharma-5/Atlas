@@ -286,6 +286,8 @@ All relationships carry these mandatory fields (plus the ones below):
 | `extraction_source` | string | ✓ | Source resource identifier |
 | `extraction_method` | string | ✓ | How it was extracted |
 
+**Phase 7A target resolution:** for `AUTHORED_BY` (Paper→Person), `MENTIONS` (Document→KnowledgeEntity, Repository→API), and `USES` (Repository→Technology), the relationship is written against `graph.queries.resolve_target.resolve_target(entity_id)`'s return value, not the raw extracted entity id — see conceptual.md's Phase 7A section and `docs/architecture.md` §12.5.
+
 ### Authorship and Attribution
 
 #### AUTHORED_BY
@@ -353,6 +355,14 @@ No additional properties.
 |---|---|---|---|---|
 | `version_constraint` | string | ✗ | Version requirement (e.g., >=1.0.0). | ">=2.0.0" |
 | `is_optional` | boolean | ✗ | Optional vs. required dependency. | false |
+
+#### USES
+
+Resource-level dependency signal (Repository → Technology, Phase 7A). Distinct relationship from the code-level `USES_TECHNOLOGY` below — see conceptual.md's Phase 7A section for the disambiguation.
+
+| Property | Type | Required | Description | Example |
+|---|---|---|---|---|
+| `detected_via` | string | ✗ | Where the dependency signal came from. | "manifest:requirements.txt" |
 
 ---
 
@@ -583,6 +593,6 @@ Vector index stores Sentence Transformer embeddings (dimension 384 for `all-Mini
 
 ---
 
-**Document Version:** 1.1  
-**Last Updated:** 2026-07-10
-**Status:** Complete for MVP + resolution layer (Canonical, SAME_AS); code entity properties (Phase 3) will expand once AST parsing is implemented.
+**Document Version:** 1.2  
+**Last Updated:** 2026-07-13
+**Status:** Complete for MVP + resolution layer (Canonical, SAME_AS); Phase 7A adds `USES` properties, schema-only — extraction not yet implemented. Code entity properties (Phase 3) will expand once AST parsing is implemented.

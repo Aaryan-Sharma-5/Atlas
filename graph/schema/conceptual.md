@@ -101,6 +101,7 @@ Relationships are typed, directed edges with semantic meaning. They do not form 
 | `CREATED_IN` | Technology | Language | 0..1 | Technology is written in this language |
 | `EXTENDS` | Technology | Technology | 0..N | Extends/inherits from another technology |
 | `DEPENDS_ON` | Technology | Technology | 0..N | Requires this technology as a dependency |
+| `USES` | Repository | Technology | 0..N | Repository depends on/uses this technology — resource-level signal (README, manifest); distinct from the code-level `USES_TECHNOLOGY` below (Phase 3, AST-derived) |
 
 ### Code Structure
 
@@ -142,6 +143,21 @@ Relationships are typed, directed edges with semantic meaning. They do not form 
 | Relationship | Source | Target | Cardinality | Semantics |
 |---|---|---|---|---|
 | `SAME_AS` | Canonical | (any extracted entity) | 2..N per Canonical, 0..1 per entity | Resolution decided the target entity is an occurrence of this canonical entity. Source entities are never deleted or physically merged (Rule 8); the edge's `decision_action` distinguishes confirmed (`MERGE`) from tentative (`TENTATIVE`) groupings. |
+
+### Phase 7A: Relationship Extraction Scope (high-confidence types)
+
+The first relationship-extraction pass (build order step 7) targets four resource-level relationships. Three already exist above in generalized form; only `USES` is new:
+
+| Relationship | Source | Target | Existing row? |
+|---|---|---|---|
+| `AUTHORED_BY` | Paper | Person | Yes — Authorship and Attribution (`Document, Paper, Repository` → `Person`) |
+| `MENTIONS` | Document | KnowledgeEntity | Yes — Citation and Reference (`Document, Paper, Repository` → `KnowledgeEntity`) |
+| `USES` | Repository | Technology | **New** — added to Technology and Dependency above |
+| `MENTIONS` | Repository | API | Yes — same row as above; `API` is a `KnowledgeEntity` subtype, so no separate type is needed |
+
+**Naming check (requested before implementation):** `MENTIONS` (Repository → API) is **not** a collision with `MENTIONS` (Document → KnowledgeEntity) — it's literally the same relationship type and the same table row; `Repository` is already a valid source and `API` is already a `KnowledgeEntity` subtype in that row. Separately, `USES` is deliberately **not** named `USES_TECHNOLOGY` to avoid colliding with the existing code-level relationship (`Module, Function, Class` → `Technology`, Phase 3, AST-derived) — `USES` is the coarser, resource-level signal (e.g. a README or manifest file mentioning a dependency), a different extraction method and confidence profile from code-level usage.
+
+**Target resolution:** all four relationships attach to whatever `graph/queries/resolve_target.py::resolve_target(entity_id)` returns for the extracted target — the owning `Canonical` id if one exists, otherwise the source `Entity` id unchanged (see `docs/architecture.md` §12.5). Extraction code must not assume the target is always a `Canonical` node; not every entity has one.
 
 ---
 
@@ -202,6 +218,6 @@ When adding a new relationship type:
 
 ---
 
-**Document Version:** 1.1  
-**Last Updated:** 2026-07-10
-**Status:** Complete for MVP + resolution layer (Canonical, SAME_AS); additional relationship types from Phase 3 (code intelligence) not yet included.
+**Document Version:** 1.2  
+**Last Updated:** 2026-07-13
+**Status:** Complete for MVP + resolution layer (Canonical, SAME_AS); Phase 7A relationship scope (AUTHORED_BY, MENTIONS, USES) added, schema-only — extraction not yet implemented. Additional relationship types from Phase 3 (code intelligence) not yet included.

@@ -396,8 +396,14 @@ Stage 4 clustering is union-find over candidate pairs — **single-linkage**, so
 
 Fix (2026-07-11): a **cluster cohesion floor of 0.85** — every *pair* inside a surviving cluster (not just every candidate edge) must reach 0.85 similarity. For the check, pairs never directly compared count as 0. Note for future readers: the naive fix — "drop edges below the floor and recompute connected components" — is a **no-op** here, because every candidate edge already scores ≥ the matcher thresholds (the chain links themselves are 0.857 edges); nothing can ever be dropped. Failing clusters are therefore re-partitioned greedily into complete-linkage groups on `max(candidate edge score, string similarity)` — embedding-joined pairs keep their edge score so their lower string similarity doesn't tear them apart. Members cohering with no group fall out of resolution entirely (cohesion orphans). Implemented in `resolution/decisioning/merge_resolver.py::_cohesion_partition`.
 
+### 12.5 Not every entity gets a Canonical — `resolve_target()` is the attachment boundary
+
+Of 4,482 `:Entity` nodes, only 731 sit under a `:Canonical` (329 clusters); the remaining ~3,751 either never had a duplicate to resolve against, or fell out as cohesion orphans (§12.4). **Deliberate choice: do not wrap every entity in a single-member `Canonical` to force a uniform node type.** `Canonical` keeps its current meaning — a real deduplication cluster — and inventing one-member wrappers for entities that were never duplicated would blur that meaning and inflate the graph for no resolution benefit.
+
+Consequence: any consumer that attaches something to "the entity" (relationship extraction, retrieval, explainability) cannot assume the target is uniformly a `Canonical`. `graph/queries/resolve_target.py::resolve_target(entity_id)` is the read-only helper for this: it returns the owning `Canonical`'s id if `entity_id` has an incoming `SAME_AS` edge, otherwise `entity_id` unchanged. Consumers resolve attachment targets through this function rather than assuming node type.
+
 ---
 
-**Document Version:** 1.1  
-**Last Updated:** 2026-07-11  
-**Status:** Stage 5 
+**Document Version:** 1.2  
+**Last Updated:** 2026-07-13  
+**Status:** Stage 6 (resolution write complete)
