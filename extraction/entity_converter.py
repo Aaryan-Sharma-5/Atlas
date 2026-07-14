@@ -4,9 +4,11 @@ Exact-duplicate mentions (same type + normalized surface form) collapse into one
 """
 
 import re
+import time
 from collections import Counter, defaultdict
 
 from extraction.entity_extractor import RawEntity
+from ingestion.pdf_parser import PDFMetadata
 from models.entity import Entity
 
 # spaCy label -> Atlas node type. Labels absent here (GPE, NORP, FAC, EVENT, LAW, WORK_OF_ART) have no home in the schema hierarchy yet and are skipped; adding them requires a schema-doc update first.
@@ -91,6 +93,36 @@ def convert_raw_entities(
         )
 
     return entities, dict(skipped)
+
+
+def convert_paper_entity(metadata: PDFMetadata, extraction_source: str) -> Entity:
+    """PDF ingestion metadata -> a Paper Entity node.
+
+    Id uses the same source_slug namespace as every entity extracted from this PDF (see convert_raw_entities), so `paper_{source_slug}` is the natural, deterministic anchor id for relationships (AUTHORED_BY, MENTIONS) that attach to this paper. Falls back to the source_slug as the name/title when PDF metadata carries no title (observed on this corpus: 2002.00388v4.pdf).
+    """
+    source_slug = _slugify(_normalize(extraction_source.split(":", 1)[-1]))
+    title = metadata.title or source_slug
+
+    properties: dict[str, object] = {
+        "title": title,
+        "ingestion_timestamp": int(time.time()),
+        "file_hash": metadata.file_hash,
+        "content_type": "application/pdf",
+        "page_count": metadata.page_count,
+        "language": metadata.language,
+    }
+    if metadata.authors:
+        properties["authors"] = metadata.authors
+
+    return Entity(
+        id=f"paper_{source_slug}",
+        type="Paper",
+        name=title,
+        confidence=1.0,
+        extraction_source=extraction_source,
+        extraction_method="pdfplumber",
+        properties=properties,
+    )
 
 
 def _collapse_ws(text: str) -> str:
