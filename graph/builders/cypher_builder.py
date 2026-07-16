@@ -109,6 +109,25 @@ def build_resolution_cypher(
     return [node, edges]
 
 
+def build_authored_by_cypher(rel: Relationship) -> CypherStatement:
+    """Validated AUTHORED_BY (Paper -> Person|Canonical) -> MERGE Cypher (7A.1).
+
+    Same idempotent MERGE pattern as build_resolution_cypher: re-running extraction over the same corpus must not duplicate edges. Target may be either a :Canonical or a raw :Entity (resolve_target.py's fallback), so the match is unlabeled on the target side, same as build_relationship_cypher.
+    """
+    if rel.type != "AUTHORED_BY":
+        raise ValueError(f"unvalidated relationship type: {rel.type!r}")
+    cypher = (
+        "MATCH (a {id: $source_id}) MATCH (b {id: $target_id}) "
+        "MERGE (a)-[r:AUTHORED_BY]->(b) SET r = $props"
+    )
+    params = {
+        "source_id": rel.source_id,
+        "target_id": rel.target_id,
+        "props": _rel_props(rel),
+    }
+    return cypher, params
+
+
 def _flat_props(entity: Entity) -> dict[str, Any]:
     """Mandatory fields + custom properties as one flat dict.
 

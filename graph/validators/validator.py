@@ -169,6 +169,45 @@ def _decision_errors(
     return reasons
 
 
+def validate_authored_by(
+    relationships: Iterable[Relationship],
+    known_entity_ids: set[str],
+    known_canonical_ids: set[str],
+    existing_edges: set[tuple[str, str, str]] = frozenset(),
+) -> ValidationResult:
+    """AUTHORED_BY (Paper -> Person|Canonical) relationships, post target-resolution, before graph/builders/ (7A.1). Reuses ValidationResult/ValidationError (Rule 3 applies to relationships the same as entities and resolution decisions); `entities` is always empty here since this validates edges only.
+
+    known_entity_ids/known_canonical_ids cover both the live graph and any new nodes validated in the same batch (e.g. Paper nodes not yet written). existing_edges is the live-graph (source, type, target) set, for the duplicate-edge check to hold across repeated extraction runs, not just within one batch.
+    """
+    errors: list[ValidationError] = []
+    valid: list[Relationship] = []
+    seen_edges: set[tuple[str, str, str]] = set(existing_edges)
+
+    for rel in relationships:
+        rel_id = f"{rel.source_id}-[{rel.type}]->{rel.target_id}"
+        reasons: list[str] = []
+        if rel.type != "AUTHORED_BY":
+            reasons.append(f"not an AUTHORED_BY relationship: {rel.type!r}")
+        if rel.source_id not in known_entity_ids:
+            reasons.append(f"orphan: source {rel.source_id!r} not a known Paper entity")
+        if rel.target_id not in known_entity_ids and rel.target_id not in known_canonical_ids:
+            reasons.append(f"orphan: target {rel.target_id!r} not a known Entity or Canonical")
+        if rel.source_id == rel.target_id:
+            reasons.append("self-loop: source and target are the same id")
+        edge_key = (rel.source_id, rel.type, rel.target_id)
+        if edge_key in seen_edges:
+            reasons.append("duplicate edge (already exists or repeated in this batch)")
+        reasons.extend(_common_errors(rel))
+
+        if reasons:
+            errors.extend(ValidationError(rel_id, r) for r in reasons)
+        else:
+            valid.append(rel)
+            seen_edges.add(edge_key)
+
+    return ValidationResult(entities=[], relationships=valid, errors=errors)
+
+
 def _common_errors(item: Entity | Relationship) -> list[str]:
     """Mandatory confidence/provenance checks shared by nodes and edges."""
     reasons: list[str] = []

@@ -1,0 +1,1 @@
+"""Relationship extraction: RelationshipCandidate (raw target name) -> resolved models.Relationship, per type. Orchestration only — no Neo4j imports here (Rule 1); reads go through graph/queries/, writes through graph/builders/."""
