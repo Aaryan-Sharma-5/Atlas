@@ -4,6 +4,7 @@ from graph.builders.cypher_builder import (
     build_authored_by_cypher,
     build_entity_batch_cypher,
     build_entity_cypher,
+    build_entity_merge_cypher,
     build_relationship_cypher,
     build_resolution_cypher,
 )
@@ -12,6 +13,7 @@ from graph.builders.neo4j_writer import Neo4jWriter
 __all__ = [
     "build_entity_cypher",
     "build_entity_batch_cypher",
+    "build_entity_merge_cypher",
     "build_relationship_cypher",
     "build_resolution_cypher",
     "build_authored_by_cypher",

@@ -1,0 +1,239 @@
+{
+  "papers": [
+    {
+      "id": "paper_2002_00388v4_pdf",
+      "type": "Paper",
+      "name": "2002_00388v4_pdf",
+      "confidence": 1.0,
+      "extraction_source": "pdf:2002.00388v4.pdf",
+      "extraction_method": "pdfplumber",
+      "properties": {
+        "title": "2002_00388v4_pdf",
+        "ingestion_timestamp": 1786195382,
+        "file_hash": "1368b41612825326b127e70949943aa67d504f2034c70fdd137c8e8bee670c32",
+        "content_type": "application/pdf",
+        "page_count": 27,
+        "language": "en"
+      }
+    },
+    {
+      "id": "paper_2003_02320v6_pdf",
+      "type": "Paper",
+      "name": "Knowledge Graphs",
+      "confidence": 1.0,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdfplumber",
+      "properties": {
+        "title": "Knowledge Graphs",
+        "ingestion_timestamp": 1786195417,
+        "file_hash": "348d06999cd5fd039d31620f9552dba0ac34e9e16a614f88473a74591b9f438e",
+        "content_type": "application/pdf",
+        "page_count": 135,
+        "language": "en",
+        "authors": [
+          "Aidan Hogan, Eva Blomqvist, Michael Cochez, Claudia d'Amato, Gerard de Melo, Claudio Gutierrez, José Emilio Labra Gayo, Sabrina Kirrane, Sebastian Neumaier, Axel Polleres, Roberto Navigli, Axel-Cyrille Ngonga Ngomo, Sabbir M. Rashid, Anisa Rula, Lukas Schmelzeisen, Juan Sequeda, Steffen Staab, and Antoine Zimmermann"
+        ]
+      }
+    }
+  ],
+  "relationships": [
+    {
+      "source_id": "paper_2002_00388v4_pdf",
+      "target_id": "person_shaoxiong_ji__2002_00388v4_pdf",
+      "type": "AUTHORED_BY",
+      "confidence": 0.96,
+      "extraction_source": "pdf:2002.00388v4.pdf",
+      "extraction_method": "page1_byline_heuristic",
+      "properties": {
+        "evidence": "page1:author_section; target=entity (unresolved)"
+      }
+    },
+    {
+      "source_id": "paper_2002_00388v4_pdf",
+      "target_id": "person_shirui_pan",
+      "type": "AUTHORED_BY",
+      "confidence": 0.96,
+      "extraction_source": "pdf:2002.00388v4.pdf",
+      "extraction_method": "page1_byline_heuristic",
+      "properties": {
+        "evidence": "page1:author_section; target=canonical"
+      }
+    },
+    {
+      "source_id": "paper_2002_00388v4_pdf",
+      "target_id": "person_erik_cambria",
+      "type": "AUTHORED_BY",
+      "confidence": 0.96,
+      "extraction_source": "pdf:2002.00388v4.pdf",
+      "extraction_method": "page1_byline_heuristic",
+      "properties": {
+        "evidence": "page1:author_section; target=canonical"
+      }
+    },
+    {
+      "source_id": "paper_2002_00388v4_pdf",
+      "target_id": "person_pekka_marttinen",
+      "type": "AUTHORED_BY",
+      "confidence": 0.96,
+      "extraction_source": "pdf:2002.00388v4.pdf",
+      "extraction_method": "page1_byline_heuristic",
+      "properties": {
+        "evidence": "page1:author_section; target=canonical"
+      }
+    },
+    {
+      "source_id": "paper_2002_00388v4_pdf",
+      "target_id": "person_philip_s_yu",
+      "type": "AUTHORED_BY",
+      "confidence": 0.96,
+      "extraction_source": "pdf:2002.00388v4.pdf",
+      "extraction_method": "page1_byline_heuristic",
+      "properties": {
+        "evidence": "page1:author_section; target=canonical"
+      }
+    },
+    {
+      "source_id": "paper_2003_02320v6_pdf",
+      "target_id": "person_aidan_hogan__2003_02320v6_pdf",
+      "type": "AUTHORED_BY",
+      "confidence": 0.98,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdf_metadata_authors",
+      "properties": {
+        "evidence": "metadata:author_list; target=entity (unresolved)"
+      }
+    },
+    {
+      "source_id": "paper_2003_02320v6_pdf",
+      "target_id": "person_michael_cochez__2003_02320v6_pdf",
+      "type": "AUTHORED_BY",
+      "confidence": 0.98,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdf_metadata_authors",
+      "properties": {
+        "evidence": "metadata:author_list; target=entity (unresolved)"
+      }
+    },
+    {
+      "source_id": "paper_2003_02320v6_pdf",
+      "target_id": "person_gerard_de_melo__2003_02320v6_pdf",
+      "type": "AUTHORED_BY",
+      "confidence": 0.98,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdf_metadata_authors",
+      "properties": {
+        "evidence": "metadata:author_list; target=entity (unresolved)"
+      }
+    },
+    {
+      "source_id": "paper_2003_02320v6_pdf",
+      "target_id": "person_claudio_guti_rrez",
+      "type": "AUTHORED_BY",
+      "confidence": 0.98,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdf_metadata_authors",
+      "properties": {
+        "evidence": "metadata:author_list; target=canonical"
+      }
+    },
+    {
+      "source_id": "paper_2003_02320v6_pdf",
+      "target_id": "person_jos_emilio_labra_gayo",
+      "type": "AUTHORED_BY",
+      "confidence": 0.98,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdf_metadata_authors",
+      "properties": {
+        "evidence": "metadata:author_list; target=canonical"
+      }
+    },
+    {
+      "source_id": "paper_2003_02320v6_pdf",
+      "target_id": "person_sabrina_kirrane__2003_02320v6_pdf",
+      "type": "AUTHORED_BY",
+      "confidence": 0.98,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdf_metadata_authors",
+      "properties": {
+        "evidence": "metadata:author_list; target=entity (unresolved)"
+      }
+    },
+    {
+      "source_id": "paper_2003_02320v6_pdf",
+      "target_id": "person_sebastian_neumaier__2003_02320v6_pdf",
+      "type": "AUTHORED_BY",
+      "confidence": 0.98,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdf_metadata_authors",
+      "properties": {
+        "evidence": "metadata:author_list; target=entity (unresolved)"
+      }
+    },
+    {
+      "source_id": "paper_2003_02320v6_pdf",
+      "target_id": "person_axel_polleres__2003_02320v6_pdf",
+      "type": "AUTHORED_BY",
+      "confidence": 0.98,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdf_metadata_authors",
+      "properties": {
+        "evidence": "metadata:author_list; target=entity (unresolved)"
+      }
+    },
+    {
+      "source_id": "paper_2003_02320v6_pdf",
+      "target_id": "person_roberto_navigli__2003_02320v6_pdf",
+      "type": "AUTHORED_BY",
+      "confidence": 0.98,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdf_metadata_authors",
+      "properties": {
+        "evidence": "metadata:author_list; target=entity (unresolved)"
+      }
+    },
+    {
+      "source_id": "paper_2003_02320v6_pdf",
+      "target_id": "person_anisa_rula__2003_02320v6_pdf",
+      "type": "AUTHORED_BY",
+      "confidence": 0.98,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdf_metadata_authors",
+      "properties": {
+        "evidence": "metadata:author_list; target=entity (unresolved)"
+      }
+    },
+    {
+      "source_id": "paper_2003_02320v6_pdf",
+      "target_id": "person_juan_f_sequeda",
+      "type": "AUTHORED_BY",
+      "confidence": 0.98,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdf_metadata_authors",
+      "properties": {
+        "evidence": "metadata:author_list; target=canonical"
+      }
+    },
+    {
+      "source_id": "paper_2003_02320v6_pdf",
+      "target_id": "person_steffen_staab__2003_02320v6_pdf",
+      "type": "AUTHORED_BY",
+      "confidence": 0.98,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdf_metadata_authors",
+      "properties": {
+        "evidence": "metadata:author_list; target=entity (unresolved)"
+      }
+    },
+    {
+      "source_id": "paper_2003_02320v6_pdf",
+      "target_id": "person_antoine_zimmermann__2003_02320v6_pdf",
+      "type": "AUTHORED_BY",
+      "confidence": 0.98,
+      "extraction_source": "pdf:2003.02320v6.pdf",
+      "extraction_method": "pdf_metadata_authors",
+      "properties": {
+        "evidence": "metadata:author_list; target=entity (unresolved)"
+      }
+    }
+  ]
+}

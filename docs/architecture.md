@@ -402,8 +402,22 @@ Of 4,482 `:Entity` nodes, only 731 sit under a `:Canonical` (329 clusters); the 
 
 Consequence: any consumer that attaches something to "the entity" (relationship extraction, retrieval, explainability) cannot assume the target is uniformly a `Canonical`. `graph/queries/resolve_target.py::resolve_target(entity_id)` is the read-only helper for this: it returns the owning `Canonical`'s id if `entity_id` has an incoming `SAME_AS` edge, otherwise `entity_id` unchanged. Consumers resolve attachment targets through this function rather than assuming node type.
 
+### 12.6 Build Order Step 7 (relationship extraction): sub-phases
+
+Build Order Step 7 covers all schema-scoped relationship extraction (conceptual.md's Phase 7A section). It is built and tracked in sub-phases, one relationship type at a time — this table is the single source of truth for Step 7 progress; do not track it separately in chat.
+
+| Sub-phase | Relationship | Source → Target | Status |
+|---|---|---|---|
+| 7A.1 | `AUTHORED_BY` | Paper → Person | **Done** — written to Neo4j, idempotency-verified (2 Paper nodes, 18 edges) |
+| 7A.2 | `MENTIONS` | Document → KnowledgeEntity; Repository → API | Not started |
+| 7A.3 | `USES` | Repository → Technology | Not started |
+
+### 12.7 PDF metadata author fields have been observed with mangled encoding
+
+PDF metadata extraction (author fields specifically) has been observed with mangled UTF-8 encoding — example: `"Jos� Emilio"` instead of `"José Emilio"` — in at least one source document. Currently masked when the entity resolves to a `Canonical` sourced from cleanly-extracted NER text (§12.5's milestone query shows the correct accented name), but any `AUTHORED_BY` target that resolves to a raw `Entity` built directly from the mangled metadata name would surface the corruption. Not fixed now — `ingestion/` should validate/repair encoding at extraction time in a future pass.
+
 ---
 
-**Document Version:** 1.2  
-**Last Updated:** 2026-07-13  
-**Status:** Stage 6 (resolution write complete)
+**Document Version:** 1.3
+**Last Updated:** 2026-07-17  
+**Status:** Step 7 (relationship extraction) in progress — 7A.1 done and written; 7A.2/7A.3 not started

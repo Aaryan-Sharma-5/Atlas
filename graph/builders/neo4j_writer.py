@@ -11,11 +11,15 @@ from typing import Any
 from neo4j import GraphDatabase
 
 from graph.builders.cypher_builder import (
+    build_authored_by_cypher,
     build_entity_batch_cypher,
+    build_entity_merge_cypher,
     build_relationship_cypher,
     build_resolution_cypher,
 )
 from graph.validators.validator import DecisionValidationResult, ValidationResult
+from models.entity import Entity
+from models.relationship import Relationship
 
 DEFAULT_URI = os.environ.get("NEO4J_URI", "bolt://localhost:7687")
 DEFAULT_USER = os.environ.get("NEO4J_USER", "neo4j")
@@ -111,6 +115,27 @@ class Neo4jWriter:
         return {
             "canonical_nodes_written": len(written),
             "same_as_edges_written": sum(len(d.source_ids) for d in written),
+        }
+
+    def write_authored_by(
+        self, papers: list[Entity], relationships: list[Relationship]
+    ) -> dict[str, int]:
+        """Write Paper entities + AUTHORED_BY edges in one transaction (7A.1).
+
+        Both sides MERGE-based (idempotent): re-running extraction over the same corpus must not duplicate Paper nodes or edges. Source :Entity nodes elsewhere in the graph are only ever MATCHed, never modified.
+        """
+        paper_statements = [build_entity_merge_cypher(p) for p in papers]
+        edge_statements = [build_authored_by_cypher(r) for r in relationships]
+
+        with self._driver.session() as session:
+            with session.begin_transaction() as tx:
+                for cypher, params in paper_statements + edge_statements:
+                    tx.run(cypher, params).consume()
+                tx.commit()
+
+        return {
+            "paper_nodes_written": len(papers),
+            "authored_by_edges_written": len(relationships),
         }
 
     def run_read(

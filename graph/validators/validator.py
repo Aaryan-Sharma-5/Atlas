@@ -177,7 +177,7 @@ def validate_authored_by(
 ) -> ValidationResult:
     """AUTHORED_BY (Paper -> Person|Canonical) relationships, post target-resolution, before graph/builders/ (7A.1). Reuses ValidationResult/ValidationError (Rule 3 applies to relationships the same as entities and resolution decisions); `entities` is always empty here since this validates edges only.
 
-    known_entity_ids/known_canonical_ids cover both the live graph and any new nodes validated in the same batch (e.g. Paper nodes not yet written). existing_edges is the live-graph (source, type, target) set, for the duplicate-edge check to hold across repeated extraction runs, not just within one batch.
+    known_entity_ids/known_canonical_ids cover both the live graph and any new nodes validated in the same batch (e.g. Paper nodes not yet written). existing_edges seeds the duplicate-edge check for genuinely distinct candidate sets run back-to-back; deliberately do NOT pass the live graph's own AUTHORED_BY edges here for a re-run of the SAME already-written batch — build_authored_by_cypher's MERGE is what makes that idempotent, and this check would otherwise reject every one of it.
     """
     errors: list[ValidationError] = []
     valid: list[Relationship] = []

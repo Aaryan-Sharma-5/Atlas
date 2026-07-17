@@ -4,8 +4,10 @@
 Order: build Paper entities from PDF metadata + validate them, extract author candidates (registry-driven), resolve targets via resolve_target(), validate the resolved relationships, then preview (not execute) the Cypher. Checkpoint discipline continues — this stops at the preview, same as Stage 4 decisioning did before its write was explicitly approved.
 """
 
+import json
 import re
 import sys
+from dataclasses import asdict
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -21,6 +23,7 @@ from relationships.registry import RELATIONSHIP_REGISTRY
 
 ROOT = Path(__file__).parent.parent
 CORPUS = [ROOT / "examples" / "2002.00388v4.pdf", ROOT / "examples" / "2003.02320v6.pdf"]
+OUTPUT_PATH = ROOT / "examples" / "expected_output" / "authored_by_relationships.json"
 
 _NON_ALNUM = re.compile(r"[^a-z0-9]+")
 
@@ -128,6 +131,20 @@ if all_dropped:
     print("\nSample of dropped candidates (no matching target):")
     for line in all_dropped[:10]:
         print(f"  {line}")
+
+print("\nWriting authored_by_relationships.json (extraction output, no graph write)...")
+OUTPUT_PATH.write_text(
+    json.dumps(
+        {
+            "papers": [asdict(p) for p in paper_result.entities],
+            "relationships": [asdict(r) for r in result.relationships],
+        },
+        ensure_ascii=False,
+        indent=2,
+    ),
+    encoding="utf-8",
+)
+print(f"  wrote {OUTPUT_PATH.relative_to(ROOT)}")
 
 print()
 print("[OK] STAGE 7A.1 EXTRACTION COMPLETE - nothing written to Neo4j")

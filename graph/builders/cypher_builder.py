@@ -26,6 +26,16 @@ def build_entity_cypher(entity: Entity) -> CypherStatement:
     return cypher, {"props": _flat_props(entity)}
 
 
+def build_entity_merge_cypher(entity: Entity) -> CypherStatement:
+    """Idempotent single-entity MERGE, vs. build_entity_cypher's CREATE.
+
+    For entities that may legitimately be written more than once across extraction re-runs (e.g. Paper nodes backing relationship extraction, written once per corpus but re-validated/re-written on every 7A run) - CREATE would hit unique_entity_id on the second run instead of proving idempotency.
+    """
+    _assert_valid_labels(entity)
+    cypher = f"MERGE (n:Entity:{entity.base_type}:{entity.type} {{id: $id}}) SET n = $props"
+    return cypher, {"id": entity.id, "props": _flat_props(entity)}
+
+
 def build_relationship_cypher(rel: Relationship) -> CypherStatement:
     """Edge CREATE, matching endpoints by id."""
     if rel.type not in RELATIONSHIP_TYPES:
