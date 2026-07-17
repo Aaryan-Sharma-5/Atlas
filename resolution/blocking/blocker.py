@@ -1,4 +1,4 @@
-"""Candidate generation via blocking: reduces O(n²) pairwise comparison to within-block comparisons before any matcher runs (CLAUDE.md: blocking is mandatory before matching, regardless of corpus size).
+"""Candidate generation via blocking: reduces O(n²) pairwise comparison to within-block comparisons before any matcher runs (blocking is mandatory before matching, regardless of corpus size).
 
 Union blocking: each entity lands in one block per (key kind, normalized form), and a pair is a candidate if it shares ANY block. Complementary keys keep recall-critical variants comparable — last_token survives middle initials and leading articles, sorted_initials survives token reordering — while comparisons stay far below full pairwise. Node types never share a block, so a Person is never a candidate for an Organization even on an identical string. Pure, no Neo4j.
 """

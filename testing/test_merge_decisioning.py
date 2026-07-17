@@ -60,7 +60,7 @@ print(f"      {len(result.decisions)} valid, {len(result.errors)} errors")
 for err in result.errors[:10]:
     print(f"        REJECTED {err.item_id}: {err.reason}")
 
-print("\n[4/5] Resolution metrics (CLAUDE.md deliverable):")
+print("\n[4/5] Resolution metrics: ")
 raw = data["entity_count"]
 resolved_members = sum(len(d.source_ids) for d in clusters)
 canonical_count = raw - resolved_members + len(clusters)

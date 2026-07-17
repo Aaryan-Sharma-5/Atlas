@@ -50,7 +50,7 @@ class Entity:
             raise ValueError(
                 f"Unknown entity type {self.type!r}. Valid types: "
                 f"{sorted(NODE_HIERARCHY)}. New types require a schema-doc "
-                f"update first (CLAUDE.md rule 2)."
+                f"update first. "
             )
 
     @property

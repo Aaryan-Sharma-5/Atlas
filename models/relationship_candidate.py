@@ -25,5 +25,5 @@ class RelationshipCandidate:
             raise ValueError(
                 f"Unknown relationship type {self.relationship_type!r}. Valid "
                 f"types: {sorted(RELATIONSHIP_TYPES)}. New types require a "
-                f"schema-doc update first (CLAUDE.md rule 2)."
+                f"schema-doc update first."
             )

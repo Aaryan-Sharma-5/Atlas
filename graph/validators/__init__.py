@@ -1,4 +1,4 @@
-"""Pre-insertion validation (CLAUDE.md rule 3)."""
+"""Pre-insertion validation"""
 
 from graph.validators.validator import (
     DecisionValidationResult,
