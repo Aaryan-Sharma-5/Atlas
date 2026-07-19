@@ -5,6 +5,7 @@ from graph.builders.cypher_builder import (
     build_entity_batch_cypher,
     build_entity_cypher,
     build_entity_merge_cypher,
+    build_mentions_cypher,
     build_relationship_cypher,
     build_resolution_cypher,
 )
@@ -17,5 +18,6 @@ __all__ = [
     "build_relationship_cypher",
     "build_resolution_cypher",
     "build_authored_by_cypher",
+    "build_mentions_cypher",
     "Neo4jWriter",
 ]

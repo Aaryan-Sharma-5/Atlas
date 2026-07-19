@@ -120,15 +120,25 @@ def build_resolution_cypher(
 
 
 def build_authored_by_cypher(rel: Relationship) -> CypherStatement:
-    """Validated AUTHORED_BY (Paper -> Person|Canonical) -> MERGE Cypher (7A.1).
+    """Validated AUTHORED_BY (Paper -> Person|Canonical) -> MERGE Cypher (7A.1)."""
+    return _build_relationship_merge_cypher(rel, "AUTHORED_BY")
+
+
+def build_mentions_cypher(rel: Relationship) -> CypherStatement:
+    """Validated MENTIONS (Paper|Markdown|Repository -> KnowledgeEntity|Canonical) -> MERGE Cypher (7A.2a)."""
+    return _build_relationship_merge_cypher(rel, "MENTIONS")
+
+
+def _build_relationship_merge_cypher(rel: Relationship, expected_type: str) -> CypherStatement:
+    """Shared body for the per-relationship-type MERGE builders above.
 
     Same idempotent MERGE pattern as build_resolution_cypher: re-running extraction over the same corpus must not duplicate edges. Target may be either a :Canonical or a raw :Entity (resolve_target.py's fallback), so the match is unlabeled on the target side, same as build_relationship_cypher.
     """
-    if rel.type != "AUTHORED_BY":
+    if rel.type != expected_type:
         raise ValueError(f"unvalidated relationship type: {rel.type!r}")
     cypher = (
         "MATCH (a {id: $source_id}) MATCH (b {id: $target_id}) "
-        "MERGE (a)-[r:AUTHORED_BY]->(b) SET r = $props"
+        f"MERGE (a)-[r:{expected_type}]->(b) SET r = $props"
     )
     params = {
         "source_id": rel.source_id,

@@ -14,6 +14,7 @@ from graph.builders.cypher_builder import (
     build_authored_by_cypher,
     build_entity_batch_cypher,
     build_entity_merge_cypher,
+    build_mentions_cypher,
     build_relationship_cypher,
     build_resolution_cypher,
 )
@@ -120,22 +121,45 @@ class Neo4jWriter:
     def write_authored_by(
         self, papers: list[Entity], relationships: list[Relationship]
     ) -> dict[str, int]:
-        """Write Paper entities + AUTHORED_BY edges in one transaction (7A.1).
+        """Write Paper entities + AUTHORED_BY edges in one transaction (7A.1)."""
+        counts = self._write_relationship_batch(papers, relationships, build_authored_by_cypher)
+        return {
+            "paper_nodes_written": counts["source_nodes_written"],
+            "authored_by_edges_written": counts["edges_written"],
+        }
 
-        Both sides MERGE-based (idempotent): re-running extraction over the same corpus must not duplicate Paper nodes or edges. Source :Entity nodes elsewhere in the graph are only ever MATCHed, never modified.
+    def write_mentions(
+        self, sources: list[Entity], relationships: list[Relationship]
+    ) -> dict[str, int]:
+        """Write Markdown/Repository source entities + MENTIONS edges in one transaction (7A.2a)."""
+        counts = self._write_relationship_batch(sources, relationships, build_mentions_cypher)
+        return {
+            "source_nodes_written": counts["source_nodes_written"],
+            "mentions_edges_written": counts["edges_written"],
+        }
+
+    def _write_relationship_batch(
+        self,
+        source_entities: list[Entity],
+        relationships: list[Relationship],
+        build_edge_cypher,
+    ) -> dict[str, int]:
+        """Shared body for the per-relationship-type write methods above.
+
+        Both sides MERGE-based (idempotent): re-running extraction over the same corpus must not duplicate source nodes or edges. Existing :Entity/:Canonical nodes are only ever MATCHed, never modified.
         """
-        paper_statements = [build_entity_merge_cypher(p) for p in papers]
-        edge_statements = [build_authored_by_cypher(r) for r in relationships]
+        source_statements = [build_entity_merge_cypher(e) for e in source_entities]
+        edge_statements = [build_edge_cypher(r) for r in relationships]
 
         with self._driver.session() as session:
             with session.begin_transaction() as tx:
-                for cypher, params in paper_statements + edge_statements:
+                for cypher, params in source_statements + edge_statements:
                     tx.run(cypher, params).consume()
                 tx.commit()
 
         return {
-            "paper_nodes_written": len(papers),
-            "authored_by_edges_written": len(relationships),
+            "source_nodes_written": len(source_entities),
+            "edges_written": len(relationships),
         }
 
     def run_read(

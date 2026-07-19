@@ -175,9 +175,34 @@ def validate_authored_by(
     known_canonical_ids: set[str],
     existing_edges: set[tuple[str, str, str]] = frozenset(),
 ) -> ValidationResult:
-    """AUTHORED_BY (Paper -> Person|Canonical) relationships, post target-resolution, before graph/builders/ (7A.1). Reuses ValidationResult/ValidationError (Rule 3 applies to relationships the same as entities and resolution decisions); `entities` is always empty here since this validates edges only.
+    """AUTHORED_BY (Paper -> Person|Canonical) relationships, post target-resolution, before graph/builders/ (7A.1)."""
+    return _validate_relationship_type(
+        relationships, "AUTHORED_BY", known_entity_ids, known_canonical_ids, existing_edges
+    )
 
-    known_entity_ids/known_canonical_ids cover both the live graph and any new nodes validated in the same batch (e.g. Paper nodes not yet written). existing_edges seeds the duplicate-edge check for genuinely distinct candidate sets run back-to-back; deliberately do NOT pass the live graph's own AUTHORED_BY edges here for a re-run of the SAME already-written batch — build_authored_by_cypher's MERGE is what makes that idempotent, and this check would otherwise reject every one of it.
+
+def validate_mentions(
+    relationships: Iterable[Relationship],
+    known_entity_ids: set[str],
+    known_canonical_ids: set[str],
+    existing_edges: set[tuple[str, str, str]] = frozenset(),
+) -> ValidationResult:
+    """MENTIONS (Paper|Markdown|Repository -> KnowledgeEntity|Canonical) relationships, post target-resolution, before graph/builders/ (7A.2a)."""
+    return _validate_relationship_type(
+        relationships, "MENTIONS", known_entity_ids, known_canonical_ids, existing_edges
+    )
+
+
+def _validate_relationship_type(
+    relationships: Iterable[Relationship],
+    expected_type: str,
+    known_entity_ids: set[str],
+    known_canonical_ids: set[str],
+    existing_edges: set[tuple[str, str, str]] = frozenset(),
+) -> ValidationResult:
+    """Shared body for the per-relationship-type validators above (Rule 3 applies to relationships the same as entities and resolution decisions). Reuses ValidationResult/ValidationError; `entities` is always empty here since this validates edges only.
+
+    known_entity_ids/known_canonical_ids cover both the live graph and any new nodes validated in the same batch (e.g. source nodes not yet written). existing_edges seeds the duplicate-edge check for genuinely distinct candidate sets run back-to-back; deliberately do NOT pass the live graph's own edges of this type here for a re-run of the SAME already-written batch — the builder's MERGE is what makes that idempotent, and this check would otherwise reject every one of it.
     """
     errors: list[ValidationError] = []
     valid: list[Relationship] = []
@@ -186,10 +211,10 @@ def validate_authored_by(
     for rel in relationships:
         rel_id = f"{rel.source_id}-[{rel.type}]->{rel.target_id}"
         reasons: list[str] = []
-        if rel.type != "AUTHORED_BY":
-            reasons.append(f"not an AUTHORED_BY relationship: {rel.type!r}")
+        if rel.type != expected_type:
+            reasons.append(f"not a {expected_type} relationship: {rel.type!r}")
         if rel.source_id not in known_entity_ids:
-            reasons.append(f"orphan: source {rel.source_id!r} not a known Paper entity")
+            reasons.append(f"orphan: source {rel.source_id!r} not a known entity")
         if rel.target_id not in known_entity_ids and rel.target_id not in known_canonical_ids:
             reasons.append(f"orphan: target {rel.target_id!r} not a known Entity or Canonical")
         if rel.source_id == rel.target_id:

@@ -61,8 +61,6 @@ Organizations accumulate vast amounts of knowledge scattered across documents, r
 │ ├─ Markdown Parser (markdown-it-py)                         │
 │ └─ Web Parser (BeautifulSoup)                               │
 └─────────────────────────────────────────────────────────────┘
-
-  NOTE (implementation status): ingestion/github_parser.py currently extracts DOCUMENTATION FILES ONLY (.md/.rst prose) plus repo metadata(name, url, pinned commit hash). AST parsing, dependency graphs, and call graphs and are NOT implemented.Code entities (Function, Class, Module) do not yet appear in the graph.     
                               ↓
 ┌─────────────────────────────────────────────────────────────┐
 │ Text Processing                                             │
@@ -340,10 +338,6 @@ These are explicitly **not** part of the initial build and are listed for archit
 - **Aspect-based sentiment extraction** for identifying critical claims or disagreements in papers.
 
 ### 11.2 Code Intelligence (Phase 3, explicitly planned)
-
-*Status: none of this exists yet. The current GitHub ingestion path
-(`ingestion/github_parser.py`) reads documentation files only.*
-
 - **AST parsing** of entire repositories into call graphs and dependency graphs.
 - **Type inference** for function signatures and interfaces.
 - **Import resolution** to build a full dependency graph across packages.
@@ -374,55 +368,8 @@ These are explicitly **not** part of the initial build and are listed for archit
 - **Audit logs** (who queried what, when).
 - **Role-based access control** (different users see different subgraphs).
 
-## 12. Known Technical Debt
-
-Deliberate, recorded gaps. Each item names the stage responsible for addressing it; none may be "fixed" opportunistically in an unrelated stage.
-
-### 12.1 Embedding-sourced tentative pairs with short names (Stage 5 responsibility)
-
-The embedding threshold (0.90, calibrated 2026-07-06) deliberately weights recall over precision because every embedding match becomes a TENTATIVE `SAME_AS`, never an auto-merge. Consequence: short-name and initials-only pairs ("B. Zhou" / "C. Zhou") can clear the threshold as false positives. **Stage 5 quality flagging must specifically flag embedding-sourced tentative pairs where either entity name has 3 or fewer tokens or consists only of initials** — these are the highest-risk false positives from this threshold choice. Do not raise the threshold to compensate; the choice was intentional. Also flag NER stutter artifacts ("Santiago Santiago de Chile", "RDF Reading RDF"): legitimate same-entity candidates but extraction-quality noise that inflates tentative counts — Stage 5 flags them, decisioning surfaces them and never suppresses or "fixes" them, same principle as the acronym gap (§12.2).
-
-### 12.2 Acronym-to-full-name pairs are unreachable under current blocking (unscheduled)
-
-Pairs like "W3C" / "World Wide Web Consortium" share no token, so they never share a block, and matchers only see blocked candidates (by design). Neither the string nor the embedding matcher can propose them. Fixing this requires a different blocking key (e.g. character n-grams or a curated acronym table) and was explicitly deferred as over-engineering at current corpus size. If cross-source acronym duplicates matter for a demo, this is the first blocking change to make.
-
-### 12.3 General-purpose NER under-extracts technical entities 
-
-`en_core_web_sm` under-extracts Technology/Language relative to Person/Organization (42 and 2 entities vs ~1,900 Person in the current corpus). A domain-specific extraction strategy requires explicit instruction. Do not compensate in resolution logic.
-
-### 12.4 Why union-find alone was insufficient: the cluster cohesion floor (0.85)
-
-Stage 4 clustering is union-find over candidate pairs — **single-linkage**, so it chains: A~B, B~C, C~D each clear the pairwise threshold while A and D share nothing. On the first corpus run this produced a 41-entity "Z. Zhang" canonical (plus "X. Jiang" ×14, "Chen" ×11) gluing Zhang/Chang/Jiang/Huang surnames through 0.857 initial-swap edges. Weakest-link gating correctly kept them TENTATIVE, but structurally they are not one entity each.
-
-Fix (2026-07-11): a **cluster cohesion floor of 0.85** — every *pair* inside a surviving cluster (not just every candidate edge) must reach 0.85 similarity. For the check, pairs never directly compared count as 0. Note for future readers: the naive fix — "drop edges below the floor and recompute connected components" — is a **no-op** here, because every candidate edge already scores ≥ the matcher thresholds (the chain links themselves are 0.857 edges); nothing can ever be dropped. Failing clusters are therefore re-partitioned greedily into complete-linkage groups on `max(candidate edge score, string similarity)` — embedding-joined pairs keep their edge score so their lower string similarity doesn't tear them apart. Members cohering with no group fall out of resolution entirely (cohesion orphans). Implemented in `resolution/decisioning/merge_resolver.py::_cohesion_partition`.
-
-### 12.5 Not every entity gets a Canonical — `resolve_target()` is the attachment boundary
-
-Of 4,482 `:Entity` nodes, only 731 sit under a `:Canonical` (329 clusters); the remaining ~3,751 either never had a duplicate to resolve against, or fell out as cohesion orphans (§12.4). **Deliberate choice: do not wrap every entity in a single-member `Canonical` to force a uniform node type.** `Canonical` keeps its current meaning — a real deduplication cluster — and inventing one-member wrappers for entities that were never duplicated would blur that meaning and inflate the graph for no resolution benefit.
-
-Consequence: any consumer that attaches something to "the entity" (relationship extraction, retrieval, explainability) cannot assume the target is uniformly a `Canonical`. `graph/queries/resolve_target.py::resolve_target(entity_id)` is the read-only helper for this: it returns the owning `Canonical`'s id if `entity_id` has an incoming `SAME_AS` edge, otherwise `entity_id` unchanged. Consumers resolve attachment targets through this function rather than assuming node type.
-
-### 12.6 Build Order Step 7 (relationship extraction): sub-phases
-
-Build Order Step 7 covers all schema-scoped relationship extraction (conceptual.md's Phase 7A section). It is built and tracked in sub-phases, one relationship type at a time — this table is the single source of truth for Step 7 progress; do not track it separately in chat.
-
-| Sub-phase | Relationship | Source → Target | Status |
-|---|---|---|---|
-| 7A.1 | `AUTHORED_BY` | Paper → Person | **Done** — written to Neo4j, idempotency-verified (2 Paper nodes, 18 edges) |
-| 7A.2a | `MENTIONS` | Paper/Markdown/Repository → KnowledgeEntity | **Done** — written to Neo4j, idempotency-verified (2 source nodes, 4,224 edges) |
-| 7A.2b | `MENTIONS` | Repository → API | **Blocked** — zero `:API`-typed entities exist; extraction pipeline has no NER-label mapping to `API` at all. Needs new API-entity extraction logic in `extraction/`, not scoped further until 7A.3 is done |
-| 7A.3 | `USES` | Repository → Technology | Not started |
-
-### 12.7 PDF metadata author fields have been observed with mangled encoding
-
-PDF metadata extraction (author fields specifically) has been observed with mangled UTF-8 encoding — example: `"Jos� Emilio"` instead of `"José Emilio"` — in at least one source document. Currently masked when the entity resolves to a `Canonical` sourced from cleanly-extracted NER text (§12.5's milestone query shows the correct accented name), but any `AUTHORED_BY` target that resolves to a raw `Entity` built directly from the mangled metadata name would surface the corruption. Not fixed now — `ingestion/` should validate/repair encoding at extraction time in a future pass.
-
-### 12.8 This document is both a corpus source and a living doc — intentionally decoupled
-
-`docs/architecture.md` is ingested as a Markdown corpus source (56 entities, `extraction_source: "md:docs/architecture.md"`) but is also edited every session. Re-running extraction over the *live* file drifts from the *graph's* snapshot as soon as this doc's prose changes (confirmed in 7A.2a: re-extraction produced 17 entities absent from the graph, traced to illustrative names in §12.1/§12.4 prose being picked up as NER hits). Per Testing Philosophy (fixed corpus, not ad hoc), the corpus source is intentionally pinned and decoupled from this file going forward: `examples/corpus/architecture_pinned.md` is the frozen snapshot (as of commit `ddbe709`) that actually produces the 56 live entities — verified to reproduce them exactly. This file keeps evolving; the pinned copy does not, until a deliberate re-ingestion decision is made.
-
 ---
 
-**Document Version:** 1.4
-**Last Updated:** 2026-07-19  
-**Status:** Step 7 (relationship extraction) in progress — 7A.1 and 7A.2a done and written; 7A.2b blocked; 7A.3 not started
+**Document Version:** 1.0  
+**Last Updated:** 2026-07-01  
+**Status:** Architecture frozen; ready for schema definition (Day 1 of Phase 1).

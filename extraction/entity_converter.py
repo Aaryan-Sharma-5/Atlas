@@ -8,6 +8,8 @@ import time
 from collections import Counter, defaultdict
 
 from extraction.entity_extractor import RawEntity
+from ingestion.github_parser import RepoContent
+from ingestion.markdown_parser import MarkdownDoc
 from ingestion.pdf_parser import PDFMetadata
 from models.entity import Entity
 
@@ -69,11 +71,12 @@ def convert_raw_entities(
         name = surface_forms.most_common(1)[0][0]
         aliases = sorted(set(surface_forms) - {name})
 
-        properties: dict[str, object] = {}
+        # mention_count backs MENTIONS' frequency property (relationships/mentions.py); it was already computed for the confidence heuristic below, just not previously kept.
+        properties: dict[str, object] = {"mention_count": len(mentions)}
         if aliases:
             properties["aliases"] = aliases
         if node_type == "Person":
-            properties["full_name"] = name  
+            properties["full_name"] = name
 
         confidence = min(
             _MAX_CONFIDENCE,
@@ -122,6 +125,52 @@ def convert_paper_entity(metadata: PDFMetadata, extraction_source: str) -> Entit
         extraction_source=extraction_source,
         extraction_method="pdfplumber",
         properties=properties,
+    )
+
+
+def convert_markdown_entity(doc: MarkdownDoc, extraction_source: str) -> Entity:
+    """Markdown ingestion output -> a Markdown Entity node (7A.2a source backfill, same shape as convert_paper_entity).
+
+    Falls back to the source_slug as the name/title when no top-level heading was found.
+    """
+    source_slug = _slugify(_normalize(extraction_source.split(":", 1)[-1]))
+    title = doc.title or source_slug
+
+    return Entity(
+        id=f"markdown_{source_slug}",
+        type="Markdown",
+        name=title,
+        confidence=1.0,
+        extraction_source=extraction_source,
+        extraction_method="markdown_parser",
+        properties={
+            "title": title,
+            "ingestion_timestamp": int(time.time()),
+            "file_hash": doc.file_hash,
+            "content_type": "text/markdown",
+        },
+    )
+
+
+def convert_repository_entity(repo: RepoContent, extraction_source: str) -> Entity:
+    """GitHub repository metadata -> a Repository Entity node (7A.2a source backfill, same shape as convert_paper_entity).
+
+    `commit` is a git SHA, not the Unix-timestamp physical.md's `last_commit` expects, so it's stored under its own `commit_sha` property rather than force-fit into a field with a different type.
+    """
+    source_slug = _slugify(_normalize(extraction_source.split(":", 1)[-1]))
+
+    return Entity(
+        id=f"repo_{source_slug}",
+        type="Repository",
+        name=repo.name,
+        confidence=1.0,
+        extraction_source=extraction_source,
+        extraction_method="github_parser",
+        properties={
+            "url": repo.url,
+            "ingestion_timestamp": int(time.time()),
+            "commit_sha": repo.commit,
+        },
     )
 
 

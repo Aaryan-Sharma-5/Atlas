@@ -1,0 +1,116 @@
+{
+  "total_mentions": 4224,
+  "by_target_type": {
+    "Language": 4,
+    "Organization": 1550,
+    "Person": 2605,
+    "Technology": 65
+  },
+  "by_source_type": {
+    "Markdown": 56,
+    "Paper": 3919,
+    "Repository": 249
+  },
+  "fixed_sample": [
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "lang_english",
+      "frequency": 1
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_11_6_compliance_and_security__docs_architecture_md",
+      "frequency": 1
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_acid__docs_architecture_md",
+      "frequency": 4
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_api",
+      "frequency": 4
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_api_design_placeholder__docs_architecture_md",
+      "frequency": 1
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_availability__docs_architecture_md",
+      "frequency": 1
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_biobert__docs_architecture_md",
+      "frequency": 2
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_codeentity__docs_architecture_md",
+      "frequency": 1
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_community_edition__docs_architecture_md",
+      "frequency": 2
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_cypher",
+      "frequency": 2
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_data__docs_architecture_md",
+      "frequency": 3
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_doc",
+      "frequency": 1
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_duplicate__docs_architecture_md",
+      "frequency": 1
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_extraction_llm__docs_architecture_md",
+      "frequency": 1
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_future_extensions__docs_architecture_md",
+      "frequency": 1
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_garbage__docs_architecture_md",
+      "frequency": 1
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_gpu__docs_architecture_md",
+      "frequency": 1
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_incremental__docs_architecture_md",
+      "frequency": 2
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_ingestion__docs_architecture_md",
+      "frequency": 1
+    },
+    {
+      "source": "markdown_docs_architecture_md",
+      "target": "org_knowledgeentity__docs_architecture_md",
+      "frequency": 2
+    }
+  ]
+}
