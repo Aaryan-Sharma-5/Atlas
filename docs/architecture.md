@@ -348,6 +348,8 @@ These are explicitly **not** part of the initial build and are listed for archit
 - **Type inference** for function signatures and interfaces.
 - **Import resolution** to build a full dependency graph across packages.
 - **API documentation extraction** from code comments and type hints.
+- **Manifest file capture** (`pyproject.toml`, `requirements.txt`, `package.json`) — blocks 7A.3 `USES` (Repository → Technology); deferred here rather than patched standalone since it's the same `github_parser.py` extension this section already requires (§12.6).
+- **API/endpoint entity extraction** — blocks 7A.2b `MENTIONS` (Repository → API); no `:API`-typed entity can exist until this lands (§12.6).
 
 ### 11.3 Advanced Retrieval and Reasoning
 - **Sub-graph similarity search** (finding similar patterns, not just similar text).
@@ -410,8 +412,10 @@ Build Order Step 7 covers all schema-scoped relationship extraction (conceptual.
 |---|---|---|---|
 | 7A.1 | `AUTHORED_BY` | Paper → Person | **Done** — written to Neo4j, idempotency-verified (2 Paper nodes, 18 edges) |
 | 7A.2a | `MENTIONS` | Paper/Markdown/Repository → KnowledgeEntity | **Done** — written to Neo4j, idempotency-verified (2 source nodes, 4,224 edges) |
-| 7A.2b | `MENTIONS` | Repository → API | **Blocked** — zero `:API`-typed entities exist; extraction pipeline has no NER-label mapping to `API` at all. Needs new API-entity extraction logic in `extraction/`, not scoped further until 7A.3 is done |
-| 7A.3 | `USES` | Repository → Technology | Not started |
+| 7A.2b | `MENTIONS` | Repository → API | **Blocked — deferred to Phase 3 (code intelligence)** — zero `:API`-typed entities exist; extraction pipeline has no NER-label mapping to `API` at all |
+| 7A.3 | `USES` | Repository → Technology | **Blocked — deferred to Phase 3 (code intelligence)** — `ingestion/github_parser.py` only captures `.md`/`.rst` files; confirmed empirically that rdflib's `pyproject.toml`/`poetry.lock` are never opened |
+
+7A.2b and 7A.3 are both deferred to Phase 3 rather than patched standalone: both gaps live in the same ingestion/extraction surface (`github_parser.py` and its downstream extraction logic) that Phase 3's AST work will already be extending, so fixing them now would mean touching that module twice for two separate future passes. **Step 7 is substantively complete**: 7A.1 and 7A.2a done and written; 7A.2b/7A.3 formally deferred with a documented reason, not an open gap.
 
 ### 12.7 PDF metadata author fields have been observed with mangled encoding
 
@@ -421,8 +425,30 @@ PDF metadata extraction (author fields specifically) has been observed with mang
 
 `docs/architecture.md` is ingested as a Markdown corpus source (56 entities, `extraction_source: "md:docs/architecture.md"`) but is also edited every session. Re-running extraction over the *live* file drifts from the *graph's* snapshot as soon as this doc's prose changes (confirmed in 7A.2a: re-extraction produced 17 entities absent from the graph, traced to illustrative names in §12.1/§12.4 prose being picked up as NER hits). Per Testing Philosophy (fixed corpus, not ad hoc), the corpus source is intentionally pinned and decoupled from this file going forward: `examples/corpus/architecture_pinned.md` is the frozen snapshot (as of commit `ddbe709`) that actually produces the 56 live entities — verified to reproduce them exactly. This file keeps evolving; the pinned copy does not, until a deliberate re-ingestion decision is made.
 
+### 12.9 Only 11% of MENTIONS edges are reachable by quality review
+
+Of 4,224 `MENTIONS` edges, only **473 (11%)** point at a `Canonical` and are therefore reachable by Stage 5 quality-flag cross-referencing (§12.1–§12.4's flag types are computed over `ResolutionDecision`/`Canonical` output only). The remaining **3,751 (89%)** point at raw, unresolved `Entity` nodes that never went through decisioning at all — Stage 5 has no coverage of them whatsoever, flagged or otherwise. This is a real, current limit on how much of the graph's relationship data can be trusted without manual review, not a technical footnote: **the large majority of MENTIONS edges carry no quality signal of any kind.** Confirmed in 7A.2a (`org_cypher` — flagged `cross_type_collision` — is one of the 473 reachable cases; it is also a live MENTIONS target). Not addressed here; recorded as a named gap for whoever scopes quality-review expansion.
+
+**Forward-looking note:** this should inform Step 10 (hybrid retrieval) and Step 13 (explainability) design when those are scoped — most relationship targets a query traverses will carry no quality signal, so retrieval ranking and explainability's confidence/evidence surfacing can't assume flag coverage exists. Flagging now so it isn't rediscovered from scratch later.
+
 ---
 
-**Document Version:** 1.4
-**Last Updated:** 2026-07-19  
-**Status:** Step 7 (relationship extraction) in progress — 7A.1 and 7A.2a done and written; 7A.2b blocked; 7A.3 not started
+## 13. Known Graph Quality Limitations (consolidated)
+
+Pure consolidation of findings already recorded across §12 and Stage 5 quality flagging — no new investigation, no re-litigation. This is the reference point for Step 10 (hybrid retrieval) and Step 13 (explainability) design: what's flagged, what's structurally addressed, and what's simply unmitigated.
+
+| # | Limitation | Produced by | Mitigation status |
+|---|---|---|---|
+| 1 | Short-name/initials-only embedding matches ("B. Zhou"/"C. Zhou") are the highest-risk false-positive class of the 0.90 embedding threshold, deliberately weighted for recall (§12.1) | Resolution Stage 2 (embedding matcher) | **Flagged** — Stage 5 `short_name_embedding` flag; never auto-merged (TENTATIVE only), threshold not raised on purpose |
+| 2 | Single-linkage union-find chains unrelated entities through transitive candidate edges (the original 41-entity "Z. Zhang" canonical) (§12.4) | Resolution Stage 4 (decisioning) | **Structurally addressed** — 0.85 cluster cohesion floor repartitions chains; residual ambiguous-but-cohesive clusters (13-member Z. Zhang canonical) remain and are **flagged** (`large_tentative_cluster`), not resolved |
+| 3 | 89% of MENTIONS edges (3,751 of 4,224) point at raw unresolved Entities, outside Stage 5's coverage entirely — only the 11% resolving to a Canonical carry any quality signal (§12.9) | Relationship extraction Step 7 (7A.2a) × Resolution Stage 5 | **Unmitigated** — no flag mechanism exists for unresolved-Entity targets |
+| 4 | `en_core_web_sm` under-extracts Technology/Language relative to Person/Organization (42 and 2 entities vs. ~1,900 Person) (§12.3) | Entity extraction (spaCy NER) | **Unmitigated** — accepted as technical debt; domain-specific extraction requires explicit instruction, not resolution-side compensation |
+| 5 | Cross-type name collisions — same surface name resolved separately under different node types because blocking is type-scoped (`Cypher` as both Organization and Person; `DistMult` as both Organization and Technology; `"al"` as both Organization and Person) | Entity extraction (NER type mislabeling) × Resolution Stage 5 | **Flagged, not corrected** — Stage 5 `cross_type_collision`; likely NER mislabels, left as-is rather than merged across types |
+| 6 | PDF metadata author fields observed with mangled UTF-8 encoding (`"Jos� Emilio"` vs `"José Emilio"`) (§12.7) | PDF ingestion (metadata extraction) | **Unmitigated, currently masked** — surfaces only when a target resolves to a raw Entity built from the mangled name rather than a cleanly-extracted Canonical |
+| 7 | Base64-encoded LaTeX blob embedded in `2002.00388v4.pdf`'s extracted text (a `<latexit sha1_base64="...">` artifact) — one whitespace-token with no internal spaces explodes to 2,905+ subword tokens on tokenization, far past `all-MiniLM-L6-v2`'s 256-token limit | Step 9.5 chunking-window verification (found while checking `chunk_text_for_embedding`'s window against the real tokenizer) | **Unmitigated** — `sentence-transformers` truncates silently rather than erroring, so it degrades embedding quality for that one chunk without failing; no chunk-window size fixes this (it's a text-extraction artifact, not a windowing problem) — a fix belongs in `ingestion/pdf_parser.py`, not scoped here |
+
+---
+
+**Document Version:** 1.5  
+**Last Updated:** 2026-07-22  
+**Status:** Step 7 (relationship extraction) substantively complete — 7A.1 and 7A.2a done and written; 7A.2b and 7A.3 formally deferred to Phase 3 (code intelligence). §13 consolidates known graph quality limitations ahead of Step 10 scoping, including the base64/LaTeX chunking artifact found during Step 9.5.

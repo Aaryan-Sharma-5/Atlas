@@ -17,10 +17,17 @@ Resource (abstract base)
 │   ├── Paper (academic, research paper)
 │   └── Markdown (technical documentation, blog post, wiki)
 ├── Repository (GitHub, GitLab, or similar version control)
-└── Website (web pages, documentation sites)
+├── Website (web pages, documentation sites)
+└── Chunk (a text segment of any of the above — see below)
 ```
 
-**Node counts (typical):** 100-10,000 per ingestion.
+**Node counts (typical):** 100-10,000 per ingestion (Resource sources); `Chunk` runs far higher — hundreds to low thousands per ingestion, see physical.md.
+
+#### Chunk (ingestion-derived, deliberately nested here — not given Canonical's separateness)
+
+A `Chunk` is a text segment of a source `Resource`, produced by ingestion (Step 9.5), not by extraction or resolution. Unlike `Canonical` (§ below), which is deliberately kept out of every extraction hierarchy because it is *resolution*-derived and never carries `:Entity`, a `Chunk` is *ingestion*-derived exactly like `Paper`/`Markdown`/`Repository` already are — same kind of node, same write path. Nesting it under `Resource` means it carries `:Entity:Resource:Chunk` and reuses the entire existing generic `Entity`/`graph/validators/`/`graph/builders/` machinery with zero new special-casing, the same way `convert_paper_entity()` already does for `Paper`. Introducing a separate top-level type for `Chunk` (mirroring `Canonical`) would duplicate that machinery for no benefit — `Canonical`'s separateness exists for real semantic reasons (non-destructive merge, no `:Entity` label) that don't apply here.
+
+One `Chunk` belongs to exactly one source, via `HAS_CHUNK` below.
 
 ### CodeEntity Hierarchy
 
@@ -137,6 +144,7 @@ Relationships are typed, directed edges with semantic meaning. They do not form 
 | Relationship | Source | Target | Cardinality | Semantics |
 |---|---|---|---|---|
 | `EXTRACTED_FROM` | (all entities) | Resource | 1..1 | Entity extracted from this resource (internal tracking) |
+| `HAS_CHUNK` | Document, Paper, Markdown, Repository, Website | Chunk | 1..N | Source resource decomposed into this text chunk (ingestion-level tracking, Step 9.5, not domain semantics) |
 
 ### Resolution
 
@@ -218,6 +226,6 @@ When adding a new relationship type:
 
 ---
 
-**Document Version:** 1.2  
-**Last Updated:** 2026-07-13
-**Status:** Complete for MVP + resolution layer (Canonical, SAME_AS); Phase 7A relationship scope (AUTHORED_BY, MENTIONS, USES) added, schema-only — extraction not yet implemented. Additional relationship types from Phase 3 (code intelligence) not yet included.
+**Document Version:** 1.3  
+**Last Updated:** 2026-07-22  
+**Status:** Complete for MVP + resolution layer (Canonical, SAME_AS) + Step 7 relationship extraction (AUTHORED_BY, MENTIONS done; USES deferred to Phase 3). Step 9.5 (ingestion persistence backfill) schema added: `Chunk` node + `HAS_CHUNK`, schema-only — no Chunk nodes exist yet. Additional relationship types from Phase 3 (code intelligence) not yet included.

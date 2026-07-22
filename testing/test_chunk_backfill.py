@@ -22,7 +22,6 @@ from graph.builders.cypher_builder import (
     build_has_chunk_cypher,
 )
 from graph.builders.neo4j_writer import Neo4jWriter
-from graph.queries.resolve_target import resolve_target
 from graph.validators.validator import validate_graph, validate_has_chunk
 from ingestion.chunker import chunk_text, chunk_text_for_embedding
 from ingestion.github_parser import ingest_repository
@@ -149,6 +148,20 @@ for err in has_chunk_result.errors[:10]:
     print(f"        REJECTED {err.item_id}: {err.reason}")
 
 print("\n[5/7] Evidence enrichment: matching live AUTHORED_BY/MENTIONS edges to a Chunk...")
+# One bulk SAME_AS read instead of calling resolve_target() per entity - that function opens a fresh driver connection per call, and doing that per (relationship x candidate-entity) pair was thousands of live round trips. Same logic as resolve_target(), computed in memory from one query.
+with Neo4jWriter() as writer:
+    same_as_rows = writer.run_read(
+        "MATCH (c:Canonical)-[:SAME_AS]->(e:Entity) RETURN c.id AS canonical_id, e.id AS entity_id"
+    )
+same_as_map = {row["entity_id"]: row["canonical_id"] for row in same_as_rows}
+
+# Reverse index: (source_id, resolved_target_id) -> first-matching entity, built once instead of rescanning entities_by_source per relationship.
+resolved_index: dict[tuple[str, str], object] = {}
+for source_id, ents in entities_by_source.items():
+    for e in ents:
+        resolved = same_as_map.get(e.id, e.id)
+        resolved_index.setdefault((source_id, resolved), e)
+
 source_id_to_extraction_source = {m["source_id"]: m["extraction_source"] for m in manifest}
 enrichments = []
 not_found = []
@@ -156,8 +169,7 @@ not_found = []
 for rel_type, live_rels in [("AUTHORED_BY", live_authored_by), ("MENTIONS", live_mentions)]:
     for row in live_rels:
         source_id, target_id = row["source"], row["target"]
-        candidates = entities_by_source.get(source_id, [])
-        match = next((e for e in candidates if resolve_target(e.id) == target_id), None)
+        match = resolved_index.get((source_id, target_id))
         if match is None:
             not_found.append((rel_type, source_id, target_id, "no source entity resolves to this target"))
             continue

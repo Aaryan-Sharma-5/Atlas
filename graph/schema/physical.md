@@ -126,6 +126,21 @@ Extends Document. Additional properties:
 | `domain` | string | ✓ | Domain (for grouping). | "pytorch.org" |
 | `last_crawled` | integer | ✗ | Unix timestamp of last crawl. | 1719331200 |
 
+#### Chunk (Step 9.5, ingestion-derived — see conceptual.md for the "why Resource, not a separate top-level type" reasoning)
+
+Built via the same generic `Entity`/`graph/validators/`/`graph/builders/` path as `Paper`/`Markdown`/`Repository` — carries `:Entity:Resource:Chunk`, covered by the existing `unique_entity_id` constraint, no new constraint needed.
+
+| Property | Type | Required | Description | Example |
+|---|---|---|---|---|
+| `id` | string | ✓ | `chunk_{source_slug}_{chunk_index}`. | "chunk_2003_02320v6_pdf_47" |
+| `content` | string | ✓ | The chunk's raw text. | "Knowledge graphs represent..." |
+| `chunk_index` | integer | ✓ | Position within the source's chunk sequence. | 47 |
+| `char_start` | integer | ✓ | Start character offset within the source's full text. | 23400 |
+| `char_end` | integer | ✓ | End character offset within the source's full text. | 23900 |
+| `source_id` | string | ✓ | Id of the owning Document/Paper/Markdown/Repository/Website. Denormalized — also reachable via `HAS_CHUNK` — same pattern as entity ids already embedding their source namespace. | "paper_2003_02320v6_pdf" |
+| `embedding` | list[float] | ✗ | 384-dim passage embedding (`all-MiniLM-L6-v2`, embedding-mode chunking — see `ingestion/chunker.py::chunk_text_for_embedding`). Optional: the vector index is created before population (Step 9.5 STEP 1 decision), so Chunk nodes may legitimately exist without it yet. | [0.0123, -0.045, ...] |
+| `created_at` | integer | ✓ | Unix timestamp of chunk creation. | 1784332800 |
+
 ---
 
 ### CodeEntity Hierarchy
@@ -197,6 +212,7 @@ All code entities share these base properties:
 | `name` | string | ✓ | Primary name (canonical form). | "PyTorch" |
 | `aliases` | list[string] | ✗ | Alternative names (torch, pytorch-lib). | ["torch", "pytorch-lib"] |
 | `description` | string | ✗ | Description/definition. | "Deep learning framework..." |
+| `name_embedding` | list[float] | ✗ | 384-dim name embedding (`all-MiniLM-L6-v2`, same model Stage 2 resolution already uses for name-similarity matching). Deliberately **not** named `embedding` — `Chunk.embedding` (passage-level semantic search) and this (short name-similarity) are different retrieval use cases; sharing a property name would make `:Entity`-scoped vector indexes ambiguous since `Chunk` also carries `:Entity`. | [0.0456, ...] |
 
 #### Technology
 
@@ -273,6 +289,7 @@ Derived by `resolution/decisioning/`, never extracted. Labels: `:Canonical:{Spec
 | `confidence` | float | ✓ | Decision confidence, [0.0, 1.0]. | 0.94 |
 | `extraction_source` | string | ✓ | Candidate set provenance. | "resolution:candidate_pairs" |
 | `extraction_method` | string | ✓ | Resolver + rule version. | "merge_resolver:union_find@v1" |
+| `name_embedding` | list[float] | ✗ | 384-dim name embedding, same use case and same reason for the name (not `embedding`) as `KnowledgeEntity.name_embedding` above. | [0.0456, ...] |
 
 ---
 
@@ -442,6 +459,10 @@ No additional properties.
 |---|---|---|---|---|
 | `chunk_index` | integer | ✗ | Which text chunk (if chunked). | 0 |
 
+#### HAS_CHUNK
+
+No additional properties beyond mandatory fields.
+
 ---
 
 ### Resolution
@@ -480,15 +501,20 @@ CREATE CONSTRAINT unique_canonical_id IF NOT EXISTS
   FOR (n:Canonical) REQUIRE n.id IS UNIQUE;
 ```
 
-`unique_canonical_id` is separate from `unique_entity_id` because Canonical nodes deliberately do not carry the `:Entity` label (conceptual.md, Canonical section).
+`unique_canonical_id` is separate from `unique_entity_id` because Canonical nodes deliberately do not carry the `:Entity` label (conceptual.md, Canonical section). `Chunk` needs no constraint of its own — it carries `:Entity` (conceptual.md, Chunk section) and `unique_entity_id` already covers it.
 
 ---
 
 ## Full-Text and Vector Indexes (indexes.cypher)
 
+`graph/schema/indexes.cypher` did not exist as a real file before Step 9.5 — this section was documentation-only and nothing applied it. It now exists; this section matches it exactly. Two corrections made while materializing it, both flagged rather than carried over silently:
+
+1. `document_fulltext` was scoped to `:Document`, which is abstract and never instantiated (physical.md says so explicitly, and this exact mistake was already caught once this session in a milestone-query context) — rescoped to `:Paper|Markdown`, the concrete labels.
+2. The single `embedding` vector index is now **three** indexes, one per label/property pair, since `Chunk.embedding` (passage-level) and `Entity`/`Canonical.name_embedding` (short name-level) are different retrieval use cases that must not share a search space — see the `name_embedding` property notes above for why. Renamed accordingly: `entity_name_embedding`, `canonical_name_embedding`, `chunk_embedding`.
+
 ```cypher
 CREATE FULLTEXT INDEX document_fulltext IF NOT EXISTS
-  FOR (n:Document) ON EACH [n.title, n.description];
+  FOR (n:Paper|Markdown) ON EACH [n.title, n.description];
 
 CREATE FULLTEXT INDEX technology_fulltext IF NOT EXISTS
   FOR (n:Technology) ON EACH [n.name, n.description, n.aliases];
@@ -496,12 +522,20 @@ CREATE FULLTEXT INDEX technology_fulltext IF NOT EXISTS
 CREATE FULLTEXT INDEX person_fulltext IF NOT EXISTS
   FOR (n:Person) ON EACH [n.full_name];
 
-CREATE VECTOR INDEX embedding IF NOT EXISTS
-  FOR (n:Entity) ON (n.embedding)
+CREATE VECTOR INDEX entity_name_embedding IF NOT EXISTS
+  FOR (n:Entity) ON (n.name_embedding)
+  OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_metric`: 'cosine'}};
+
+CREATE VECTOR INDEX canonical_name_embedding IF NOT EXISTS
+  FOR (n:Canonical) ON (n.name_embedding)
+  OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_metric`: 'cosine'}};
+
+CREATE VECTOR INDEX chunk_embedding IF NOT EXISTS
+  FOR (n:Chunk) ON (n.embedding)
   OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_metric`: 'cosine'}};
 ```
 
-Vector index stores Sentence Transformer embeddings (dimension 384 for `all-MiniLM-L6-v2`).
+All three vector indexes store `all-MiniLM-L6-v2` embeddings (dimension 384, cosine similarity — the metric this model is trained against, and the same metric `resolution/matchers/embedding_matcher.py` already uses via L2-normalized dot product). Created before population, per the Step 9.5 STEP 1 decision — Neo4j vector indexes are a schema declaration, not a data operation; they populate automatically as the property gets set on matching nodes, in either order.
 
 ---
 
@@ -593,6 +627,6 @@ Vector index stores Sentence Transformer embeddings (dimension 384 for `all-Mini
 
 ---
 
-**Document Version:** 1.2  
-**Last Updated:** 2026-07-13
-**Status:** Complete for MVP + resolution layer (Canonical, SAME_AS); Phase 7A adds `USES` properties, schema-only — extraction not yet implemented. Code entity properties (Phase 3) will expand once AST parsing is implemented.
+**Document Version:** 1.3  
+**Last Updated:** 2026-07-22  
+**Status:** Complete for MVP + resolution layer (Canonical, SAME_AS) + Step 7 relationship extraction. Step 9.5 (ingestion persistence backfill) schema added: `Chunk` properties, `HAS_CHUNK`, `name_embedding` on Entity/Canonical, `indexes.cypher` materialized as a real file — all schema-only, no Chunk nodes or embeddings exist yet. Code entity properties (Phase 3) will expand once AST parsing is implemented.
