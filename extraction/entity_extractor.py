@@ -41,6 +41,8 @@ class RawEntity:
     end_char: int
     chunk_index: int
     source_file: str
+    doc_char_start: int  # offset within the full source document (chunk.char_start + start_char)
+    doc_char_end: int
 
 
 def load_model(model_name: str = DEFAULT_MODEL) -> Language:
@@ -72,6 +74,8 @@ def extract_entities_from_chunk(
             end_char=ent.end_char,
             chunk_index=chunk.chunk_index,
             source_file=chunk.source_file,
+            doc_char_start=chunk.char_start + ent.start_char,
+            doc_char_end=chunk.char_start + ent.end_char,
         )
         for ent in doc.ents
         if ent.label_ in relevant_labels and not _is_noise(ent.text)
@@ -109,6 +113,8 @@ def extract_entities(
                 end_char=ent.end_char,
                 chunk_index=chunk.chunk_index,
                 source_file=chunk.source_file,
+                doc_char_start=chunk.char_start + ent.start_char,
+                doc_char_end=chunk.char_start + ent.end_char,
             )
             for ent in doc.ents
             if ent.label_ in relevant_labels and not _is_noise(ent.text)

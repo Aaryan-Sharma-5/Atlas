@@ -193,6 +193,18 @@ def validate_mentions(
     )
 
 
+def validate_has_chunk(
+    relationships: Iterable[Relationship],
+    known_entity_ids: set[str],
+    known_canonical_ids: set[str],
+    existing_edges: set[tuple[str, str, str]] = frozenset(),
+) -> ValidationResult:
+    """HAS_CHUNK (Document|Paper|Markdown|Repository|Website -> Chunk) relationships, before graph/builders/ (Step 9.5). known_canonical_ids is always irrelevant here (Chunk targets are never Canonicals) but kept for signature symmetry with the other per-type validators."""
+    return _validate_relationship_type(
+        relationships, "HAS_CHUNK", known_entity_ids, known_canonical_ids, existing_edges
+    )
+
+
 def _validate_relationship_type(
     relationships: Iterable[Relationship],
     expected_type: str,

@@ -129,6 +129,28 @@ def build_mentions_cypher(rel: Relationship) -> CypherStatement:
     return _build_relationship_merge_cypher(rel, "MENTIONS")
 
 
+def build_has_chunk_cypher(rel: Relationship) -> CypherStatement:
+    """Validated HAS_CHUNK (source Resource -> Chunk) -> MERGE Cypher (Step 9.5)."""
+    return _build_relationship_merge_cypher(rel, "HAS_CHUNK")
+
+
+def build_evidence_enrichment_cypher(
+    source_id: str, rel_type: str, target_id: str, chunk_id: str
+) -> CypherStatement:
+    """Add evidence_chunk_id to an ALREADY-EXISTING AUTHORED_BY/MENTIONS edge (Step 9.5).
+
+    Deliberately SET, not MERGE-create: the edge itself was written in a prior session (7A.1/7A.2a). This only enriches it with a chunk reference -- it must not create the edge if it doesn't exist (silently masking a real mismatch), so it MATCHes the edge rather than MERGE-creating one.
+    """
+    if rel_type not in RELATIONSHIP_TYPES:
+        raise ValueError(f"unvalidated relationship type: {rel_type!r}")
+    cypher = (
+        f"MATCH (a {{id: $source_id}})-[r:{rel_type}]->(b {{id: $target_id}}) "
+        "SET r.evidence_chunk_id = $chunk_id"
+    )
+    params = {"source_id": source_id, "target_id": target_id, "chunk_id": chunk_id}
+    return cypher, params
+
+
 def _build_relationship_merge_cypher(rel: Relationship, expected_type: str) -> CypherStatement:
     """Shared body for the per-relationship-type MERGE builders above.
 

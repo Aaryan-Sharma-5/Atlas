@@ -1,0 +1,34 @@
+// Full-text and vector indexes for the Atlas knowledge graph.
+// Applied by graph/builders/neo4j_writer.py (Neo4jWriter.apply_constraints,
+// same mechanism as constraints.cypher) before any write.
+//
+// This file did not exist before Step 9.5 (physical.md documented it in
+// prose only). Two corrections made while materializing it — see
+// physical.md's "Full-Text and Vector Indexes" section for why.
+
+CREATE FULLTEXT INDEX document_fulltext IF NOT EXISTS
+FOR (n:Paper|Markdown) ON EACH [n.title, n.description];
+
+CREATE FULLTEXT INDEX technology_fulltext IF NOT EXISTS
+FOR (n:Technology) ON EACH [n.name, n.description, n.aliases];
+
+CREATE FULLTEXT INDEX person_fulltext IF NOT EXISTS
+FOR (n:Person) ON EACH [n.full_name];
+
+// Short name-similarity search (Person/Organization/Technology/... via :Entity,
+// and Canonical separately since it doesn't carry :Entity). NOT the same
+// property or index as chunk_embedding below - see physical.md.
+CREATE VECTOR INDEX entity_name_embedding IF NOT EXISTS
+FOR (n:Entity) ON (n.name_embedding)
+OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_metric`: 'cosine'}};
+
+CREATE VECTOR INDEX canonical_name_embedding IF NOT EXISTS
+FOR (n:Canonical) ON (n.name_embedding)
+OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_metric`: 'cosine'}};
+
+// Passage-level semantic search over Chunk text (Step 9.5). Created before
+// any Chunk carries an embedding - vector indexes populate incrementally as
+// the property is set, same as any other Neo4j index.
+CREATE VECTOR INDEX chunk_embedding IF NOT EXISTS
+FOR (n:Chunk) ON (n.embedding)
+OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_metric`: 'cosine'}};

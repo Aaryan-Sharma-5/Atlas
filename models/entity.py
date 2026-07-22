@@ -12,6 +12,7 @@ NODE_HIERARCHY: dict[str, str] = {
     "Markdown": "Resource",
     "Repository": "Resource",
     "Website": "Resource",
+    "Chunk": "Resource",
     # CodeEntity
     "Module": "CodeEntity",
     "Class": "CodeEntity",

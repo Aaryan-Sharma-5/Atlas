@@ -12,6 +12,8 @@ class TextChunk:
     chunk_index: int
     source_file: str
     page_markers: list[int]
+    char_start: int
+    char_end: int
 
 
 def chunk_text(
@@ -77,6 +79,8 @@ def chunk_text(
                 chunk_index=chunk_index,
                 source_file=source_file,
                 page_markers=chunk_pages,
+                char_start=chunk_start_char,
+                char_end=chunk_end_char,
             )
         )
 
@@ -92,6 +96,22 @@ def chunk_text(
             break
 
     return chunks
+
+
+# Embedding-mode default, verified empirically against all-MiniLM-L6-v2's actual tokenizer (max_seq_length=256), not assumed: the NER window (500 whitespace tokens) tokenizes to 690 subwords on a real corpus chunk - the model would silently truncate ~63% of it. At target_tokens=60, worst-case subword count on clean text stays safely under 256 (max observed: 243 across two different sources). Does NOT protect against pathological single "words" - e.g. a base64-encoded LaTeX blob found embedded in 2002.00388v4.pdf's extracted text explodes to 2,905 subword tokens regardless of window size, since it contains no whitespace to split on. sentence-transformers truncates silently rather than erroring on that, so it's an accepted rare-case gap (a text-extraction quality issue, not a chunking-window issue) rather than something tuning this constant can fix.
+EMBEDDING_TARGET_TOKENS = 60
+EMBEDDING_OVERLAP_TOKENS = 15
+
+
+def chunk_text_for_embedding(
+    text: str,
+    source_file: str,
+    target_tokens: int = EMBEDDING_TARGET_TOKENS,
+    overlap_tokens: int = EMBEDDING_OVERLAP_TOKENS,
+) -> list[TextChunk]:
+    """Embedding-sized chunking (Step 9.5) - a distinct, independently callable entry point, not a re-tune of chunk_text's NER-mode default. Same underlying windowing algorithm; only the window size differs, so nothing about chunk_text's own behavior changes for existing NER callers.
+    """
+    return chunk_text(text, source_file, target_tokens=target_tokens, overlap_tokens=overlap_tokens)
 
 
 def _tokenize_with_positions(text: str) -> list[tuple[str, int, int]]:

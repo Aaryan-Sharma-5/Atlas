@@ -8,6 +8,7 @@ import time
 from collections import Counter, defaultdict
 
 from extraction.entity_extractor import RawEntity
+from ingestion.chunker import TextChunk
 from ingestion.github_parser import RepoContent
 from ingestion.markdown_parser import MarkdownDoc
 from ingestion.pdf_parser import PDFMetadata
@@ -72,7 +73,14 @@ def convert_raw_entities(
         aliases = sorted(set(surface_forms) - {name})
 
         # mention_count backs MENTIONS' frequency property (relationships/mentions.py); it was already computed for the confidence heuristic below, just not previously kept.
-        properties: dict[str, object] = {"mention_count": len(mentions)}
+        # doc_char_start/doc_char_end (first occurrence, scan order) back chunk-evidence linkage (Step 9.5) - which embedding-mode Chunk this entity's first mention falls in.
+        properties: dict[str, object] = {
+            "mention_count": len(mentions),
+            "doc_char_start": mentions[0].doc_char_start,
+            "doc_char_end": mentions[0].doc_char_end,
+            # char offsets are relative to mentions[0]'s own file, not the
+            "source_file": mentions[0].source_file,
+        }
         if aliases:
             properties["aliases"] = aliases
         if node_type == "Person":
@@ -170,6 +178,33 @@ def convert_repository_entity(repo: RepoContent, extraction_source: str) -> Enti
             "url": repo.url,
             "ingestion_timestamp": int(time.time()),
             "commit_sha": repo.commit,
+        },
+    )
+
+
+def convert_chunk_entity(
+    chunk: TextChunk, source_id: str, extraction_source: str
+) -> Entity:
+    """Embedding-mode TextChunk -> a Chunk Entity node (Step 9.5).
+
+    Id is scoped by source + chunk_index (embedding-mode indices, not the NER-mode chunker's), so re-running ingestion over the same source reproduces the same Chunk ids (MERGE-idempotent, same principle as Paper/Markdown/Repository).
+    """
+    source_slug = _slugify(_normalize(extraction_source.split(":", 1)[-1]))
+
+    return Entity(
+        id=f"chunk_{source_slug}_{chunk.chunk_index}",
+        type="Chunk",
+        name=f"{source_id} chunk {chunk.chunk_index}",
+        confidence=1.0,
+        extraction_source=extraction_source,
+        extraction_method="chunker:embedding_mode@v1",
+        properties={
+            "content": chunk.content,
+            "chunk_index": chunk.chunk_index,
+            "char_start": chunk.char_start,
+            "char_end": chunk.char_end,
+            "source_id": source_id,
+            "created_at": int(time.time()),
         },
     )
 
