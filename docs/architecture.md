@@ -431,6 +431,14 @@ Of 4,224 `MENTIONS` edges, only **473 (11%)** point at a `Canonical` and are the
 
 **Forward-looking note:** this should inform Step 10 (hybrid retrieval) and Step 13 (explainability) design when those are scoped — most relationship targets a query traverses will carry no quality signal, so retrieval ranking and explainability's confidence/evidence surfacing can't assume flag coverage exists. Flagging now so it isn't rediscovered from scratch later.
 
+### 12.10 Graph retrieval (Step 10B) is 1-hop by construction — no multi-hop domain traversal exists yet
+
+`retrieval/graph_retriever.py::get_entity_context()` returns the queried node plus its direct `AUTHORED_BY`/`MENTIONS`/`SAME_AS` neighbors (either direction) and their supporting chunks — one hop, by design, matching the Step 10B spec. This isn't an implementation shortcut to revisit: there is currently nothing productive to chain a second hop through. `AUTHORED_BY` and `MENTIONS` are the only two *domain* relationship types live in the graph; `SAME_AS` and `HAS_CHUNK` are infrastructure/resolution edges, not semantic ones. A chain like Person → Paper →(cites)→ Paper →(mentions)→ Technology has no path to walk until `CITES`, `DEPENDS_ON`, `CALLS`, or the deferred 7A.2b/7A.3 types (§12.6) land in Phase 3.
+
+What 10B does demonstrate, verified against the live corpus: **SAME_AS-based alias aggregation** (querying a Canonical surfaces every raw-entity variant merged under it, across sources, in one call — a real win over a single-node lookup) and **cross-relationship-type aggregation** on one node (e.g. `person_erik_cambria` resolves as both an `AUTHORED_BY` target and a `MENTIONS` target from two different papers). Neither is multi-hop graph reasoning.
+
+**Constrains downstream work:** Step 10F's "graph" category evaluation questions should be 1-hop ("who authored X", "what does Canonical Y aggregate"), not multi-hop chains — anything multi-hop isn't answerable by this retriever yet, regardless of planner routing. Step 11's planner should not route multi-hop reasoning questions to graph-only; that class of question either needs hybrid retrieval + LLM synthesis to bridge the gap, or waits for Phase 3's relationship types.
+
 ---
 
 ## 13. Known Graph Quality Limitations (consolidated)
@@ -446,9 +454,10 @@ Pure consolidation of findings already recorded across §12 and Stage 5 quality 
 | 5 | Cross-type name collisions — same surface name resolved separately under different node types because blocking is type-scoped (`Cypher` as both Organization and Person; `DistMult` as both Organization and Technology; `"al"` as both Organization and Person) | Entity extraction (NER type mislabeling) × Resolution Stage 5 | **Flagged, not corrected** — Stage 5 `cross_type_collision`; likely NER mislabels, left as-is rather than merged across types |
 | 6 | PDF metadata author fields observed with mangled UTF-8 encoding (`"Jos� Emilio"` vs `"José Emilio"`) (§12.7) | PDF ingestion (metadata extraction) | **Unmitigated, currently masked** — surfaces only when a target resolves to a raw Entity built from the mangled name rather than a cleanly-extracted Canonical |
 | 7 | Base64-encoded LaTeX blob embedded in `2002.00388v4.pdf`'s extracted text (a `<latexit sha1_base64="...">` artifact) — one whitespace-token with no internal spaces explodes to 2,905+ subword tokens on tokenization, far past `all-MiniLM-L6-v2`'s 256-token limit | Step 9.5 chunking-window verification (found while checking `chunk_text_for_embedding`'s window against the real tokenizer) | **Unmitigated** — `sentence-transformers` truncates silently rather than erroring, so it degrades embedding quality for that one chunk without failing; no chunk-window size fixes this (it's a text-extraction artifact, not a windowing problem) — a fix belongs in `ingestion/pdf_parser.py`, not scoped here |
+| 8 | Graph retrieval (10B) is 1-hop only — `AUTHORED_BY`/`MENTIONS` are the only live domain relationship types; `SAME_AS`/`HAS_CHUNK` are infrastructure, not semantic, so there is no second hop to chain through yet (§12.10) | Relationship extraction Step 7 (7A.2b/7A.3 deferred to Phase 3) × Retrieval Step 10B | **By design, not a defect** — demonstrates SAME_AS alias aggregation and cross-relationship-type aggregation on one node, not multi-hop reasoning; constrains Step 10F's "graph" question category and Step 11 planner routing |
 
 ---
 
-**Document Version:** 1.5  
-**Last Updated:** 2026-07-22  
-**Status:** Step 7 (relationship extraction) substantively complete — 7A.1 and 7A.2a done and written; 7A.2b and 7A.3 formally deferred to Phase 3 (code intelligence). §13 consolidates known graph quality limitations ahead of Step 10 scoping, including the base64/LaTeX chunking artifact found during Step 9.5.
+**Document Version:** 1.6  
+**Last Updated:** 2026-07-23
+**Status:** Step 7 (relationship extraction) substantively complete — 7A.1 and 7A.2a done and written; 7A.2b and 7A.3 formally deferred to Phase 3 (code intelligence). §13 consolidates known graph quality limitations ahead of Step 10 scoping, including the base64/LaTeX chunking artifact found during Step 9.5 and the 1-hop graph-retrieval depth limit found during Step 10B (§12.10).

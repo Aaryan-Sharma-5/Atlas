@@ -1,0 +1,1 @@
+"""Retrieval layer. Every query is routed through planner/ (not built yet); retrievers here execute one strategy each and return list[models.RetrievalResult] — no exceptions to the shared shape (Step 10A)."""
