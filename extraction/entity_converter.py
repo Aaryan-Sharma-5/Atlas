@@ -73,13 +73,12 @@ def convert_raw_entities(
         aliases = sorted(set(surface_forms) - {name})
 
         # mention_count backs MENTIONS' frequency property (relationships/mentions.py); it was already computed for the confidence heuristic below, just not previously kept.
-        # doc_char_start/doc_char_end (first occurrence, scan order) back chunk-evidence linkage (Step 9.5) - which embedding-mode Chunk this entity's first mention falls in.
+        # doc_char_start/doc_char_end/source_file are ALWAYS mentions[0]'s (first occurrence in scan order, which follows chunk order = document order) - a deliberate, deterministic choice for chunk-evidence linkage (Step 9.5): for entities with mention_count > 1, evidence_chunk_id always points at the chunk containing the FIRST mention, never the last or an arbitrary one. Reproducible across re-runs since chunk_text()/extract_entities() are deterministic over the same input. Single-chunk evidence for a multi-mention entity is an accepted simplification, not a bug.
         properties: dict[str, object] = {
             "mention_count": len(mentions),
             "doc_char_start": mentions[0].doc_char_start,
             "doc_char_end": mentions[0].doc_char_end,
-            # char offsets are relative to mentions[0]'s own file, not the
-            "source_file": mentions[0].source_file,
+            "source_file": mentions[0].source_file,  # offsets above are relative to this file's own text
         }
         if aliases:
             properties["aliases"] = aliases

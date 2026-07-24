@@ -14,6 +14,8 @@ from graph.builders.cypher_builder import (
     build_authored_by_cypher,
     build_entity_batch_cypher,
     build_entity_merge_cypher,
+    build_evidence_enrichment_cypher,
+    build_has_chunk_cypher,
     build_mentions_cypher,
     build_relationship_cypher,
     build_resolution_cypher,
@@ -138,6 +140,37 @@ class Neo4jWriter:
             "mentions_edges_written": counts["edges_written"],
         }
 
+    def write_chunk_backfill(
+        self,
+        chunks: list[Entity],
+        has_chunk_relationships: list[Relationship],
+        evidence_enrichments: list[dict[str, Any]],
+    ) -> dict[str, int]:
+        """Write Chunk nodes + HAS_CHUNK edges + evidence_chunk_id enrichment on existing AUTHORED_BY/MENTIONS edges, all in one transaction (Step 9.5).
+
+        Chunks and HAS_CHUNK are MERGE-based (idempotent, same as write_authored_by/write_mentions). The enrichment statements are SET on edges that already exist from a prior session (7A.1/7A.2a) - they MATCH, never MERGE-create, so a mismatch surfaces as 0 rows affected rather than silently creating a relationship that shouldn't exist.
+        """
+        chunk_statements = [build_entity_merge_cypher(c) for c in chunks]
+        has_chunk_statements = [build_has_chunk_cypher(r) for r in has_chunk_relationships]
+        enrichment_statements = [
+            build_evidence_enrichment_cypher(
+                e["source_id"], e["rel_type"], e["target_id"], e["chunk_id"]
+            )
+            for e in evidence_enrichments
+        ]
+
+        with self._driver.session() as session:
+            with session.begin_transaction() as tx:
+                for cypher, params in chunk_statements + has_chunk_statements + enrichment_statements:
+                    tx.run(cypher, params).consume()
+                tx.commit()
+
+        return {
+            "chunk_nodes_written": len(chunks),
+            "has_chunk_edges_written": len(has_chunk_relationships),
+            "evidence_enrichments_written": len(evidence_enrichments),
+        }
+
     def _write_relationship_batch(
         self,
         source_entities: list[Entity],
@@ -165,8 +198,7 @@ class Neo4jWriter:
     def run_read(
         self, cypher: str, params: dict[str, Any] | None = None
     ) -> list[dict[str, Any]]:
-        """Read-only helper for verification. Retrieval-facing query
-        templates belong in graph/queries/ (built in Phase 4)."""
+        """Read-only helper for verification. Retrieval-facing query templates belong in graph/queries/ (built in Phase 4)."""
         with self._driver.session() as session:
             return [record.data() for record in session.run(cypher, params or {})]
 

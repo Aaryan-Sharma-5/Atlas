@@ -179,7 +179,18 @@ for rel_type, live_rels in [("AUTHORED_BY", live_authored_by), ("MENTIONS", live
             not_found.append((rel_type, source_id, target_id, "doc position outside all embedding-mode chunks"))
             continue
         chunk_id = f"chunk_{_source_slug(source_id_to_extraction_source[source_id].split(':', 1)[-1])}_{chunk.chunk_index}"
-        enrichments.append((rel_type, source_id, target_id, chunk_id))
+        enrichments.append({
+            "rel_type": rel_type,
+            "source_id": source_id,
+            "target_id": target_id,
+            "chunk_id": chunk_id,
+            # persisted for STEP 1/2 auditability - don't discard the check inputs.
+            "entity_doc_char_start": match.properties["doc_char_start"],
+            "entity_doc_char_end": match.properties["doc_char_end"],
+            "chunk_char_start": chunk.char_start,
+            "chunk_char_end": chunk.char_end,
+            "mention_count": match.properties["mention_count"],
+        })
 
 print(f"      {len(enrichments)} enriched, {len(not_found)} could not be matched")
 if not_found:
@@ -188,6 +199,20 @@ if not_found:
         reasons[reason] = reasons.get(reason, 0) + 1
     for reason, count in reasons.items():
         print(f"        {count}x: {reason}")
+
+print("\n[5b/7] Verifying char-offset containment (sample of 10)...")
+sample = enrichments[:5] + [e for e in enrichments if e["mention_count"] > 1][:5]
+containment_fails = []
+for e in sample:
+    start_ok = e["chunk_char_start"] <= e["entity_doc_char_start"] < e["chunk_char_end"]
+    end_ok = e["entity_doc_char_end"] <= e["chunk_char_end"]
+    status = "OK" if (start_ok and end_ok) else "FAIL"
+    if status == "FAIL":
+        containment_fails.append(e)
+    print(f"      [{status}] {e['rel_type']} {e['source_id']}->{e['target_id']}: "
+          f"entity=[{e['entity_doc_char_start']},{e['entity_doc_char_end']}) "
+          f"chunk={e['chunk_id']}=[{e['chunk_char_start']},{e['chunk_char_end']}) mention_count={e['mention_count']}")
+print(f"      {len(sample) - len(containment_fails)}/{len(sample)} contained cleanly")
 
 print("\n[6/7] Cypher preview (NOT executed)...")
 example_chunk = chunk_result.entities[0]
@@ -206,8 +231,10 @@ print(f"  {hc_cypher}")
 print(f"  params: {hc_params}")
 
 if enrichments:
-    rel_type, source_id, target_id, chunk_id = enrichments[0]
-    ev_cypher, ev_params = build_evidence_enrichment_cypher(source_id, rel_type, target_id, chunk_id)
+    e0 = enrichments[0]
+    ev_cypher, ev_params = build_evidence_enrichment_cypher(
+        e0["source_id"], e0["rel_type"], e0["target_id"], e0["chunk_id"]
+    )
     print("\n  -- Evidence enrichment --")
     print(f"  {ev_cypher}")
     print(f"  params: {ev_params}")
@@ -220,10 +247,7 @@ OUTPUT_PATH.write_text(
         {
             "chunks": [asdict(e) for e in chunk_result.entities],
             "has_chunk": [asdict(r) for r in has_chunk_result.relationships],
-            "evidence_enrichments": [
-                {"rel_type": rt, "source_id": s, "target_id": t, "chunk_id": c}
-                for rt, s, t, c in enrichments
-            ],
+            "evidence_enrichments": enrichments,
         },
         ensure_ascii=False,
         indent=2,
