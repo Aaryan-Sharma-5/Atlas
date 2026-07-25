@@ -2,6 +2,8 @@
 
 from graph.builders.cypher_builder import (
     build_authored_by_cypher,
+    build_embedding_batch_cypher,
+    build_embedding_cypher,
     build_entity_batch_cypher,
     build_entity_cypher,
     build_entity_merge_cypher,
@@ -23,5 +25,7 @@ __all__ = [
     "build_mentions_cypher",
     "build_has_chunk_cypher",
     "build_evidence_enrichment_cypher",
+    "build_embedding_cypher",
+    "build_embedding_batch_cypher",
     "Neo4jWriter",
 ]

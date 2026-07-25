@@ -3,8 +3,12 @@
 // same mechanism as constraints.cypher) before any write.
 //
 // This file did not exist before Step 9.5 (physical.md documented it in
-// prose only). Two corrections made while materializing it — see
-// physical.md's "Full-Text and Vector Indexes" section for why.
+// prose only). Corrections made while materializing it — see physical.md's
+// "Full-Text and Vector Indexes" section for the first two; a third found
+// only once this file was actually applied to a live Neo4j (embedding
+// generation close-out): the config key is `vector.similarity_function`
+// in Neo4j 5.16, not `vector.similarity_metric` as originally documented -
+// that name was never tested against a real database until this point.
 
 CREATE FULLTEXT INDEX document_fulltext IF NOT EXISTS
 FOR (n:Paper|Markdown) ON EACH [n.title, n.description];
@@ -20,15 +24,15 @@ FOR (n:Person) ON EACH [n.full_name];
 // property or index as chunk_embedding below - see physical.md.
 CREATE VECTOR INDEX entity_name_embedding IF NOT EXISTS
 FOR (n:Entity) ON (n.name_embedding)
-OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_metric`: 'cosine'}};
+OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_function`: 'cosine'}};
 
 CREATE VECTOR INDEX canonical_name_embedding IF NOT EXISTS
 FOR (n:Canonical) ON (n.name_embedding)
-OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_metric`: 'cosine'}};
+OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_function`: 'cosine'}};
 
 // Passage-level semantic search over Chunk text (Step 9.5). Created before
 // any Chunk carries an embedding - vector indexes populate incrementally as
 // the property is set, same as any other Neo4j index.
 CREATE VECTOR INDEX chunk_embedding IF NOT EXISTS
 FOR (n:Chunk) ON (n.embedding)
-OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_metric`: 'cosine'}};
+OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_function`: 'cosine'}};

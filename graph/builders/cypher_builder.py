@@ -15,6 +15,9 @@ CypherStatement = tuple[str, dict[str, Any]]
 RESOLUTION_SOURCE = "resolution:candidate_pairs"
 RESOLUTION_METHOD = "merge_resolver:union_find@v1"
 
+# Embedding properties added post-Step-9.5 (physical.md): name_embedding on Entity/Canonical (short name-similarity), embedding on Chunk (passage search) - deliberately different property names so the two vector index scopes never collide, see physical.md's name_embedding note.
+_EMBEDDING_PROPERTIES = frozenset({"name_embedding", "embedding"})
+
 
 def build_entity_cypher(entity: Entity) -> CypherStatement:
     """Single-entity CREATE.
@@ -122,6 +125,33 @@ def build_resolution_cypher(
 def build_authored_by_cypher(rel: Relationship) -> CypherStatement:
     """Validated AUTHORED_BY (Paper -> Person|Canonical) -> MERGE Cypher (7A.1)."""
     return _build_relationship_merge_cypher(rel, "AUTHORED_BY")
+
+
+def build_embedding_cypher(
+    node_id: str, property_name: str, embedding: list[float]
+) -> CypherStatement:
+    """Validated node id + a 384-dim embedding -> SET Cypher.
+
+    property_name is whitelisted before being embedded in the query text - Cypher can't parameterize property keys, same reason labels/relationship types are embedded-after-whitelisting elsewhere in this module. Matches on bare {id: $id} (not a specific label) since this is reused across Entity, Canonical, and Chunk id spaces.
+    """
+    if property_name not in _EMBEDDING_PROPERTIES:
+        raise ValueError(f"unvalidated embedding property: {property_name!r}")
+    cypher = f"MATCH (n {{id: $id}}) SET n.{property_name} = $embedding"
+    return cypher, {"id": node_id, "embedding": embedding}
+
+
+def build_embedding_batch_cypher(
+    rows: list[dict[str, Any]], property_name: str
+) -> CypherStatement:
+    """UNWIND-batched version of build_embedding_cypher - same reasoning as build_entity_batch_cypher: thousands of individual MATCH+SET statements is thousands of round trips; one UNWIND is one. rows are {"id": ..., "embedding": [...]}.
+    """
+    if property_name not in _EMBEDDING_PROPERTIES:
+        raise ValueError(f"unvalidated embedding property: {property_name!r}")
+    cypher = (
+        "UNWIND $rows AS row MATCH (n {id: row.id}) "
+        f"SET n.{property_name} = row.embedding"
+    )
+    return cypher, {"rows": rows}
 
 
 def build_mentions_cypher(rel: Relationship) -> CypherStatement:

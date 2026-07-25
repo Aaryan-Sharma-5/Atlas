@@ -507,10 +507,11 @@ CREATE CONSTRAINT unique_canonical_id IF NOT EXISTS
 
 ## Full-Text and Vector Indexes (indexes.cypher)
 
-`graph/schema/indexes.cypher` did not exist as a real file before Step 9.5 — this section was documentation-only and nothing applied it. It now exists; this section matches it exactly. Two corrections made while materializing it, both flagged rather than carried over silently:
+`graph/schema/indexes.cypher` did not exist as a real file before Step 9.5 — this section was documentation-only and nothing applied it. It now exists; this section matches it exactly. Three corrections made while materializing and then actually applying it, each flagged rather than carried over silently:
 
 1. `document_fulltext` was scoped to `:Document`, which is abstract and never instantiated (physical.md says so explicitly, and this exact mistake was already caught once this session in a milestone-query context) — rescoped to `:Paper|Markdown`, the concrete labels.
 2. The single `embedding` vector index is now **three** indexes, one per label/property pair, since `Chunk.embedding` (passage-level) and `Entity`/`Canonical.name_embedding` (short name-level) are different retrieval use cases that must not share a search space — see the `name_embedding` property notes above for why. Renamed accordingly: `entity_name_embedding`, `canonical_name_embedding`, `chunk_embedding`.
+3. **Found only once this file was actually applied to a live Neo4j** (embedding generation close-out, not the earlier schema-only pass): the vector index config key is `vector.similarity_function` in Neo4j 5.16, not `vector.similarity_metric` as originally documented here. The original name was never tested against a real database until this point — first attempt failed with `Missing index config options ['vector.similarity_function']`.
 
 ```cypher
 CREATE FULLTEXT INDEX document_fulltext IF NOT EXISTS
@@ -524,15 +525,15 @@ CREATE FULLTEXT INDEX person_fulltext IF NOT EXISTS
 
 CREATE VECTOR INDEX entity_name_embedding IF NOT EXISTS
   FOR (n:Entity) ON (n.name_embedding)
-  OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_metric`: 'cosine'}};
+  OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_function`: 'cosine'}};
 
 CREATE VECTOR INDEX canonical_name_embedding IF NOT EXISTS
   FOR (n:Canonical) ON (n.name_embedding)
-  OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_metric`: 'cosine'}};
+  OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_function`: 'cosine'}};
 
 CREATE VECTOR INDEX chunk_embedding IF NOT EXISTS
   FOR (n:Chunk) ON (n.embedding)
-  OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_metric`: 'cosine'}};
+  OPTIONS {indexConfig: {`vector.dimensions`: 384, `vector.similarity_function`: 'cosine'}};
 ```
 
 All three vector indexes store `all-MiniLM-L6-v2` embeddings (dimension 384, cosine similarity — the metric this model is trained against, and the same metric `resolution/matchers/embedding_matcher.py` already uses via L2-normalized dot product). Created before population, per the Step 9.5 STEP 1 decision — Neo4j vector indexes are a schema declaration, not a data operation; they populate automatically as the property gets set on matching nodes, in either order.

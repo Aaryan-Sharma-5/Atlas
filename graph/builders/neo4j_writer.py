@@ -12,6 +12,7 @@ from neo4j import GraphDatabase
 
 from graph.builders.cypher_builder import (
     build_authored_by_cypher,
+    build_embedding_batch_cypher,
     build_entity_batch_cypher,
     build_entity_merge_cypher,
     build_evidence_enrichment_cypher,
@@ -169,6 +170,32 @@ class Neo4jWriter:
             "chunk_nodes_written": len(chunks),
             "has_chunk_edges_written": len(has_chunk_relationships),
             "evidence_enrichments_written": len(evidence_enrichments),
+        }
+
+    def write_embeddings(
+        self,
+        entity_rows: list[dict[str, Any]],
+        canonical_rows: list[dict[str, Any]],
+        chunk_rows: list[dict[str, Any]],
+    ) -> dict[str, int]:
+        """Write name_embedding (Entity + Canonical) and embedding (Chunk) in one transaction, UNWIND-batched (3 statements, not thousands of individual SETs).
+
+        Each row is {"id": ..., "embedding": [...]}. Idempotent by construction: SET on an existing property just overwrites with the same value on a re-run.
+        """
+        statements = [
+            build_embedding_batch_cypher(entity_rows, "name_embedding"),
+            build_embedding_batch_cypher(canonical_rows, "name_embedding"),
+            build_embedding_batch_cypher(chunk_rows, "embedding"),
+        ]
+        with self._driver.session() as session:
+            with session.begin_transaction() as tx:
+                for cypher, params in statements:
+                    tx.run(cypher, params).consume()
+                tx.commit()
+        return {
+            "entity_embeddings_written": len(entity_rows),
+            "canonical_embeddings_written": len(canonical_rows),
+            "chunk_embeddings_written": len(chunk_rows),
         }
 
     def _write_relationship_batch(
