@@ -1,0 +1,233 @@
+{
+  "_meta": {
+    "step": "10F (first pass, 16 of an eventual 25-30)",
+    "purpose": "Draft evaluation corpus for Step 11 planner design and Step 10E fusion. Every graph/vector/keyword question below was actually run against the live corpus this session (retrieval/graph_retriever.py, retrieval/vector_retriever.py, retrieval/keyword_retriever.py); hybrid questions are compositional by nature and are noted as such rather than independently retrievable by one primitive.",
+    "corpus_sources": [
+      "pdf:2002.00388v4.pdf (Ji et al., A Survey on Knowledge Graphs)",
+      "pdf:2003.02320v6.pdf (Hogan et al., Knowledge Graphs)",
+      "github:rdflib/rdflib (docs only, no AST — see docs/architecture.md Phase 3 note)",
+      "md:docs/architecture.md (Atlas's own architecture doc, pinned snapshot)"
+    ],
+    "known_gaps_this_pass_confirmed": [
+      "No fulltext index covers Chunk body text or full document text (document_fulltext only indexes Paper/Markdown title+description) — literal in-text substring search is not possible today (Q10).",
+      "Paper.arxiv_id was never populated at ingestion (both Papers' arxiv_id property is None) — exact arXiv-id lookup is not possible today via any index (Q11).",
+      "Lucene scores are not comparable across different fulltext indexes (field length/index characteristics differ) — merging top-k-per-index by raw score can bury a strong single-index hit under numerically larger but less relevant hits from another index (seen while checking Q11 with 'Knowledge Graphs'). Relevant to Step 10E fusion design, not fixed here.",
+      "Graph retrieval (retrieval/graph_retriever.py) is 1-hop by construction — only AUTHORED_BY/MENTIONS are domain relationship types (docs/architecture.md §12.10)."
+    ],
+    "fixed_this_pass": [
+      "organization_fulltext was missing (only document_fulltext/person_fulltext/technology_fulltext existed) — a real coverage gap, not a scoping choice, since Organization is the most common KnowledgeEntity label in this corpus. Added to graph/schema/indexes.cypher, applied, confirmed ONLINE. Q15 updated to reflect the corrected (now-passing) keyword result. See docs/architecture.md for the closed-gap note."
+    ]
+  },
+  "questions": [
+    {
+      "id": 1,
+      "question": "Who authored the 'Knowledge Graphs' survey (2003.02320v6.pdf)?",
+      "retrieval_type": "graph",
+      "verified": true,
+      "expected_evidence": {
+        "source_node": "paper_2003_02320v6_pdf",
+        "relationship": "AUTHORED_BY",
+        "edge_count": 16,
+        "sample_targets": ["person_claudio_guti_rrez (canonical)", "person_aidan_hogan__2003_02320v6_pdf (unresolved)"]
+      },
+      "notes": "Verified against examples/expected_output/authored_by_relationships.json and retrieval/graph_retriever.py."
+    },
+    {
+      "id": 2,
+      "question": "What raw name variants and source papers does the person_erik_cambria canonical entity aggregate?",
+      "retrieval_type": "graph",
+      "verified": true,
+      "expected_evidence": {
+        "queried_node": "person_erik_cambria",
+        "same_as_members": [
+          "person_erik_cambria__2002_00388v4_pdf",
+          "person_e_cambria__2002_00388v4_pdf",
+          "person_erik_cambria__2003_02320v6_pdf"
+        ],
+        "incoming_authored_by": ["paper_2002_00388v4_pdf"],
+        "incoming_mentions": ["paper_2002_00388v4_pdf", "paper_2003_02320v6_pdf"]
+      },
+      "notes": "Verified live via get_entity_context('person_erik_cambria') this session."
+    },
+    {
+      "id": 3,
+      "question": "Who authored the Ji et al. 2020 survey (2002.00388v4.pdf)?",
+      "retrieval_type": "graph",
+      "verified": true,
+      "expected_evidence": {
+        "source_node": "paper_2002_00388v4_pdf",
+        "relationship": "AUTHORED_BY",
+        "edge_count": 5,
+        "targets": ["person_shaoxiong_ji__2002_00388v4_pdf (unresolved)", "person_shirui_pan (canonical)", "person_erik_cambria (canonical)", "person_pekka_marttinen (canonical)", "person_philip_s_yu (canonical)"]
+      },
+      "notes": "Verified against examples/expected_output/authored_by_relationships.json."
+    },
+    {
+      "id": 4,
+      "question": "What entities does the rdflib repository mention most frequently?",
+      "retrieval_type": "graph",
+      "verified": true,
+      "expected_evidence": {
+        "source_node": "repo_rdflib_rdflib",
+        "relationship": "MENTIONS",
+        "top_by_frequency": [
+          {"target": "org_rdf", "target_resolution": "canonical", "frequency": 91},
+          {"target": "org_api", "target_resolution": "canonical", "frequency": 23},
+          {"target": "org_rdflib__rdflib_rdflib", "target_resolution": "unresolved", "frequency": 11}
+        ]
+      },
+      "notes": "Verified live this session."
+    },
+    {
+      "id": 5,
+      "question": "Is 'DBpedia' resolved to the same entity across both papers and the rdflib repo?",
+      "retrieval_type": "graph",
+      "verified": true,
+      "expected_evidence": {
+        "canonical": "org_dbpedia",
+        "same_as_members": ["org_dbpedia__2003_02320v6_pdf", "org_dbpedia__2002_00388v4_pdf", "org_dbpedia__rdflib_rdflib"],
+        "sources_spanned": 3
+      },
+      "notes": "Verified live this session."
+    },
+    {
+      "id": 6,
+      "question": "Find entities/canonicals whose name is closest to 'RDF library'.",
+      "retrieval_type": "vector_name",
+      "verified": true,
+      "expected_evidence": {
+        "query": "RDF library",
+        "top_hits": [
+          {"id": "org_rdf_data__2003_02320v6_pdf", "score": 0.9227, "target_resolution": "unresolved"},
+          {"id": "org_rdf_reading_rdf__rdflib_rdflib", "score": 0.9134, "target_resolution": "unresolved"},
+          {"id": "org_rdf_reading_rdf", "score": 0.9134, "target_resolution": "canonical"}
+        ]
+      },
+      "notes": "The raw/canonical pair at identical score 0.9134 is the known NER-stutter artifact (architecture.md §12.1, 'RDF Reading RDF')."
+    },
+    {
+      "id": 7,
+      "question": "Find the entity or canonical best matching 'knowledge graph'.",
+      "retrieval_type": "vector_name",
+      "verified": true,
+      "expected_evidence": {
+        "query": "knowledge graph",
+        "top_hit": {"id": "person_knowledge_graph__2003_02320v6_pdf", "score": 1.0, "target_resolution": "unresolved"}
+      },
+      "notes": "Top hit is a Person-labeled entity for the term 'Knowledge Graph' — incidentally confirms the known NER cross-type mislabeling (architecture.md §13 row 5), not an injected example."
+    },
+    {
+      "id": 8,
+      "question": "How does entity resolution merge duplicate entities?",
+      "retrieval_type": "vector_passage",
+      "verified": true,
+      "expected_evidence": {
+        "top_hit": {"id": "chunk_2003_02320v6_pdf_236", "score": 0.7257}
+      },
+      "notes": "Verified live this session."
+    },
+    {
+      "id": 9,
+      "question": "How do I install rdflib?",
+      "retrieval_type": "vector_passage",
+      "verified": true,
+      "expected_evidence": {
+        "top_hits": [
+          {"id": "chunk_rdflib_rdflib_101", "score": 0.9088},
+          {"id": "chunk_rdflib_rdflib_386", "score": 0.8976}
+        ]
+      },
+      "notes": "Clean, unambiguous hit — good positive-control question for passage mode."
+    },
+    {
+      "id": 10,
+      "question": "Find content containing the literal string 'SAME_AS'.",
+      "retrieval_type": "keyword",
+      "verified": true,
+      "expected_evidence": {
+        "result_count": 0
+      },
+      "notes": "GAP, confirmed this session: none of document_fulltext/person_fulltext/technology_fulltext index Chunk body text or full document text (document_fulltext only covers Paper/Markdown title+description). Not a retriever bug — a real fulltext-coverage gap. Kept in the corpus as a documented negative case, not fixed here."
+    },
+    {
+      "id": 11,
+      "question": "Find the paper with arXiv id 2003.02320.",
+      "retrieval_type": "keyword",
+      "verified": true,
+      "expected_evidence": {
+        "result_count": 0
+      },
+      "notes": "GAP, confirmed this session: Paper.arxiv_id is None on both live Paper nodes (never populated at ingestion), so no indexed field carries the id string. Separately verified that searching the paper's actual title text ('Knowledge Graphs') against document_fulltext alone correctly hits paper_2003_02320v6_pdf at score 0.735 — but that hit gets crowded out of the merged top-5 by numerically larger (not more relevant) Lucene scores from person_fulltext when all three indexes are queried together. Flagged for Step 10E fusion design."
+    },
+    {
+      "id": 12,
+      "question": "Who is José Emilio Labra Gayo, and is his name affected by the known PDF-encoding issue (architecture.md §12.7)?",
+      "retrieval_type": "hybrid",
+      "verified": "partial — graph facts verified, hybrid composition not independently retrievable by one primitive",
+      "expected_evidence": {
+        "canonical": "person_jos_emilio_labra_gayo",
+        "canonical_name_codepoints_clean": true,
+        "same_as_members": ["person_jose_emilio_labra_gayo__2003_02320v6_pdf", "person_jos_emilio_labra_gayo__2003_02320v6_pdf", "person_emilio_labra_gayo__2003_02320v6_pdf"]
+      },
+      "notes": "Cluster contains a clean NER-sourced alias alongside the metadata-derived form — same masking behavior §12.7 documents, verified this session at the codepoint level (U+00E9, correctly encoded)."
+    },
+    {
+      "id": 13,
+      "question": "Which technology/organization names appear across more than one corpus source, and how does resolution treat them?",
+      "retrieval_type": "hybrid",
+      "verified": "partial — graph facts verified, hybrid composition not independently retrievable by one primitive",
+      "expected_evidence": {
+        "cross_source_canonicals": ["org_dbpedia (3 sources)", "org_complex / ComplEx (2 papers)"]
+      },
+      "notes": "Matches examples/README.md's stated purpose for pairing these two papers (cross-source duplicate surface)."
+    },
+    {
+      "id": 14,
+      "question": "What does the rdflib repository depend on?",
+      "retrieval_type": "hybrid",
+      "verified": true,
+      "expected_evidence": {
+        "answerable": false
+      },
+      "notes": "Deliberate gap/calibration question, not a bug to fix: USES (Repository->Technology) is formally deferred to Phase 3 (architecture.md §12.6 / 7A.3). Included so the Step 11 planner is built against a question it must correctly decline, not just ones it can answer."
+    },
+    {
+      "id": 15,
+      "question": "Search for 'ACL' — compare keyword search against vector name-search on the same query.",
+      "retrieval_type": "keyword_vs_vector_name",
+      "verified": true,
+      "expected_evidence": {
+        "keyword_results": [
+          {"id": "org_acl__rdflib_rdflib", "score": 3.607, "target_resolution": "unresolved"},
+          {"id": "org_acl__2003_02320v6_pdf", "score": 3.607, "target_resolution": "unresolved"},
+          {"id": "org_acl__2002_00388v4_pdf", "score": 3.607, "target_resolution": "unresolved"},
+          {"id": "org_acl_workshop__2002_00388v4_pdf", "score": 2.992, "target_resolution": "unresolved"}
+        ],
+        "vector_results": [
+          {"id": "org_acl__rdflib_rdflib", "score": 1.0, "target_resolution": "unresolved"},
+          {"id": "org_acl__2003_02320v6_pdf", "score": 1.0, "target_resolution": "unresolved"},
+          {"id": "org_acl__2002_00388v4_pdf", "score": 1.0, "target_resolution": "unresolved"},
+          {"id": "org_acl", "score": 1.0, "target_resolution": "canonical"}
+        ]
+      },
+      "notes": "REVISED after adding organization_fulltext: originally keyword returned 0 results (Organization label had no fulltext index at all — a real coverage gap, not by design). With the index added, applied, and confirmed ONLINE, keyword now finds all 3 raw org_acl entities cleanly. It still does NOT surface the org_acl Canonical, even though Canonical:Organization carries the Organization label and is structurally in scope for the index: Canonical uses `canonical_name`, not `name`, and the index is defined on `name`/`description`/`aliases` — verified org_acl's Canonical has name=None, description=None, aliases=None, so it contributes nothing indexable. Vector name-search, by contrast, surfaces both the 3 raw entities AND the Canonical (all at score 1.0, exact-name match) because canonical_name_embedding is a separate index built specifically over Canonical.name_embedding. Net: keyword and vector now roughly agree on the raw-entity results, but only vector reaches the canonical — a genuine, still-standing capability difference worth keeping in the corpus, not the original all-or-nothing gap."
+    },
+    {
+      "id": 16,
+      "question": "How many distinct people authored the two papers in Atlas's corpus?",
+      "retrieval_type": "graph_target_resolution_dependent",
+      "verified": true,
+      "expected_evidence": {
+        "correct_answer_target_resolution_aware": 18,
+        "naive_answer_ignoring_target_resolution": 27,
+        "breakdown": {
+          "canonical_authors": 7,
+          "unresolved_authors": 11,
+          "raw_same_as_aliases_behind_the_7_canonicals": 16,
+          "overcount_source": "person_erik_cambria (3 aliases), person_jos_emilio_labra_gayo (3 aliases), person_shirui_pan/person_pekka_marttinen/person_philip_s_yu/person_claudio_guti_rrez/person_juan_f_sequeda (2 aliases each)"
+        }
+      },
+      "notes": "A naive count that enumerates every SAME_AS alias as a separate person (ignoring target_resolution/canonical grouping) overcounts by 9 people — entirely attributable to entities that have both a Canonical (1 correct identity) and multiple raw-Entity aliases (each wrongly counted again). This is exactly the failure mode target_resolution exists to prevent. Verified live this session."
+    }
+  ]
+}

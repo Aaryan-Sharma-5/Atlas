@@ -507,11 +507,12 @@ CREATE CONSTRAINT unique_canonical_id IF NOT EXISTS
 
 ## Full-Text and Vector Indexes (indexes.cypher)
 
-`graph/schema/indexes.cypher` did not exist as a real file before Step 9.5 — this section was documentation-only and nothing applied it. It now exists; this section matches it exactly. Three corrections made while materializing and then actually applying it, each flagged rather than carried over silently:
+`graph/schema/indexes.cypher` did not exist as a real file before Step 9.5 — this section was documentation-only and nothing applied it. It now exists; this section matches it exactly. Four corrections made while materializing, applying, and then actually querying it, each flagged rather than carried over silently:
 
 1. `document_fulltext` was scoped to `:Document`, which is abstract and never instantiated (physical.md says so explicitly, and this exact mistake was already caught once this session in a milestone-query context) — rescoped to `:Paper|Markdown`, the concrete labels.
 2. The single `embedding` vector index is now **three** indexes, one per label/property pair, since `Chunk.embedding` (passage-level) and `Entity`/`Canonical.name_embedding` (short name-level) are different retrieval use cases that must not share a search space — see the `name_embedding` property notes above for why. Renamed accordingly: `entity_name_embedding`, `canonical_name_embedding`, `chunk_embedding`.
 3. **Found only once this file was actually applied to a live Neo4j** (embedding generation close-out, not the earlier schema-only pass): the vector index config key is `vector.similarity_function` in Neo4j 5.16, not `vector.similarity_metric` as originally documented here. The original name was never tested against a real database until this point — first attempt failed with `Missing index config options ['vector.similarity_function']`.
+4. **Found only once the keyword retriever was actually queried against real corpus questions** (Step 10D/10F, evaluation question 15): `organization_fulltext` was missing entirely. This was a real coverage gap, not a deliberate scoping decision — `Organization` is the most common `KnowledgeEntity` label in this corpus (§12.3), so its absence meant short Organization-labeled names/acronyms ("ACL", "RDF") returned zero keyword hits even though an exact-name entity existed. Added, applied, confirmed `ONLINE`, and the evaluation question that found it was re-verified against the fix (`examples/expected_output/retrieval_eval_questions.json`, question 15). Not carried forward as a known limitation — it's closed.
 
 ```cypher
 CREATE FULLTEXT INDEX document_fulltext IF NOT EXISTS
@@ -522,6 +523,9 @@ CREATE FULLTEXT INDEX technology_fulltext IF NOT EXISTS
 
 CREATE FULLTEXT INDEX person_fulltext IF NOT EXISTS
   FOR (n:Person) ON EACH [n.full_name];
+
+CREATE FULLTEXT INDEX organization_fulltext IF NOT EXISTS
+  FOR (n:Organization) ON EACH [n.name, n.description, n.aliases];
 
 CREATE VECTOR INDEX entity_name_embedding IF NOT EXISTS
   FOR (n:Entity) ON (n.name_embedding)
@@ -628,6 +632,6 @@ All three vector indexes store `all-MiniLM-L6-v2` embeddings (dimension 384, cos
 
 ---
 
-**Document Version:** 1.3  
-**Last Updated:** 2026-07-22  
-**Status:** Complete for MVP + resolution layer (Canonical, SAME_AS) + Step 7 relationship extraction. Step 9.5 (ingestion persistence backfill) schema added: `Chunk` properties, `HAS_CHUNK`, `name_embedding` on Entity/Canonical, `indexes.cypher` materialized as a real file — all schema-only, no Chunk nodes or embeddings exist yet. Code entity properties (Phase 3) will expand once AST parsing is implemented.
+**Document Version:** 1.4  
+**Last Updated:** 2026-07-27  
+**Status:** Complete for MVP + resolution layer (Canonical, SAME_AS) + Step 7 relationship extraction. Step 9.5 (ingestion persistence backfill) schema added: `Chunk` properties, `HAS_CHUNK`, `name_embedding` on Entity/Canonical, `indexes.cypher` materialized as a real file. Step 10D/10F added `organization_fulltext` (closed coverage gap, see correction 4 above). Code entity properties (Phase 3) will expand once AST parsing is implemented.

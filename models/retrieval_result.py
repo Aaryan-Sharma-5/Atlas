@@ -4,7 +4,8 @@ from dataclasses import dataclass, field
 from typing import Any, Literal
 
 RESULT_TYPES: frozenset[str] = frozenset({"Entity", "Canonical", "Chunk"})
-SOURCES: frozenset[str] = frozenset({"graph", "vector", "keyword"})
+# "fusion" added Step 10E: retrieval/fusion.py::reciprocal_rank_fusion produces results that no single retriever found on its own (they exist only after combining ranks across sources), so labeling one "graph"/"vector"/"keyword" would misattribute it. Per-source contribution (which retrievers found it, at what rank/score) is kept in metadata["fused_from"] rather than collapsed away.
+SOURCES: frozenset[str] = frozenset({"graph", "vector", "keyword", "fusion"})
 TargetResolution = Literal["canonical", "unresolved"]
 
 

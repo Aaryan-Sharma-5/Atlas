@@ -8,6 +8,7 @@ from typing import Any
 from neo4j import GraphDatabase
 
 from graph.builders.neo4j_writer import DEFAULT_PASSWORD, DEFAULT_URI, DEFAULT_USER
+from models.relationship import RELATIONSHIP_TYPES
 from models.retrieval_result import RetrievalResult
 
 _DIRECT_RELATIONSHIP_TYPES = ("AUTHORED_BY", "MENTIONS", "SAME_AS")
@@ -27,14 +28,23 @@ _CHUNKS_QUERY = "MATCH (c:Chunk) WHERE c.id IN $ids RETURN properties(c) AS prop
 
 def get_entity_context(
     entity_id: str,
+    relationship_types: list[str] | None = None,
     uri: str = DEFAULT_URI,
     user: str = DEFAULT_USER,
     password: str = DEFAULT_PASSWORD,
 ) -> list[RetrievalResult]:
     """The queried node, its direct relationship neighbors, and their supporting chunks.
 
+    relationship_types=None (default): all three direct types (AUTHORED_BY/MENTIONS/ SAME_AS), the original Step 10B behavior. Pass a subset (e.g. ["AUTHORED_BY"]) to filter the traversal itself — the WHERE type(r) IN $rel_types clause in _NEIGHBORS_QUERY runs inside Neo4j before scoring/sorting, not as a Python post-filter over the full result set. Added Step 10E+ baseline testing: for a high-fan-out node (a Paper with thousands of MENTIONS edges, or a Repository with hundreds), the answer to a type-specific question ("who authored X") existed in the unfiltered result set but was buried past any usable rank (e.g. rank 884 of 3806) because every relationship type's confidence clusters near 1.0 alike — confidence sorting alone can't recover type-specific relevance, only filtering can. This function still doesn't decide which type to request for a given question — that's Step 11 planner territory — it just makes a filtered query possible at all.
+
     Returns [] if entity_id matches no node (caller's problem to handle, e.g. planner falling back to vector/keyword once those exist).
     """
+    if relationship_types is not None:
+        unknown = set(relationship_types) - RELATIONSHIP_TYPES
+        if unknown:
+            raise ValueError(f"unknown relationship type(s): {sorted(unknown)}")
+    rel_types = relationship_types if relationship_types is not None else list(_DIRECT_RELATIONSHIP_TYPES)
+
     driver = GraphDatabase.driver(uri, auth=(user, password))
     try:
         with driver.session() as session:
@@ -45,9 +55,7 @@ def get_entity_context(
             results = [_self_result(entity_id, self_record["props"], self_record["labels"])]
 
             neighbor_rows = list(
-                session.run(
-                    _NEIGHBORS_QUERY, id=entity_id, rel_types=list(_DIRECT_RELATIONSHIP_TYPES)
-                )
+                session.run(_NEIGHBORS_QUERY, id=entity_id, rel_types=rel_types)
             )
             chunk_ids: set[str] = set()
             for row in neighbor_rows:
@@ -60,6 +68,10 @@ def get_entity_context(
                 chunk_rows = session.run(_CHUNKS_QUERY, ids=list(chunk_ids))
                 results.extend(_chunk_result(r["props"]) for r in chunk_rows)
 
+            # Two-tier sort, found necessary during Step 10E/10F baseline testing (§13 row 9). Tier 1 ("answer"): self + neighbor Entity/Canonical results — these are what a question is actually asking about. Tier 2 ("supporting evidence"): Chunk results pulled in via evidence_chunk_id — these back up an answer, they aren't the answer. Chunks were previously flatly scored 1.0, identical to the queried node itself, so on a high-fan-out node they numerically outnumbered and outranked the actual answer-entity by sheer count (verified: paper_2003_02320v6_pdf filtered to AUTHORED_BY still buried its target author at rank 14, behind ~12 same-scored chunks). result_type == "Chunk" is reused as the tier discriminator rather than adding a new field to RetrievalResult — it already distinguishes exactly this ("Chunk" vs "Entity"/"Canonical"), so a second field would be redundant. Within each tier, still sorted by score descending (original reasoning below still applies per tier).
+            
+            # Original note (Step 10E, still true within a tier): neighbor_rows comes back in Neo4j's traversal order (arbitrary, no ORDER BY), not by relevance — unlike vector_retriever (index-native score order) and keyword_retriever (explicit sort). retrieval/fusion.py's RRF only uses each source's RANK, not its score, so an unsorted list silently made "rank" random for graph results and would have corrupted every fused ranking that included a graph contribution.
+            results.sort(key=lambda r: (r.result_type == "Chunk", -r.score))
             return results
     finally:
         driver.close()

@@ -19,6 +19,14 @@ FOR (n:Technology) ON EACH [n.name, n.description, n.aliases];
 CREATE FULLTEXT INDEX person_fulltext IF NOT EXISTS
 FOR (n:Person) ON EACH [n.full_name];
 
+// Added Step 10D+ (retrieval eval, question 15): missing from the original three,
+// not a deliberate scoping choice - Organization is the most common KnowledgeEntity
+// label in this corpus (architecture.md §12.3), so its absence meant short
+// Organization-labeled names/acronyms ("ACL", "RDF") returned zero keyword hits
+// even when an exact-name entity existed. Same property set as technology_fulltext.
+CREATE FULLTEXT INDEX organization_fulltext IF NOT EXISTS
+FOR (n:Organization) ON EACH [n.name, n.description, n.aliases];
+
 // Short name-similarity search (Person/Organization/Technology/... via :Entity,
 // and Canonical separately since it doesn't carry :Entity). NOT the same
 // property or index as chunk_embedding below - see physical.md.
