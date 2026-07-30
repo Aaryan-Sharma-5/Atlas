@@ -40,7 +40,8 @@ print(f"{'Q':<3} {'expected':<16} {'predicted':<16} {'ok':<4} question")
 print("-" * 120)
 correct = 0
 for q in data["questions"]:
-    expected = TYPE_MAP[q["retrieval_type"]]
+    # routing_type (when present, e.g. Q14) is what the classifier is actually scored against - it names which retriever a question should route to, distinct from retrieval_type, which for Q14 describes answer-synthesis needs, not routing.
+    expected = TYPE_MAP[q.get("routing_type", q["retrieval_type"])]
     predicted, _fired = classify_with_signals(q["question"])
     ok = predicted == expected
     correct += ok

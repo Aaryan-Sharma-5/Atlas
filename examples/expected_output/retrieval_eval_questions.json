@@ -185,16 +185,18 @@
       "id": 14,
       "question": "What does the rdflib repository depend on?",
       "retrieval_type": "hybrid",
+      "routing_type": "graph",
       "verified": true,
       "expected_evidence": {
         "answerable": false
       },
-      "notes": "Deliberate gap/calibration question, not a bug to fix: USES (Repository->Technology) is formally deferred to Phase 3 (architecture.md §12.6 / 7A.3). Included so the Step 11 planner is built against a question it must correctly decline, not just ones it can answer."
+      "notes": "Deliberate gap/calibration question, not a bug to fix: USES (Repository->Technology) is formally deferred to Phase 3 (architecture.md §12.6 / 7A.3). Included so the Step 11 planner is built against a question it must correctly decline, not just ones it can answer. RELABELED (Step 11 scoping): the original retrieval_type=\"hybrid\" conflated two different questions — which retriever should this be ROUTED to (graph — \"depend on\" is DEPENDS_ON/USES-shaped language, and the deterministic classifier correctly identifies it as such) versus whether the final ANSWER needs synthesis to explain why graph came back empty (yes, but that's the explainability/synthesis step's job, Step 13, not retrieval's). routing_type is the field the query classifier is scored against; retrieval_type is left as \"hybrid\" for continuity with how this question was originally framed as a calibration case, not because it's the correct routing target."
     },
     {
       "id": 15,
-      "question": "Search for 'ACL' — compare keyword search against vector name-search on the same query.",
+      "question": "What is ACL?",
       "retrieval_type": "keyword_vs_vector_name",
+      "routing_type": "hybrid",
       "verified": true,
       "expected_evidence": {
         "keyword_results": [
@@ -210,7 +212,7 @@
           {"id": "org_acl", "score": 1.0, "target_resolution": "canonical"}
         ]
       },
-      "notes": "REVISED after adding organization_fulltext: originally keyword returned 0 results (Organization label had no fulltext index at all — a real coverage gap, not by design). With the index added, applied, and confirmed ONLINE, keyword now finds all 3 raw org_acl entities cleanly. It still does NOT surface the org_acl Canonical, even though Canonical:Organization carries the Organization label and is structurally in scope for the index: Canonical uses `canonical_name`, not `name`, and the index is defined on `name`/`description`/`aliases` — verified org_acl's Canonical has name=None, description=None, aliases=None, so it contributes nothing indexable. Vector name-search, by contrast, surfaces both the 3 raw entities AND the Canonical (all at score 1.0, exact-name match) because canonical_name_embedding is a separate index built specifically over Canonical.name_embedding. Net: keyword and vector now roughly agree on the raw-entity results, but only vector reaches the canonical — a genuine, still-standing capability difference worth keeping in the corpus, not the original all-or-nothing gap."
+      "notes": "REVISED after adding organization_fulltext: originally keyword returned 0 results (Organization label had no fulltext index at all — a real coverage gap, not by design). With the index added, applied, and confirmed ONLINE, keyword now finds all 3 raw org_acl entities cleanly. It still does NOT surface the org_acl Canonical, even though Canonical:Organization carries the Organization label and is structurally in scope for the index: Canonical uses `canonical_name`, not `name`, and the index is defined on `name`/`description`/`aliases` — verified org_acl's Canonical has name=None, description=None, aliases=None, so it contributes nothing indexable. Vector name-search, by contrast, surfaces both the 3 raw entities AND the Canonical (all at score 1.0, exact-name match) because canonical_name_embedding is a separate index built specifically over Canonical.name_embedding. Net: keyword and vector now roughly agree on the raw-entity results, but only vector reaches the canonical — a genuine, still-standing capability difference worth keeping in the corpus, not the original all-or-nothing gap. REVISED AGAIN (Step 11 closing): the question text was originally a meta-instruction (\"compare keyword search against vector name-search\") written for Step 10F's own testing purposes, not a question a real user would ask — end-to-end routing testing showed this concretely, passing that meta-text into vector/keyword search returned nothing (the comparison language drowned out \"ACL\"). Reworded to \"What is ACL?\", a genuine natural-language question; the pipeline was not changed to accommodate the old phrasing. retrieval_type is left as the historical keyword_vs_vector_name label (this question's original purpose — contrasting the two search modes on the same target term — is still accurately described by it); routing_type is what the classifier/planner are scored against."
     },
     {
       "id": 16,
