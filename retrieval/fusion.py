@@ -75,6 +75,7 @@ def reciprocal_rank_fusion(
                 source="fusion",
                 matched_text=rep.matched_text,
                 target_resolution=rep.target_resolution,
+                confidence_method="rrf_fused",
                 chunk_id=rep.chunk_id,
                 path=rep.path,
                 metadata={**rep.metadata, "fused_from": contribs, "source_count": len(contribs)},
@@ -107,5 +108,6 @@ def _fetch_canonical_representative(
         source="fusion",
         matched_text=props.get("canonical_name", ""),
         target_resolution="canonical",
+        confidence_method="rrf_fused",
         metadata={"node_type": next((l for l in labels if l != "Canonical"), "Unknown")},
     )

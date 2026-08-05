@@ -29,6 +29,7 @@ _CHUNKS_QUERY = "MATCH (c:Chunk) WHERE c.id IN $ids RETURN properties(c) AS prop
 def get_entity_context(
     entity_id: str,
     relationship_types: list[str] | None = None,
+    include_seed: bool = True,
     uri: str = DEFAULT_URI,
     user: str = DEFAULT_USER,
     password: str = DEFAULT_PASSWORD,
@@ -36,6 +37,8 @@ def get_entity_context(
     """The queried node, its direct relationship neighbors, and their supporting chunks.
 
     relationship_types=None (default): all three direct types (AUTHORED_BY/MENTIONS/ SAME_AS), the original Step 10B behavior. Pass a subset (e.g. ["AUTHORED_BY"]) to filter the traversal itself — the WHERE type(r) IN $rel_types clause in _NEIGHBORS_QUERY runs inside Neo4j before scoring/sorting, not as a Python post-filter over the full result set. Added Step 10E+ baseline testing: for a high-fan-out node (a Paper with thousands of MENTIONS edges, or a Repository with hundreds), the answer to a type-specific question ("who authored X") existed in the unfiltered result set but was buried past any usable rank (e.g. rank 884 of 3806) because every relationship type's confidence clusters near 1.0 alike — confidence sorting alone can't recover type-specific relevance, only filtering can. This function still doesn't decide which type to request for a given question — that's Step 11 planner territory — it just makes a filtered query possible at all.
+
+    include_seed=True (default): the queried node itself is included as a tier-1 result (metadata["is_seed"]=True), same as always. Pass False to omit it entirely — added Step 13 closeout (§13 row 10): for "who authored X"/"what does X mention" style questions, the seed is never a valid answer (it's the *subject*, not a relationship target), yet it always outranked the real answer at tier 1 (score 1.0, same tier as the answer itself). This function still doesn't decide *when* to pass False for a given question — same non-decision as relationship_types above, and for the same reason: that's intent, planner territory (planner/planner.py decides based on which relationship_types were requested). Blanket-excluding the seed unconditionally here would be wrong: eval questions 2/5/12/13 all correctly expect the seed itself as the top answer (e.g. "what does person_erik_cambria aggregate" — the canonical's own identity, with its SAME_AS aliases as supporting evidence, not a relationship target to find instead of it) — checked against examples/expected_output/retrieval_eval_questions.json's own expected evidence before choosing a caller-controlled flag over unconditional exclusion.
 
     Returns [] if entity_id matches no node (caller's problem to handle, e.g. planner falling back to vector/keyword once those exist).
     """
@@ -52,7 +55,11 @@ def get_entity_context(
             if self_record is None:
                 return []
 
-            results = [_self_result(entity_id, self_record["props"], self_record["labels"])]
+            results = (
+                [_self_result(entity_id, self_record["props"], self_record["labels"])]
+                if include_seed
+                else []
+            )
 
             neighbor_rows = list(
                 session.run(_NEIGHBORS_QUERY, id=entity_id, rel_types=rel_types)
@@ -85,8 +92,13 @@ def _self_result(entity_id: str, props: dict[str, Any], labels: list[str]) -> Re
         source="graph",
         matched_text=_display_name(props),
         target_resolution=_target_resolution(labels),
+        confidence_method="graph_exact_match",
         path=[{"id": entity_id, "hop": 0}],
-        metadata={"node_type": _specific_type(labels), "confidence": props.get("confidence")},
+        metadata={
+            "node_type": _specific_type(labels),
+            "confidence": props.get("confidence"),
+            "is_seed": True,
+        },
     )
 
 
@@ -104,6 +116,7 @@ def _neighbor_result(origin_id: str, row: dict[str, Any]) -> RetrievalResult:
         source="graph",
         matched_text=_display_name(m_props),
         target_resolution=_target_resolution(m_labels),
+        confidence_method="graph_edge_confidence",
         chunk_id=rel_props.get("evidence_chunk_id"),
         path=[
             {"id": origin_id, "hop": 0},
@@ -134,6 +147,7 @@ def _chunk_result(props: dict[str, Any]) -> RetrievalResult:
         source="graph",
         matched_text=content[:200],
         target_resolution="unresolved",
+        confidence_method="graph_evidence_chunk",
         chunk_id=props["id"],
         metadata={"chunk_index": props.get("chunk_index"), "source_id": props.get("source_id")},
     )

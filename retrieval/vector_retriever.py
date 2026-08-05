@@ -84,6 +84,7 @@ def _name_result(props: dict[str, Any], labels: list[str], score: float) -> Retr
         source="vector",
         matched_text=_display_name(props),
         target_resolution="canonical" if is_canonical else "unresolved",
+        confidence_method="cosine_similarity_name",
         metadata={
             "node_type": _specific_type(labels),
             "confidence": props.get("confidence"),
@@ -101,6 +102,7 @@ def _chunk_result(props: dict[str, Any], score: float) -> RetrievalResult:
         source="vector",
         matched_text=content[:200],
         target_resolution="unresolved",
+        confidence_method="cosine_similarity_passage",
         chunk_id=props["id"],
         metadata={"chunk_index": props.get("chunk_index"), "source_id": props.get("source_id")},
     )

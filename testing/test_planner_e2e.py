@@ -51,8 +51,8 @@ print(f"{'Q':<3} {'routing':<10} {'rank':<6} {'hit_id':<45} question")
 print("-" * 130)
 for qid, (graph_seed, expected) in GROUND_TRUTH.items():
     question = by_id[qid]["question"]
-    routing, results = plan_and_retrieve(question, graph_seed_id=graph_seed)
-    rank, hit = rank_of(results, expected)
-    print(f"{qid:<3} {routing:<10} {str(rank):<6} {str(hit):<45} {question[:70]}")
+    routing = plan_and_retrieve(question, graph_seed_id=graph_seed)
+    rank, hit = rank_of(routing.results, expected)
+    print(f"{qid:<3} {routing.category:<10} {str(rank):<6} {str(hit):<45} {question[:70]}")
 
 print("\nQ16 excluded — structural aggregate question, not a single get_entity_context() call.")

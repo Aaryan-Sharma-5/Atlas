@@ -1,0 +1,1 @@
+"""Explainability layer (Step 13). Assembles a RoutingResult (planner/planner.py) into an ExplainedAnswer — evidence, reasoning path, confidence provenance, and applicable known-limitation caveats, per the answer alone rather than the whole result list."""

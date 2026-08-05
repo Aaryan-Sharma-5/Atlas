@@ -57,6 +57,7 @@ def _keyword_result(props: dict[str, Any], labels: list[str], score: float) -> R
         source="keyword",
         matched_text=_display_name(props),
         target_resolution="canonical" if is_canonical else "unresolved",
+        confidence_method="lucene_relevance",
         metadata={"node_type": _specific_type(labels)},
     )
 

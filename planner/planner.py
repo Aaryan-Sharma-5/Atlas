@@ -10,6 +10,7 @@ Found and fixed while end-to-end testing all 16 eval questions: eval question 13
 """
 
 import re
+from dataclasses import dataclass, field
 
 from models.retrieval_result import RetrievalResult
 from planner.query_classifier import classify_with_signals
@@ -19,6 +20,17 @@ from retrieval.keyword_retriever import search_by_keyword
 from retrieval.vector_retriever import search_by_name, search_by_passage
 
 _FLAGS = re.IGNORECASE
+
+
+@dataclass
+class RoutingResult:
+    """plan_and_retrieve()'s return shape. Step 13A: relationship_types_filtered and retrievers_invoked used to be computed internally and then discarded — a caller had no way to know which relationship type filtered a graph query, or (for hybrid) which retrievers were actually invoked vs. which contributed a surviving result, without re-deriving both themselves. Fixed by carrying them through instead of throwing them away; this is a bug fix, not new design — the values were already being computed either way.
+    """
+
+    category: str
+    relationship_types_filtered: list[str] | None
+    retrievers_invoked: list[str]
+    results: list[RetrievalResult] = field(default_factory=list)
 
 _LUCENE_SPECIAL_CHARS = set('+-&|!(){}[]^"~*?:\\/')
 
@@ -48,6 +60,16 @@ def infer_relationship_types(question: str) -> list[str] | None:
         if re.search(pattern, question, _FLAGS):
             return rel_types
     return None
+
+
+# Relationship types under which the seed node itself is never a valid answer to the implied question — "who authored X" / "what does X mention" ask about a relationship TARGET, not X's own identity, unlike "what does X aggregate" (SAME_AS) or an unfiltered "tell me about X" call, where the seed genuinely can be (and per eval questions 2/5/12/13, is) the correct top answer.
+_SEED_EXCLUDED_RELATIONSHIP_TYPES = {"AUTHORED_BY", "MENTIONS"}
+
+
+def _include_seed(relationship_types: list[str] | None) -> bool:
+    if not relationship_types:
+        return True
+    return not _SEED_EXCLUDED_RELATIONSHIP_TYPES.intersection(relationship_types)
 
 
 # search_by_name() embeds whatever text it's given against entity_name_embedding/ canonical_name_embedding — short-name embeddings, calibrated for a few words, not a full sentence (architecture.md §12.14, found during Step 11 end-to-end testing: question 6 dropped rank 1 -> 6, question 4's vector leg similarly diluted). Two-step extraction below, proportionate to that specific gap — not a new NLP subsystem:
@@ -95,9 +117,7 @@ def plan_and_retrieve(
     question: str,
     graph_seed_id: str | None = None,
     top_k: int = 8,
-) -> tuple[str, list[RetrievalResult]]:
-    """Returns (routing_decision, results). routing_decision is the classifier's category (including "hybrid" when escalated).
-    """
+) -> RoutingResult:
     category, fired = classify_with_signals(question)
 
     if category == "graph":
@@ -106,22 +126,33 @@ def plan_and_retrieve(
                 "graph routing requires graph_seed_id — entity linking from free text is not implemented in Atlas yet (see module docstring)"
             )
         rel_types = infer_relationship_types(question)
-        return category, get_entity_context(graph_seed_id, relationship_types=rel_types)[:top_k]
+        results = get_entity_context(
+            graph_seed_id, relationship_types=rel_types, include_seed=_include_seed(rel_types)
+        )[:top_k]
+        return RoutingResult(category, rel_types, ["graph"], results)
 
     if category == "vector_name":
-        return category, search_by_name(extract_vector_name_term(question), top_k=top_k)
+        results = search_by_name(extract_vector_name_term(question), top_k=top_k)
+        return RoutingResult(category, None, ["vector"], results)
 
     if category == "vector_passage":
-        return category, search_by_passage(question, top_k=top_k)
+        results = search_by_passage(question, top_k=top_k)
+        return RoutingResult(category, None, ["vector"], results)
 
     if category == "keyword":
-        return category, search_by_keyword(_escape_lucene(question), top_k=top_k)
+        results = search_by_keyword(_escape_lucene(question), top_k=top_k)
+        return RoutingResult(category, None, ["keyword"], results)
 
     # hybrid
     per_source: dict[str, list[RetrievalResult]] = {}
+    graph_rel_types: list[str] | None = None
     if graph_seed_id is not None:
-        rel_types = infer_relationship_types(question)
-        per_source["graph"] = get_entity_context(graph_seed_id, relationship_types=rel_types)[:top_k]
+        graph_rel_types = infer_relationship_types(question)
+        per_source["graph"] = get_entity_context(
+            graph_seed_id,
+            relationship_types=graph_rel_types,
+            include_seed=_include_seed(graph_rel_types),
+        )[:top_k]
 
     # Which vector mode for a hybrid call? The classifier's category alone doesn't say (that's exactly why it escalated). Use whichever vector signal actually fired if one did; if the escalation was specifically an AMBIGUOUS_TERMS match on an otherwise-clean "graph" signal (e.g. "mention" — see query_classifier.py), call vector in passage mode, since content-level "discusses X" is the competing interpretation graph's "mention" reading was hedged against. Any other 0-signal or 2+-signal hybrid case (Q12/Q13/Q15-shaped: identity/lookup questions with no single dominant signal) defaults to name mode.
     if "vector_passage" in fired:
@@ -140,4 +171,5 @@ def plan_and_retrieve(
 
     per_source["keyword"] = search_by_keyword(_escape_lucene(question), top_k=top_k)
 
-    return "hybrid", reciprocal_rank_fusion(per_source)[:top_k]
+    fused = reciprocal_rank_fusion(per_source)[:top_k]
+    return RoutingResult("hybrid", graph_rel_types, list(per_source.keys()), fused)
