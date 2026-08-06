@@ -519,6 +519,20 @@ Verified: question 1 now returns `person_claudio_guti_rrez` at rank 1 (was rank 
 
 Step 13 is considered **closed**. Of the two findings above, the self-node ranking issue is now resolved (§13 row 10); the §12.7 caveat-rule coarseness remains a documented, non-blocking observation about rule precision, not a defect.
 
+### 12.17 Build Order Step 12 (NL → Cypher): investigated and deferred
+
+Same treatment as 7A.2b/7A.3's deferral (§12.6) — a documented, reasoned decision, not an abandoned gap.
+
+**Investigation, not implementation**: before writing any NL→Cypher generation, validation pipeline, or schema-context prompt, 8 concrete multi-hop/aggregation questions were built and run live against this graph (not theorized) to find what `get_entity_context()` genuinely cannot express. Result: **1** mechanically answerable via a single filtered call (empty only because the underlying data — `CITES` — was never extracted); **3** fully answerable today by composing 2-3 existing `get_entity_context()` calls in Python, zero new Cypher; **3** are whole-graph aggregates with no anchor entity (a narrow, enumerable class: "top-N by count," "count above a threshold," "aggregate stat over one relationship type") — genuinely inexpressible via `get_entity_context()`, but closable by a handful of new **fixed** Cypher templates, not open-ended generation; **1** is a pure schema gap (`USES` was never added to `models.relationship.RELATIONSHIP_TYPES` at all — no query mechanism, generated or fixed, produces an answer without that relationship type existing first).
+
+**Decision: defer LLM-generated Cypher + its validation pipeline.** None of the 8 questions needed it. The three genuinely-new query shapes were closed cheaply instead:
+
+- `graph/queries/aggregates.py` — `most_mentioned_canonicals()`, `canonicals_by_alias_count()`, `relationship_type_stats()`, three fixed, parameterized templates (same folder-ownership rule as `resolve_target.py`/`document_reader.py`; no query-text parsing, no LLM, no new validator).
+- `examples/expected_output/retrieval_eval_questions.json` extended to 23 questions (17-18: composed-call patterns; 19-21: the new aggregate functions; 22-23: calibration gaps, `CITES` and `USES`, same purpose as question 14).
+- The two composed-call patterns (questions 17, 18) were deliberately **not** given first-class planner routing. Judgment: only 2 concrete instances exist, they're structurally unrelated to each other (a 2-hop chain vs. a 3-way parallel intersection — no shared generalizable pattern to route on), and both additionally require multi-seed entity linking from free text, which `planner.py` already documents as unbuilt for even the single-seed case. Building routing for 2 one-off instances would be exactly the over-fit the investigation was scoped to avoid. Revisit if the eval corpus's growth toward 50-100 questions (§12.16's accuracy-framing note) surfaces more real instances of either shape.
+
+**Reactivation condition, stated explicitly**: this calculus changes when Phase 3's code intelligence work (`CALLS`, `IMPLEMENTS`, `DEPENDS_ON` — real multi-hop chains through code structure, not just resource-level `AUTHORED_BY`/`MENTIONS`/`SAME_AS`) lands. This graph is currently too shallow for open-ended traversal to have much to traverse (§12.10) — that's the condition under which NL→Cypher's value proposition actually changes, not a fixed calendar date.
+
 ---
 
 ## 13. Known Graph Quality Limitations (consolidated)
@@ -540,6 +554,6 @@ Pure consolidation of findings already recorded across §12 and Stage 5 quality 
 
 ---
 
-**Document Version:** 2.0
-**Last Updated:** 2026-08-05
-**Status:** Step 7 (relationship extraction) substantively complete — 7A.1 and 7A.2a done and written; 7A.2b and 7A.3 formally deferred to Phase 3 (code intelligence). **Steps 10, 11, and 13 (hybrid retrieval, query planner, explainability) are all closed** (§12.15/§12.16 have the full sub-phase status tables). §13 consolidates known graph/retrieval/explainability quality limitations, all resolved or explicitly scoped as future work — none blocking: the base64/LaTeX chunking artifact from Step 9.5, the 1-hop graph-retrieval depth limit (§12.10, by design), the `organization_fulltext` gap (§12.11, closed), relationship-type-aware graph queries and canonical-aware fusion (§12.12/§12.13), the graph-retriever chunk/entity scoring tier (row 9, resolved), `vector_name`'s full-sentence-query degradation (§12.14, resolved), and the explainability self-node-as-default-answer gap found during Step 13F testing and fixed during closeout via `get_entity_context()`'s `include_seed` parameter (row 10, resolved). Step 14+ scoping is next.
+**Document Version:** 2.1
+**Last Updated:** 2026-08-06
+**Status:** Step 7 (relationship extraction) substantively complete — 7A.1 and 7A.2a done and written; 7A.2b and 7A.3 formally deferred to Phase 3 (code intelligence). **Steps 10, 11, and 13 (hybrid retrieval, query planner, explainability) are all closed** (§12.15/§12.16 have the full sub-phase status tables). **Step 12 (NL→Cypher) was investigated and deliberately deferred** (§12.17) — 8 live-verified questions found the real gap is 3 narrow whole-graph-aggregate query shapes, now closed cheaply via `graph/queries/aggregates.py`, not open-ended query flexibility justifying an LLM-generation + validation pipeline; reactivation condition is Phase 3's code intelligence adding real multi-hop depth. §13 consolidates known graph/retrieval/explainability quality limitations, all resolved or explicitly scoped as future work — none blocking. Step 14+ (API/frontend) scoping is next.

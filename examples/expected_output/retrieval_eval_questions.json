@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "step": "10F (first pass, 16 of an eventual 25-30)",
+    "step": "10F (first pass, 16) extended to 23 during Step 12 closeout — still short of an eventual 25-30",
     "purpose": "Draft evaluation corpus for Step 11 planner design and Step 10E fusion. Every graph/vector/keyword question below was actually run against the live corpus this session (retrieval/graph_retriever.py, retrieval/vector_retriever.py, retrieval/keyword_retriever.py); hybrid questions are compositional by nature and are noted as such rather than independently retrievable by one primitive.",
     "corpus_sources": [
       "pdf:2002.00388v4.pdf (Ji et al., A Survey on Knowledge Graphs)",
@@ -16,7 +16,8 @@
     ],
     "fixed_this_pass": [
       "organization_fulltext was missing (only document_fulltext/person_fulltext/technology_fulltext existed) — a real coverage gap, not a scoping choice, since Organization is the most common KnowledgeEntity label in this corpus. Added to graph/schema/indexes.cypher, applied, confirmed ONLINE. Q15 updated to reflect the corrected (now-passing) keyword result. See docs/architecture.md for the closed-gap note."
-    ]
+    ],
+    "step_12_extension": "Questions 17-23 added during the Step 12 (NL->Cypher) investigation and closeout. The investigation found the graph questions get_entity_context() genuinely can't express are a narrow, enumerable class (composed multi-call patterns and whole-graph aggregates), not evidence of open-ended query flexibility — see docs/architecture.md's Step 12 deferral entry. Questions 17-18 are composed-call patterns (2-3 get_entity_context() calls + Python set logic, zero new Cypher); 19-21 are served by the new graph/queries/aggregates.py fixed templates; 22-23 are deliberate calibration gaps (CITES: mechanically valid, zero data; USES: not in the schema at all), same treatment as question 14. Step 12 (LLM-generated Cypher + validation pipeline) itself was NOT built — deferred, reactivation condition documented in architecture.md."
   },
   "questions": [
     {
@@ -230,6 +231,95 @@
         }
       },
       "notes": "A naive count that enumerates every SAME_AS alias as a separate person (ignoring target_resolution/canonical grouping) overcounts by 9 people — entirely attributable to entities that have both a Canonical (1 correct identity) and multiple raw-Entity aliases (each wrongly counted again). This is exactly the failure mode target_resolution exists to prevent. Verified live this session."
+    },
+    {
+      "id": 17,
+      "question": "Who co-authored papers with Erik Cambria?",
+      "retrieval_type": "graph_composed",
+      "verified": true,
+      "expected_evidence": {
+        "papers_authored": ["paper_2002_00388v4_pdf"],
+        "co_authors": ["person_shirui_pan", "person_pekka_marttinen", "person_shaoxiong_ji__2002_00388v4_pdf", "person_philip_s_yu"]
+      },
+      "notes": "Step 12 investigation question 1. NOT answerable via a single get_entity_context() call — genuinely 2-hop (person -> paper via incoming AUTHORED_BY, then paper -> other authors via outgoing AUTHORED_BY). Answerable today with zero new Cypher by composing two filtered get_entity_context() calls in Python: get_entity_context('person_erik_cambria', relationship_types=['AUTHORED_BY'], include_seed=False) -> paper_2002_00388v4_pdf; get_entity_context('paper_2002_00388v4_pdf', relationship_types=['AUTHORED_BY'], include_seed=False) -> the 4 co-authors (Erik Cambria himself must be excluded from that second call's results in the composing code, since he'll appear in it too). Verified live this session (fresh run, not restated from an earlier pass)."
+    },
+    {
+      "id": 18,
+      "question": "Which entities are mentioned by both research papers and the rdflib repository?",
+      "retrieval_type": "graph_composed",
+      "verified": true,
+      "expected_evidence": {
+        "common_entities": ["org_dbpedia", "org_rdf", "org_acl", "person_graph", "org_wikipedia", "org_google", "org_node"]
+      },
+      "notes": "Step 12 investigation question 2. Answerable with zero new Cypher by composing three filtered get_entity_context() calls (paper_2003_02320v6_pdf, paper_2002_00388v4_pdf, repo_rdflib_rdflib, each relationship_types=['MENTIONS'], include_seed=False) and intersecting the three entity_id sets in Python. 7 real entities confirmed, cross-checked against org_dbpedia's already-known cross-source canonical status (examples/expected_output/retrieval_eval_questions.json question 5/13). Verified live this session."
+    },
+    {
+      "id": 19,
+      "question": "Which canonical entities are mentioned by the most distinct sources?",
+      "retrieval_type": "graph_aggregate",
+      "verified": true,
+      "expected_evidence": {
+        "top_5": [
+          {"id": "person_graph", "canonical_name": "Graph", "source_count": 4},
+          {"id": "org_api", "canonical_name": "API", "source_count": 3},
+          {"id": "org_rdf", "canonical_name": "RDF", "source_count": 3},
+          {"id": "lang_english", "canonical_name": "English", "source_count": 3},
+          {"id": "org_acl", "canonical_name": "ACL", "source_count": 3}
+        ]
+      },
+      "notes": "Step 12 investigation question 4. NOT expressible via get_entity_context() at all — no anchor entity, whole-graph aggregate. Served by graph/queries/aggregates.py::most_mentioned_canonicals(), a new fixed Cypher template added Step 12 closeout (not a planner-routed category — see planner.py's module docstring for the routing judgment call). Caveat, consistent with this corpus's own rigor: person_graph's rank-1 spot is very plausibly the common noun 'Graph' rather than a meaningful named entity — same class of NER cross-type/generic-term noise already documented (architecture.md §12.3/§13 row 5), not a new finding, just visible again here. Verified live this session with fresh parameters (limit=5), not the investigation's exact call restated."
+    },
+    {
+      "id": 20,
+      "question": "Which canonical entities aggregate the most raw duplicate aliases?",
+      "retrieval_type": "graph_aggregate",
+      "verified": true,
+      "expected_evidence": {
+        "min_aliases": 3,
+        "top_5": [
+          {"id": "person_z_zhang", "canonical_name": "Z. Zhang", "alias_count": 13},
+          {"id": "person_x_jiang", "canonical_name": "X. Jiang", "alias_count": 6},
+          {"id": "person_appendix_c", "canonical_name": "Appendix C.", "alias_count": 5},
+          {"id": "person_p_huang", "canonical_name": "P. Huang", "alias_count": 5},
+          {"id": "org_rdf", "canonical_name": "RDF", "alias_count": 5}
+        ]
+      },
+      "notes": "Step 12 investigation question 5. Served by graph/queries/aggregates.py::canonicals_by_alias_count(). person_z_zhang at 13 aliases is the exact cluster documented in architecture.md §12.4 (the cluster-cohesion-floor case study) — cross-validated, not coincidental. Verified live this session."
+    },
+    {
+      "id": 21,
+      "question": "What is the average confidence of AUTHORED_BY relationships in the graph?",
+      "retrieval_type": "graph_aggregate",
+      "verified": true,
+      "expected_evidence": {
+        "edge_count": 18,
+        "avg_confidence": 0.9744444444444443,
+        "min_confidence": 0.96,
+        "max_confidence": 0.98
+      },
+      "notes": "Step 12 investigation question 8's class, generalized. Served by graph/queries/aggregates.py::relationship_type_stats('AUTHORED_BY') — a single parameterized function covering this pattern for any relationship type, not a one-off query. Also spot-checked against MENTIONS (4224 edges, avg 0.632) and SAME_AS (731 edges, avg 0.924) this session; only AUTHORED_BY is committed to the corpus to keep this entry singular and verifiable, not because the others don't work."
+    },
+    {
+      "id": 22,
+      "question": "Which papers does the Knowledge Graphs survey cite?",
+      "retrieval_type": "graph",
+      "verified": true,
+      "expected_evidence": {
+        "answerable": false,
+        "result_count": 0
+      },
+      "notes": "Step 12 investigation question 6 — calibration case, deliberately included. get_entity_context('paper_2003_02320v6_pdf', relationship_types=['CITES']) is a perfectly valid single filtered call (CITES IS a member of models.relationship.RELATIONSHIP_TYPES) and executes cleanly — it just returns [], because 0 CITES edges exist anywhere in the graph (confirmed via direct Cypher: MATCH ()-[r:CITES]->() RETURN count(r) is 0). This is a data/extraction gap (citation extraction was never built), not a retrieval-mechanism gap — distinguishes cleanly from question 23's schema gap below. No amount of query flexibility, generated or fixed, produces an answer here; only citation extraction would."
+    },
+    {
+      "id": 23,
+      "question": "What is the average confidence of USES relationships between repositories and the technologies they depend on?",
+      "retrieval_type": "graph_aggregate",
+      "verified": true,
+      "expected_evidence": {
+        "answerable": false,
+        "error": "ValueError: unknown relationship type: 'USES'"
+      },
+      "notes": "Step 12 investigation question 7, re-verified against the new aggregate path (graph/queries/aggregates.py::relationship_type_stats), not just the original get_entity_context() finding. 'USES' is not a member of models.relationship.RELATIONSHIP_TYPES at all (confirmed empirically, both here and in question 14's notes) — physical.md documents a resource-level USES relationship in prose, but it was never added to the actual schema enum; 7A.3 is deferred to Phase 3 (architecture.md §12.6). relationship_type_stats() raises ValueError before ever reaching Neo4j, same as get_entity_context() would. Same underlying schema gap as question 14, approached through the new aggregate function instead of the graph retriever, to confirm the gap is consistent across both code paths, not just one."
     }
   ]
 }
