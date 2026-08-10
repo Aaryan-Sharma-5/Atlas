@@ -70,3 +70,24 @@ export interface EntityDetailResponse {
 export interface ApiErrorBody {
   detail: string;
 }
+
+// Mirrors api/schemas.py::GraphNodeOut/GraphEdgeOut/EntityGraphResponse — the GET /entities/{id}/graph shape (Step 14D, F2).
+export interface GraphNodeOut {
+  id: string;
+  label: string;
+  type: string | null;
+  target_resolution: string;
+}
+
+export interface GraphEdgeOut {
+  source: string;
+  target: string;
+  relationship_type: string;
+  direction: string;
+}
+
+export interface EntityGraphResponse {
+  nodes: GraphNodeOut[];
+  edges: GraphEdgeOut[];
+  truncated: boolean;
+}

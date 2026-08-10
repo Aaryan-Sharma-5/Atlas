@@ -63,12 +63,18 @@
 }
 
 .status-loading,
-.status-error {
+.status-error,
+.status-caveat {
   margin-top: 20px;
 }
 
 .status-error {
   color: #b3261e;
+}
+
+.status-caveat {
+  color: var(--text);
+  font-size: 14px;
 }
 
 .results {
@@ -132,4 +138,55 @@
 .evidence-card-empty {
   color: var(--text);
   font-size: 14px;
+}
+
+.explore-graph-button {
+  align-self: flex-start;
+  font: inherit;
+  font-size: 14px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.graph-view {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.graph-view-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.load-more-button {
+  font: inherit;
+  font-size: 13px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--accent-bg);
+  color: var(--text-h);
+  cursor: pointer;
+}
+
+.load-more-button:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.graph-view-canvas {
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  border: 1px solid var(--border);
+  border-radius: 6px;
 }
