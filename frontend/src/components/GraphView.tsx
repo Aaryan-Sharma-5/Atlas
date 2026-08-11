@@ -4,6 +4,7 @@ import type { Core, ElementDefinition, StylesheetJson } from "cytoscape";
 import { fetchEntityGraph } from "../api/entities";
 import { ApiError } from "../api/client";
 import type { EntityGraphResponse } from "../types/api";
+import EntityPanel from "./EntityPanel";
 
 interface GraphViewProps {
   entityId: string;
@@ -67,8 +68,15 @@ function toElements(data: EntityGraphResponse, seedId: string): ElementDefinitio
 export default function GraphView({ entityId }: GraphViewProps) {
   const [limit, setLimit] = useState(LIMIT_STEP);
   const [result, setResult] = useState<Result | null>(null);
+  const [selectedEntityId, setSelectedEntityId] = useState<string | null>(null);
+  const [selectionSeed, setSelectionSeed] = useState(entityId);
   const requestKey = `${entityId}:${limit}`;
   const cyRef = useRef<Core | null>(null);
+
+  if (entityId !== selectionSeed) {
+    setSelectionSeed(entityId);
+    setSelectedEntityId(null);
+  }
 
   useEffect(() => {
     let cancelled = false;
@@ -129,8 +137,13 @@ export default function GraphView({ entityId }: GraphViewProps) {
             cy.resize();
             cy.fit(undefined, 30);
           });
+          cy.off("tap", "node");
+          cy.on("tap", "node", (evt) => setSelectedEntityId(evt.target.id()));
         }}
       />
+      {selectedEntityId && (
+        <EntityPanel entityId={selectedEntityId} onClose={() => setSelectedEntityId(null)} />
+      )}
     </div>
   );
 }

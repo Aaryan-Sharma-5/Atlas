@@ -53,7 +53,7 @@ export interface AliasOut {
   decision_action: string | null;
 }
 
-// Not rendered by any F1 component yet (no entity panel until F3) — typed now per instruction, kept in sync with api/schemas.py::EntityDetailResponse.
+// Rendered by components/EntityPanel.tsx (F3) — kept in sync with api/schemas.py::EntityDetailResponse.
 export interface EntityDetailResponse {
   id: string;
   node_type: string | null;
