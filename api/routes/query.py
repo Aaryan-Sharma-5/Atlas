@@ -1,4 +1,4 @@
-"""POST /api/v1/query (Step 14A). Thin transport only — calls plan_and_retrieve() + assemble_explained_answer() and maps the result to QueryResponse. No retrieval/planner/ graph logic belongs here (CLAUDE.md); if this handler starts making routing decisions, that's a bug, not a feature.
+"""POST /api/v1/query (Step 14A). Thin transport only — calls plan_and_retrieve() + assemble_explained_answer() and maps the result to QueryResponse. No retrieval/planner/ graph logic belongs here (CONTRIBUTING.md); if this handler starts making routing decisions, that's a bug, not a feature.
 """
 
 from fastapi import APIRouter, HTTPException
