@@ -26,7 +26,7 @@ from models.entity import Entity
 from models.relationship import Relationship
 
 DEFAULT_URI = os.environ.get("NEO4J_URI", "bolt://localhost:7687")
-DEFAULT_USER = os.environ.get("NEO4J_USER", "neo4j")
+DEFAULT_USER = os.environ.get("NEO4J_USERNAME", "neo4j")
 DEFAULT_PASSWORD = os.environ.get("NEO4J_PASSWORD", "atlas_password_123")
 
 

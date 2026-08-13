@@ -1,6 +1,7 @@
 fastapi
 uvicorn[standard]
 neo4j
+numpy
 psycopg2-binary
 spacy
 sentence-transformers

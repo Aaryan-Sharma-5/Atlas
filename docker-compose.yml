@@ -6,7 +6,7 @@ services:
       - "7474:7474"  # HTTP
       - "7687:7687"  # Bolt
     environment:
-      NEO4J_AUTH: neo4j/atlas_password_123
+      NEO4J_AUTH: neo4j/${NEO4J_LOCAL_PASSWORD}
       NEO4J_PLUGINS: '["graph-data-science"]'
       NEO4J_dbms_memory_heap_initial__size: 1G
       NEO4J_dbms_memory_heap_max__size: 2G
@@ -29,7 +29,7 @@ services:
       - "5432:5432"
     environment:
       POSTGRES_USER: atlas_user
-      POSTGRES_PASSWORD: atlas_password_123
+      POSTGRES_PASSWORD: ${POSTGRES_LOCAL_PASSWORD}
       POSTGRES_DB: atlas
     volumes:
       - postgres_data:/var/lib/postgresql/data
