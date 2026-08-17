@@ -23,6 +23,14 @@ def read_root():
     return {"status": "healthy", "message": "Welcome to Atlas!"}
 
 
+@app.get("/warmup")
+def warmup():
+    from resolution.matchers.embedding_matcher import embed_names
+
+    embed_names(["warmup"])
+    return {"status": "warm"}
+
+
 if __name__ == "__main__":
     import uvicorn
 

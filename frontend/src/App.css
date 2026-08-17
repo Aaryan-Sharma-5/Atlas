@@ -64,8 +64,15 @@
 
 .status-loading,
 .status-error,
-.status-caveat {
+.status-caveat,
+.status-waking {
   margin-top: 20px;
+}
+
+.status-waking {
+  color: var(--text);
+  font-size: 14px;
+  opacity: 0.7;
 }
 
 .status-error {

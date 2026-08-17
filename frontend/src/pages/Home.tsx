@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { runQuery } from "../api/query";
 import { ApiError } from "../api/client";
+import { ping, warmup } from "../api/warmup";
 import type { QueryResponse } from "../types/api";
 import QueryBar from "../components/QueryBar";
 import AnswerCard from "../components/AnswerCard";
@@ -8,6 +9,7 @@ import EvidenceCard from "../components/EvidenceCard";
 import GraphView from "../components/GraphView";
 
 type Status = "idle" | "loading" | "error";
+type BackendStatus = "waking" | "ready";
 
 interface DisplayError {
   tone: "caveat" | "error";
@@ -33,6 +35,15 @@ export default function Home() {
   const [response, setResponse] = useState<QueryResponse | null>(null);
   const [error, setError] = useState<DisplayError | null>(null);
   const [exploring, setExploring] = useState(false);
+  const [backendStatus, setBackendStatus] = useState<BackendStatus>("waking");
+
+  useEffect(() => {
+    Promise.all([ping(), warmup()])
+      .catch(() => {
+        // best-effort: real queries still work if warm-up itself failed
+      })
+      .finally(() => setBackendStatus("ready"));
+  }, []);
 
   async function handleAsk(question: string) {
     setStatus("loading");
@@ -51,6 +62,9 @@ export default function Home() {
   return (
     <main className="home">
       <h1>Atlas</h1>
+      {backendStatus === "waking" && (
+        <p className="status-waking">Waking Atlas — first search may take a bit longer.</p>
+      )}
       <QueryBar onSubmit={handleAsk} disabled={status === "loading"} />
 
       {status === "loading" && <p className="status-loading">Asking...</p>}

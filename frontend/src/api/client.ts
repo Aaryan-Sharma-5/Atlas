@@ -1,7 +1,10 @@
 import type { ApiErrorBody } from "../types/api";
 
-// Relative — vite.config.ts proxies /api/* to the FastAPI backend in dev, so no CORS setup is needed on the backend (which stays "frozen at three endpoints" as scoped).
-const API_BASE = "/api/v1";
+const API_BASE = import.meta.env.VITE_API_BASE_URL ?? "/api/v1";
+
+export const API_ORIGIN = import.meta.env.VITE_API_BASE_URL
+  ? new URL(import.meta.env.VITE_API_BASE_URL).origin
+  : "http://127.0.0.1:8000";
 
 export class ApiError extends Error {
   status: number;
