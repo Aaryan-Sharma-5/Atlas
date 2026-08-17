@@ -19,12 +19,12 @@ def fetch_all_entities(
     user: str = DEFAULT_USER,
     password: str = DEFAULT_PASSWORD,
 ) -> list[Entity]:
-    """Load every :Entity node back into a models.Entity object."""
+    """Load every resolution-scoped :Entity node back into a models.Entity object."""
     driver = GraphDatabase.driver(uri, auth=(user, password))
     try:
         with driver.session() as session:
             records = session.run(
-                "MATCH (n:Entity) RETURN properties(n) AS props, labels(n) AS labels"
+                "MATCH (n:Entity) WHERE NOT n:Chunk RETURN properties(n) AS props, labels(n) AS labels"
             )
             return [_to_entity(r["props"], r["labels"]) for r in records]
     finally:

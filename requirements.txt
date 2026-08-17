@@ -4,7 +4,9 @@ neo4j
 numpy
 psycopg2-binary
 spacy
-sentence-transformers
+onnxruntime
+tokenizers
+huggingface_hub
 pydantic
 pydantic-settings
 python-dotenv
